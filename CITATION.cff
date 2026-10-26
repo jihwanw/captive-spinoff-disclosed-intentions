@@ -6,7 +6,8 @@ authors:
     given-names: Jihwan
     orcid: https://orcid.org/0000-0002-0424-0242
     affiliation: Amazon Web Services, Seoul, Republic of Korea
-version: 1.0-results
+version: 1.0-submission
+doi: 10.5281/zenodo.23660636
 date-released: 2026-10-26
 license: MIT
 repository-code: https://github.com/jihwanw/captive-spinoff-disclosed-intentions

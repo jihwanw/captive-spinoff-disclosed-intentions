@@ -1,7 +1,9 @@
 # Controlling Owners, Disclosed Intentions, and Minority Shareholder Returns in Korean Captive Spin-Offs
 
 Replication archive for the manuscript of that title (single author), submitted to *Corporate Governance: An International Review*.
-Version DOI (this release): [PENDING — filled when the release is archived on Zenodo]. Concept DOI (all versions): [PENDING].
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23660636.svg)](https://doi.org/10.5281/zenodo.23660636)
+
+Version DOI (release `v1.0-submission`, the submitted state): https://doi.org/10.5281/zenodo.23660636. Concept DOI (resolves to the latest version): https://doi.org/10.5281/zenodo.23660635.
 
 ## What is here
 
@@ -32,7 +34,7 @@ cd paper/tex && pdflatex main && bibtex main && pdflatex main && pdflatex main
 ## Releases
 
 * `v1.0-results` — the code and results files that produced every estimate in the submitted manuscript.
-* `v1.0-submission` — the submitted state (adds this README's DOI line and the citation file; no results code changed).
+* `v1.0-submission` — the submitted state (DOI 10.5281/zenodo.23660636); results code unchanged from `v1.0-results`. This README's DOI line was added after the release was archived.
 
 ## Licence and citation
 
