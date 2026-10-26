@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.DS_Store
+paper/tex/*.aux
+paper/tex/*.log
+paper/tex/*.bbl
+paper/tex/*.blg
+paper/tex/*.out
+paper/tex/*.ttt
+paper/tex/*.fff
+paper/tex/*.pdf

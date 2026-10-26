@@ -1,0 +1,282 @@
+{
+ "run_at": "2026-10-25T15:53:50",
+ "cases": [
+  {
+   "rcept_no": "20201201000434",
+   "corp_name": "케이씨씨",
+   "division_year": 2020,
+   "v3_outcome": "majority_disposed",
+   "llm_outcome": "retained_100",
+   "category": "intra_group_transfer"
+  },
+  {
+   "rcept_no": "20170713000208",
+   "corp_name": "쿠쿠홀딩스",
+   "division_year": 2017,
+   "v3_outcome": "ipo_listed",
+   "llm_outcome": "retained_100",
+   "category": "tracker_error_matched_spinoff_entity"
+  },
+  {
+   "rcept_no": "20240618000210",
+   "corp_name": "한화",
+   "division_year": 2024,
+   "v3_outcome": "majority_disposed",
+   "llm_outcome": "retained_100",
+   "category": "unresolved_conflict"
+  },
+  {
+   "rcept_no": "20190415001165",
+   "corp_name": "글로앤웰",
+   "division_year": 2019,
+   "v3_outcome": "majority_disposed",
+   "llm_outcome": "retained_100",
+   "category": "unresolved_conflict"
+  },
+  {
+   "rcept_no": "20200218001200",
+   "corp_name": "가온그룹",
+   "division_year": 2020,
+   "v3_outcome": "partial_sale",
+   "llm_outcome": "retained_100",
+   "category": "minor_dilution_below_materiality"
+  },
+  {
+   "rcept_no": "20210106000442",
+   "corp_name": "하나마이크론",
+   "division_year": 2021,
+   "v3_outcome": "partial_sale",
+   "llm_outcome": "retained_100",
+   "category": "temporary_external_dilution"
+  },
+  {
+   "rcept_no": "20210330000627",
+   "corp_name": "에스코넥",
+   "division_year": 2021,
+   "v3_outcome": "partial_sale",
+   "llm_outcome": "retained_100",
+   "category": "temporary_external_dilution"
+  },
+  {
+   "rcept_no": "20180412002210",
+   "corp_name": "풀무원식품",
+   "division_year": 2018,
+   "v3_outcome": "partial_sale",
+   "llm_outcome": "retained_100",
+   "category": "related_party_preferred_shares"
+  },
+  {
+   "rcept_no": "20181120000096",
+   "corp_name": "드림시큐리티",
+   "division_year": 2019,
+   "v3_outcome": "partial_sale",
+   "llm_outcome": "retained_100",
+   "category": "intra_group_transfer"
+  },
+  {
+   "rcept_no": "20180205000105",
+   "corp_name": "SGA솔루션즈",
+   "division_year": 2018,
+   "v3_outcome": "partial_sale",
+   "llm_outcome": "retained_100",
+   "category": "temporary_external_dilution"
+  },
+  {
+   "rcept_no": "20210914000337",
+   "corp_name": "매일유업",
+   "division_year": 2021,
+   "v3_outcome": "partial_sale",
+   "llm_outcome": "retained_100",
+   "category": "unresolved_conflict"
+  }
+ ],
+ "baseline": {
+  "label": "clean labels as used (tracker label kept for the eleven)",
+  "n_clean": 476,
+  "disposed_share": 0.695,
+  "gate1_auc_two_model": 0.785,
+  "gate1_auc_2017plus": 0.83,
+  "bhar1y_disposed_vs_retained": {
+   "n_a": 330,
+   "n_b": 141,
+   "mean_a": -0.0892,
+   "mean_b": 0.0139,
+   "diff": -0.1032,
+   "diff_ci95_boot": [
+    -0.2743,
+    0.0526
+   ],
+   "welch_t": -1.23,
+   "welch_p": 0.219,
+   "median_a": -0.2246,
+   "median_b": -0.0871,
+   "mannwhitney_p": 0.01
+  },
+  "bhar1y_early_vs_never": {
+   "n_a": 195,
+   "n_b": 141,
+   "mean_a": -0.1416,
+   "mean_b": 0.0139,
+   "diff": -0.1555,
+   "diff_ci95_boot": [
+    -0.3397,
+    0.0116
+   ],
+   "welch_t": -1.75,
+   "welch_p": 0.082,
+   "median_a": -0.2659,
+   "median_b": -0.0871,
+   "mannwhitney_p": 0.001
+  },
+  "reg_bhar1y_on_early_controls": {
+   "n": 406,
+   "early": {
+    "coef": -0.1333,
+    "p_hc1": 0.055
+   }
+  },
+  "reg_rank1y_on_early_controls": {
+   "n": 406,
+   "early": {
+    "coef": -0.0793,
+    "p_hc1": 0.013
+   }
+  },
+  "disposal_rate_by_block_tercile": {
+   "low": 0.74,
+   "mid": 0.706,
+   "high": 0.615
+  },
+  "early_rate_by_block_tercile": {
+   "low": 0.523,
+   "mid": 0.433,
+   "high": 0.427
+  }
+ },
+ "flip_to_retained": {
+  "label": "eleven cases set to retained_100 / never (adverse)",
+  "n_clean": 476,
+  "disposed_share": 0.679,
+  "gate1_auc_two_model": 0.79,
+  "gate1_auc_2017plus": 0.844,
+  "bhar1y_disposed_vs_retained": {
+   "n_a": 322,
+   "n_b": 149,
+   "mean_a": -0.1044,
+   "mean_b": 0.0412,
+   "diff": -0.1457,
+   "diff_ci95_boot": [
+    -0.3139,
+    0.0071
+   ],
+   "welch_t": -1.76,
+   "welch_p": 0.079,
+   "median_a": -0.2276,
+   "median_b": -0.0777,
+   "mannwhitney_p": 0.002
+  },
+  "bhar1y_early_vs_never": {
+   "n_a": 195,
+   "n_b": 149,
+   "mean_a": -0.1416,
+   "mean_b": 0.0412,
+   "diff": -0.1828,
+   "diff_ci95_boot": [
+    -0.3636,
+    -0.0172
+   ],
+   "welch_t": -2.07,
+   "welch_p": 0.04,
+   "median_a": -0.2659,
+   "median_b": -0.0777,
+   "mannwhitney_p": 0.0
+  },
+  "reg_bhar1y_on_early_controls": {
+   "n": 414,
+   "early": {
+    "coef": -0.1294,
+    "p_hc1": 0.055
+   }
+  },
+  "reg_rank1y_on_early_controls": {
+   "n": 414,
+   "early": {
+    "coef": -0.0791,
+    "p_hc1": 0.013
+   }
+  },
+  "disposal_rate_by_block_tercile": {
+   "low": 0.72,
+   "mid": 0.693,
+   "high": 0.594
+  },
+  "early_rate_by_block_tercile": {
+   "low": 0.511,
+   "mid": 0.426,
+   "high": 0.417
+  }
+ },
+ "drop_eleven": {
+  "label": "eleven cases dropped",
+  "n_clean": 468,
+  "disposed_share": 0.69,
+  "gate1_auc_two_model": 0.792,
+  "gate1_auc_2017plus": 0.85,
+  "bhar1y_disposed_vs_retained": {
+   "n_a": 322,
+   "n_b": 141,
+   "mean_a": -0.1044,
+   "mean_b": 0.0139,
+   "diff": -0.1184,
+   "diff_ci95_boot": [
+    -0.2856,
+    0.0354
+   ],
+   "welch_t": -1.42,
+   "welch_p": 0.157,
+   "median_a": -0.2276,
+   "median_b": -0.0871,
+   "mannwhitney_p": 0.006
+  },
+  "bhar1y_early_vs_never": {
+   "n_a": 195,
+   "n_b": 141,
+   "mean_a": -0.1416,
+   "mean_b": 0.0139,
+   "diff": -0.1555,
+   "diff_ci95_boot": [
+    -0.3344,
+    0.013
+   ],
+   "welch_t": -1.75,
+   "welch_p": 0.082,
+   "median_a": -0.2659,
+   "median_b": -0.0871,
+   "mannwhitney_p": 0.001
+  },
+  "reg_bhar1y_on_early_controls": {
+   "n": 406,
+   "early": {
+    "coef": -0.1333,
+    "p_hc1": 0.055
+   }
+  },
+  "reg_rank1y_on_early_controls": {
+   "n": 406,
+   "early": {
+    "coef": -0.0793,
+    "p_hc1": 0.013
+   }
+  },
+  "disposal_rate_by_block_tercile": {
+   "low": 0.735,
+   "mid": 0.702,
+   "high": 0.607
+  },
+  "early_rate_by_block_tercile": {
+   "low": 0.523,
+   "mid": 0.433,
+   "high": 0.427
+  }
+ }
+}

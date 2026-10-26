@@ -1,0 +1,271 @@
+{
+ "run_at": "2026-10-25T15:31:42",
+ "cutoff_post": "2022-10-01",
+ "caveats": [
+  "before/after only — the rules applied to all 물적분할, no untreated group",
+  "post-period outcome rates use events with division year <= 2023 (two fiscal years of annual reports); later events are immature",
+  "regulatory dates verified on FSC releases 2022-09-05 (fsc.go.kr/no010101/78449: three measures; form and listing-rule revisions to be completed by October 2022) and 2022-12-20 (fsc.go.kr/no010101/79125: appraisal-right decree passed Cabinet, promulgation and immediate effect within 2022); filings state protection measures from 2022-10-17 onward (first: 삼양패키징); the appraisal right was not yet in force for filings between 2022-10 and late 2022-12"
+ ],
+ "by_year": {
+  "2015": {
+   "n_filings": 29,
+   "n_with_llm_facts": 29,
+   "share_mentions_protection": 0.224,
+   "share_mentions_listing": 0.397,
+   "share_mentions_sale": 0.224,
+   "share_purpose_sale_or_disposal": 0.19,
+   "share_purpose_fundraising": 0.207,
+   "mean_score": 0.575,
+   "mean_ann_car": -0.0019,
+   "n_ann_car": 17,
+   "disposal_rate_mature": 0.667,
+   "n_clean_mature": 18,
+   "early_disposal_rate_mature": 0.5,
+   "n_early_mature": 18
+  },
+  "2016": {
+   "n_filings": 40,
+   "n_with_llm_facts": 40,
+   "share_mentions_protection": 0.125,
+   "share_mentions_listing": 0.5,
+   "share_mentions_sale": 0.15,
+   "share_purpose_sale_or_disposal": 0.1,
+   "share_purpose_fundraising": 0.1,
+   "mean_score": 0.537,
+   "mean_ann_car": -0.0165,
+   "n_ann_car": 31,
+   "disposal_rate_mature": 0.724,
+   "n_clean_mature": 29,
+   "early_disposal_rate_mature": 0.552,
+   "n_early_mature": 29
+  },
+  "2017": {
+   "n_filings": 31,
+   "n_with_llm_facts": 29,
+   "share_mentions_protection": 0.164,
+   "share_mentions_listing": 0.575,
+   "share_mentions_sale": 0.034,
+   "share_purpose_sale_or_disposal": 0.034,
+   "share_purpose_fundraising": 0.086,
+   "mean_score": 0.486,
+   "mean_ann_car": 0.0143,
+   "n_ann_car": 23,
+   "disposal_rate_mature": 0.607,
+   "n_clean_mature": 28,
+   "early_disposal_rate_mature": 0.364,
+   "n_early_mature": 22
+  },
+  "2018": {
+   "n_filings": 31,
+   "n_with_llm_facts": 28,
+   "share_mentions_protection": 0.062,
+   "share_mentions_listing": 0.512,
+   "share_mentions_sale": 0.036,
+   "share_purpose_sale_or_disposal": 0.036,
+   "share_purpose_fundraising": 0.125,
+   "mean_score": 0.468,
+   "mean_ann_car": 0.0177,
+   "n_ann_car": 27,
+   "disposal_rate_mature": 0.731,
+   "n_clean_mature": 26,
+   "early_disposal_rate_mature": 0.462,
+   "n_early_mature": 13
+  },
+  "2019": {
+   "n_filings": 34,
+   "n_with_llm_facts": 30,
+   "share_mentions_protection": 0.078,
+   "share_mentions_listing": 0.522,
+   "share_mentions_sale": 0.217,
+   "share_purpose_sale_or_disposal": 0.158,
+   "share_purpose_fundraising": 0.142,
+   "mean_score": 0.565,
+   "mean_ann_car": 0.0138,
+   "n_ann_car": 25,
+   "disposal_rate_mature": 0.759,
+   "n_clean_mature": 29,
+   "early_disposal_rate_mature": 0.474,
+   "n_early_mature": 19
+  },
+  "2020": {
+   "n_filings": 50,
+   "n_with_llm_facts": 49,
+   "share_mentions_protection": 0.061,
+   "share_mentions_listing": 0.529,
+   "share_mentions_sale": 0.25,
+   "share_purpose_sale_or_disposal": 0.184,
+   "share_purpose_fundraising": 0.321,
+   "mean_score": 0.587,
+   "mean_ann_car": -0.0116,
+   "n_ann_car": 45,
+   "disposal_rate_mature": 0.795,
+   "n_clean_mature": 44,
+   "early_disposal_rate_mature": 0.524,
+   "n_early_mature": 21
+  },
+  "2021": {
+   "n_filings": 52,
+   "n_with_llm_facts": 49,
+   "share_mentions_protection": 0.071,
+   "share_mentions_listing": 0.514,
+   "share_mentions_sale": 0.173,
+   "share_purpose_sale_or_disposal": 0.122,
+   "share_purpose_fundraising": 0.173,
+   "mean_score": 0.508,
+   "mean_ann_car": -0.0004,
+   "n_ann_car": 39,
+   "disposal_rate_mature": 0.585,
+   "n_clean_mature": 41,
+   "early_disposal_rate_mature": 0.321,
+   "n_early_mature": 28
+  },
+  "2022": {
+   "n_filings": 35,
+   "n_with_llm_facts": 29,
+   "share_mentions_protection": 0.25,
+   "share_mentions_listing": 0.621,
+   "share_mentions_sale": 0.371,
+   "share_purpose_sale_or_disposal": 0.328,
+   "share_purpose_fundraising": 0.216,
+   "mean_score": 0.556,
+   "mean_ann_car": -0.0086,
+   "n_ann_car": 32,
+   "disposal_rate_mature": 0.577,
+   "n_clean_mature": 26,
+   "early_disposal_rate_mature": 0.368,
+   "n_early_mature": 19
+  },
+  "2023": {
+   "n_filings": 16,
+   "n_with_llm_facts": 16,
+   "share_mentions_protection": 1.0,
+   "share_mentions_listing": 0.875,
+   "share_mentions_sale": 0.062,
+   "share_purpose_sale_or_disposal": 0.062,
+   "share_purpose_fundraising": 0.188,
+   "mean_score": 0.473,
+   "mean_ann_car": 0.0609,
+   "n_ann_car": 13,
+   "disposal_rate_mature": 0.308,
+   "n_clean_mature": 13,
+   "early_disposal_rate_mature": 0.308,
+   "n_early_mature": 13
+  },
+  "2024": {
+   "n_filings": 18,
+   "n_with_llm_facts": 17,
+   "share_mentions_protection": 0.971,
+   "share_mentions_listing": 0.985,
+   "share_mentions_sale": 0.147,
+   "share_purpose_sale_or_disposal": 0.074,
+   "share_purpose_fundraising": 0.294,
+   "mean_score": 0.47,
+   "mean_ann_car": 0.0752,
+   "n_ann_car": 15,
+   "disposal_rate_mature": 0.0,
+   "n_clean_mature": 1,
+   "early_disposal_rate_mature": 0.0,
+   "n_early_mature": 1
+  },
+  "2025": {
+   "n_filings": 13,
+   "n_with_llm_facts": 5,
+   "share_mentions_protection": 1.0,
+   "share_mentions_listing": 0.7,
+   "share_mentions_sale": 0.2,
+   "share_purpose_sale_or_disposal": 0.2,
+   "share_purpose_fundraising": 0.2,
+   "mean_score": 0.56,
+   "mean_ann_car": 0.0016,
+   "n_ann_car": 9,
+   "disposal_rate_mature": null,
+   "n_clean_mature": 0,
+   "early_disposal_rate_mature": null,
+   "n_early_mature": 0
+  },
+  "2026": {
+   "n_filings": 10,
+   "n_with_llm_facts": 0,
+   "share_mentions_protection": null,
+   "share_mentions_listing": null,
+   "share_mentions_sale": null,
+   "share_purpose_sale_or_disposal": null,
+   "share_purpose_fundraising": null,
+   "mean_score": null,
+   "mean_ann_car": 0.1086,
+   "n_ann_car": 4,
+   "disposal_rate_mature": null,
+   "n_clean_mature": 0,
+   "early_disposal_rate_mature": null,
+   "n_early_mature": 0
+  }
+ },
+ "pre_post": {
+  "filings_mention_protection": {
+   "n_pre": 208,
+   "n_post": 44,
+   "share_pre": 0.005,
+   "share_post": 0.955,
+   "fisher_p": 0.0
+  },
+  "filings_mention_listing": {
+   "n_pre": 208,
+   "n_post": 44,
+   "share_pre": 0.091,
+   "share_post": 0.773,
+   "fisher_p": 0.0
+  },
+  "purpose_sale_or_disposal": {
+   "n_pre": 208,
+   "n_post": 44,
+   "share_pre": 0.13,
+   "share_post": 0.136,
+   "fisher_p": 1.0
+  },
+  "purpose_fundraising": {
+   "n_pre": 208,
+   "n_post": 44,
+   "share_pre": 0.159,
+   "share_post": 0.273,
+   "fisher_p": 0.084
+  },
+  "disposal_score": {
+   "n_pre": 208,
+   "n_post": 44,
+   "mean_pre": 0.5283,
+   "mean_post": 0.5097,
+   "welch_p": 0.616,
+   "mannwhitney_p": 0.442
+  },
+  "announcement_car": {
+   "n_pre": 183,
+   "n_post": 49,
+   "mean_pre": 0.0006,
+   "mean_post": 0.0529,
+   "welch_p": 0.0,
+   "mannwhitney_p": 0.0
+  },
+  "disposal_rate_mature_only": {
+   "n_pre": 188,
+   "n_post": 20,
+   "share_pre": 0.681,
+   "share_post": 0.4,
+   "fisher_p": 0.024
+  },
+  "early_disposal_rate_mature_only": {
+   "n_pre": 117,
+   "n_post": 19,
+   "share_pre": 0.402,
+   "share_post": 0.368,
+   "fisher_p": 1.0
+  },
+  "n_filings_per_year_pre_vs_post": {
+   "pre_2017_to_cutoff": 39.0,
+   "post": 16.4
+  },
+  "score_to_early_auc_pre": {
+   "n": 117,
+   "auc": 0.913
+  }
+ }
+}

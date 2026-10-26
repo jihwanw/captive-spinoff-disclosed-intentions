@@ -1,0 +1,157 @@
+{
+ "n_rows": 579,
+ "by_source": {
+  "2001-2016": 345,
+  "2017+": 234
+ },
+ "feature_coverage": {
+  "kosdaq": 579,
+  "log_newco_assets": 333,
+  "newco_leverage": 323,
+  "newco_sales_to_assets": 280,
+  "relative_size": 327,
+  "parent_after_leverage": 336,
+  "relisting_yes": 579,
+  "put_option_yes": 274
+ },
+ "disposed_share_by_period": {
+  "2001-2008": {
+   "n": 161,
+   "share": 0.77
+  },
+  "2009-2016": {
+   "n": 178,
+   "share": 0.719
+  },
+  "2017-2025": {
+   "n": 240,
+   "share": 0.621
+  }
+ },
+ "pooled": {
+  "n": 579,
+  "disposed_share": 0.693,
+  "n_features": 14,
+  "financial_cv_auc": 0.587,
+  "auc_p_claude": 0.771,
+  "auc_p_gpt": 0.736,
+  "auc_p_llm": 0.761,
+  "combined_cv_auc": 0.765,
+  "delta_llm_minus_financial": {
+   "point": 0.174,
+   "ci95": [
+    0.117,
+    0.235
+   ]
+  },
+  "delta_combined_minus_financial": {
+   "point": 0.178,
+   "ci95": [
+    0.132,
+    0.227
+   ]
+  }
+ },
+ "period_2001-2008": {
+  "n": 161,
+  "disposed_share": 0.77,
+  "n_features": 12,
+  "financial_cv_auc": 0.4,
+  "auc_p_claude": 0.625,
+  "auc_p_gpt": 0.631,
+  "auc_p_llm": 0.639,
+  "combined_cv_auc": 0.645,
+  "delta_llm_minus_financial": {
+   "point": 0.24,
+   "ci95": [
+    0.106,
+    0.364
+   ]
+  },
+  "delta_combined_minus_financial": {
+   "point": 0.245,
+   "ci95": [
+    0.147,
+    0.348
+   ]
+  }
+ },
+ "period_2009-2016": {
+  "n": 178,
+  "disposed_share": 0.719,
+  "n_features": 14,
+  "financial_cv_auc": 0.443,
+  "auc_p_claude": 0.771,
+  "auc_p_gpt": 0.707,
+  "auc_p_llm": 0.751,
+  "combined_cv_auc": 0.698,
+  "delta_llm_minus_financial": {
+   "point": 0.307,
+   "ci95": [
+    0.175,
+    0.431
+   ]
+  },
+  "delta_combined_minus_financial": {
+   "point": 0.255,
+   "ci95": [
+    0.14,
+    0.362
+   ]
+  }
+ },
+ "period_2017-2025": {
+  "n": 240,
+  "disposed_share": 0.621,
+  "n_features": 14,
+  "financial_cv_auc": 0.577,
+  "auc_p_claude": 0.813,
+  "auc_p_gpt": 0.804,
+  "auc_p_llm": 0.813,
+  "combined_cv_auc": 0.807,
+  "delta_llm_minus_financial": {
+   "point": 0.236,
+   "ci95": [
+    0.148,
+    0.323
+   ]
+  },
+  "delta_combined_minus_financial": {
+   "point": 0.23,
+   "ci95": [
+    0.162,
+    0.298
+   ]
+  }
+ },
+ "mature_le2021": {
+  "n": 506,
+  "disposed_share": 0.731,
+  "n_features": 14,
+  "financial_cv_auc": 0.564,
+  "auc_p_claude": 0.754,
+  "auc_p_gpt": 0.727,
+  "auc_p_llm": 0.751,
+  "combined_cv_auc": 0.753,
+  "delta_llm_minus_financial": {
+   "point": 0.187,
+   "ci95": [
+    0.118,
+    0.256
+   ]
+  },
+  "delta_combined_minus_financial": {
+   "point": 0.189,
+   "ci95": [
+    0.13,
+    0.245
+   ]
+  }
+ },
+ "temporal_train_le2016_test_ge2017": {
+  "train_n": 339,
+  "test_n": 240,
+  "financial_auc_test": 0.611,
+  "llm_auc_test": 0.813
+ }
+}

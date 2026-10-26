@@ -1,0 +1,134 @@
+{
+ "n_events": 294,
+ "outcomes": {
+  "unmatched": 65,
+  "majority_disposed": 76,
+  "partial_sale": 24,
+  "retained_100": 107,
+  "too_recent": 15,
+  "ipo_listed": 7
+ },
+ "by_year": {
+  "2018": {
+   "unmatched": 4,
+   "majority_disposed": 10,
+   "retained_100": 12,
+   "partial_sale": 3,
+   "ipo_listed": 1
+  },
+  "2017": {
+   "unmatched": 6,
+   "majority_disposed": 9,
+   "retained_100": 12,
+   "ipo_listed": 1,
+   "partial_sale": 1
+  },
+  "2020": {
+   "partial_sale": 9,
+   "majority_disposed": 18,
+   "unmatched": 10,
+   "retained_100": 15,
+   "ipo_listed": 2
+  },
+  "2021": {
+   "retained_100": 17,
+   "unmatched": 11,
+   "majority_disposed": 16,
+   "partial_sale": 4
+  },
+  "2022": {
+   "retained_100": 17,
+   "unmatched": 11,
+   "majority_disposed": 9,
+   "partial_sale": 5
+  },
+  "2026": {
+   "too_recent": 8
+  },
+  "2025": {
+   "unmatched": 6,
+   "retained_100": 6,
+   "too_recent": 4
+  },
+  "2027": {
+   "too_recent": 3
+  },
+  "2019": {
+   "unmatched": 9,
+   "retained_100": 8,
+   "majority_disposed": 10,
+   "ipo_listed": 2,
+   "partial_sale": 2
+  },
+  "2023": {
+   "majority_disposed": 2,
+   "unmatched": 6,
+   "retained_100": 9,
+   "ipo_listed": 1
+  },
+  "2024": {
+   "retained_100": 11,
+   "majority_disposed": 2,
+   "unmatched": 2
+  }
+ },
+ "resolved_2017_2022": {
+  "n": 183,
+  "outcomes": {
+   "majority_disposed": 72,
+   "partial_sale": 24,
+   "retained_100": 81,
+   "ipo_listed": 6
+  }
+ },
+ "ipo_listed": [
+  {
+   "year": 2017,
+   "parent": "동국제약",
+   "listed": "동국생명과학",
+   "listing_date": "2025-02-17"
+  },
+  {
+   "year": 2023,
+   "parent": "한화솔루션",
+   "listed": "한화갤러리아",
+   "listing_date": "2023-03-31"
+  },
+  {
+   "year": 2019,
+   "parent": "HD한국조선해양",
+   "listed": "HD현대중공업",
+   "listing_date": "2021-09-17"
+  },
+  {
+   "year": 2019,
+   "parent": "네패스",
+   "listed": "네패스아크",
+   "listing_date": "2020-11-17"
+  },
+  {
+   "year": 2020,
+   "parent": "LG화학",
+   "listed": "LG에너지솔루션",
+   "listing_date": "2022-01-27"
+  },
+  {
+   "year": 2020,
+   "parent": "필옵틱스",
+   "listed": "필에너지",
+   "listing_date": "2023-07-14"
+  },
+  {
+   "year": 2018,
+   "parent": "SK케미칼",
+   "listed": "SK바이오사이언스",
+   "listing_date": "2021-03-18"
+  }
+ ],
+ "method_note": "outcome from parent 타법인출자현황 (DART otrCprInvstmntSttus) FY division..+5, KIND listing match (name sim>=0.9, listing after division), parent 양도/합병 결정; 'unmatched' includes parents whose 타법인출자현황 omits wholly-owned subsidiaries (reported in 종속기업 현황 instead) — not evidence of disposal.",
+ "source_files": [
+  "data/raw/dart_division_decisions_2017_2026.json",
+  "data/raw/dart_cache_otrCprInvstmntSttus.json",
+  "data/raw/kind_corplist_20261014.csv"
+ ]
+}

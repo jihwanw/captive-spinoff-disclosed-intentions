@@ -1,0 +1,18 @@
+{
+ "v3_outcomes": {
+  "unmatched": 61,
+  "majority_disposed_or_dropped": 61,
+  "majority_disposed": 30,
+  "partial_sale": 40,
+  "retained_100": 60,
+  "too_recent": 15,
+  "ipo_listed": 8,
+  "merged_back_into_parent": 18,
+  "observed_no_ratio": 1
+ },
+ "clean_labels": {
+  "n": 138,
+  "disposed_share": 0.565
+ },
+ "audit_queue": 169
+}

@@ -1,0 +1,128 @@
+{
+"_note": "Numbers transcribed on 2026-10-25 from the anchor papers' own text (page/table given). Used only by code/make_tables_cgir.py for the mirroring table. Any correction here must cite the page.",
+"kang_lee_2025_frl": {
+"citation": "Kang, H. C., & Lee, S. (2025). Do 'captive' spin-offs create value? Evidence from Korea. Finance Research Letters, 85, 107826. https://doi.org/10.1016/j.frl.2025.107826",
+"sample": {
+"n": 525,
+"period": "2001-2021",
+"unit": "captive spin-offs announced by KOSPI/KOSDAQ-listed parents; parent listed for at least 365 days; one event per firm-year (p. 3, Section 3)"
+},
+"car_m1_p1_pct": {
+"mean": 0.853,
+"t": 2.31,
+"source": "Table 1 Panel B"
+},
+"car_p2_p252_pct": {
+"mean": -7.857,
+"t": -3.07,
+"source": "Table 1 Panel B"
+},
+"bhar_p2_p252_pct": {
+"mean": -10.995,
+"t": -3.25,
+"source": "Table 1 Panel B (matched-portfolio BHAR)"
+},
+"bhar_m1_p252_pct": {
+"mean": -9.585,
+"t": -2.77,
+"source": "Table 1 Panel B"
+},
+"car_m252_m2_pct": {
+"mean": 13.969,
+"t": 3.7,
+"source": "Table 1 Panel B (pre-announcement run-up)"
+},
+"ownership_mean_pct": {
+"mean": 18.432,
+"median": 14.71,
+"definition": "controlling owner's (family and inside directors') equity stake in the parent before the announcement",
+"source": "Table 1 Panel A; footnote 4"
+},
+"ownership_on_car_m1_p1": {
+"coef": 0.052,
+"sig": "**",
+"source": "Table 2 columns (1)-(5)"
+},
+"ownership_on_longrun": {
+"coef_range": [
+0.511,
+0.769
+],
+"sig": "***",
+"source": "Table 3 (CAR and BHAR over one year)"
+},
+"longrun_by_ownership_split": {
+"below_median_range_pct": [
+-19.38,
+-12.18
+],
+"above_median_range_pct": [
+-2.58,
+-1.01
+],
+"source": "footnote 14 (unreported test; below-median significant, above-median insignificant)"
+},
+"longrun_by_disposal": {
+"disposed_range_pct": [
+-16.7,
+-10.45
+],
+"retained": "slightly positive, insignificant",
+"source": "Section 4, mechanism paragraph (unreported test)"
+},
+"disposed_share_pct": {
+"value": 69.3,
+"n": 364,
+"source": "footnote 18"
+},
+"subsidiary_listed_share": {
+"mean": 0.04,
+"source": "Table 1 Panel A, 'Subsidiary Listed'"
+},
+"subsidiary_retained_share": {
+"mean": 0.307,
+"source": "Table 1 Panel A, 'Subsidiary Retained'"
+},
+"purpose_sale_share": {
+"mean": 0.12,
+"source": "Table 1 Panel A, 'Purpose: Sale'"
+},
+"operating_performance": {
+"delta_roa_coef": -0.045,
+"sig": "**",
+"source": "Table 4 column (1), matched DiD"
+},
+"open_claim": "'It is unlikely, in most cases, that investors can fully discern the controlling owner's true intentions regarding the spun-off entity immediately following the announcement' (Section 4) — stated, not tested",
+"ownership_on_retention": "Ownership positively associated with the likelihood of retention (Section 4, unreported multivariate result)",
+"krx_counts_1998_2022": {
+"spin_off_announcements": 948,
+"captive": 719,
+"equity": 229,
+"source": "footnote 6 (Section 2), citing the Korea Exchange: 1998 (introduction of divisions by law) to 2022"
+},
+"press_quote": {
+"outlet": "Korea Times",
+"date": "2022-02-10",
+"title": "Why do Korean-style corporate split-offs wreak havoc on minor shareholders?",
+"source": "footnote 1 of Kang & Lee (2025), with the article's URL"
+},
+"lg_chem_price_drop_pct": {
+"more_than": 30,
+"source": "Section 1 and Appendix A: 'more than 30% decrease in LG Chem's stock prices' from the initial announcement to the subsidiary's IPO date"
+}
+},
+"kang_lee_2025_arfr": {
+"citation": "강형철, 이상원 (2025). 기업분할 방법의 선택 요인과 분할 공시효과에 관한 연구: 인적분할 vs. 물적분할. 재무연구 (Asian Review of Financial Research), 38(1), 1-36.",
+"doi": "10.37197/ARFR.2025.38.1.1 (printed in the PDF header; Crossref record fetched 2026-10-25)",
+"sample": {
+"period": "1999-2022",
+"description": "division announcements, logit on the choice between equity spin-off and captive spin-off"
+},
+"findings": [
+"parents overvalued relative to their industry, or whose new company's industry is overvalued, more often choose the captive form",
+"high-growth, low-profitability parents with financing needs more often choose the captive form",
+"announcement CAR of equity spin-offs significantly exceeds that of captive spin-offs; highest for undervalued parents choosing the equity form"
+],
+"source": "abstract (p. 1)"
+}
+}

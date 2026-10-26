@@ -1,0 +1,102 @@
+{
+ "runs": {
+  "claude": {
+   "run1_file": "anthropic__identified.jsonl",
+   "run2_file": "anthropic__identified__run2.jsonl",
+   "n_run1": 250,
+   "n_run2": 248
+  },
+  "gpt": {
+   "run1_file": "openai__identified.jsonl",
+   "run2_file": "openai__identified__run2.jsonl",
+   "n_run1": 253,
+   "n_run2": 253
+  }
+ },
+ "n_events_with_both_runs_both_models": 245,
+ "stability_claude": {
+  "n": 245,
+  "pearson": 0.963,
+  "spearman": 0.944,
+  "mean_abs_diff": 0.039,
+  "share_abs_diff_gt_0.2": 0.008,
+  "mean_run1": 0.576,
+  "mean_run2": 0.578,
+  "path_agreement": 0.89
+ },
+ "stability_gpt": {
+  "n": 245,
+  "pearson": 0.989,
+  "spearman": 0.981,
+  "mean_abs_diff": 0.024,
+  "share_abs_diff_gt_0.2": 0.0,
+  "mean_run1": 0.48,
+  "mean_run2": 0.48,
+  "path_agreement": 0.971
+ },
+ "stability_avg": {
+  "n": 245,
+  "pearson": 0.988,
+  "spearman": 0.982,
+  "mean_abs_diff": 0.025,
+  "share_abs_diff_gt_0.2": 0.0,
+  "mean_run1": 0.528,
+  "mean_run2": 0.529
+ },
+ "stability_between_models_run1": 0.871,
+ "stability_between_models_run2": 0.859,
+ "auc_clean_labels": {
+  "n": 131,
+  "disposed_share": 0.557,
+  "claude": {
+   "run1": 0.762,
+   "run2": 0.763,
+   "mean_of_runs": 0.765
+  },
+  "gpt": {
+   "run1": 0.765,
+   "run2": 0.767,
+   "mean_of_runs": 0.768
+  },
+  "avg": {
+   "run1": 0.76,
+   "run2": 0.769,
+   "mean_of_runs": 0.767
+  },
+  "avg_run2_minus_run1_ci95": [
+   -0.017,
+   0.033
+  ],
+  "avg_meanruns_minus_run1_ci95": [
+   -0.007,
+   0.021
+  ]
+ },
+ "auc_gate1_rows": {
+  "n": 131,
+  "disposed_share": 0.557,
+  "claude": {
+   "run1": 0.762,
+   "run2": 0.763,
+   "mean_of_runs": 0.765
+  },
+  "gpt": {
+   "run1": 0.765,
+   "run2": 0.767,
+   "mean_of_runs": 0.768
+  },
+  "avg": {
+   "run1": 0.76,
+   "run2": 0.769,
+   "mean_of_runs": 0.767
+  },
+  "avg_run2_minus_run1_ci95": [
+   -0.017,
+   0.033
+  ],
+  "avg_meanruns_minus_run1_ci95": [
+   -0.007,
+   0.021
+  ]
+ }
+}

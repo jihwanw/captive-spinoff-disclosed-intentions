@@ -1,0 +1,1438 @@
+{
+ "run_at": "2026-10-25T09:51:01",
+ "sample": {
+  "n_carveouts": 600,
+  "with_score_and_1y": 559,
+  "control_coverage": {
+   "log_me": 597,
+   "log_bm": 438,
+   "mom6": 584,
+   "kosdaq": 600,
+   "rel_size": 344,
+   "surv_lev": 352,
+   "relisting": 600,
+   "parent_roa": 229,
+   "parent_lev": 231,
+   "log_parent_assets": 231
+  }
+ },
+ "specs": {
+  "bhar1y": {
+   "1_score_yearFE": {
+    "n": 559,
+    "r2": 0.061,
+    "n_years": 24,
+    "p_llm": {
+     "coef": -0.1869,
+     "se_hc1": 0.1316,
+     "p_hc1": 0.155,
+     "p_cluster_year": 0.221
+    }
+   },
+   "2_plus_size_bm_mom_market": {
+    "n": 559,
+    "r2": 0.073,
+    "n_years": 24,
+    "p_llm": {
+     "coef": -0.1724,
+     "se_hc1": 0.1329,
+     "p_hc1": 0.195,
+     "p_cluster_year": 0.254
+    },
+    "log_me": {
+     "coef": 0.0322,
+     "se_hc1": 0.022,
+     "p_hc1": 0.143,
+     "p_cluster_year": 0.161
+    },
+    "log_bm": {
+     "coef": 0.0376,
+     "se_hc1": 0.0473,
+     "p_hc1": 0.427,
+     "p_cluster_year": 0.54
+    },
+    "mom6": {
+     "coef": -0.0146,
+     "se_hc1": 0.0614,
+     "p_hc1": 0.812,
+     "p_cluster_year": 0.819
+    },
+    "kosdaq": {
+     "coef": 0.1194,
+     "se_hc1": 0.0757,
+     "p_hc1": 0.115,
+     "p_cluster_year": 0.137
+    }
+   },
+   "3_plus_filing_controls": {
+    "n": 559,
+    "r2": 0.076,
+    "n_years": 24,
+    "p_llm": {
+     "coef": -0.1579,
+     "se_hc1": 0.1471,
+     "p_hc1": 0.283,
+     "p_cluster_year": 0.35
+    },
+    "log_me": {
+     "coef": 0.0291,
+     "se_hc1": 0.0221,
+     "p_hc1": 0.188,
+     "p_cluster_year": 0.204
+    },
+    "log_bm": {
+     "coef": 0.0367,
+     "se_hc1": 0.0476,
+     "p_hc1": 0.442,
+     "p_cluster_year": 0.553
+    },
+    "mom6": {
+     "coef": -0.0112,
+     "se_hc1": 0.0645,
+     "p_hc1": 0.862,
+     "p_cluster_year": 0.871
+    },
+    "kosdaq": {
+     "coef": 0.1148,
+     "se_hc1": 0.0745,
+     "p_hc1": 0.123,
+     "p_cluster_year": 0.137
+    },
+    "rel_size": {
+     "coef": -0.0195,
+     "se_hc1": 0.2795,
+     "p_hc1": 0.944,
+     "p_cluster_year": 0.945
+    },
+    "surv_lev": {
+     "coef": -0.1753,
+     "se_hc1": 0.211,
+     "p_hc1": 0.406,
+     "p_cluster_year": 0.477
+    },
+    "relisting": {
+     "coef": -0.3393,
+     "se_hc1": 0.1609,
+     "p_hc1": 0.035,
+     "p_cluster_year": 0.0
+    }
+   },
+   "3b_old_period_only": {
+    "n": 350,
+    "r2": 0.126,
+    "n_years": 15,
+    "p_llm": {
+     "coef": -0.3339,
+     "se_hc1": 0.205,
+     "p_hc1": 0.103,
+     "p_cluster_year": 0.082
+    },
+    "log_me": {
+     "coef": 0.0145,
+     "se_hc1": 0.0241,
+     "p_hc1": 0.549,
+     "p_cluster_year": 0.529
+    },
+    "log_bm": {
+     "coef": 0.0778,
+     "se_hc1": 0.0402,
+     "p_hc1": 0.053,
+     "p_cluster_year": 0.241
+    },
+    "mom6": {
+     "coef": 0.0182,
+     "se_hc1": 0.0538,
+     "p_hc1": 0.735,
+     "p_cluster_year": 0.697
+    },
+    "kosdaq": {
+     "coef": 0.0415,
+     "se_hc1": 0.0835,
+     "p_hc1": 0.619,
+     "p_cluster_year": 0.566
+    },
+    "rel_size": {
+     "coef": -0.5194,
+     "se_hc1": 0.3658,
+     "p_hc1": 0.156,
+     "p_cluster_year": 0.191
+    },
+    "surv_lev": {
+     "coef": -0.2398,
+     "se_hc1": 0.2018,
+     "p_hc1": 0.235,
+     "p_cluster_year": 0.407
+    },
+    "relisting": {
+     "coef": -0.3479,
+     "se_hc1": 0.1601,
+     "p_hc1": 0.03,
+     "p_cluster_year": 0.0
+    }
+   },
+   "3c_new_period_only": {
+    "n": 209,
+    "r2": 0.047,
+    "n_years": 9,
+    "p_llm": {
+     "coef": 0.0095,
+     "se_hc1": 0.2227,
+     "p_hc1": 0.966,
+     "p_cluster_year": 0.976
+    },
+    "log_me": {
+     "coef": 0.0592,
+     "se_hc1": 0.0488,
+     "p_hc1": 0.225,
+     "p_cluster_year": 0.334
+    },
+    "log_bm": {
+     "coef": -0.0335,
+     "se_hc1": 0.1146,
+     "p_hc1": 0.77,
+     "p_cluster_year": 0.796
+    },
+    "mom6": {
+     "coef": -0.0775,
+     "se_hc1": 0.247,
+     "p_hc1": 0.754,
+     "p_cluster_year": 0.792
+    },
+    "kosdaq": {
+     "coef": 0.2499,
+     "se_hc1": 0.1506,
+     "p_hc1": 0.097,
+     "p_cluster_year": 0.183
+    },
+    "rel_size": {
+     "coef": 0.6251,
+     "se_hc1": 0.4802,
+     "p_hc1": 0.193,
+     "p_cluster_year": 0.2
+    },
+    "surv_lev": {
+     "coef": 0.0137,
+     "se_hc1": 0.3661,
+     "p_hc1": 0.97,
+     "p_cluster_year": 0.973
+    },
+    "relisting": {
+     "coef": -0.0,
+     "se_hc1": 0.0,
+     "p_hc1": 0.214,
+     "p_cluster_year": 0.34
+    }
+   },
+   "4_new_period_plus_parent_fundamentals": {
+    "n": 209,
+    "r2": 0.078,
+    "n_years": 9,
+    "p_llm": {
+     "coef": -0.1231,
+     "se_hc1": 0.2525,
+     "p_hc1": 0.626,
+     "p_cluster_year": 0.74
+    },
+    "log_me": {
+     "coef": -0.2602,
+     "se_hc1": 0.2344,
+     "p_hc1": 0.267,
+     "p_cluster_year": 0.186
+    },
+    "log_bm": {
+     "coef": -0.3288,
+     "se_hc1": 0.2585,
+     "p_hc1": 0.203,
+     "p_cluster_year": 0.186
+    },
+    "mom6": {
+     "coef": 0.0007,
+     "se_hc1": 0.2204,
+     "p_hc1": 0.997,
+     "p_cluster_year": 0.998
+    },
+    "kosdaq": {
+     "coef": 0.2924,
+     "se_hc1": 0.1476,
+     "p_hc1": 0.048,
+     "p_cluster_year": 0.135
+    },
+    "rel_size": {
+     "coef": 0.5857,
+     "se_hc1": 0.6243,
+     "p_hc1": 0.348,
+     "p_cluster_year": 0.417
+    },
+    "surv_lev": {
+     "coef": -0.0608,
+     "se_hc1": 0.6318,
+     "p_hc1": 0.923,
+     "p_cluster_year": 0.927
+    },
+    "relisting": {
+     "coef": 0.0,
+     "se_hc1": 0.0,
+     "p_hc1": 0.837,
+     "p_cluster_year": 0.767
+    },
+    "parent_roa": {
+     "coef": -0.3077,
+     "se_hc1": 0.5147,
+     "p_hc1": 0.55,
+     "p_cluster_year": 0.537
+    },
+    "parent_lev": {
+     "coef": -0.5969,
+     "se_hc1": 0.9758,
+     "p_hc1": 0.541,
+     "p_cluster_year": 0.513
+    },
+    "log_parent_assets": {
+     "coef": 0.3282,
+     "se_hc1": 0.2274,
+     "p_hc1": 0.149,
+     "p_cluster_year": 0.102
+    }
+   }
+  },
+  "bhar1y_rank": {
+   "1_score_yearFE": {
+    "n": 559,
+    "r2": 0.017,
+    "n_years": 24,
+    "p_llm": {
+     "coef": -0.191,
+     "se_hc1": 0.0668,
+     "p_hc1": 0.004,
+     "p_cluster_year": 0.001
+    }
+   },
+   "2_plus_size_bm_mom_market": {
+    "n": 559,
+    "r2": 0.076,
+    "n_years": 24,
+    "p_llm": {
+     "coef": -0.1918,
+     "se_hc1": 0.0656,
+     "p_hc1": 0.003,
+     "p_cluster_year": 0.0
+    },
+    "log_me": {
+     "coef": 0.0356,
+     "se_hc1": 0.0089,
+     "p_hc1": 0.0,
+     "p_cluster_year": 0.0
+    },
+    "log_bm": {
+     "coef": 0.0562,
+     "se_hc1": 0.0159,
+     "p_hc1": 0.0,
+     "p_cluster_year": 0.004
+    },
+    "mom6": {
+     "coef": -0.0186,
+     "se_hc1": 0.0293,
+     "p_hc1": 0.526,
+     "p_cluster_year": 0.483
+    },
+    "kosdaq": {
+     "coef": 0.0472,
+     "se_hc1": 0.0307,
+     "p_hc1": 0.124,
+     "p_cluster_year": 0.127
+    }
+   },
+   "3_plus_filing_controls": {
+    "n": 559,
+    "r2": 0.081,
+    "n_years": 24,
+    "p_llm": {
+     "coef": -0.195,
+     "se_hc1": 0.0679,
+     "p_hc1": 0.004,
+     "p_cluster_year": 0.0
+    },
+    "log_me": {
+     "coef": 0.0343,
+     "se_hc1": 0.0092,
+     "p_hc1": 0.0,
+     "p_cluster_year": 0.0
+    },
+    "log_bm": {
+     "coef": 0.0559,
+     "se_hc1": 0.0161,
+     "p_hc1": 0.001,
+     "p_cluster_year": 0.005
+    },
+    "mom6": {
+     "coef": -0.0179,
+     "se_hc1": 0.0296,
+     "p_hc1": 0.545,
+     "p_cluster_year": 0.52
+    },
+    "kosdaq": {
+     "coef": 0.0494,
+     "se_hc1": 0.031,
+     "p_hc1": 0.111,
+     "p_cluster_year": 0.085
+    },
+    "rel_size": {
+     "coef": -0.0381,
+     "se_hc1": 0.1412,
+     "p_hc1": 0.787,
+     "p_cluster_year": 0.736
+    },
+    "surv_lev": {
+     "coef": -0.0503,
+     "se_hc1": 0.0865,
+     "p_hc1": 0.561,
+     "p_cluster_year": 0.648
+    },
+    "relisting": {
+     "coef": -0.1655,
+     "se_hc1": 0.083,
+     "p_hc1": 0.046,
+     "p_cluster_year": 0.0
+    }
+   },
+   "3b_old_period_only": {
+    "n": 350,
+    "r2": 0.101,
+    "n_years": 15,
+    "p_llm": {
+     "coef": -0.2289,
+     "se_hc1": 0.0978,
+     "p_hc1": 0.019,
+     "p_cluster_year": 0.002
+    },
+    "log_me": {
+     "coef": 0.0317,
+     "se_hc1": 0.0114,
+     "p_hc1": 0.005,
+     "p_cluster_year": 0.004
+    },
+    "log_bm": {
+     "coef": 0.0574,
+     "se_hc1": 0.0198,
+     "p_hc1": 0.004,
+     "p_cluster_year": 0.033
+    },
+    "mom6": {
+     "coef": -0.0044,
+     "se_hc1": 0.0317,
+     "p_hc1": 0.89,
+     "p_cluster_year": 0.859
+    },
+    "kosdaq": {
+     "coef": 0.0397,
+     "se_hc1": 0.0377,
+     "p_hc1": 0.293,
+     "p_cluster_year": 0.3
+    },
+    "rel_size": {
+     "coef": -0.1446,
+     "se_hc1": 0.2107,
+     "p_hc1": 0.493,
+     "p_cluster_year": 0.456
+    },
+    "surv_lev": {
+     "coef": -0.178,
+     "se_hc1": 0.1379,
+     "p_hc1": 0.197,
+     "p_cluster_year": 0.374
+    },
+    "relisting": {
+     "coef": -0.1605,
+     "se_hc1": 0.0846,
+     "p_hc1": 0.058,
+     "p_cluster_year": 0.0
+    }
+   },
+   "3c_new_period_only": {
+    "n": 209,
+    "r2": 0.062,
+    "n_years": 9,
+    "p_llm": {
+     "coef": -0.1678,
+     "se_hc1": 0.1011,
+     "p_hc1": 0.097,
+     "p_cluster_year": 0.047
+    },
+    "log_me": {
+     "coef": 0.0375,
+     "se_hc1": 0.017,
+     "p_hc1": 0.027,
+     "p_cluster_year": 0.032
+    },
+    "log_bm": {
+     "coef": 0.0508,
+     "se_hc1": 0.0299,
+     "p_hc1": 0.09,
+     "p_cluster_year": 0.075
+    },
+    "mom6": {
+     "coef": -0.0642,
+     "se_hc1": 0.0755,
+     "p_hc1": 0.395,
+     "p_cluster_year": 0.486
+    },
+    "kosdaq": {
+     "coef": 0.0663,
+     "se_hc1": 0.0574,
+     "p_hc1": 0.249,
+     "p_cluster_year": 0.122
+    },
+    "rel_size": {
+     "coef": 0.1206,
+     "se_hc1": 0.1972,
+     "p_hc1": 0.541,
+     "p_cluster_year": 0.404
+    },
+    "surv_lev": {
+     "coef": 0.0736,
+     "se_hc1": 0.1184,
+     "p_hc1": 0.534,
+     "p_cluster_year": 0.546
+    },
+    "relisting": {
+     "coef": -0.0,
+     "se_hc1": 0.0,
+     "p_hc1": 0.743,
+     "p_cluster_year": 0.729
+    }
+   },
+   "4_new_period_plus_parent_fundamentals": {
+    "n": 209,
+    "r2": 0.085,
+    "n_years": 9,
+    "p_llm": {
+     "coef": -0.2069,
+     "se_hc1": 0.1042,
+     "p_hc1": 0.047,
+     "p_cluster_year": 0.042
+    },
+    "log_me": {
+     "coef": -0.0483,
+     "se_hc1": 0.0515,
+     "p_hc1": 0.349,
+     "p_cluster_year": 0.223
+    },
+    "log_bm": {
+     "coef": -0.0298,
+     "se_hc1": 0.0537,
+     "p_hc1": 0.579,
+     "p_cluster_year": 0.563
+    },
+    "mom6": {
+     "coef": -0.0474,
+     "se_hc1": 0.0745,
+     "p_hc1": 0.525,
+     "p_cluster_year": 0.613
+    },
+    "kosdaq": {
+     "coef": 0.0751,
+     "se_hc1": 0.0574,
+     "p_hc1": 0.191,
+     "p_cluster_year": 0.09
+    },
+    "rel_size": {
+     "coef": 0.0904,
+     "se_hc1": 0.224,
+     "p_hc1": 0.686,
+     "p_cluster_year": 0.667
+    },
+    "surv_lev": {
+     "coef": 0.0312,
+     "se_hc1": 0.2443,
+     "p_hc1": 0.898,
+     "p_cluster_year": 0.907
+    },
+    "relisting": {
+     "coef": -0.0,
+     "se_hc1": 0.0,
+     "p_hc1": 0.679,
+     "p_cluster_year": 0.637
+    },
+    "parent_roa": {
+     "coef": 0.0264,
+     "se_hc1": 0.183,
+     "p_hc1": 0.885,
+     "p_cluster_year": 0.856
+    },
+    "parent_lev": {
+     "coef": -0.0852,
+     "se_hc1": 0.2813,
+     "p_hc1": 0.762,
+     "p_cluster_year": 0.81
+    },
+    "log_parent_assets": {
+     "coef": 0.083,
+     "se_hc1": 0.0496,
+     "p_hc1": 0.094,
+     "p_cluster_year": 0.085
+    }
+   }
+  },
+  "carmm1y": {
+   "1_score_yearFE": {
+    "n": 559,
+    "r2": 0.075,
+    "n_years": 24,
+    "p_llm": {
+     "coef": 0.0023,
+     "se_hc1": 0.1526,
+     "p_hc1": 0.988,
+     "p_cluster_year": 0.99
+    }
+   },
+   "2_plus_size_bm_mom_market": {
+    "n": 559,
+    "r2": 0.291,
+    "n_years": 24,
+    "p_llm": {
+     "coef": 0.0245,
+     "se_hc1": 0.1439,
+     "p_hc1": 0.865,
+     "p_cluster_year": 0.877
+    },
+    "log_me": {
+     "coef": -0.0189,
+     "se_hc1": 0.0221,
+     "p_hc1": 0.392,
+     "p_cluster_year": 0.501
+    },
+    "log_bm": {
+     "coef": 0.1618,
+     "se_hc1": 0.0439,
+     "p_hc1": 0.0,
+     "p_cluster_year": 0.008
+    },
+    "mom6": {
+     "coef": -0.7046,
+     "se_hc1": 0.0761,
+     "p_hc1": 0.0,
+     "p_cluster_year": 0.0
+    },
+    "kosdaq": {
+     "coef": 0.0524,
+     "se_hc1": 0.0797,
+     "p_hc1": 0.511,
+     "p_cluster_year": 0.56
+    }
+   },
+   "3_plus_filing_controls": {
+    "n": 559,
+    "r2": 0.296,
+    "n_years": 24,
+    "p_llm": {
+     "coef": -0.0314,
+     "se_hc1": 0.1481,
+     "p_hc1": 0.832,
+     "p_cluster_year": 0.848
+    },
+    "log_me": {
+     "coef": -0.0177,
+     "se_hc1": 0.0221,
+     "p_hc1": 0.423,
+     "p_cluster_year": 0.529
+    },
+    "log_bm": {
+     "coef": 0.1628,
+     "se_hc1": 0.0441,
+     "p_hc1": 0.0,
+     "p_cluster_year": 0.007
+    },
+    "mom6": {
+     "coef": -0.7085,
+     "se_hc1": 0.076,
+     "p_hc1": 0.0,
+     "p_cluster_year": 0.0
+    },
+    "kosdaq": {
+     "coef": 0.0753,
+     "se_hc1": 0.0811,
+     "p_hc1": 0.353,
+     "p_cluster_year": 0.404
+    },
+    "rel_size": {
+     "coef": -0.1853,
+     "se_hc1": 0.3275,
+     "p_hc1": 0.571,
+     "p_cluster_year": 0.439
+    },
+    "surv_lev": {
+     "coef": 0.2518,
+     "se_hc1": 0.2146,
+     "p_hc1": 0.241,
+     "p_cluster_year": 0.327
+    },
+    "relisting": {
+     "coef": 0.2776,
+     "se_hc1": 0.18,
+     "p_hc1": 0.123,
+     "p_cluster_year": 0.001
+    }
+   },
+   "3b_old_period_only": {
+    "n": 350,
+    "r2": 0.323,
+    "n_years": 15,
+    "p_llm": {
+     "coef": -0.033,
+     "se_hc1": 0.2106,
+     "p_hc1": 0.875,
+     "p_cluster_year": 0.83
+    },
+    "log_me": {
+     "coef": -0.0353,
+     "se_hc1": 0.0277,
+     "p_hc1": 0.203,
+     "p_cluster_year": 0.34
+    },
+    "log_bm": {
+     "coef": 0.2147,
+     "se_hc1": 0.0531,
+     "p_hc1": 0.0,
+     "p_cluster_year": 0.001
+    },
+    "mom6": {
+     "coef": -0.6393,
+     "se_hc1": 0.0739,
+     "p_hc1": 0.0,
+     "p_cluster_year": 0.0
+    },
+    "kosdaq": {
+     "coef": 0.0673,
+     "se_hc1": 0.1029,
+     "p_hc1": 0.513,
+     "p_cluster_year": 0.54
+    },
+    "rel_size": {
+     "coef": -0.308,
+     "se_hc1": 0.5621,
+     "p_hc1": 0.584,
+     "p_cluster_year": 0.401
+    },
+    "surv_lev": {
+     "coef": 0.219,
+     "se_hc1": 0.3555,
+     "p_hc1": 0.538,
+     "p_cluster_year": 0.576
+    },
+    "relisting": {
+     "coef": 0.325,
+     "se_hc1": 0.1799,
+     "p_hc1": 0.071,
+     "p_cluster_year": 0.0
+    }
+   },
+   "3c_new_period_only": {
+    "n": 209,
+    "r2": 0.217,
+    "n_years": 9,
+    "p_llm": {
+     "coef": -0.0376,
+     "se_hc1": 0.223,
+     "p_hc1": 0.866,
+     "p_cluster_year": 0.897
+    },
+    "log_me": {
+     "coef": -0.0019,
+     "se_hc1": 0.0358,
+     "p_hc1": 0.957,
+     "p_cluster_year": 0.946
+    },
+    "log_bm": {
+     "coef": 0.06,
+     "se_hc1": 0.0772,
+     "p_hc1": 0.437,
+     "p_cluster_year": 0.605
+    },
+    "mom6": {
+     "coef": -0.8701,
+     "se_hc1": 0.2239,
+     "p_hc1": 0.0,
+     "p_cluster_year": 0.001
+    },
+    "kosdaq": {
+     "coef": 0.0509,
+     "se_hc1": 0.1248,
+     "p_hc1": 0.684,
+     "p_cluster_year": 0.634
+    },
+    "rel_size": {
+     "coef": 0.0239,
+     "se_hc1": 0.3993,
+     "p_hc1": 0.952,
+     "p_cluster_year": 0.955
+    },
+    "surv_lev": {
+     "coef": 0.3275,
+     "se_hc1": 0.2845,
+     "p_hc1": 0.25,
+     "p_cluster_year": 0.41
+    },
+    "relisting": {
+     "coef": -0.0,
+     "se_hc1": 0.0,
+     "p_hc1": 0.432,
+     "p_cluster_year": 0.431
+    }
+   },
+   "4_new_period_plus_parent_fundamentals": {
+    "n": 209,
+    "r2": 0.271,
+    "n_years": 9,
+    "p_llm": {
+     "coef": -0.1713,
+     "se_hc1": 0.2253,
+     "p_hc1": 0.447,
+     "p_cluster_year": 0.576
+    },
+    "log_me": {
+     "coef": -0.2546,
+     "se_hc1": 0.1374,
+     "p_hc1": 0.064,
+     "p_cluster_year": 0.107
+    },
+    "log_bm": {
+     "coef": -0.1556,
+     "se_hc1": 0.1448,
+     "p_hc1": 0.283,
+     "p_cluster_year": 0.48
+    },
+    "mom6": {
+     "coef": -0.7722,
+     "se_hc1": 0.2032,
+     "p_hc1": 0.0,
+     "p_cluster_year": 0.002
+    },
+    "kosdaq": {
+     "coef": 0.0776,
+     "se_hc1": 0.1203,
+     "p_hc1": 0.519,
+     "p_cluster_year": 0.456
+    },
+    "rel_size": {
+     "coef": 0.0236,
+     "se_hc1": 0.4691,
+     "p_hc1": 0.96,
+     "p_cluster_year": 0.961
+    },
+    "surv_lev": {
+     "coef": 0.272,
+     "se_hc1": 0.5159,
+     "p_hc1": 0.598,
+     "p_cluster_year": 0.624
+    },
+    "relisting": {
+     "coef": -0.0,
+     "se_hc1": 0.0,
+     "p_hc1": 0.966,
+     "p_cluster_year": 0.93
+    },
+    "parent_roa": {
+     "coef": -1.2694,
+     "se_hc1": 0.4276,
+     "p_hc1": 0.003,
+     "p_cluster_year": 0.0
+    },
+    "parent_lev": {
+     "coef": -0.7773,
+     "se_hc1": 0.6389,
+     "p_hc1": 0.224,
+     "p_cluster_year": 0.139
+    },
+    "log_parent_assets": {
+     "coef": 0.2803,
+     "se_hc1": 0.1336,
+     "p_hc1": 0.036,
+     "p_cluster_year": 0.101
+    }
+   }
+  },
+  "ann_car": {
+   "1_score_yearFE": {
+    "n": 560,
+    "r2": 0.049,
+    "n_years": 24,
+    "p_llm": {
+     "coef": 0.0376,
+     "se_hc1": 0.0187,
+     "p_hc1": 0.045,
+     "p_cluster_year": 0.078
+    }
+   },
+   "2_plus_size_bm_mom_market": {
+    "n": 560,
+    "r2": 0.062,
+    "n_years": 24,
+    "p_llm": {
+     "coef": 0.0411,
+     "se_hc1": 0.019,
+     "p_hc1": 0.031,
+     "p_cluster_year": 0.044
+    },
+    "log_me": {
+     "coef": -0.0014,
+     "se_hc1": 0.003,
+     "p_hc1": 0.629,
+     "p_cluster_year": 0.587
+    },
+    "log_bm": {
+     "coef": 0.003,
+     "se_hc1": 0.0054,
+     "p_hc1": 0.572,
+     "p_cluster_year": 0.497
+    },
+    "mom6": {
+     "coef": -0.0089,
+     "se_hc1": 0.0119,
+     "p_hc1": 0.455,
+     "p_cluster_year": 0.414
+    },
+    "kosdaq": {
+     "coef": 0.0158,
+     "se_hc1": 0.0124,
+     "p_hc1": 0.202,
+     "p_cluster_year": 0.141
+    }
+   },
+   "3_plus_filing_controls": {
+    "n": 560,
+    "r2": 0.068,
+    "n_years": 24,
+    "p_llm": {
+     "coef": 0.0385,
+     "se_hc1": 0.0189,
+     "p_hc1": 0.041,
+     "p_cluster_year": 0.064
+    },
+    "log_me": {
+     "coef": -0.0016,
+     "se_hc1": 0.0031,
+     "p_hc1": 0.602,
+     "p_cluster_year": 0.506
+    },
+    "log_bm": {
+     "coef": 0.0031,
+     "se_hc1": 0.0054,
+     "p_hc1": 0.569,
+     "p_cluster_year": 0.488
+    },
+    "mom6": {
+     "coef": -0.0093,
+     "se_hc1": 0.0119,
+     "p_hc1": 0.438,
+     "p_cluster_year": 0.399
+    },
+    "kosdaq": {
+     "coef": 0.0156,
+     "se_hc1": 0.0133,
+     "p_hc1": 0.238,
+     "p_cluster_year": 0.17
+    },
+    "rel_size": {
+     "coef": -0.0503,
+     "se_hc1": 0.0397,
+     "p_hc1": 0.205,
+     "p_cluster_year": 0.211
+    },
+    "surv_lev": {
+     "coef": 0.0092,
+     "se_hc1": 0.0215,
+     "p_hc1": 0.67,
+     "p_cluster_year": 0.714
+    },
+    "relisting": {
+     "coef": 0.0091,
+     "se_hc1": 0.0199,
+     "p_hc1": 0.647,
+     "p_cluster_year": 0.491
+    }
+   },
+   "3b_old_period_only": {
+    "n": 349,
+    "r2": 0.051,
+    "n_years": 15,
+    "p_llm": {
+     "coef": 0.0604,
+     "se_hc1": 0.0333,
+     "p_hc1": 0.07,
+     "p_cluster_year": 0.086
+    },
+    "log_me": {
+     "coef": -0.0003,
+     "se_hc1": 0.004,
+     "p_hc1": 0.94,
+     "p_cluster_year": 0.93
+    },
+    "log_bm": {
+     "coef": 0.0058,
+     "se_hc1": 0.0072,
+     "p_hc1": 0.423,
+     "p_cluster_year": 0.278
+    },
+    "mom6": {
+     "coef": -0.0099,
+     "se_hc1": 0.0144,
+     "p_hc1": 0.492,
+     "p_cluster_year": 0.465
+    },
+    "kosdaq": {
+     "coef": 0.0182,
+     "se_hc1": 0.0179,
+     "p_hc1": 0.308,
+     "p_cluster_year": 0.25
+    },
+    "rel_size": {
+     "coef": -0.0872,
+     "se_hc1": 0.0684,
+     "p_hc1": 0.202,
+     "p_cluster_year": 0.223
+    },
+    "surv_lev": {
+     "coef": 0.0032,
+     "se_hc1": 0.0335,
+     "p_hc1": 0.924,
+     "p_cluster_year": 0.924
+    },
+    "relisting": {
+     "coef": 0.0165,
+     "se_hc1": 0.0237,
+     "p_hc1": 0.488,
+     "p_cluster_year": 0.286
+    }
+   },
+   "3c_new_period_only": {
+    "n": 211,
+    "r2": 0.186,
+    "n_years": 9,
+    "p_llm": {
+     "coef": 0.0205,
+     "se_hc1": 0.0223,
+     "p_hc1": 0.357,
+     "p_cluster_year": 0.411
+    },
+    "log_me": {
+     "coef": -0.0051,
+     "se_hc1": 0.004,
+     "p_hc1": 0.21,
+     "p_cluster_year": 0.103
+    },
+    "log_bm": {
+     "coef": -0.0032,
+     "se_hc1": 0.0073,
+     "p_hc1": 0.66,
+     "p_cluster_year": 0.661
+    },
+    "mom6": {
+     "coef": -0.0138,
+     "se_hc1": 0.0161,
+     "p_hc1": 0.393,
+     "p_cluster_year": 0.32
+    },
+    "kosdaq": {
+     "coef": 0.0052,
+     "se_hc1": 0.0129,
+     "p_hc1": 0.685,
+     "p_cluster_year": 0.718
+    },
+    "rel_size": {
+     "coef": -0.0259,
+     "se_hc1": 0.0444,
+     "p_hc1": 0.56,
+     "p_cluster_year": 0.433
+    },
+    "surv_lev": {
+     "coef": 0.0069,
+     "se_hc1": 0.0283,
+     "p_hc1": 0.807,
+     "p_cluster_year": 0.864
+    },
+    "relisting": {
+     "coef": -0.0,
+     "se_hc1": 0.0,
+     "p_hc1": 0.299,
+     "p_cluster_year": 0.062
+    }
+   },
+   "4_new_period_plus_parent_fundamentals": {
+    "n": 211,
+    "r2": 0.198,
+    "n_years": 9,
+    "p_llm": {
+     "coef": 0.0265,
+     "se_hc1": 0.0234,
+     "p_hc1": 0.257,
+     "p_cluster_year": 0.242
+    },
+    "log_me": {
+     "coef": 0.0001,
+     "se_hc1": 0.0105,
+     "p_hc1": 0.996,
+     "p_cluster_year": 0.997
+    },
+    "log_bm": {
+     "coef": -0.0002,
+     "se_hc1": 0.0119,
+     "p_hc1": 0.987,
+     "p_cluster_year": 0.989
+    },
+    "mom6": {
+     "coef": -0.0171,
+     "se_hc1": 0.0156,
+     "p_hc1": 0.272,
+     "p_cluster_year": 0.157
+    },
+    "kosdaq": {
+     "coef": 0.0041,
+     "se_hc1": 0.0132,
+     "p_hc1": 0.757,
+     "p_cluster_year": 0.755
+    },
+    "rel_size": {
+     "coef": -0.0454,
+     "se_hc1": 0.0532,
+     "p_hc1": 0.394,
+     "p_cluster_year": 0.195
+    },
+    "surv_lev": {
+     "coef": -0.0484,
+     "se_hc1": 0.0608,
+     "p_hc1": 0.426,
+     "p_cluster_year": 0.12
+    },
+    "relisting": {
+     "coef": -0.0,
+     "se_hc1": 0.0,
+     "p_hc1": 0.974,
+     "p_cluster_year": 0.968
+    },
+    "parent_roa": {
+     "coef": 0.0147,
+     "se_hc1": 0.0581,
+     "p_hc1": 0.801,
+     "p_cluster_year": 0.809
+    },
+    "parent_lev": {
+     "coef": 0.0776,
+     "se_hc1": 0.0624,
+     "p_hc1": 0.214,
+     "p_cluster_year": 0.18
+    },
+    "log_parent_assets": {
+     "coef": -0.0065,
+     "se_hc1": 0.0107,
+     "p_hc1": 0.54,
+     "p_cluster_year": 0.625
+    }
+   }
+  },
+  "bhar1y_realized": {
+   "early_yearFE": {
+    "n": 406,
+    "r2": 0.084,
+    "n_years": 24,
+    "early": {
+     "coef": -0.1425,
+     "se_hc1": 0.0619,
+     "p_hc1": 0.021,
+     "p_cluster_year": 0.051
+    }
+   },
+   "early_plus_controls": {
+    "n": 406,
+    "r2": 0.106,
+    "n_years": 24,
+    "early": {
+     "coef": -0.1321,
+     "se_hc1": 0.0693,
+     "p_hc1": 0.057,
+     "p_cluster_year": 0.077
+    },
+    "log_me": {
+     "coef": 0.0134,
+     "se_hc1": 0.0288,
+     "p_hc1": 0.64,
+     "p_cluster_year": 0.667
+    },
+    "log_bm": {
+     "coef": -0.019,
+     "se_hc1": 0.065,
+     "p_hc1": 0.77,
+     "p_cluster_year": 0.801
+    },
+    "mom6": {
+     "coef": -0.0867,
+     "se_hc1": 0.071,
+     "p_hc1": 0.222,
+     "p_cluster_year": 0.309
+    },
+    "kosdaq": {
+     "coef": 0.1303,
+     "se_hc1": 0.0977,
+     "p_hc1": 0.182,
+     "p_cluster_year": 0.278
+    },
+    "rel_size": {
+     "coef": 0.174,
+     "se_hc1": 0.3277,
+     "p_hc1": 0.596,
+     "p_cluster_year": 0.526
+    },
+    "surv_lev": {
+     "coef": -0.4193,
+     "se_hc1": 0.2901,
+     "p_hc1": 0.148,
+     "p_cluster_year": 0.238
+    },
+    "relisting": {
+     "coef": -0.1285,
+     "se_hc1": 0.1889,
+     "p_hc1": 0.496,
+     "p_cluster_year": 0.259
+    }
+   },
+   "score_and_early_plus_controls": {
+    "n": 405,
+    "r2": 0.107,
+    "n_years": 24,
+    "p_llm": {
+     "coef": 0.1348,
+     "se_hc1": 0.225,
+     "p_hc1": 0.549,
+     "p_cluster_year": 0.606
+    },
+    "early": {
+     "coef": -0.1514,
+     "se_hc1": 0.0873,
+     "p_hc1": 0.083,
+     "p_cluster_year": 0.11
+    },
+    "log_me": {
+     "coef": 0.0128,
+     "se_hc1": 0.0289,
+     "p_hc1": 0.659,
+     "p_cluster_year": 0.679
+    },
+    "log_bm": {
+     "coef": -0.0151,
+     "se_hc1": 0.0647,
+     "p_hc1": 0.815,
+     "p_cluster_year": 0.841
+    },
+    "mom6": {
+     "coef": -0.0819,
+     "se_hc1": 0.0717,
+     "p_hc1": 0.254,
+     "p_cluster_year": 0.34
+    },
+    "kosdaq": {
+     "coef": 0.1248,
+     "se_hc1": 0.0982,
+     "p_hc1": 0.204,
+     "p_cluster_year": 0.301
+    },
+    "rel_size": {
+     "coef": 0.1957,
+     "se_hc1": 0.3272,
+     "p_hc1": 0.55,
+     "p_cluster_year": 0.482
+    },
+    "surv_lev": {
+     "coef": -0.4858,
+     "se_hc1": 0.3142,
+     "p_hc1": 0.122,
+     "p_cluster_year": 0.214
+    },
+    "relisting": {
+     "coef": -0.0975,
+     "se_hc1": 0.1914,
+     "p_hc1": 0.61,
+     "p_cluster_year": 0.441
+    }
+   },
+   "rank_early_plus_controls": {
+    "n": 406,
+    "r2": 0.097,
+    "n_years": 24,
+    "early": {
+     "coef": -0.0792,
+     "se_hc1": 0.032,
+     "p_hc1": 0.013,
+     "p_cluster_year": 0.023
+    },
+    "log_me": {
+     "coef": 0.0293,
+     "se_hc1": 0.0108,
+     "p_hc1": 0.007,
+     "p_cluster_year": 0.007
+    },
+    "log_bm": {
+     "coef": 0.0414,
+     "se_hc1": 0.0196,
+     "p_hc1": 0.034,
+     "p_cluster_year": 0.025
+    },
+    "mom6": {
+     "coef": -0.0442,
+     "se_hc1": 0.0312,
+     "p_hc1": 0.157,
+     "p_cluster_year": 0.231
+    },
+    "kosdaq": {
+     "coef": 0.0475,
+     "se_hc1": 0.0357,
+     "p_hc1": 0.184,
+     "p_cluster_year": 0.202
+    },
+    "rel_size": {
+     "coef": 0.0883,
+     "se_hc1": 0.1739,
+     "p_hc1": 0.612,
+     "p_cluster_year": 0.547
+    },
+    "surv_lev": {
+     "coef": -0.0818,
+     "se_hc1": 0.1212,
+     "p_hc1": 0.5,
+     "p_cluster_year": 0.594
+    },
+    "relisting": {
+     "coef": -0.0135,
+     "se_hc1": 0.0991,
+     "p_hc1": 0.892,
+     "p_cluster_year": 0.806
+    }
+   }
+  }
+ },
+ "score_predicts_early_disposal": {
+  "early_vs_never": {
+   "n": 412,
+   "share_early": 0.476,
+   "auc": 0.78
+  },
+  "early_vs_late_or_never": {
+   "n": 412,
+   "auc": 0.78
+  },
+  "late_vs_never": {
+   "n": 216,
+   "auc": 0.708
+  },
+  "by_period_early_vs_never": {
+   "2001-2016": {
+    "n": 283,
+    "auc": 0.698
+   },
+   "2017+": {
+    "n": 129,
+    "auc": 0.919
+   }
+  }
+ },
+ "control_summary": {
+  "log_me": {
+   "count": 597.0,
+   "mean": 25.897,
+   "std": 1.797,
+   "min": 22.095,
+   "25%": 24.701,
+   "50%": 25.527,
+   "75%": 26.837,
+   "max": 33.067
+  },
+  "log_bm": {
+   "count": 438.0,
+   "mean": -0.378,
+   "std": 1.004,
+   "min": -5.025,
+   "25%": -0.973,
+   "50%": -0.291,
+   "75%": 0.313,
+   "max": 2.175
+  },
+  "mom6": {
+   "count": 584.0,
+   "mean": 0.05,
+   "std": 0.556,
+   "min": -1.119,
+   "25%": -0.236,
+   "50%": -0.056,
+   "75%": 0.198,
+   "max": 5.59
+  },
+  "kosdaq": {
+   "count": 600.0,
+   "mean": 0.458,
+   "std": 0.499,
+   "min": 0.0,
+   "25%": 0.0,
+   "50%": 0.0,
+   "75%": 1.0,
+   "max": 1.0
+  },
+  "rel_size": {
+   "count": 344.0,
+   "mean": 0.131,
+   "std": 0.124,
+   "min": 0.0,
+   "25%": 0.04,
+   "50%": 0.097,
+   "75%": 0.183,
+   "max": 0.591
+  },
+  "surv_lev": {
+   "count": 352.0,
+   "mean": 0.406,
+   "std": 0.21,
+   "min": 0.005,
+   "25%": 0.249,
+   "50%": 0.409,
+   "75%": 0.568,
+   "max": 0.95
+  },
+  "relisting": {
+   "count": 600.0,
+   "mean": 0.002,
+   "std": 0.041,
+   "min": 0.0,
+   "25%": 0.0,
+   "50%": 0.0,
+   "75%": 0.0,
+   "max": 1.0
+  },
+  "parent_roa": {
+   "count": 229.0,
+   "mean": -0.009,
+   "std": 0.167,
+   "min": -1.463,
+   "25%": -0.024,
+   "50%": 0.015,
+   "75%": 0.054,
+   "max": 0.988
+  },
+  "parent_lev": {
+   "count": 231.0,
+   "mean": 0.462,
+   "std": 0.193,
+   "min": 0.024,
+   "25%": 0.319,
+   "50%": 0.469,
+   "75%": 0.613,
+   "max": 0.925
+  },
+  "log_parent_assets": {
+   "count": 231.0,
+   "mean": 27.123,
+   "std": 2.008,
+   "min": 23.471,
+   "25%": 25.712,
+   "50%": 26.723,
+   "75%": 28.283,
+   "max": 32.977
+  }
+ }
+}

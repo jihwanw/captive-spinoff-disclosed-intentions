@@ -1,0 +1,154 @@
+{
+ "run_at": "2026-10-25T13:39:04",
+ "by_period": {
+  "2001-2016": {
+   "claude": {
+    "n_both_conditions_clean": 344,
+    "disposed_share": 0.747,
+    "auc_identified": 0.716,
+    "auc_anonymized": 0.71,
+    "auc_gap_identified_minus_anonymized": 0.006,
+    "gap_ci95_paired_boot": [
+     -0.033,
+     0.045
+    ],
+    "spearman_identified_vs_anonymized": 0.858,
+    "mean_abs_score_change": 0.053,
+    "used_outside_knowledge_share_identified": 0.43,
+    "auc_identified_flagged": 0.764,
+    "auc_anonymized_flagged": 0.763,
+    "auc_identified_unflagged": 0.678,
+    "auc_anonymized_unflagged": 0.669
+   },
+   "gpt": {
+    "n_both_conditions_clean": 346,
+    "disposed_share": 0.743,
+    "auc_identified": 0.674,
+    "auc_anonymized": 0.668,
+    "auc_gap_identified_minus_anonymized": 0.006,
+    "gap_ci95_paired_boot": [
+     -0.017,
+     0.028
+    ],
+    "spearman_identified_vs_anonymized": 0.93,
+    "mean_abs_score_change": 0.039,
+    "used_outside_knowledge_share_identified": 0.038,
+    "auc_identified_flagged": 0.683,
+    "auc_anonymized_flagged": 0.783,
+    "auc_identified_unflagged": 0.675,
+    "auc_anonymized_unflagged": 0.666
+   },
+   "two_model_average": {
+    "n": 344,
+    "auc_identified": 0.706,
+    "auc_anonymized": 0.691,
+    "gap_ci95_paired_boot": [
+     -0.006,
+     0.039
+    ],
+    "spearman": 0.936
+   }
+  },
+  "2017+": {
+   "claude": {
+    "n_both_conditions_clean": 232,
+    "disposed_share": 0.616,
+    "auc_identified": 0.812,
+    "auc_anonymized": 0.808,
+    "auc_gap_identified_minus_anonymized": 0.005,
+    "gap_ci95_paired_boot": [
+     -0.019,
+     0.027
+    ],
+    "spearman_identified_vs_anonymized": 0.952,
+    "mean_abs_score_change": 0.038,
+    "used_outside_knowledge_share_identified": 0.47,
+    "auc_identified_flagged": 0.826,
+    "auc_anonymized_flagged": 0.819,
+    "auc_identified_unflagged": 0.797,
+    "auc_anonymized_unflagged": 0.788
+   },
+   "gpt": {
+    "n_both_conditions_clean": 234,
+    "disposed_share": 0.615,
+    "auc_identified": 0.803,
+    "auc_anonymized": 0.795,
+    "auc_gap_identified_minus_anonymized": 0.009,
+    "gap_ci95_paired_boot": [
+     -0.007,
+     0.025
+    ],
+    "spearman_identified_vs_anonymized": 0.977,
+    "mean_abs_score_change": 0.029,
+    "used_outside_knowledge_share_identified": 0.047,
+    "auc_identified_flagged": 1.0,
+    "auc_anonymized_flagged": 1.0,
+    "auc_identified_unflagged": 0.794,
+    "auc_anonymized_unflagged": 0.786
+   },
+   "two_model_average": {
+    "n": 232,
+    "auc_identified": 0.81,
+    "auc_anonymized": 0.803,
+    "gap_ci95_paired_boot": [
+     -0.008,
+     0.025
+    ],
+    "spearman": 0.981
+   }
+  }
+ },
+ "return_tests_with_anonymized_score": {
+  "n_with_anonymized_score_and_1y": 555,
+  "by_period": {
+   "2001-2016": 348,
+   "2017+": 207
+  },
+  "spearman_anon_score_vs_bhar1y": {
+   "rho": -0.135,
+   "p": 0.001
+  },
+  "spearman_identified_score_vs_bhar1y_same_events": {
+   "rho": -0.133,
+   "p": 0.002
+  },
+  "rank1y_on_anon_score_controls_yearFE": {
+   "n": 555,
+   "p_anon": {
+    "coef": -0.1946,
+    "p_hc1": 0.005,
+    "p_cluster_year": 0.001
+   }
+  },
+  "bhar1y_on_anon_score_controls_yearFE": {
+   "n": 555,
+   "p_anon": {
+    "coef": -0.0949,
+    "p_hc1": 0.533,
+    "p_cluster_year": 0.593
+   }
+  },
+  "ann_car_on_anon_score_yearFE": {
+   "n": 556,
+   "p_anon": {
+    "coef": 0.0354,
+    "p_hc1": 0.046,
+    "p_cluster_year": 0.079
+   }
+  },
+  "anon_score_predicts_early_disposal_auc": {
+   "n": 339,
+   "auc": 0.817
+  },
+  "spearman_anon_2001-2016": {
+   "rho": -0.188,
+   "p": 0.0,
+   "n": 348
+  },
+  "spearman_anon_2017+": {
+   "rho": -0.063,
+   "p": 0.368,
+   "n": 207
+  }
+ }
+}

@@ -1,0 +1,115 @@
+{
+ "events": 853,
+ "status": {
+  "ok": 739,
+  "not_traded_at_event": 67,
+  "no_stock_code": 42,
+  "no_compustat_security": 3,
+  "no_market": 2
+ },
+ "by_period_status": {
+  "2001-2016": {
+   "ok": 392,
+   "no_stock_code": 42,
+   "not_traded_at_event": 29,
+   "no_compustat_security": 1
+  },
+  "2017+": {
+   "ok": 347,
+   "not_traded_at_event": 38,
+   "no_compustat_security": 2,
+   "no_market": 2
+  }
+ },
+ "carve_outs_ok_by_period": {
+  "2001-2016": 380,
+  "2017+": 260
+ },
+ "carve_outs_ok_full_1y_by_period": {
+  "2001-2016": 366,
+  "2017+": 249
+ },
+ "ok_by_year": {
+  "2002": 11,
+  "2003": 9,
+  "2004": 11,
+  "2005": 13,
+  "2006": 30,
+  "2007": 40,
+  "2008": 67,
+  "2009": 34,
+  "2010": 30,
+  "2011": 26,
+  "2012": 19,
+  "2013": 24,
+  "2014": 22,
+  "2015": 20,
+  "2016": 36,
+  "2017": 38,
+  "2018": 38,
+  "2019": 33,
+  "2020": 56,
+  "2021": 57,
+  "2022": 43,
+  "2023": 26,
+  "2024": 27,
+  "2025": 17,
+  "2026": 12
+ },
+ "ok_by_corp_cls_now": {
+  "Y": 296,
+  "K": 261,
+  "E": 182
+ },
+ "market_source": {
+  "exchg": 739
+ },
+ "delisted_within_1y": 24,
+ "market_model_estimable": 716,
+ "krx_vs_compustat_2017plus": {
+  "events_compared": 233,
+  "days_compared": 110420,
+  "median_corr": 0.9998,
+  "share_events_corr_below_0_95": 0.021,
+  "median_mean_abs_diff": 5.3e-05,
+  "share_days_abs_diff_gt_1pct": 0.002,
+  "events_corr_below_0_95": [
+   {
+    "rcept_no": "20190827000462",
+    "n": 389.0,
+    "corr": 0.907,
+    "mad": 0.001,
+    "share_gt1pct": 0.003
+   },
+   {
+    "rcept_no": "20200302000524",
+    "n": 480.0,
+    "corr": 0.592,
+    "mad": 0.002,
+    "share_gt1pct": 0.008
+   },
+   {
+    "rcept_no": "20200312001175",
+    "n": 476.0,
+    "corr": 0.741,
+    "mad": 0.001,
+    "share_gt1pct": 0.004
+   },
+   {
+    "rcept_no": "20201201000434",
+    "n": 478.0,
+    "corr": 0.905,
+    "mad": 0.001,
+    "share_gt1pct": 0.004
+   },
+   {
+    "rcept_no": "20220221001889",
+    "n": 350.0,
+    "corr": 0.918,
+    "mad": 0.001,
+    "share_gt1pct": 0.003
+   }
+  ],
+  "note": "KRX adjusted close excludes cash dividends; Compustat trfd includes them, so small differences on ex-dividend days are expected"
+ }
+}

@@ -1,0 +1,252 @@
+{
+ "n_carveouts_2017_2026": 294,
+ "outcome_counts_v4": {
+  "unmatched": 11,
+  "partial_sale": 45,
+  "majority_disposed": 93,
+  "retained_100": 89,
+  "too_recent": 15,
+  "merged_back_into_parent": 23,
+  "majority_disposed_or_dropped": 4,
+  "ipo_listed": 8,
+  "liquidated": 6
+ },
+ "by_division_year": {
+  "2017": {
+   "n_all": 29,
+   "clean": 26,
+   "disposed": 17,
+   "disposed_share_clean": 0.654,
+   "ipo": 2,
+   "majority_disposed": 13,
+   "partial_sale": 2,
+   "retained_100": 9,
+   "merged_back": 3,
+   "liquidated": 0,
+   "unresolved": 0
+  },
+  "2018": {
+   "n_all": 30,
+   "clean": 25,
+   "disposed": 16,
+   "disposed_share_clean": 0.64,
+   "ipo": 1,
+   "majority_disposed": 8,
+   "partial_sale": 7,
+   "retained_100": 9,
+   "merged_back": 2,
+   "liquidated": 1,
+   "unresolved": 2
+  },
+  "2019": {
+   "n_all": 31,
+   "clean": 26,
+   "disposed": 21,
+   "disposed_share_clean": 0.808,
+   "ipo": 2,
+   "majority_disposed": 16,
+   "partial_sale": 3,
+   "retained_100": 5,
+   "merged_back": 4,
+   "liquidated": 0,
+   "unresolved": 1
+  },
+  "2020": {
+   "n_all": 54,
+   "clean": 48,
+   "disposed": 37,
+   "disposed_share_clean": 0.771,
+   "ipo": 2,
+   "majority_disposed": 22,
+   "partial_sale": 13,
+   "retained_100": 11,
+   "merged_back": 2,
+   "liquidated": 1,
+   "unresolved": 3
+  },
+  "2021": {
+   "n_all": 48,
+   "clean": 37,
+   "disposed": 24,
+   "disposed_share_clean": 0.649,
+   "ipo": 0,
+   "majority_disposed": 13,
+   "partial_sale": 11,
+   "retained_100": 13,
+   "merged_back": 7,
+   "liquidated": 2,
+   "unresolved": 2
+  },
+  "2022": {
+   "n_all": 42,
+   "clean": 34,
+   "disposed": 18,
+   "disposed_share_clean": 0.529,
+   "ipo": 0,
+   "majority_disposed": 12,
+   "partial_sale": 6,
+   "retained_100": 16,
+   "merged_back": 4,
+   "liquidated": 2,
+   "unresolved": 2
+  },
+  "2023": {
+   "n_all": 18,
+   "clean": 16,
+   "disposed": 7,
+   "disposed_share_clean": 0.438,
+   "ipo": 1,
+   "majority_disposed": 5,
+   "partial_sale": 1,
+   "retained_100": 9,
+   "merged_back": 1,
+   "liquidated": 0,
+   "unresolved": 1
+  },
+  "2024": {
+   "n_all": 15,
+   "clean": 15,
+   "disposed": 4,
+   "disposed_share_clean": 0.267,
+   "ipo": 0,
+   "majority_disposed": 3,
+   "partial_sale": 1,
+   "retained_100": 11,
+   "merged_back": 0,
+   "liquidated": 0,
+   "unresolved": 0
+  },
+  "2025": {
+   "n_all": 16,
+   "clean": 8,
+   "disposed": 2,
+   "disposed_share_clean": 0.25,
+   "ipo": 0,
+   "majority_disposed": 1,
+   "partial_sale": 1,
+   "retained_100": 6,
+   "merged_back": 0,
+   "liquidated": 0,
+   "unresolved": 8
+  },
+  "2026": {
+   "n_all": 8,
+   "clean": 0,
+   "disposed": 0,
+   "disposed_share_clean": null,
+   "ipo": 0,
+   "majority_disposed": 0,
+   "partial_sale": 0,
+   "retained_100": 0,
+   "merged_back": 0,
+   "liquidated": 0,
+   "unresolved": 8
+  },
+  "2027": {
+   "n_all": 3,
+   "clean": 0,
+   "disposed": 0,
+   "disposed_share_clean": null,
+   "ipo": 0,
+   "majority_disposed": 0,
+   "partial_sale": 0,
+   "retained_100": 0,
+   "merged_back": 0,
+   "liquidated": 0,
+   "unresolved": 3
+  }
+ },
+ "window_2017_2022": {
+  "n_all": 234,
+  "clean": 196,
+  "disposed_share_clean": 0.679,
+  "ipo_share_clean": 0.036,
+  "disposed_or_diluted_share_all_resolved": 0.594,
+  "benchmark_FRL_2001_2021": {
+   "disposal_share": 0.69,
+   "listing_share": 0.04,
+   "source": "Kang & Lee (2025) FRL 85:107826, as recorded in docs/WINNING_MEMO_20261014.md"
+  }
+ },
+ "years_to_first_change_annual_report_labels": {
+  "n": 67,
+  "distribution": {
+   "0": 43,
+   "1": 14,
+   "2": 5,
+   "3": 2,
+   "4": 1,
+   "6": 2
+  },
+  "median": 0.0
+ },
+ "filing_content_by_period": {
+  "claude": {
+   "pre_2022_12": {
+    "n": 155,
+    "share_mentions_shareholder_protection": 0.032,
+    "share_mentions_listing_or_ipo": 0.084,
+    "share_mentions_external_investor": 0.232,
+    "share_mentions_sale_or_buyer": 0.142,
+    "mean_p_disposal": 56.4,
+    "purpose_categories_top": {
+     "specialization": 150,
+     "efficiency": 148,
+     "fundraising_or_investment_attraction": 36,
+     "holding_company_or_group_restructuring": 31,
+     "other": 27,
+     "sale_or_disposal": 19
+    }
+   },
+   "post_2022_12": {
+    "n": 29,
+    "share_mentions_shareholder_protection": 1.0,
+    "share_mentions_listing_or_ipo": 0.793,
+    "share_mentions_external_investor": 0.207,
+    "share_mentions_sale_or_buyer": 0.034,
+    "mean_p_disposal": 49.5,
+    "purpose_categories_top": {
+     "specialization": 29,
+     "efficiency": 29,
+     "fundraising_or_investment_attraction": 6,
+     "other": 5,
+     "holding_company_or_group_restructuring": 4,
+     "sale_or_disposal": 1
+    }
+   }
+  },
+  "gpt": {
+   "pre_2022_12": {
+    "n": 157,
+    "share_mentions_shareholder_protection": 0.172,
+    "share_mentions_listing_or_ipo": 1.0,
+    "share_mentions_external_investor": 0.465,
+    "share_mentions_sale_or_buyer": 0.204,
+    "mean_p_disposal": 46.8,
+    "purpose_categories_top": {
+     "specialization": 154,
+     "efficiency": 147,
+     "fundraising_or_investment_attraction": 29,
+     "holding_company_or_group_restructuring": 24,
+     "sale_or_disposal": 18,
+     "other": 10
+    }
+   },
+   "post_2022_12": {
+    "n": 30,
+    "share_mentions_shareholder_protection": 1.0,
+    "share_mentions_listing_or_ipo": 1.0,
+    "share_mentions_external_investor": 0.367,
+    "share_mentions_sale_or_buyer": 0.067,
+    "mean_p_disposal": 35.0,
+    "purpose_categories_top": {
+     "specialization": 30,
+     "efficiency": 30,
+     "fundraising_or_investment_attraction": 6,
+     "holding_company_or_group_restructuring": 3,
+     "regulatory_or_legal": 2
+    }
+   }
+  }
+ }
+}

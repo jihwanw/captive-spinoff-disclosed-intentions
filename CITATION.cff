@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite the manuscript and this archive."
+title: "Controlling Owners, Disclosed Intentions, and Minority Shareholder Returns in Korean Captive Spin-Offs — replication archive"
+authors:
+  - family-names: Woo
+    given-names: Jihwan
+    orcid: https://orcid.org/0000-0002-0424-0242
+    affiliation: Amazon Web Services, Seoul, Republic of Korea
+version: 1.0-results
+date-released: 2026-10-26
+license: MIT
+repository-code: https://github.com/jihwanw/captive-spinoff-disclosed-intentions

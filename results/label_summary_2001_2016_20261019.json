@@ -1,0 +1,105 @@
+{
+ "date": "2026-10-19",
+ "n_events": 464,
+ "outcome_counts": {
+  "majority_disposed": 211,
+  "merged_back_into_parent": 29,
+  "unresolved": 75,
+  "retained_100": 89,
+  "partial_sale": 34,
+  "ipo_listed": 12,
+  "liquidated": 14
+ },
+ "label_source_counts": {
+  "annual_report_llm": 389,
+  "no_annual_reports_found": 27,
+  "llm_not_accepted": 48
+ },
+ "clean_labels": 346,
+ "disposed_share_clean": 0.743,
+ "ipo_share_clean": 0.035,
+ "by_year": {
+  "2002": {
+   "n_all": 14,
+   "clean": 12,
+   "disposed_share": 0.833
+  },
+  "2003": {
+   "n_all": 9,
+   "clean": 8,
+   "disposed_share": 0.375
+  },
+  "2004": {
+   "n_all": 17,
+   "clean": 14,
+   "disposed_share": 0.643
+  },
+  "2005": {
+   "n_all": 22,
+   "clean": 16,
+   "disposed_share": 0.875
+  },
+  "2006": {
+   "n_all": 31,
+   "clean": 24,
+   "disposed_share": 0.875
+  },
+  "2007": {
+   "n_all": 40,
+   "clean": 33,
+   "disposed_share": 0.727
+  },
+  "2008": {
+   "n_all": 70,
+   "clean": 54,
+   "disposed_share": 0.796
+  },
+  "2009": {
+   "n_all": 45,
+   "clean": 30,
+   "disposed_share": 0.667
+  },
+  "2010": {
+   "n_all": 29,
+   "clean": 23,
+   "disposed_share": 0.783
+  },
+  "2011": {
+   "n_all": 28,
+   "clean": 23,
+   "disposed_share": 0.783
+  },
+  "2012": {
+   "n_all": 26,
+   "clean": 20,
+   "disposed_share": 0.6
+  },
+  "2013": {
+   "n_all": 28,
+   "clean": 19,
+   "disposed_share": 0.632
+  },
+  "2014": {
+   "n_all": 28,
+   "clean": 19,
+   "disposed_share": 0.842
+  },
+  "2015": {
+   "n_all": 33,
+   "clean": 19,
+   "disposed_share": 0.737
+  },
+  "2016": {
+   "n_all": 36,
+   "clean": 26,
+   "disposed_share": 0.692
+  },
+  "2017": {
+   "n_all": 8,
+   "clean": 6,
+   "disposed_share": 0.833
+  }
+ },
+ "listed_parent_clean": 200,
+ "disposed_share_clean_listed": 0.74
+}

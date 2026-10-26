@@ -1,0 +1,26 @@
+% Supporting Information (separate file, hosted online without typesetting). Same macros and generated tables.
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}\usepackage{mathptmx}\usepackage{setspace}\onehalfspacing
+\usepackage{booktabs}\usepackage{array}\usepackage{longtable}\usepackage{amsmath}\usepackage{graphicx}\usepackage{rotating}\usepackage{xr-hyper}\externaldocument{main}\usepackage[hidelinks]{hyperref}\usepackage{apacite}
+\input{../tables/numbers}
+\newcommand{\tabnote}[1]{\par\vspace{4pt}\begin{minipage}{\linewidth}\singlespacing\small\emph{Note.} #1\end{minipage}}
+\title{Supporting Information}\author{}\date{}
+\begin{document}
+\maketitle
+\section{Definitions in full}
+{\footnotesize\input{../tables/S_defs_full}}
+\section{Label definitions and sensitivity}
+\begin{table}[htbp]\centering\caption{Headline results with the \NSensitive{} definition-sensitive labels flipped or dropped}\label{tab:s_labels}
+{\footnotesize\setlength{\tabcolsep}{3pt}\input{../tables/S_label_sensitivity}}\tabnote{\NSensitive{} of the 2017--2026 labels are sensitive to the outcome definition or to a disagreement between the equity-investment schedule and the annual-report text (categories: intragroup transfer, temporary external dilution, related-party preferred shares, dilution below materiality, unresolved conflict, one tracker mismatch). Column 2 recodes all eleven as retained, the direction least favourable to the paper's results; column 3 drops them. Statistics as defined in the main text.}\end{table}
+\section{Price sources}
+\begin{table}[htbp]\centering\caption{Two price sources: cross-check and screen}\label{tab:s_prices}
+{\footnotesize\setlength{\tabcolsep}{3pt}\input{../tables/S_price_sources}}\tabnote{Daily adjusted prices from the Korea Exchange (2017--2026) and Compustat Global (2001--2016, used for 2017--2026 only in this cross-check). Returns are compared on the events priced in both sources over trading days $-250$ to $+250$. The exchange's adjusted close excludes cash dividends while Compustat's adjustment factor includes them, so small differences on ex-dividend days are expected. The screen flags a 2001--2016 event when a daily return in $[-1, +250]$ exceeds the exchange's daily price limit (15 percent before 15 June 2015, 30 percent after) by more than one percentage point; flagged events whose parent was in delisting proceedings are kept, the rest are excluded from the main results and included in a sensitivity run.}\end{table}
+\section{Ownership sources}
+\begin{table}[htbp]\centering\caption{Pre-announcement ownership: two sources and their agreement}\label{tab:s_ownership}
+{\footnotesize\setlength{\tabcolsep}{3pt}\input{../tables/S_ownership_sources}}\tabnote{The controlling block is the largest shareholder's and related parties' common shares, excluding treasury shares, at the fiscal year-end before the announcement year. For announcements from 2016 the figure is read from the largest-shareholder table returned by the regulator's interface; for earlier announcements the same table is read from the annual report's text by two language models independently, and a record is kept when the two agree within one percentage point.}\end{table}
+\section{Results by period}
+\begin{table}[htbp]\centering\caption{Headline return results by period}\label{tab:s_period}
+{\footnotesize\setlength{\tabcolsep}{3pt}\input{../tables/S_by_period}}\tabnote{Listed parents with a disposal signal and a full one-year window, by announcement period. Q5 $-$ Q1 is the mean one-year market-adjusted BHAR difference between the top and bottom quintiles of the signal with a bootstrap 95 percent interval; Spearman correlation between the signal and the one-year BHAR; CAR slope is the OLS coefficient of the three-day announcement CAR on the signal with year fixed effects (HC1 $p$).}\end{table}
+\bibliographystyle{apacite}
+\bibliography{refs,refs_manual}
+\end{document}

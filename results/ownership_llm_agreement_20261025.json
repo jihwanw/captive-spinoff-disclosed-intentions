@@ -1,0 +1,33 @@
+{
+ "n_both_models": 373,
+ "table_found_agree": 373,
+ "largest_pct": {
+  "n": 357,
+  "within_0_5pp": 355,
+  "median_abs_diff": 0.0
+ },
+ "block_pct": {
+  "n": 357,
+  "within_1pp": 354,
+  "within_3pp": 355,
+  "median_abs_diff": 0.0
+ },
+ "block_available_in_one_model_only": 4,
+ "block_disagreements_gt_1pp": [
+  [
+   "금호건설",
+   11.69,
+   14.19
+  ],
+  [
+   "삼성물산",
+   65.4,
+   50.17
+  ],
+  [
+   "엘앤피아너스",
+   0,
+   20.33
+  ]
+ ]
+}

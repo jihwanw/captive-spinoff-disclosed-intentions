@@ -1,0 +1,1038 @@
+{
+ "date": "2026-10-17",
+ "n_events": 294,
+ "outcome_counts_v3": {
+  "unmatched": 61,
+  "majority_disposed_or_dropped": 61,
+  "majority_disposed": 30,
+  "partial_sale": 40,
+  "retained_100": 60,
+  "too_recent": 15,
+  "ipo_listed": 8,
+  "merged_back_into_parent": 18,
+  "observed_no_ratio": 1
+ },
+ "outcome_counts_v4": {
+  "unmatched": 11,
+  "partial_sale": 45,
+  "majority_disposed": 93,
+  "retained_100": 89,
+  "too_recent": 15,
+  "merged_back_into_parent": 23,
+  "majority_disposed_or_dropped": 4,
+  "ipo_listed": 8,
+  "liquidated": 6
+ },
+ "clean_labels_v3": 138,
+ "clean_labels_v4": 235,
+ "disposed_share_clean_v3": 0.565,
+ "disposed_share_clean_v4": 0.621,
+ "label_source_counts": {
+  "v3_tracker_unresolved": 18,
+  "annual_report_llm": 151,
+  "v3_tracker": 125
+ },
+ "n_changed": 109,
+ "transitions_v3_to_v4": {
+  "unmatched -> majority_disposed": 33,
+  "majority_disposed_or_dropped -> majority_disposed": 29,
+  "majority_disposed_or_dropped -> retained_100": 21,
+  "unmatched -> retained_100": 9,
+  "unmatched -> merged_back_into_parent": 3,
+  "unmatched -> partial_sale": 3,
+  "majority_disposed_or_dropped -> liquidated": 3,
+  "majority_disposed_or_dropped -> partial_sale": 2,
+  "majority_disposed_or_dropped -> merged_back_into_parent": 2,
+  "unmatched -> liquidated": 2,
+  "observed_no_ratio -> liquidated": 1,
+  "retained_100 -> majority_disposed": 1
+ },
+ "llm_confidence_counts_queue": {
+  "high": 129,
+  "medium": 28,
+  "low": 12
+ },
+ "changes": [
+  {
+   "rcept_no": "20170502002250",
+   "corp_name": "아이이",
+   "division_year": 2017,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "partial_sale",
+   "confidence": "medium",
+   "name": "주식회사 스마트포스팅"
+  },
+  {
+   "rcept_no": "20250318001189",
+   "corp_name": "현대위아",
+   "division_year": 2025,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "위아공작기계㈜"
+  },
+  {
+   "rcept_no": "20181116000051",
+   "corp_name": "남선알미늄",
+   "division_year": 2018,
+   "v3": "unmatched",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "주식회사 남선홀딩스"
+  },
+  {
+   "rcept_no": "20200312001175",
+   "corp_name": "DL",
+   "division_year": 2020,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "retained_100",
+   "confidence": "medium",
+   "name": "대림에프엔씨㈜ (2021.01 사명 변경 → DL에프엔씨㈜)"
+  },
+  {
+   "rcept_no": "20220214001160",
+   "corp_name": "삼일씨엔에스",
+   "division_year": 2022,
+   "v3": "unmatched",
+   "v4": "merged_back_into_parent",
+   "confidence": "high",
+   "name": "주식회사 삼일산업"
+  },
+  {
+   "rcept_no": "20200429001289",
+   "corp_name": "대한해운",
+   "division_year": 2020,
+   "v3": "unmatched",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "대한해운엘엔지 주식회사"
+  },
+  {
+   "rcept_no": "20200325000950",
+   "corp_name": "동부건설",
+   "division_year": 2020,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "동부엔텍 주식회사(Dongbu nTECH.,LTD)"
+  },
+  {
+   "rcept_no": "20200427000711",
+   "corp_name": "아이에스동서",
+   "division_year": 2020,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "이누스 주식회사"
+  },
+  {
+   "rcept_no": "20201123000260",
+   "corp_name": "두산",
+   "division_year": 2020,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 모트롤 (2024.10 두산모트롤㈜로 사명 변경)"
+  },
+  {
+   "rcept_no": "20211116000166",
+   "corp_name": "스틱인베스트먼트",
+   "division_year": 2022,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "디피씨 주식회사"
+  },
+  {
+   "rcept_no": "20200313000815",
+   "corp_name": "포스코인터내셔널",
+   "division_year": 2020,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "주식회사 포스코에스피에스 (2022.01 사명변경 → 주식회사 포스코모빌리티솔루션)"
+  },
+  {
+   "rcept_no": "20190719000245",
+   "corp_name": "SGC에너지",
+   "division_year": 2019,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "삼광캔 주식회사"
+  },
+  {
+   "rcept_no": "20170627000171",
+   "corp_name": "한화에어로스페이스",
+   "division_year": 2017,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "merged_back_into_parent",
+   "confidence": "high",
+   "name": "한화지상방산주식회사 (2019.01 사명변경 → 한화디펜스주식회사)"
+  },
+  {
+   "rcept_no": "20231106000063",
+   "corp_name": "유네코",
+   "division_year": 2023,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "유네코레일 주식회사"
+  },
+  {
+   "rcept_no": "20210527000544",
+   "corp_name": "SJG세종",
+   "division_year": 2021,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "세종중앙연구소 주식회사 (2024년 에스제이지중앙연구소 주식회사로 사명 변경)"
+  },
+  {
+   "rcept_no": "20181031000166",
+   "corp_name": "신세계",
+   "division_year": 2018,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 신세계몰"
+  },
+  {
+   "rcept_no": "20190429000554",
+   "corp_name": "차AI헬스케어",
+   "division_year": 2019,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "제이케이엠 주식회사"
+  },
+  {
+   "rcept_no": "20170905000293",
+   "corp_name": "LG씨엔에스",
+   "division_year": 2017,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "(주)에이텍에이피"
+  },
+  {
+   "rcept_no": "20221202000607",
+   "corp_name": "SKC",
+   "division_year": 2022,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "에스케이씨미래소재㈜ (가칭)"
+  },
+  {
+   "rcept_no": "20231026000467",
+   "corp_name": "아센디오",
+   "division_year": 2023,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 수호이미지랩스"
+  },
+  {
+   "rcept_no": "20170911000328",
+   "corp_name": "엔브이에이치코리아",
+   "division_year": 2017,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "(주)엔티앰 (NTM)"
+  },
+  {
+   "rcept_no": "20210930000632",
+   "corp_name": "에스엠벡셀",
+   "division_year": 2021,
+   "v3": "unmatched",
+   "v4": "liquidated",
+   "confidence": "high",
+   "name": "(주)지코더블유"
+  },
+  {
+   "rcept_no": "20211210000304",
+   "corp_name": "POSCO홀딩스",
+   "division_year": 2022,
+   "v3": "unmatched",
+   "v4": "retained_100",
+   "confidence": "medium",
+   "name": "주식회사 포스코"
+  },
+  {
+   "rcept_no": "20220927000374",
+   "corp_name": "한화",
+   "division_year": 2022,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 한화방산"
+  },
+  {
+   "rcept_no": "20181128000498",
+   "corp_name": "한화",
+   "division_year": 2019,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 에이치오토모티브"
+  },
+  {
+   "rcept_no": "20200730000168",
+   "corp_name": "한화",
+   "division_year": 2020,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "medium",
+   "name": "주식회사 코리아디펜스인더스트리"
+  },
+  {
+   "rcept_no": "20230227006118",
+   "corp_name": "한농화성",
+   "division_year": 2023,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "바스프한농화성솔루션스(주)"
+  },
+  {
+   "rcept_no": "20250428000126",
+   "corp_name": "한독",
+   "division_year": 2025,
+   "v3": "unmatched",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "㈜한독헬스케어"
+  },
+  {
+   "rcept_no": "20200309000642",
+   "corp_name": "행남사",
+   "division_year": 2019,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 썸머인베스트먼트"
+  },
+  {
+   "rcept_no": "20210316001236",
+   "corp_name": "휴코드홀딩스",
+   "division_year": 2021,
+   "v3": "unmatched",
+   "v4": "retained_100",
+   "confidence": "medium",
+   "name": "(주)휴코드 (분할신설회사 3사: (주)휴코드, (주)휴코드랩, (주)휴코드바이오)"
+  },
+  {
+   "rcept_no": "20190306000376",
+   "corp_name": "화승인더스트리",
+   "division_year": 2019,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "merged_back_into_parent",
+   "confidence": "medium",
+   "name": "주식회사 화승첨단소재"
+  },
+  {
+   "rcept_no": "20171102000182",
+   "corp_name": "화승인더스트리",
+   "division_year": 2018,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "(주)화승케미칼"
+  },
+  {
+   "rcept_no": "20190827000462",
+   "corp_name": "흥아해운",
+   "division_year": 2019,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "흥아라인 주식회사 (구 흥아해운컨테이너 주식회사)"
+  },
+  {
+   "rcept_no": "20240426000765",
+   "corp_name": "코웨이",
+   "division_year": 2024,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "retained_100",
+   "confidence": "medium",
+   "name": "리엔케이비앤에이치 주식회사 (2024.08.01 힐러비(주) 흡수합병 후 힐러비리엔케이(주)로, 이후 힐러비(주)로 사명 변경)"
+  },
+  {
+   "rcept_no": "20200304000285",
+   "corp_name": "엔케이",
+   "division_year": 2020,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 엔케이에테르"
+  },
+  {
+   "rcept_no": "20191014000248",
+   "corp_name": "미스토홀딩스",
+   "division_year": 2020,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "휠라코리아 주식회사 (2025년 3월 미스토코리아 주식회사로 사명변경)"
+  },
+  {
+   "rcept_no": "20230220002442",
+   "corp_name": "HLB",
+   "division_year": 2023,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "에이치엘비이엔지㈜"
+  },
+  {
+   "rcept_no": "20220803000287",
+   "corp_name": "한솔홈데코",
+   "division_year": 2022,
+   "v3": "observed_no_ratio",
+   "v4": "liquidated",
+   "confidence": "high",
+   "name": "한솔모두의봄 주식회사 (분할 당시 모두의봄 주식회사, 2023.01 사명변경)"
+  },
+  {
+   "rcept_no": "20221214000396",
+   "corp_name": "무궁화인포메이션테크놀로지",
+   "division_year": 2022,
+   "v3": "unmatched",
+   "v4": "merged_back_into_parent",
+   "confidence": "high",
+   "name": "주식회사 유씨아이"
+  },
+  {
+   "rcept_no": "20170629000281",
+   "corp_name": "케이엠더블유",
+   "division_year": 2017,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "주식회사 기가테라 (2019년 12월 주식회사 기가테라라이팅으로 상호 변경)"
+  },
+  {
+   "rcept_no": "20191209000329",
+   "corp_name": "네패스",
+   "division_year": 2020,
+   "v3": "unmatched",
+   "v4": "partial_sale",
+   "confidence": "medium",
+   "name": "(주)네패스라웨"
+  },
+  {
+   "rcept_no": "20211012000307",
+   "corp_name": "현대에버다임",
+   "division_year": 2021,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 현대에버다임건설"
+  },
+  {
+   "rcept_no": "20200811000265",
+   "corp_name": "인성정보",
+   "division_year": 2020,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "medium",
+   "name": "하이케어넷(주)"
+  },
+  {
+   "rcept_no": "20200527000524",
+   "corp_name": "LG유플러스",
+   "division_year": 2020,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "토스페이먼츠 주식회사"
+  },
+  {
+   "rcept_no": "20170412001848",
+   "corp_name": "판타지오",
+   "division_year": 2017,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "한국영재교육학술원㈜"
+  },
+  {
+   "rcept_no": "20171124000288",
+   "corp_name": "에스케이브로드밴드",
+   "division_year": 2017,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "에스케이스토아 주식회사"
+  },
+  {
+   "rcept_no": "20221220000359",
+   "corp_name": "골드앤에스",
+   "division_year": 2022,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 에이알에이잉글리시"
+  },
+  {
+   "rcept_no": "20181214000379",
+   "corp_name": "에이텍",
+   "division_year": 2019,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "(주)에이텍솔루션"
+  },
+  {
+   "rcept_no": "20240527000411",
+   "corp_name": "엠에스오토텍",
+   "division_year": 2024,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "주식회사 엠에스오토시스"
+  },
+  {
+   "rcept_no": "20220407002245",
+   "corp_name": "케이티알파",
+   "division_year": 2022,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "(주)알파디엑스솔루션"
+  },
+  {
+   "rcept_no": "20240913000790",
+   "corp_name": "NC",
+   "division_year": 2024,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "주식회사 엔씨큐에이 ((주)엔씨큐에이) 및 주식회사 엔씨아이디에스 ((주)엔씨아이디에스)"
+  },
+  {
+   "rcept_no": "20170703000134",
+   "corp_name": "세중",
+   "division_year": 2017,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "고려강재장(주) (구, (주)창원강재)"
+  },
+  {
+   "rcept_no": "20240328001206",
+   "corp_name": "세종텔레콤",
+   "division_year": 2022,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "세종네트웍스(주)"
+  },
+  {
+   "rcept_no": "20191209000461",
+   "corp_name": "비케이탑스",
+   "division_year": 2020,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "동양네트웍스주식회사"
+  },
+  {
+   "rcept_no": "20210107000484",
+   "corp_name": "우전",
+   "division_year": 2021,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 뉴우전"
+  },
+  {
+   "rcept_no": "20170224000454",
+   "corp_name": "케이맥",
+   "division_year": 2017,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "케이맥바이오센터 주식회사"
+  },
+  {
+   "rcept_no": "20240507000418",
+   "corp_name": "스포츠서울",
+   "division_year": 2024,
+   "v3": "unmatched",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "스포츠서울신문 주식회사"
+  },
+  {
+   "rcept_no": "20210728000329",
+   "corp_name": "콜마파마",
+   "division_year": 2021,
+   "v3": "unmatched",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "주식회사 제뉴파마"
+  },
+  {
+   "rcept_no": "20210218001166",
+   "corp_name": "제이웨이",
+   "division_year": 2021,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "(주)제이웨이마스크"
+  },
+  {
+   "rcept_no": "20170707000136",
+   "corp_name": "코원플레이",
+   "division_year": 2017,
+   "v3": "unmatched",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "주식회사 코원시스템"
+  },
+  {
+   "rcept_no": "20180307000733",
+   "corp_name": "제이케이시냅스",
+   "division_year": 2018,
+   "v3": "unmatched",
+   "v4": "merged_back_into_parent",
+   "confidence": "high",
+   "name": "주식회사 이그잭스엔에프씨 (2020.11 사명 변경: 주식회사 이그잭스디엑스)"
+  },
+  {
+   "rcept_no": "20170530000174",
+   "corp_name": "스타코링크",
+   "division_year": 2017,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 아이넷스쿨"
+  },
+  {
+   "rcept_no": "20170310000086",
+   "corp_name": "기가레인",
+   "division_year": 2017,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "(주)위드멤스 및 (주)웨이비스 (2017.05.01 FPD 테스트 솔루션 사업 및 GaN RF PA 사업 물적분할로 신설된 2개사)"
+  },
+  {
+   "rcept_no": "20190308000484",
+   "corp_name": "해피드림",
+   "division_year": 2019,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "medium",
+   "name": null
+  },
+  {
+   "rcept_no": "20221019000371",
+   "corp_name": "대산F&B",
+   "division_year": 2023,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 미스터피자"
+  },
+  {
+   "rcept_no": "20200330002495",
+   "corp_name": "현대퓨처넷",
+   "division_year": 2020,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 현대에이치씨엔 (매각 후 주식회사 에이치씨엔으로 상호 변경)"
+  },
+  {
+   "rcept_no": "20180724000367",
+   "corp_name": "HD현대마린엔진",
+   "division_year": 2018,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "세아STX엔테크 주식회사"
+  },
+  {
+   "rcept_no": "20210319000781",
+   "corp_name": "HD현대마린엔진",
+   "division_year": 2021,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "liquidated",
+   "confidence": "high",
+   "name": "STX에너지솔루션 주식회사 (에스티엑스에너지솔루션 주식회사)"
+  },
+  {
+   "rcept_no": "20190107000492",
+   "corp_name": "HD현대마린엔진",
+   "division_year": 2018,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "liquidated",
+   "confidence": "high",
+   "name": "에스티엑스리커버리 주식회사"
+  },
+  {
+   "rcept_no": "20200528000954",
+   "corp_name": "HD현대마린엔진",
+   "division_year": 2020,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "liquidated",
+   "confidence": "high",
+   "name": "한국해양선박데크하우스 주식회사"
+  },
+  {
+   "rcept_no": "20211115002161",
+   "corp_name": "제넨바이오",
+   "division_year": 2022,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 에코랜드"
+  },
+  {
+   "rcept_no": "20220929000534",
+   "corp_name": "누리플랜",
+   "division_year": 2023,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "partial_sale",
+   "confidence": "high",
+   "name": "주식회사 누리웍스"
+  },
+  {
+   "rcept_no": "20190805000193",
+   "corp_name": "세진중공업",
+   "division_year": 2019,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 에코마린텍"
+  },
+  {
+   "rcept_no": "20200522000273",
+   "corp_name": "드림텍",
+   "division_year": 2020,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 드림텍오토모티브 (매각 후 (주)에스에프이노텍으로 사명 변경)"
+  },
+  {
+   "rcept_no": "20220228005561",
+   "corp_name": "드림텍",
+   "division_year": 2022,
+   "v3": "unmatched",
+   "v4": "liquidated",
+   "confidence": "medium",
+   "name": "주식회사 아이시그널"
+  },
+  {
+   "rcept_no": "20191016000008",
+   "corp_name": "해태제과식품",
+   "division_year": 2020,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "해태아이스크림 주식회사"
+  },
+  {
+   "rcept_no": "20210622000265",
+   "corp_name": "코스나인",
+   "division_year": 2021,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 지인커뮤니케이션"
+  },
+  {
+   "rcept_no": "20170407001543",
+   "corp_name": "위메이드",
+   "division_year": 2017,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "주식회사 전기아이피"
+  },
+  {
+   "rcept_no": "20200410003013",
+   "corp_name": "MDS테크",
+   "division_year": 2020,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "주식회사 한컴인텔리전스 (2022.07.22 ㈜MDS인텔리전스로 상호변경)"
+  },
+  {
+   "rcept_no": "20190626000357",
+   "corp_name": "이엠네트웍스",
+   "division_year": 2019,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "medium",
+   "name": "주식회사 에스모소재기술연구원"
+  },
+  {
+   "rcept_no": "20211214000456",
+   "corp_name": "SK디앤디",
+   "division_year": 2022,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "retained_100",
+   "confidence": "medium",
+   "name": "디앤디프라퍼티솔루션 주식회사 (舊 디앤디리빙솔루션 주식회사)"
+  },
+  {
+   "rcept_no": "20200312000298",
+   "corp_name": "녹십자엠에스",
+   "division_year": 2020,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 녹십자혈액백"
+  },
+  {
+   "rcept_no": "20180412000634",
+   "corp_name": "차바이오텍",
+   "division_year": 2018,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "주식회사 차바이오랩 (2024.03.25 (주)마티카바이오랩스로 사명 변경)"
+  },
+  {
+   "rcept_no": "20210322000809",
+   "corp_name": "웨이브일렉트로",
+   "division_year": 2021,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 더블유오에스"
+  },
+  {
+   "rcept_no": "20181004000632",
+   "corp_name": "비보존 제약",
+   "division_year": 2019,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "루미테크놀로지앤대부 주식회사 (분할 당시 루미엘이디앤마이크로 주식회사, 2019.01.28 상호변경)"
+  },
+  {
+   "rcept_no": "20230315000824",
+   "corp_name": "네오리진",
+   "division_year": 2023,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 코닉글로리"
+  },
+  {
+   "rcept_no": "20191219000412",
+   "corp_name": "신텍",
+   "division_year": 2019,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "현대신텍 주식회사"
+  },
+  {
+   "rcept_no": "20190415000988",
+   "corp_name": "CJ제일제당",
+   "division_year": 2019,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "retained_100",
+   "confidence": "medium",
+   "name": "씨제이생물자원 주식회사 (2022년 씨제이피드앤케어(주)로 사명 변경)"
+  },
+  {
+   "rcept_no": "20210308000530",
+   "corp_name": "위메이드맥스",
+   "division_year": 2021,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "주식회사 라이트컨 (㈜라이트컨)"
+  },
+  {
+   "rcept_no": "20220817000147",
+   "corp_name": "메카로",
+   "division_year": 2022,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "엠케미칼 주식회사"
+  },
+  {
+   "rcept_no": "20170411001956",
+   "corp_name": "앱토크롬",
+   "division_year": 2017,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 이너스텍"
+  },
+  {
+   "rcept_no": "20211006000364",
+   "corp_name": "지유온",
+   "division_year": 2022,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 비투비네트웍스"
+  },
+  {
+   "rcept_no": "20200925000101",
+   "corp_name": "크래프톤",
+   "division_year": 2020,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "주식회사 블루홀스튜디오"
+  },
+  {
+   "rcept_no": "20220908000433",
+   "corp_name": "스마트솔루션즈",
+   "division_year": 2022,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "medium",
+   "name": "주식회사 스마트이브이"
+  },
+  {
+   "rcept_no": "20201112000349",
+   "corp_name": "휴맥스",
+   "division_year": 2020,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 휴맥스오토모티브"
+  },
+  {
+   "rcept_no": "20191016000281",
+   "corp_name": "베셀",
+   "division_year": 2019,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "베셀에어로스페이스 주식회사"
+  },
+  {
+   "rcept_no": "20201110000228",
+   "corp_name": "티엔엔터테인먼트",
+   "division_year": 2021,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 에이나인미디어 씨앤아이"
+  },
+  {
+   "rcept_no": "20211014000293",
+   "corp_name": "티엔엔터테인먼트",
+   "division_year": 2021,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 케이웨이브"
+  },
+  {
+   "rcept_no": "20170614000313",
+   "corp_name": "인크로스",
+   "division_year": 2017,
+   "v3": "retained_100",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "인프라커뮤니케이션즈 주식회사"
+  },
+  {
+   "rcept_no": "20181031000162",
+   "corp_name": "이마트",
+   "division_year": 2018,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "medium",
+   "name": "주식회사 에스에스지닷컴 (구, 주식회사 이마트몰)"
+  },
+  {
+   "rcept_no": "20170116000143",
+   "corp_name": "에코글로우",
+   "division_year": 2017,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "㈜씨엠디엘"
+  },
+  {
+   "rcept_no": "20211220000307",
+   "corp_name": "에프엔씨엔터",
+   "division_year": 2021,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 에프엔씨디자인"
+  },
+  {
+   "rcept_no": "20190306000724",
+   "corp_name": "썸에이지",
+   "division_year": 2019,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 언사인드게임즈"
+  },
+  {
+   "rcept_no": "20210513000482",
+   "corp_name": "에스엘테라퓨틱스",
+   "division_year": 2021,
+   "v3": "unmatched",
+   "v4": "majority_disposed",
+   "confidence": "high",
+   "name": "주식회사 제이원메디칼시스템"
+  },
+  {
+   "rcept_no": "20231011000371",
+   "corp_name": "스튜디오미르",
+   "division_year": 2023,
+   "v3": "unmatched",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "주식회사 스튜디오미르CGI"
+  },
+  {
+   "rcept_no": "20241218000346",
+   "corp_name": "휴온스",
+   "division_year": 2024,
+   "v3": "unmatched",
+   "v4": "partial_sale",
+   "confidence": "medium",
+   "name": "㈜휴온스엔(구 ㈜휴온스푸디언스)"
+  },
+  {
+   "rcept_no": "20210401002690",
+   "corp_name": "하이브",
+   "division_year": 2021,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "주식회사 빅히트뮤직"
+  },
+  {
+   "rcept_no": "20191104000155",
+   "corp_name": "코윈로보틱스",
+   "division_year": 2020,
+   "v3": "majority_disposed_or_dropped",
+   "v4": "retained_100",
+   "confidence": "high",
+   "name": "주식회사 코윈솔루션 (구. 주식회사 코윈서비스)"
+  },
+  {
+   "rcept_no": "20241018000457",
+   "corp_name": "시선AI",
+   "division_year": 2025,
+   "v3": "unmatched",
+   "v4": "partial_sale",
+   "confidence": "high",
+   "name": "주식회사 유온로보틱스"
+  }
+ ]
+}

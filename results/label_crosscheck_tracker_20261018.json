@@ -1,0 +1,558 @@
+{
+ "date": "2026-10-18",
+ "n_checked": 92,
+ "agreement_binary_decided": "74/85 = 0.871",
+ "by_pair": {
+  "disposed->disposed (high)": 40,
+  "disposed->disposed (medium)": 21,
+  "retained->retained (high)": 13,
+  "retained->other (high)": 1,
+  "disposed->retained (medium)": 8,
+  "disposed->other (low)": 2,
+  "disposed->retained (high)": 3,
+  "disposed->other (medium)": 3,
+  "disposed->other (high)": 1
+ },
+ "disagreements": [
+  {
+   "rcept_no": "20201201000434",
+   "corp_name": "케이씨씨",
+   "division_year": 2020,
+   "v3_outcome": "majority_disposed",
+   "llm_outcome": "retained_100",
+   "confidence": "medium",
+   "actual_new_company_name": "주식회사 케이씨씨실리콘",
+   "category": "intra_group_transfer",
+   "corrected_outcome": null,
+   "note": "100% of 케이씨씨실리콘 sold in Jan 2021 to a subsidiary of MOM Holding Company, itself a KCC subsidiary: direct stake 0, group stake retained in part — economic disposal share = minority share in MOM; keep tracker label, flag",
+   "by_fiscal_year": [
+    {
+     "fy": 2020,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "지배기업이 100% 지분을 보유하고 있는 종속기업 ㈜케이씨씨실리콘 … 주5) 주식회사 케이씨씨실리콘 은 당기 물적분할로 인해 설립되어 종속기업으로 편입되었습니다."
+    },
+    {
+     "fy": 2021,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "㈜케이씨씨실리콘 (주7,9) 한국 실리콘 12월 31일 - 100 100 100 … (주9) 당기 중 지배기업이 보유하던 주식회사 케이씨씨실리콘 … 지분 100%를 … 모멘티브퍼포먼스머티리얼스코리아 주식회사 … 에 매각하였습니다."
+    },
+    {
+     "fy": 2022,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "주식회사 케이씨씨실리콘 (주5) 한국 실리콘 12월 31일 - 100 100 100 … (주5) MOM Holding Company의 종속기업(손자기업 포함)입니다."
+    },
+    {
+     "fy": 2023,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "주식회사 케이씨씨실리콘 전체 특수관계자 지배기업 0.00 종속기업 1.00 전체 특수관계자 한국 실리콘 2023-12-31 1.00 MOM Holding Company의 종속기업(손자기업 포함)입니다."
+    },
+    {
+     "fy": 2024,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "㈜케이씨씨실리콘 (주5) 한국 실리콘 12월 31일 - 100 100 100 … (주5) MOM Holding Company의 종속기업(손자기업 포함)입니다."
+    },
+    {
+     "fy": 2025,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "㈜케이씨씨실리콘 (주5) 한국 실리콘 12월 31일 - 100 100 100 … 2025년 1월 1일에는 ㈜케이씨씨실리콘이 모멘티브퍼포먼스머티리얼스코리아㈜를 100% 역흡수합병 하였습니다."
+    }
+   ]
+  },
+  {
+   "rcept_no": "20170713000208",
+   "corp_name": "쿠쿠홀딩스",
+   "division_year": 2017,
+   "v3_outcome": "ipo_listed",
+   "llm_outcome": "retained_100",
+   "confidence": "high",
+   "actual_new_company_name": "쿠쿠전자(주)",
+   "category": "tracker_error_matched_spinoff_entity",
+   "corrected_outcome": "retained_100",
+   "note": "tracker matched 쿠쿠홈시스 (인적분할 spin-off, listed) instead of the carve-out 쿠쿠전자(주), which stayed 100%-owned",
+   "by_fiscal_year": [
+    {
+     "fy": 2017,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "종속기업 청도복고전자유한공사 100 100 쿠쿠전자(주) (주1) 100 - … (주1) 당기 중 물적 분할을 통해 종속회사로 포함되었습니다."
+    },
+    {
+     "fy": 2018,
+     "status": "subsidiary_100",
+     "ownership_pct": null,
+     "evidence": "쿠쿠전자(주) (주요 종속회사) 2017.12.01 쿠쿠전자 주식회사 물적분할신설 … 쿠쿠전자(주) 물적분할신설회사 가전사업부문 사업회사, 종속회사"
+    },
+    {
+     "fy": 2019,
+     "status": "subsidiary_100",
+     "ownership_pct": null,
+     "evidence": "FY2019 excerpts focus on 관계기업(쿠쿠홈시스 40.55%); 쿠쿠전자(주) 지분율 미기재 (FY2020 보고서: '쿠쿠전자(주) (주요 종속회사) … 물적분할신설')"
+    },
+    {
+     "fy": 2020,
+     "status": "subsidiary_100",
+     "ownership_pct": null,
+     "evidence": "쿠쿠전자(주) (주요 종속회사) 2017.12.01 쿠쿠전자 주식회사 물적분할신설 … 쿠쿠전자(주) 물적분할신설회사 가전사업부문 사업회사, 종속회사"
+    },
+    {
+     "fy": 2021,
+     "status": "subsidiary_100",
+     "ownership_pct": null,
+     "evidence": "쿠쿠전자(주) (주요 종속회사) 2017.12.01 쿠쿠전자 주식회사 물적분할신설 … 쿠쿠전자(주) 물적분할신설회사 가전사업부문 사업회사, 종속회사"
+    },
+    {
+     "fy": 2022,
+     "status": "subsidiary_100",
+     "ownership_pct": null,
+     "evidence": "쿠쿠전자(주)(주요 종속회사) 2017.12.01 쿠쿠전자 주식회사 물적분할신설 … 쿠쿠전자(주) 물적분할신설회사 가전사업부문 사업회사, 종속회사"
+    },
+    {
+     "fy": 2023,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "쿠쿠전자(주)(주요 종속회사) 2017.12.01 쿠쿠전자 주식회사 물적분할신설 (FY2024 보고서 전기말: '종속기업 청도복고전자유한공사 100 100 쿠쿠전자(주) 100 100')"
+    },
+    {
+     "fy": 2024,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "당기말 전기말 종속기업 청도복고전자유한공사 100 100 쿠쿠전자(주) 100 100 CUCKOO ELECTRONICS MALAYSIA Sdn Bhd 100 100"
+    },
+    {
+     "fy": 2025,
+     "status": "unclear",
+     "ownership_pct": null,
+     "evidence": "종속기업 … 소 계 126,701,577 126,701,577 (excerpt truncated; 쿠쿠전자(주) row not visible)"
+    }
+   ]
+  },
+  {
+   "rcept_no": "20240618000210",
+   "corp_name": "한화",
+   "division_year": 2024,
+   "v3_outcome": "majority_disposed",
+   "llm_outcome": "retained_100",
+   "confidence": "medium",
+   "actual_new_company_name": "한화모멘텀 주식회사",
+   "category": "unresolved_conflict",
+   "corrected_outcome": null,
+   "note": "tracker: majority_disposed (타법인출자현황); LLM: 100% subsidiary FY2024-25 inferred from segment tables, no percentage — manual check",
+   "by_fiscal_year": [
+    {
+     "fy": 2024,
+     "status": "subsidiary_100",
+     "ownership_pct": null,
+     "evidence": "[한화모멘텀㈜] '24년 4월 이사회와 '24년 5월 주주총회를 통해 ㈜한화 모멘텀부문(이차전지&IT솔루션 등)을 물적분할하여 신설회사 설립을 승인받았으며, 한화모멘텀㈜로 상호명이 결정되었습니다. (설립일 : '24년 7월)"
+    },
+    {
+     "fy": 2025,
+     "status": "subsidiary_100",
+     "ownership_pct": null,
+     "evidence": "산업용 기계 한화세미텍㈜(舊(구)한화정밀기계㈜) 칩마운터, 스크린프린터, 프립칩마운터 등 산업용 기계 431,216 0.58% 한화모멘텀㈜ 이차전지, 디스플레이, 로지스틱스, 신재생에너지 등 산업용 기계 397,333 0.53%"
+    }
+   ]
+  },
+  {
+   "rcept_no": "20190415001165",
+   "corp_name": "글로앤웰",
+   "division_year": 2019,
+   "v3_outcome": "majority_disposed",
+   "llm_outcome": "retained_100",
+   "confidence": "medium",
+   "actual_new_company_name": "주식회사 마제스타",
+   "category": "unresolved_conflict",
+   "corrected_outcome": null,
+   "note": "LLM: 100% FY2019-20 (sale contract terminated); tracker majority_disposed later — manual check",
+   "by_fiscal_year": [
+    {
+     "fy": 2019,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "㈜마제스타 2019.05.30 제주특별자치도 서귀포시 중문관광로 72번길 75 카지노 19,540 지분의 100% 보유 주요종속회사 … 신규 연결 ㈜마제스타 분할 후 신설회사 설립"
+    },
+    {
+     "fy": 2020,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "㈜마제스타 2019.05.30 제주특별자치도 서귀포시 중문관광로 72번길 75 카지노 19,540 지분의 100% 보유 주요종속회사"
+    }
+   ]
+  },
+  {
+   "rcept_no": "20200218001200",
+   "corp_name": "가온그룹",
+   "division_year": 2020,
+   "v3_outcome": "partial_sale",
+   "llm_outcome": "retained_100",
+   "confidence": "medium",
+   "actual_new_company_name": "가온브로드밴드(주)",
+   "category": "minor_dilution_below_materiality",
+   "corrected_outcome": null,
+   "note": "97.71% for FY2021-24 (2.29% non-controlling), 100% again FY2025; v3 threshold <99.5% calls this partial_sale",
+   "by_fiscal_year": [
+    {
+     "fy": 2020,
+     "status": "subsidiary_100",
+     "ownership_pct": 100.0,
+     "evidence": "가온브로드밴드㈜ (*4) 대한민국 100.00% - 12월 31일 네트워크 통신장비 제조 … (*4) 연결회사는 네트워크 사업부문을 분할하였으며, 종속기업으로 편입되었습니다."
+    },
+    {
+     "fy": 2021,
+     "status": "subsidiary_partial",
+     "ownership_pct": 97.71,
+     "evidence": "가온브로드밴드㈜(*1) 대한민국 네트워크 및 브로드밴드 솔루션 97.71% 51,385,160 100.00% 51,385,160 … 가온브로드밴드(주) 97.71% 100%"
+    },
+    {
+     "fy": 2022,
+     "status": "subsidiary_partial",
+     "ownership_pct": 97.71,
+     "evidence": "가온브로드밴드(주) 대한민국 네트워크 장비 개발 및 판매 97.71% 97.71% 12월 31일 … 비지배 지분율 … 가온브로드밴드(주) 2.29%"
+    },
+    {
+     "fy": 2023,
+     "status": "subsidiary_partial",
+     "ownership_pct": 97.71,
+     "evidence": "가온브로드밴드(주) 대한민국 네트워크 장비 개발 및 판매 97.71% 97.71% 12월 31일"
+    },
+    {
+     "fy": 2024,
+     "status": "subsidiary_partial",
+     "ownership_pct": 97.71,
+     "evidence": "가온브로드밴드(주) 대한민국 네트워크 장비 개발 및 판매 97.71% 51,385,160 97.71% 51,385,160 … 비지배지분율 … 가온브로드밴드(주) 2.29%"
+    },
+    {
+     "fy": 2025,
+     "status": "subsidiary_100",
+     "ownership_pct": 100.0,
+     "evidence": "가온브로드밴드(주)(*3) 대한민국 네트워크 장비 개발 및 판매 100.00% 97.71% 12월 31일 … (*3) 당기 중 지분 추가취득으로 인하여 지분율이 100%로 증가하였습니다."
+    }
+   ]
+  },
+  {
+   "rcept_no": "20210106000442",
+   "corp_name": "하나마이크론",
+   "division_year": 2021,
+   "v3_outcome": "partial_sale",
+   "llm_outcome": "retained_100",
+   "confidence": "medium",
+   "actual_new_company_name": "하나더블유엘에스 주식회사",
+   "category": "temporary_external_dilution",
+   "corrected_outcome": null,
+   "note": "RCPS to third party FY2021 → 61.54% for FY2021-23, 100% FY2024-25",
+   "by_fiscal_year": [
+    {
+     "fy": 2021,
+     "status": "subsidiary_partial",
+     "ownership_pct": 61.54,
+     "evidence": "하나더블유엘에스㈜(분할신설회사)가 설립시에 발행하는 주식의 총수를 하나마이크론㈜(분할존속회사)에 100% 배정하였습니다. 한편, 당기 중 발행한 전환우선주를 포함한 당기말 현재 지분율은 61.54% 입니다."
+    },
+    {
+     "fy": 2022,
+     "status": "subsidiary_partial",
+     "ownership_pct": 61.54,
+     "evidence": "하나더블유엘에스(주)(*3) 반도체 패키징 & 테스트 한국 61.54 61.54 … 전기 중 발행한 전환우선주를 포함한 당기말 현재 지분율은 61.54% 입니다."
+    },
+    {
+     "fy": 2023,
+     "status": "subsidiary_partial",
+     "ownership_pct": 61.54,
+     "evidence": "하나더블유엘에스(주)(*3) 반도체 패키징 & 테스트 한국 61.54 61.54 … 물적분할 설립일 이후 발행한 전환우선주를 포함한 당기말 현재 지분율은 61.54% 입니다."
+    },
+    {
+     "fy": 2024,
+     "status": "subsidiary_100",
+     "ownership_pct": 100.0,
+     "evidence": "하나더블유엘에스(주)(*3) 한국 100 … 물적분할 설립일 이후 발행한 전환우선주를 포함하여 당기말 현재 지분율은 100%입니다."
+    },
+    {
+     "fy": 2025,
+     "status": "subsidiary_100",
+     "ownership_pct": 100.0,
+     "evidence": "하나더블유엘에스 주식회사(*3) 반도체 패키징 & 테스트 한국 100 - 100 … 물적분할 설립일 이후 발행한 전환우선주를 포함한 당기말 현재 지분율은 100% 입니다."
+    }
+   ]
+  },
+  {
+   "rcept_no": "20210330000627",
+   "corp_name": "에스코넥",
+   "division_year": 2021,
+   "v3_outcome": "partial_sale",
+   "llm_outcome": "retained_100",
+   "confidence": "medium",
+   "actual_new_company_name": "주식회사 에코하이테크",
+   "category": "temporary_external_dilution",
+   "corrected_outcome": null,
+   "note": "RCPS to external PEF 2022-06 → 87.72% FY2022-24, 100% FY2025",
+   "by_fiscal_year": [
+    {
+     "fy": 2021,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "(주)에코하이테크(*2) 100% 4,000,000 3,274,347 4,000,000 … (*2) 회사의 친환경수소사업부를 물적분할하여 설립된 분할신설법인으로 당기중 회사의 종속기업에 포함되었습니다."
+    },
+    {
+     "fy": 2022,
+     "status": "subsidiary_partial",
+     "ownership_pct": 87.72,
+     "evidence": "(주)에코하이테크(*) 4,000,000 87.72% 이산화탄소저감장치 제조업 경기 광주 2022-12-31 (*)(주)에코하이테크의 의결권 있는 전환상환우선주 12.28%가 제외된 지분율입니다."
+    },
+    {
+     "fy": 2023,
+     "status": "subsidiary_partial",
+     "ownership_pct": 87.72,
+     "evidence": "(주)에코하이테크(*2) 87.72% 4,000,000 4,000,000 … (*2) (주)에코하이테크의 의결권 있는 전환상환우선주부채 지분율 12.28%가 제외된 지분율입니다."
+    },
+    {
+     "fy": 2024,
+     "status": "subsidiary_partial",
+     "ownership_pct": 87.72,
+     "evidence": "(주)에코하이테크(*1) 87.72% 4,000,000 1,951,374 … (*1) (주)에코하이테크의 의결권 있는 전환상환우선주부채 지분율 12.28%가 제외된 지분율입니다."
+    },
+    {
+     "fy": 2025,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "상환전환우선주(RCPS) 1,120,000주를 1주당 6,696원에 유상매입하여 소각하였습니다. 이로 인하여 회사의 (주)에코하이테크에 대한 지분율은 전기말 87.72%에서 당기말 100.00%로 변동되었습니다."
+    }
+   ]
+  },
+  {
+   "rcept_no": "20180412002210",
+   "corp_name": "풀무원식품",
+   "division_year": 2018,
+   "v3_outcome": "partial_sale",
+   "llm_outcome": "retained_100",
+   "confidence": "medium",
+   "actual_new_company_name": "피피이씨글로벌김치(주)",
+   "category": "related_party_preferred_shares",
+   "corrected_outcome": null,
+   "note": "voting preferred shares to the group's own PEF (2018-05) → 50% voting FY2018-21, 100% FY2022-23",
+   "by_fiscal_year": [
+    {
+     "fy": 2018,
+     "status": "subsidiary_partial",
+     "ownership_pct": 50.0,
+     "evidence": "피피이씨글로벌김치(주)(*1) 대한민국 50.00 13,500,075 … 당기말 현재 당사는 피피이씨글로벌김치(주)가발행한 의결권이 존재하는 주식 360,001주 중에서 180,001주를 보유하고 있습니다."
+    },
+    {
+     "fy": 2019,
+     "status": "subsidiary_partial",
+     "ownership_pct": 50.0,
+     "evidence": "피피이씨글로벌김치(주) 식품제조 대한민국 50 50 12월 31일 -"
+    },
+    {
+     "fy": 2020,
+     "status": "subsidiary_partial",
+     "ownership_pct": 50.0,
+     "evidence": "피피이씨글로벌김치(주) 대한민국 50.00 13,500,075 50.00 13,500,075"
+    },
+    {
+     "fy": 2021,
+     "status": "subsidiary_partial",
+     "ownership_pct": 50.0,
+     "evidence": "피피이씨글로벌김치(주) 식품제조 대한민국 50 50 12월 31일 - … 피피이씨글로벌김치(주) 50.00% 13,848,450 162,771 (24,040) 13,987,181"
+    },
+    {
+     "fy": 2022,
+     "status": "subsidiary_100",
+     "ownership_pct": 100.0,
+     "evidence": "피피이씨글로벌김치(주) 식품제조 대한민국 100 50 12월 31일 - … 출자 피피이씨글로벌김치(주) 15,016,140 - … 공동투자약정이 11월말로 종료됨에 따라"
+    },
+    {
+     "fy": 2023,
+     "status": "subsidiary_100",
+     "ownership_pct": 100.0,
+     "evidence": "피피이씨글로벌김치(주) 식품제조 대한민국 100 100 12월 31일 -"
+    },
+    {
+     "fy": 2024,
+     "status": "subsidiary_100",
+     "ownership_pct": 100.0,
+     "evidence": "피피이씨글로벌김치(주) 대한민국 100 28,516,215 100 28,516,215"
+    },
+    {
+     "fy": 2025,
+     "status": "subsidiary_100",
+     "ownership_pct": 100.0,
+     "evidence": "피피이씨글로벌김치(주) 대한민국 100 28,516,215 100 28,516,215"
+    }
+   ]
+  },
+  {
+   "rcept_no": "20181120000096",
+   "corp_name": "드림시큐리티",
+   "division_year": 2019,
+   "v3_outcome": "partial_sale",
+   "llm_outcome": "retained_100",
+   "confidence": "high",
+   "actual_new_company_name": "(주)드림디엔에스",
+   "category": "intra_group_transfer",
+   "corrected_outcome": null,
+   "note": "49.99% transferred (2023-06) to the parent's wholly owned subsidiary ㈜시드코어: no external disposal",
+   "by_fiscal_year": [
+    {
+     "fy": 2019,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "(주)드림디엔에스 2019.01.03 서울시 송파구 중대로 8길 8, 서경빌딩 6층 전산장비제조 및 판매 등 4,855 100% 지분보유 해당 … 신규 연결 (주)드림디엔에스 당기중 신설 (물적분할)"
+    },
+    {
+     "fy": 2020,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "㈜드림디엔에스(*3) 1,800,000 100.0 100.0 2,168,856 2,168,856 … (*3) 당사는 2019년 1월 3일자로 회사가 영위하고 있는 사업 중 장비사업부문을 분리하여 분할신설회사인 (주)드림디엔에스를 설립하였습니다."
+    },
+    {
+     "fy": 2021,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "㈜드림디엔에스 한국 100% 100% 12월 전산장비 제조 및 판매 등 … ㈜드림디엔에스 1,800,000 100.0 100.0 2,168,856 2,168,856 2,168,856"
+    },
+    {
+     "fy": 2022,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "㈜드림디엔에스 한국 100% 100% 12월 전산장비 제조 및 판매 등 … ㈜드림디엔에스 1,800,000 100.0 100.0 2,168,856"
+    },
+    {
+     "fy": 2023,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "(*4) 당기 중 종속회사인 ㈜시드코어에 주식 899,999주(지분율 49.99%)를 양도하였으나, 연결회사가 ㈜시드코어의 지분을 100% 보유하고 있어 연결회사가 가진 ㈜드림디엔에스의 지분율은 100% 입니다."
+    },
+    {
+     "fy": 2024,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "㈜드림디엔에스(*3) 한국 100% 100% … 연결실체가 ㈜시드코어의 지분을 100% 보유하고 있어 연결실체가 가진 ㈜드림디엔에스의 지분율은 100% 입니다."
+    },
+    {
+     "fy": 2025,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "㈜드림디엔에스 한국 100.0% 100.0% 12월 전산장비 제조 및 판매 등 … ㈜드림디엔에스 900,001 50.01 50.01 2,168,856 1,084,429 1,084,429"
+    }
+   ]
+  },
+  {
+   "rcept_no": "20180205000105",
+   "corp_name": "SGA솔루션즈",
+   "division_year": 2018,
+   "v3_outcome": "partial_sale",
+   "llm_outcome": "retained_100",
+   "confidence": "medium",
+   "actual_new_company_name": "에스지에이블록체인 주식회사 (2020.02.27 에스지에이비엘씨(주)로, 2022.08 에스지에이퓨처스(주)로 사명 변경)",
+   "category": "temporary_external_dilution",
+   "corrected_outcome": null,
+   "note": "merger-related dilution 82-98% FY2018-21, 100% from FY2022",
+   "by_fiscal_year": [
+    {
+     "fy": 2018,
+     "status": "subsidiary_partial",
+     "ownership_pct": null,
+     "evidence": "에스지에이블록체인(주) 2018.04.02 … 블록체인 및 통합인증사업 6,923 지배기업이 직접 의결권의 과반수를 소유 해당 … 2018년 8월 흡수합병 : (주) 알앤에이솔루션"
+    },
+    {
+     "fy": 2019,
+     "status": "subsidiary_partial",
+     "ownership_pct": 82.39,
+     "evidence": "에스지에이블록체인(주) 대한민국 소프트웨어 개발 및 공급 12월31일 82.39% 6,475,969 6,448,559"
+    },
+    {
+     "fy": 2020,
+     "status": "subsidiary_partial",
+     "ownership_pct": 98.22,
+     "evidence": "에스지에이블록체인㈜ 98.22% 대한민국 12월31일 소프트웨어개발및공급 … 2020년 02월 27일 에스지에이블록체인(주)에서 에스지에이비엘씨(주)로 사명 변경하였습니다."
+    },
+    {
+     "fy": 2021,
+     "status": "subsidiary_partial",
+     "ownership_pct": 98.06,
+     "evidence": "에스지에이블록체인㈜ 98.06% 대한민국 12월31일 소프트웨어개발및공급"
+    },
+    {
+     "fy": 2022,
+     "status": "subsidiary_100",
+     "ownership_pct": 100.0,
+     "evidence": "주요종속회사인 에스지에이퓨처스(주) 최대주주 에스지에이솔루션즈㈜ 100%의 지분을 소유하고 있으며, 당기 중 1.94% 지분을 추가 취득하여 당기 중 100%로 지분율이 변동 되었습니다."
+    },
+    {
+     "fy": 2023,
+     "status": "subsidiary_100",
+     "ownership_pct": 100.0,
+     "evidence": "에스지에이퓨처스(주) (*1) 100.00% 대한민국 12월31일 기타금융업 … (*1) 당기 중 에스지에이퓨처스(주)의 주 업종은 기타금융업으로 변경되었습니다."
+    },
+    {
+     "fy": 2024,
+     "status": "subsidiary_100",
+     "ownership_pct": null,
+     "evidence": "종속회사 (주)액시스인베스트먼트 비상장 - 보이스아이(주) 비상장 - 에스지앤(주) 비상장 - 에스지에이퓨처스(주) 비상장 … 연결대상회사의 변동내용 … 신규연결 - - - - 연결제외 - - - -"
+    },
+    {
+     "fy": 2025,
+     "status": "not_mentioned",
+     "ownership_pct": null,
+     "evidence": "2018년 … 04월 암호인증 사업부문 물적분할 : 신설회사 에스지에이블록체인(주) (연혁 기재만 있고 기말 지분현황은 발췌에 없음)"
+    }
+   ]
+  },
+  {
+   "rcept_no": "20210914000337",
+   "corp_name": "매일유업",
+   "division_year": 2021,
+   "v3_outcome": "partial_sale",
+   "llm_outcome": "retained_100",
+   "confidence": "high",
+   "actual_new_company_name": "매일헬스뉴트리션(주) (매일헬스뉴트리션 주식회사)",
+   "category": "unresolved_conflict",
+   "corrected_outcome": null,
+   "note": "LLM: 100% FY2021-25, subsequent event in FY2025 report; tracker partial_sale — manual check",
+   "by_fiscal_year": [
+    {
+     "fy": 2021,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "매일헬스뉴트리션(주)(*2) 100 한국 12월 31일 … (*2) 당기 중 지배기업의 핼스앤뉴트리션 판매사업부문이 물적분할되어 신규설립되었습니다."
+    },
+    {
+     "fy": 2022,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "매일헬스뉴트리션(주)(*1) 100 100 한국 12월 31일 … (*1) 전기 중 지배기업의 헬스앤뉴트리션 판매사업부문이 물적분할되어 신규설립되었습니다."
+    },
+    {
+     "fy": 2023,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "매일헬스뉴트리션(주) 100 100 한국 12월 31일 … 종속기업 … 매일헬스뉴트리션(주) 한국 100 21,607,164 21,607,164"
+    },
+    {
+     "fy": 2024,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "매일헬스뉴트리션(주) 100 100 한국 12월 31일 … 1.3 연결대상범위의 변동 당기 중 연결대상범위의 변동은 없습니다."
+    },
+    {
+     "fy": 2025,
+     "status": "subsidiary_100",
+     "ownership_pct": 100,
+     "evidence": "매일헬스뉴트리션(주) 100 100 한국 12월 31일 … 2026년 2월 6일 개최된 이사회에서 2026년 5월 1일을 합병기일로 하여 종속기업인 매일헬스뉴트리션 주식회사를 흡수합병하기로 결의하였습니다."
+    }
+   ]
+  }
+ ],
+ "category_counts": {
+  "intra_group_transfer": 2,
+  "tracker_error_matched_spinoff_entity": 1,
+  "unresolved_conflict": 3,
+  "minor_dilution_below_materiality": 1,
+  "temporary_external_dilution": 3,
+  "related_party_preferred_shares": 1
+ }
+}

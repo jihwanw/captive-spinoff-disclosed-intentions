@@ -1,0 +1,26 @@
+% CGIR manuscript — anonymous main document (double-blind). Title page is a separate file (title_page.tex). Tables and figures are moved after the
+% references by endfloat (CGIR: tables and figures on separate pages after the reference list; editable tables, not images). APA references via apacite.
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}\usepackage{mathptmx}\usepackage{setspace}\doublespacing
+\usepackage{booktabs}\usepackage{array}\usepackage{amsmath}\usepackage{graphicx}\usepackage{threeparttable}\usepackage{rotating}
+\usepackage[nolists,tablesfirst]{endfloat}\renewcommand{\efloatseparator}{\mbox{}}\DeclareDelayedFloatFlavor{sidewaystable}{table}
+\usepackage[hidelinks]{hyperref}\usepackage{apacite}
+\input{../tables/numbers}
+\newcommand{\tabnote}[1]{\par\vspace{4pt}\begin{minipage}{\linewidth}\singlespacing\small\emph{Note.} #1\end{minipage}}
+\newcommand{\captive}{captive spin-off}
+\title{Controlling Owners, Disclosed Intentions, and Minority Shareholder Returns in Korean Captive Spin-Offs}
+\author{}\date{}
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\input{sec0_abstract}
+\clearpage
+\input{sec1_intro}
+\input{sec2_setting_theory}
+\input{sec3_data}
+\input{sec4_results}
+\input{sec5_discussion}
+\input{sec6_conclusion}
+\bibliographystyle{apacite}
+\bibliography{refs,refs_manual}
+\end{document}

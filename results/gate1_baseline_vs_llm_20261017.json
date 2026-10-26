@@ -1,0 +1,86 @@
+{
+ "n": 120,
+ "disposed_share": 0.5416666666666666,
+ "features": [
+  "kosdaq",
+  "log_newco_assets",
+  "newco_leverage",
+  "newco_sales_to_assets",
+  "relative_size",
+  "parent_after_leverage",
+  "log_parent_assets",
+  "parent_roa",
+  "parent_op_margin",
+  "parent_leverage",
+  "parent_current_ratio",
+  "relisting_yes",
+  "put_option_yes",
+  "sec_reg_yes",
+  "year"
+ ],
+ "financial_cv_auc": {
+  "mean": 0.691,
+  "sd_over_repeats": 0.029
+ },
+ "auc_p_claude": 0.761,
+ "auc_p_gpt": 0.752,
+ "auc_p_llm": 0.754,
+ "combined_cv_auc": {
+  "mean": 0.76,
+  "sd_over_repeats": 0.025
+ },
+ "delta_llm_minus_financial": {
+  "point": 0.063,
+  "ci95": [
+   -0.077,
+   0.161
+  ]
+ },
+ "delta_combined_minus_financial": {
+  "point": 0.069,
+  "ci95": [
+   0.011,
+   0.124
+  ]
+ },
+ "temporal_split": {
+  "train_n": 62,
+  "test_n": 58,
+  "financial_auc_test": 0.542,
+  "llm_auc_test": 0.753
+ },
+ "univariate_auc_abs": {
+  "year": 0.688,
+  "parent_roa": 0.665,
+  "newco_sales_to_assets": 0.616,
+  "parent_after_leverage": 0.615,
+  "relative_size": 0.603,
+  "parent_current_ratio": 0.591,
+  "parent_leverage": 0.585,
+  "newco_leverage": 0.56,
+  "parent_op_margin": 0.552,
+  "kosdaq": 0.541,
+  "put_option_yes": 0.529,
+  "relisting_yes": 0.515,
+  "sec_reg_yes": 0.515,
+  "log_newco_assets": 0.512,
+  "log_parent_assets": 0.502
+ },
+ "corr_llm_with_features": {
+  "kosdaq": -0.04,
+  "log_newco_assets": 0.15,
+  "newco_leverage": -0.08,
+  "newco_sales_to_assets": -0.23,
+  "relative_size": -0.16,
+  "parent_after_leverage": 0.23,
+  "log_parent_assets": 0.31,
+  "parent_roa": -0.23,
+  "parent_op_margin": -0.18,
+  "parent_leverage": 0.31,
+  "parent_current_ratio": -0.07,
+  "relisting_yes": 0.05,
+  "put_option_yes": 0.39,
+  "sec_reg_yes": 0.05,
+  "year": -0.01
+ }
+}

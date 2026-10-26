@@ -1,0 +1,250 @@
+{
+ "sample_n": 120,
+ "note": "same assembly/protocol as 06_baseline_vs_llm.py; see module docstring",
+ "disposed_share_by_division_year": {
+  "2017": {
+   "n": 8,
+   "disposed_share": 0.5
+  },
+  "2018": {
+   "n": 16,
+   "disposed_share": 0.625
+  },
+  "2019": {
+   "n": 7,
+   "disposed_share": 0.571
+  },
+  "2020": {
+   "n": 23,
+   "disposed_share": 0.87
+  },
+  "2021": {
+   "n": 22,
+   "disposed_share": 0.636
+  },
+  "2022": {
+   "n": 22,
+   "disposed_share": 0.409
+  },
+  "2023": {
+   "n": 8,
+   "disposed_share": 0.125
+  },
+  "2024": {
+   "n": 9,
+   "disposed_share": 0.333
+  },
+  "2025": {
+   "n": 5,
+   "disposed_share": 0.0
+  }
+ },
+ "follow_up_years_by_label": {
+  "0": {
+   "n": 55,
+   "median": 3.0,
+   "min": 0.0,
+   "max": 6.0
+  },
+  "1": {
+   "n": 65,
+   "median": 4.0,
+   "min": 0.0,
+   "max": 6.0
+  }
+ },
+ "auc_year_alone": 0.688,
+ "auc_llm_within_year_strata": {
+  "2017": {
+   "n": 8,
+   "auc_p_llm": 0.75
+  },
+  "2018": {
+   "n": 16,
+   "auc_p_llm": 0.7
+  },
+  "2020": {
+   "n": 23,
+   "auc_p_llm": 0.875
+  },
+  "2021": {
+   "n": 22,
+   "auc_p_llm": 0.75
+  },
+  "2022": {
+   "n": 22,
+   "auc_p_llm": 0.855
+  },
+  "2023": {
+   "n": 8,
+   "auc_p_llm": 1.0
+  },
+  "2024": {
+   "n": 9,
+   "auc_p_llm": 0.25
+  }
+ },
+ "V0_as_in_06": {
+  "n": 120,
+  "disposed_share": 0.542,
+  "n_features": 24,
+  "year_included": true,
+  "financial_cv_auc": {
+   "mean": 0.691,
+   "sd_over_repeats": 0.029
+  },
+  "auc_p_claude": 0.761,
+  "auc_p_gpt": 0.752,
+  "auc_p_llm": 0.754,
+  "combined_cv_auc": {
+   "mean": 0.76,
+   "sd_over_repeats": 0.025
+  },
+  "delta_llm_minus_financial": {
+   "point": 0.063,
+   "ci95": [
+    -0.077,
+    0.161
+   ]
+  },
+  "delta_combined_minus_financial": {
+   "point": 0.069,
+   "ci95": [
+    0.011,
+    0.124
+   ]
+  },
+  "univariate_auc_abs_top6": {
+   "year": 0.688,
+   "parent_roa": 0.665,
+   "newco_sales_to_assets": 0.616,
+   "parent_after_leverage": 0.615,
+   "relative_size": 0.603,
+   "parent_current_ratio": 0.591
+  }
+ },
+ "V1_no_year": {
+  "n": 120,
+  "disposed_share": 0.542,
+  "n_features": 23,
+  "year_included": false,
+  "financial_cv_auc": {
+   "mean": 0.605,
+   "sd_over_repeats": 0.031
+  },
+  "auc_p_claude": 0.761,
+  "auc_p_gpt": 0.752,
+  "auc_p_llm": 0.754,
+  "combined_cv_auc": {
+   "mean": 0.686,
+   "sd_over_repeats": 0.026
+  },
+  "delta_llm_minus_financial": {
+   "point": 0.149,
+   "ci95": [
+    0.015,
+    0.246
+   ]
+  },
+  "delta_combined_minus_financial": {
+   "point": 0.082,
+   "ci95": [
+    0.004,
+    0.145
+   ]
+  },
+  "univariate_auc_abs_top6": {
+   "parent_roa": 0.665,
+   "newco_sales_to_assets": 0.616,
+   "parent_after_leverage": 0.615,
+   "relative_size": 0.603,
+   "parent_current_ratio": 0.591,
+   "parent_leverage": 0.585
+  }
+ },
+ "mature_sample_rule": "division_year <= 2021 and (disposed or retained_100 observed >= 3 fiscal years after division)",
+ "V2_no_year_mature": {
+  "n": 76,
+  "disposed_share": 0.684,
+  "n_features": 23,
+  "year_included": false,
+  "financial_cv_auc": {
+   "mean": 0.733,
+   "sd_over_repeats": 0.035
+  },
+  "auc_p_claude": 0.753,
+  "auc_p_gpt": 0.796,
+  "auc_p_llm": 0.776,
+  "combined_cv_auc": {
+   "mean": 0.787,
+   "sd_over_repeats": 0.034
+  },
+  "delta_llm_minus_financial": {
+   "point": 0.043,
+   "ci95": [
+    -0.115,
+    0.169
+   ]
+  },
+  "delta_combined_minus_financial": {
+   "point": 0.054,
+   "ci95": [
+    -0.003,
+    0.119
+   ]
+  },
+  "univariate_auc_abs_top6": {
+   "newco_leverage": 0.687,
+   "parent_roa": 0.683,
+   "relative_size": 0.663,
+   "newco_sales_to_assets": 0.614,
+   "parent_after_leverage": 0.601,
+   "parent_op_margin": 0.562
+  }
+ },
+ "V3_with_year_mature": {
+  "n": 76,
+  "disposed_share": 0.684,
+  "n_features": 24,
+  "year_included": true,
+  "financial_cv_auc": {
+   "mean": 0.722,
+   "sd_over_repeats": 0.036
+  },
+  "auc_p_claude": 0.753,
+  "auc_p_gpt": 0.796,
+  "auc_p_llm": 0.776,
+  "combined_cv_auc": {
+   "mean": 0.773,
+   "sd_over_repeats": 0.036
+  },
+  "delta_llm_minus_financial": {
+   "point": 0.054,
+   "ci95": [
+    -0.104,
+    0.185
+   ]
+  },
+  "delta_combined_minus_financial": {
+   "point": 0.051,
+   "ci95": [
+    -0.01,
+    0.118
+   ]
+  },
+  "univariate_auc_abs_top6": {
+   "newco_leverage": 0.687,
+   "parent_roa": 0.683,
+   "relative_size": 0.663,
+   "newco_sales_to_assets": 0.614,
+   "parent_after_leverage": 0.601,
+   "parent_op_margin": 0.562
+  }
+ },
+ "V1_temporal_split": {
+  "train_n": 62,
+  "test_n": 58,
+  "financial_auc_test": 0.589,
+  "llm_auc_test": 0.753
+ }
+}

@@ -1,0 +1,113 @@
+{
+ "dropped_flagged": [
+  "20170713000208",
+  "20180205000105",
+  "20180412002210",
+  "20181120000096",
+  "20190415001165",
+  "20200218001200",
+  "20201201000434",
+  "20210106000442",
+  "20210330000627",
+  "20210914000337",
+  "20240618000210"
+ ],
+ "A_full_minus_flagged": {
+  "n": 223,
+  "disposed_share": 0.601,
+  "n_features": 24,
+  "year_included": false,
+  "financial_cv_auc": {
+   "mean": 0.59,
+   "sd_over_repeats": 0.02
+  },
+  "auc_p_claude": 0.831,
+  "auc_p_gpt": 0.82,
+  "auc_p_llm": 0.83,
+  "combined_cv_auc": {
+   "mean": 0.815,
+   "sd_over_repeats": 0.013
+  },
+  "delta_llm_minus_financial": {
+   "point": 0.24,
+   "ci95": [
+    0.151,
+    0.324
+   ]
+  },
+  "delta_combined_minus_financial": {
+   "point": 0.225,
+   "ci95": [
+    0.165,
+    0.296
+   ]
+  },
+  "univariate_auc_abs_top6": {
+   "parent_roa": 0.645,
+   "parent_after_leverage": 0.628,
+   "log_parent_assets": 0.603,
+   "parent_current_ratio": 0.602,
+   "parent_leverage": 0.594,
+   "log_newco_assets": 0.584
+  },
+  "financial_coef_std": {
+   "parent_roa_miss": 0.413,
+   "parent_roa": -0.41,
+   "parent_after_leverage": 0.406,
+   "relative_size": -0.389,
+   "put_option_yes": 0.34,
+   "newco_sales_to_assets_miss": -0.278,
+   "parent_op_margin": -0.254,
+   "parent_current_ratio": -0.229
+  }
+ },
+ "B_mature_minus_flagged": {
+  "n": 151,
+  "disposed_share": 0.689,
+  "n_features": 23,
+  "year_included": false,
+  "financial_cv_auc": {
+   "mean": 0.665,
+   "sd_over_repeats": 0.023
+  },
+  "auc_p_claude": 0.827,
+  "auc_p_gpt": 0.835,
+  "auc_p_llm": 0.842,
+  "combined_cv_auc": {
+   "mean": 0.85,
+   "sd_over_repeats": 0.013
+  },
+  "delta_llm_minus_financial": {
+   "point": 0.177,
+   "ci95": [
+    0.064,
+    0.266
+   ]
+  },
+  "delta_combined_minus_financial": {
+   "point": 0.185,
+   "ci95": [
+    0.11,
+    0.264
+   ]
+  },
+  "univariate_auc_abs_top6": {
+   "parent_roa": 0.664,
+   "parent_after_leverage": 0.632,
+   "relative_size": 0.618,
+   "log_newco_assets": 0.606,
+   "parent_current_ratio": 0.606,
+   "parent_op_margin": 0.58
+  },
+  "financial_coef_std": {
+   "parent_after_leverage": 0.586,
+   "parent_roa": -0.523,
+   "newco_leverage_miss": -0.518,
+   "parent_leverage": -0.516,
+   "put_option_yes": 0.5,
+   "relative_size_miss": 0.482,
+   "log_newco_assets_miss": 0.482,
+   "parent_current_ratio": -0.44
+  }
+ }
+}

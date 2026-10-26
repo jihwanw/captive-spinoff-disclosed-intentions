@@ -1,0 +1,81 @@
+{
+ "anthropic__anonymized": {
+  "n": 183,
+  "parse_fail": 4,
+  "base_rate": 0.48633879781420764,
+  "auc": 0.754,
+  "brier": 0.205,
+  "acc@50": 0.65,
+  "mean_p": 0.544,
+  "self_reported_outside_knowledge": 0.536,
+  "paths": {
+   "retain": 69,
+   "partial_stake_sale_or_investor": 51,
+   "intragroup_transfer_or_merger": 16,
+   "sale_to_third_party": 43,
+   "ipo": 4
+  },
+  "median_latency_s": 109.3
+ },
+ "anthropic__identified": {
+  "n": 184,
+  "parse_fail": 3,
+  "base_rate": 0.4945652173913043,
+  "auc": 0.788,
+  "brier": 0.199,
+  "acc@50": 0.696,
+  "mean_p": 0.553,
+  "self_reported_outside_knowledge": 0.402,
+  "paths": {
+   "partial_stake_sale_or_investor": 49,
+   "retain": 64,
+   "sale_to_third_party": 45,
+   "intragroup_transfer_or_merger": 21,
+   "ipo": 5
+  },
+  "median_latency_s": 120.05000000000001
+ },
+ "openai__anonymized": {
+  "n": 187,
+  "parse_fail": 0,
+  "base_rate": 0.4919786096256685,
+  "auc": 0.756,
+  "brier": 0.206,
+  "acc@50": 0.668,
+  "mean_p": 0.446,
+  "self_reported_outside_knowledge": 0.021,
+  "paths": {
+   "retain": 127,
+   "intragroup_transfer_or_merger": 11,
+   "partial_stake_sale_or_investor": 29,
+   "ipo": 3,
+   "sale_to_third_party": 17
+  },
+  "median_latency_s": 77.3
+ },
+ "openai__identified": {
+  "n": 187,
+  "parse_fail": 0,
+  "base_rate": 0.4919786096256685,
+  "auc": 0.748,
+  "brier": 0.208,
+  "acc@50": 0.652,
+  "mean_p": 0.449,
+  "self_reported_outside_knowledge": 0.043,
+  "paths": {
+   "retain": 128,
+   "partial_stake_sale_or_investor": 29,
+   "sale_to_third_party": 16,
+   "intragroup_transfer_or_merger": 11,
+   "ipo": 3
+  },
+  "median_latency_s": 80.1
+ },
+ "ensemble": {
+  "n": 180,
+  "auc_identified": 0.767,
+  "auc_anonymized": 0.76,
+  "corr_models_identified": 0.852,
+  "corr_models_anonymized": 0.844
+ }
+}

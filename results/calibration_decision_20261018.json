@@ -1,0 +1,1467 @@
+{
+ "sample": "as 10_gate1_v4.py (v4 clean labels, both-model identified scores, financial features)",
+ "full": {
+  "n": 234,
+  "disposed_share": 0.62,
+  "scores": {
+   "llm_raw": {
+    "auc": 0.805,
+    "mean_pred": 0.527,
+    "brier": 0.1866,
+    "reliability": 0.0166,
+    "resolution": 0.0648,
+    "uncertainty": 0.2357,
+    "ece": 0.101,
+    "reliability_table": [
+     {
+      "bin": 0,
+      "n": 24,
+      "mean_pred": 0.204,
+      "obs_share": 0.208
+     },
+     {
+      "bin": 1,
+      "n": 23,
+      "mean_pred": 0.31,
+      "obs_share": 0.435
+     },
+     {
+      "bin": 2,
+      "n": 24,
+      "mean_pred": 0.372,
+      "obs_share": 0.333
+     },
+     {
+      "bin": 3,
+      "n": 23,
+      "mean_pred": 0.423,
+      "obs_share": 0.478
+     },
+     {
+      "bin": 4,
+      "n": 24,
+      "mean_pred": 0.463,
+      "obs_share": 0.5
+     },
+     {
+      "bin": 5,
+      "n": 23,
+      "mean_pred": 0.504,
+      "obs_share": 0.696
+     },
+     {
+      "bin": 6,
+      "n": 23,
+      "mean_pred": 0.569,
+      "obs_share": 0.826
+     },
+     {
+      "bin": 7,
+      "n": 23,
+      "mean_pred": 0.64,
+      "obs_share": 0.826
+     },
+     {
+      "bin": 8,
+      "n": 23,
+      "mean_pred": 0.821,
+      "obs_share": 0.913
+     },
+     {
+      "bin": 9,
+      "n": 24,
+      "mean_pred": 0.965,
+      "obs_share": 1.0
+     }
+    ],
+    "decision_curve": {
+     "0.3": {
+      "flagged_share": 0.872,
+      "precision": 0.667,
+      "recall": 0.938,
+      "net_benefit": 0.4567,
+      "net_benefit_flag_all": 0.4567,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.4": {
+      "flagged_share": 0.705,
+      "precision": 0.739,
+      "recall": 0.841,
+      "net_benefit": 0.3989,
+      "net_benefit_flag_all": 0.3661,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.5": {
+      "flagged_share": 0.453,
+      "precision": 0.858,
+      "recall": 0.628,
+      "net_benefit": 0.3248,
+      "net_benefit_flag_all": 0.2393,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.6": {
+      "flagged_share": 0.312,
+      "precision": 0.904,
+      "recall": 0.455,
+      "net_benefit": 0.2372,
+      "net_benefit_flag_all": 0.0491,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.7": {
+      "flagged_share": 0.201,
+      "precision": 0.957,
+      "recall": 0.31,
+      "net_benefit": 0.1724,
+      "net_benefit_flag_all": -0.2678,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.8": {
+      "flagged_share": 0.158,
+      "precision": 1.0,
+      "recall": 0.255,
+      "net_benefit": 0.1581,
+      "net_benefit_flag_all": -0.9017,
+      "net_benefit_flag_none": 0.0
+     }
+    }
+   },
+   "claude_raw": {
+    "auc": 0.807,
+    "mean_pred": 0.579,
+    "brier": 0.1825,
+    "reliability": 0.0178,
+    "resolution": 0.0732,
+    "uncertainty": 0.2357,
+    "ece": 0.111,
+    "reliability_table": [
+     {
+      "bin": 0,
+      "n": 25,
+      "mean_pred": 0.229,
+      "obs_share": 0.24
+     },
+     {
+      "bin": 1,
+      "n": 22,
+      "mean_pred": 0.366,
+      "obs_share": 0.409
+     },
+     {
+      "bin": 2,
+      "n": 29,
+      "mean_pred": 0.468,
+      "obs_share": 0.345
+     },
+     {
+      "bin": 3,
+      "n": 27,
+      "mean_pred": 0.541,
+      "obs_share": 0.37
+     },
+     {
+      "bin": 4,
+      "n": 14,
+      "mean_pred": 0.57,
+      "obs_share": 0.643
+     },
+     {
+      "bin": 5,
+      "n": 27,
+      "mean_pred": 0.592,
+      "obs_share": 0.778
+     },
+     {
+      "bin": 6,
+      "n": 20,
+      "mean_pred": 0.62,
+      "obs_share": 0.85
+     },
+     {
+      "bin": 7,
+      "n": 23,
+      "mean_pred": 0.672,
+      "obs_share": 0.696
+     },
+     {
+      "bin": 8,
+      "n": 23,
+      "mean_pred": 0.816,
+      "obs_share": 1.0
+     },
+     {
+      "bin": 9,
+      "n": 24,
+      "mean_pred": 0.957,
+      "obs_share": 1.0
+     }
+    ],
+    "decision_curve": {
+     "0.3": {
+      "flagged_share": 0.906,
+      "precision": 0.665,
+      "recall": 0.972,
+      "net_benefit": 0.4725,
+      "net_benefit_flag_all": 0.4567,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.4": {
+      "flagged_share": 0.816,
+      "precision": 0.686,
+      "recall": 0.903,
+      "net_benefit": 0.3889,
+      "net_benefit_flag_all": 0.3661,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.5": {
+      "flagged_share": 0.705,
+      "precision": 0.739,
+      "recall": 0.841,
+      "net_benefit": 0.3376,
+      "net_benefit_flag_all": 0.2393,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.6": {
+      "flagged_share": 0.423,
+      "precision": 0.869,
+      "recall": 0.593,
+      "net_benefit": 0.2842,
+      "net_benefit_flag_all": 0.0491,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.7": {
+      "flagged_share": 0.218,
+      "precision": 0.941,
+      "recall": 0.331,
+      "net_benefit": 0.1752,
+      "net_benefit_flag_all": -0.2678,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.8": {
+      "flagged_share": 0.162,
+      "precision": 1.0,
+      "recall": 0.262,
+      "net_benefit": 0.1624,
+      "net_benefit_flag_all": -0.9017,
+      "net_benefit_flag_none": 0.0
+     }
+    }
+   },
+   "gpt_raw": {
+    "auc": 0.796,
+    "mean_pred": 0.475,
+    "brier": 0.2037,
+    "reliability": 0.0301,
+    "resolution": 0.0617,
+    "uncertainty": 0.2357,
+    "ece": 0.148,
+    "reliability_table": [
+     {
+      "bin": 0,
+      "n": 26,
+      "mean_pred": 0.169,
+      "obs_share": 0.154
+     },
+     {
+      "bin": 1,
+      "n": 22,
+      "mean_pred": 0.237,
+      "obs_share": 0.409
+     },
+     {
+      "bin": 2,
+      "n": 26,
+      "mean_pred": 0.288,
+      "obs_share": 0.462
+     },
+     {
+      "bin": 3,
+      "n": 34,
+      "mean_pred": 0.339,
+      "obs_share": 0.529
+     },
+     {
+      "bin": 4,
+      "n": 11,
+      "mean_pred": 0.375,
+      "obs_share": 0.636
+     },
+     {
+      "bin": 5,
+      "n": 31,
+      "mean_pred": 0.424,
+      "obs_share": 0.645
+     },
+     {
+      "bin": 6,
+      "n": 16,
+      "mean_pred": 0.553,
+      "obs_share": 0.875
+     },
+     {
+      "bin": 7,
+      "n": 22,
+      "mean_pred": 0.652,
+      "obs_share": 0.773
+     },
+     {
+      "bin": 8,
+      "n": 22,
+      "mean_pred": 0.839,
+      "obs_share": 0.909
+     },
+     {
+      "bin": 9,
+      "n": 24,
+      "mean_pred": 0.98,
+      "obs_share": 1.0
+     }
+    ],
+    "decision_curve": {
+     "0.3": {
+      "flagged_share": 0.731,
+      "precision": 0.731,
+      "recall": 0.862,
+      "net_benefit": 0.4499,
+      "net_benefit_flag_all": 0.4567,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.4": {
+      "flagged_share": 0.479,
+      "precision": 0.839,
+      "recall": 0.648,
+      "net_benefit": 0.3504,
+      "net_benefit_flag_all": 0.3661,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.5": {
+      "flagged_share": 0.355,
+      "precision": 0.892,
+      "recall": 0.51,
+      "net_benefit": 0.2778,
+      "net_benefit_flag_all": 0.2393,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.6": {
+      "flagged_share": 0.291,
+      "precision": 0.897,
+      "recall": 0.421,
+      "net_benefit": 0.2158,
+      "net_benefit_flag_all": 0.0491,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.7": {
+      "flagged_share": 0.214,
+      "precision": 0.94,
+      "recall": 0.324,
+      "net_benefit": 0.1709,
+      "net_benefit_flag_all": -0.2678,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.8": {
+      "flagged_share": 0.171,
+      "precision": 0.975,
+      "recall": 0.269,
+      "net_benefit": 0.1496,
+      "net_benefit_flag_all": -0.9017,
+      "net_benefit_flag_none": 0.0
+     }
+    }
+   },
+   "financial_oof": {
+    "auc": 0.605,
+    "mean_pred": 0.613,
+    "brier": 0.2354,
+    "reliability": 0.0196,
+    "resolution": 0.0195,
+    "uncertainty": 0.2357,
+    "ece": 0.107,
+    "reliability_table": [
+     {
+      "bin": 0,
+      "n": 24,
+      "mean_pred": 0.273,
+      "obs_share": 0.417
+     },
+     {
+      "bin": 1,
+      "n": 23,
+      "mean_pred": 0.411,
+      "obs_share": 0.739
+     },
+     {
+      "bin": 2,
+      "n": 23,
+      "mean_pred": 0.501,
+      "obs_share": 0.565
+     },
+     {
+      "bin": 3,
+      "n": 24,
+      "mean_pred": 0.549,
+      "obs_share": 0.583
+     },
+     {
+      "bin": 4,
+      "n": 23,
+      "mean_pred": 0.597,
+      "obs_share": 0.478
+     },
+     {
+      "bin": 5,
+      "n": 23,
+      "mean_pred": 0.64,
+      "obs_share": 0.565
+     },
+     {
+      "bin": 6,
+      "n": 24,
+      "mean_pred": 0.683,
+      "obs_share": 0.542
+     },
+     {
+      "bin": 7,
+      "n": 23,
+      "mean_pred": 0.742,
+      "obs_share": 0.739
+     },
+     {
+      "bin": 8,
+      "n": 23,
+      "mean_pred": 0.806,
+      "obs_share": 0.652
+     },
+     {
+      "bin": 9,
+      "n": 24,
+      "mean_pred": 0.931,
+      "obs_share": 0.917
+     }
+    ],
+    "decision_curve": {
+     "0.3": {
+      "flagged_share": 0.932,
+      "precision": 0.638,
+      "recall": 0.959,
+      "net_benefit": 0.4493,
+      "net_benefit_flag_all": 0.4567,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.4": {
+      "flagged_share": 0.863,
+      "precision": 0.639,
+      "recall": 0.89,
+      "net_benefit": 0.3433,
+      "net_benefit_flag_all": 0.3661,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.5": {
+      "flagged_share": 0.756,
+      "precision": 0.644,
+      "recall": 0.786,
+      "net_benefit": 0.2179,
+      "net_benefit_flag_all": 0.2393,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.6": {
+      "flagged_share": 0.543,
+      "precision": 0.669,
+      "recall": 0.586,
+      "net_benefit": 0.094,
+      "net_benefit_flag_all": 0.0491,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.7": {
+      "flagged_share": 0.316,
+      "precision": 0.757,
+      "recall": 0.386,
+      "net_benefit": 0.0598,
+      "net_benefit_flag_all": -0.2678,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.8": {
+      "flagged_share": 0.15,
+      "precision": 0.771,
+      "recall": 0.186,
+      "net_benefit": -0.0214,
+      "net_benefit_flag_all": -0.9017,
+      "net_benefit_flag_none": 0.0
+     }
+    }
+   },
+   "combined_oof": {
+    "auc": 0.812,
+    "mean_pred": 0.614,
+    "brier": 0.1723,
+    "reliability": 0.0054,
+    "resolution": 0.0719,
+    "uncertainty": 0.2357,
+    "ece": 0.06,
+    "reliability_table": [
+     {
+      "bin": 0,
+      "n": 24,
+      "mean_pred": 0.101,
+      "obs_share": 0.125
+     },
+     {
+      "bin": 1,
+      "n": 23,
+      "mean_pred": 0.27,
+      "obs_share": 0.391
+     },
+     {
+      "bin": 2,
+      "n": 23,
+      "mean_pred": 0.374,
+      "obs_share": 0.348
+     },
+     {
+      "bin": 3,
+      "n": 24,
+      "mean_pred": 0.48,
+      "obs_share": 0.583
+     },
+     {
+      "bin": 4,
+      "n": 23,
+      "mean_pred": 0.602,
+      "obs_share": 0.522
+     },
+     {
+      "bin": 5,
+      "n": 23,
+      "mean_pred": 0.715,
+      "obs_share": 0.739
+     },
+     {
+      "bin": 6,
+      "n": 24,
+      "mean_pred": 0.794,
+      "obs_share": 0.667
+     },
+     {
+      "bin": 7,
+      "n": 23,
+      "mean_pred": 0.869,
+      "obs_share": 0.913
+     },
+     {
+      "bin": 8,
+      "n": 23,
+      "mean_pred": 0.953,
+      "obs_share": 0.913
+     },
+     {
+      "bin": 9,
+      "n": 24,
+      "mean_pred": 0.99,
+      "obs_share": 1.0
+     }
+    ],
+    "decision_curve": {
+     "0.3": {
+      "flagged_share": 0.829,
+      "precision": 0.691,
+      "recall": 0.924,
+      "net_benefit": 0.4628,
+      "net_benefit_flag_all": 0.4567,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.4": {
+      "flagged_share": 0.718,
+      "precision": 0.75,
+      "recall": 0.869,
+      "net_benefit": 0.4188,
+      "net_benefit_flag_all": 0.3661,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.5": {
+      "flagged_share": 0.641,
+      "precision": 0.78,
+      "recall": 0.807,
+      "net_benefit": 0.359,
+      "net_benefit_flag_all": 0.2393,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.6": {
+      "flagged_share": 0.56,
+      "precision": 0.809,
+      "recall": 0.731,
+      "net_benefit": 0.2927,
+      "net_benefit_flag_all": 0.0491,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.7": {
+      "flagged_share": 0.479,
+      "precision": 0.839,
+      "recall": 0.648,
+      "net_benefit": 0.2222,
+      "net_benefit_flag_all": -0.2678,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.8": {
+      "flagged_share": 0.35,
+      "precision": 0.915,
+      "recall": 0.517,
+      "net_benefit": 0.2009,
+      "net_benefit_flag_all": -0.9017,
+      "net_benefit_flag_none": 0.0
+     }
+    }
+   },
+   "llm_platt_oof": {
+    "auc": 0.801,
+    "mean_pred": 0.619,
+    "brier": 0.1768,
+    "reliability": 0.0055,
+    "resolution": 0.0619,
+    "uncertainty": 0.2357,
+    "ece": 0.064,
+    "reliability_table": [
+     {
+      "bin": 0,
+      "n": 24,
+      "mean_pred": 0.184,
+      "obs_share": 0.25
+     },
+     {
+      "bin": 1,
+      "n": 23,
+      "mean_pred": 0.342,
+      "obs_share": 0.435
+     },
+     {
+      "bin": 2,
+      "n": 23,
+      "mean_pred": 0.441,
+      "obs_share": 0.304
+     },
+     {
+      "bin": 3,
+      "n": 24,
+      "mean_pred": 0.523,
+      "obs_share": 0.458
+     },
+     {
+      "bin": 4,
+      "n": 23,
+      "mean_pred": 0.585,
+      "obs_share": 0.522
+     },
+     {
+      "bin": 5,
+      "n": 23,
+      "mean_pred": 0.643,
+      "obs_share": 0.696
+     },
+     {
+      "bin": 6,
+      "n": 24,
+      "mean_pred": 0.728,
+      "obs_share": 0.833
+     },
+     {
+      "bin": 7,
+      "n": 23,
+      "mean_pred": 0.81,
+      "obs_share": 0.783
+     },
+     {
+      "bin": 8,
+      "n": 23,
+      "mean_pred": 0.942,
+      "obs_share": 0.913
+     },
+     {
+      "bin": 9,
+      "n": 24,
+      "mean_pred": 0.996,
+      "obs_share": 1.0
+     }
+    ],
+    "decision_curve": {
+     "0.3": {
+      "flagged_share": 0.88,
+      "precision": 0.665,
+      "recall": 0.945,
+      "net_benefit": 0.4591,
+      "net_benefit_flag_all": 0.4567,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.4": {
+      "flagged_share": 0.795,
+      "precision": 0.694,
+      "recall": 0.89,
+      "net_benefit": 0.3889,
+      "net_benefit_flag_all": 0.3661,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.5": {
+      "flagged_share": 0.688,
+      "precision": 0.752,
+      "recall": 0.834,
+      "net_benefit": 0.3462,
+      "net_benefit_flag_all": 0.2393,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.6": {
+      "flagged_share": 0.53,
+      "precision": 0.839,
+      "recall": 0.717,
+      "net_benefit": 0.3162,
+      "net_benefit_flag_all": 0.0491,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.7": {
+      "flagged_share": 0.38,
+      "precision": 0.888,
+      "recall": 0.545,
+      "net_benefit": 0.2379,
+      "net_benefit_flag_all": -0.2678,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.8": {
+      "flagged_share": 0.248,
+      "precision": 0.948,
+      "recall": 0.379,
+      "net_benefit": 0.1838,
+      "net_benefit_flag_all": -0.9017,
+      "net_benefit_flag_none": 0.0
+     }
+    }
+   }
+  }
+ },
+ "mature_division_year_le_2021": {
+  "n": 161,
+  "disposed_share": 0.708,
+  "scores": {
+   "llm_raw": {
+    "auc": 0.815,
+    "mean_pred": 0.533,
+    "brier": 0.1926,
+    "reliability": 0.0377,
+    "resolution": 0.0506,
+    "uncertainty": 0.2067,
+    "ece": 0.175,
+    "reliability_table": [
+     {
+      "bin": 0,
+      "n": 17,
+      "mean_pred": 0.211,
+      "obs_share": 0.353
+     },
+     {
+      "bin": 1,
+      "n": 16,
+      "mean_pred": 0.322,
+      "obs_share": 0.438
+     },
+     {
+      "bin": 2,
+      "n": 16,
+      "mean_pred": 0.391,
+      "obs_share": 0.562
+     },
+     {
+      "bin": 3,
+      "n": 16,
+      "mean_pred": 0.436,
+      "obs_share": 0.5
+     },
+     {
+      "bin": 4,
+      "n": 16,
+      "mean_pred": 0.475,
+      "obs_share": 0.688
+     },
+     {
+      "bin": 5,
+      "n": 16,
+      "mean_pred": 0.519,
+      "obs_share": 0.812
+     },
+     {
+      "bin": 6,
+      "n": 17,
+      "mean_pred": 0.577,
+      "obs_share": 0.882
+     },
+     {
+      "bin": 7,
+      "n": 15,
+      "mean_pred": 0.643,
+      "obs_share": 0.867
+     },
+     {
+      "bin": 8,
+      "n": 16,
+      "mean_pred": 0.821,
+      "obs_share": 1.0
+     },
+     {
+      "bin": 9,
+      "n": 16,
+      "mean_pred": 0.957,
+      "obs_share": 1.0
+     }
+    ],
+    "decision_curve": {
+     "0.3": {
+      "flagged_share": 0.882,
+      "precision": 0.746,
+      "recall": 0.93,
+      "net_benefit": 0.5626,
+      "net_benefit_flag_all": 0.583,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.4": {
+      "flagged_share": 0.739,
+      "precision": 0.798,
+      "recall": 0.833,
+      "net_benefit": 0.4907,
+      "net_benefit_flag_all": 0.5135,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.5": {
+      "flagged_share": 0.491,
+      "precision": 0.911,
+      "recall": 0.632,
+      "net_benefit": 0.4037,
+      "net_benefit_flag_all": 0.4161,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.6": {
+      "flagged_share": 0.317,
+      "precision": 0.961,
+      "recall": 0.43,
+      "net_benefit": 0.2857,
+      "net_benefit_flag_all": 0.2702,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.7": {
+      "flagged_share": 0.199,
+      "precision": 1.0,
+      "recall": 0.281,
+      "net_benefit": 0.1988,
+      "net_benefit_flag_all": 0.0269,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.8": {
+      "flagged_share": 0.161,
+      "precision": 1.0,
+      "recall": 0.228,
+      "net_benefit": 0.1615,
+      "net_benefit_flag_all": -0.4596,
+      "net_benefit_flag_none": 0.0
+     }
+    }
+   },
+   "claude_raw": {
+    "auc": 0.802,
+    "mean_pred": 0.584,
+    "brier": 0.1812,
+    "reliability": 0.0292,
+    "resolution": 0.0548,
+    "uncertainty": 0.2067,
+    "ece": 0.128,
+    "reliability_table": [
+     {
+      "bin": 0,
+      "n": 17,
+      "mean_pred": 0.237,
+      "obs_share": 0.412
+     },
+     {
+      "bin": 1,
+      "n": 17,
+      "mean_pred": 0.375,
+      "obs_share": 0.412
+     },
+     {
+      "bin": 2,
+      "n": 15,
+      "mean_pred": 0.473,
+      "obs_share": 0.467
+     },
+     {
+      "bin": 3,
+      "n": 19,
+      "mean_pred": 0.542,
+      "obs_share": 0.526
+     },
+     {
+      "bin": 4,
+      "n": 13,
+      "mean_pred": 0.575,
+      "obs_share": 0.846
+     },
+     {
+      "bin": 5,
+      "n": 16,
+      "mean_pred": 0.596,
+      "obs_share": 0.75
+     },
+     {
+      "bin": 6,
+      "n": 16,
+      "mean_pred": 0.627,
+      "obs_share": 1.0
+     },
+     {
+      "bin": 7,
+      "n": 17,
+      "mean_pred": 0.686,
+      "obs_share": 0.765
+     },
+     {
+      "bin": 8,
+      "n": 16,
+      "mean_pred": 0.834,
+      "obs_share": 1.0
+     },
+     {
+      "bin": 9,
+      "n": 15,
+      "mean_pred": 0.952,
+      "obs_share": 1.0
+     }
+    ],
+    "decision_curve": {
+     "0.3": {
+      "flagged_share": 0.913,
+      "precision": 0.748,
+      "recall": 0.965,
+      "net_benefit": 0.5847,
+      "net_benefit_flag_all": 0.583,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.4": {
+      "flagged_share": 0.826,
+      "precision": 0.767,
+      "recall": 0.895,
+      "net_benefit": 0.5052,
+      "net_benefit_flag_all": 0.5135,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.5": {
+      "flagged_share": 0.727,
+      "precision": 0.812,
+      "recall": 0.833,
+      "net_benefit": 0.4534,
+      "net_benefit_flag_all": 0.4161,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.6": {
+      "flagged_share": 0.441,
+      "precision": 0.915,
+      "recall": 0.57,
+      "net_benefit": 0.3478,
+      "net_benefit_flag_all": 0.2702,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.7": {
+      "flagged_share": 0.23,
+      "precision": 0.946,
+      "recall": 0.307,
+      "net_benefit": 0.1884,
+      "net_benefit_flag_all": 0.0269,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.8": {
+      "flagged_share": 0.168,
+      "precision": 1.0,
+      "recall": 0.237,
+      "net_benefit": 0.1677,
+      "net_benefit_flag_all": -0.4596,
+      "net_benefit_flag_none": 0.0
+     }
+    }
+   },
+   "gpt_raw": {
+    "auc": 0.808,
+    "mean_pred": 0.481,
+    "brier": 0.216,
+    "reliability": 0.0623,
+    "resolution": 0.0527,
+    "uncertainty": 0.2067,
+    "ece": 0.227,
+    "reliability_table": [
+     {
+      "bin": 0,
+      "n": 17,
+      "mean_pred": 0.171,
+      "obs_share": 0.235
+     },
+     {
+      "bin": 1,
+      "n": 17,
+      "mean_pred": 0.256,
+      "obs_share": 0.529
+     },
+     {
+      "bin": 2,
+      "n": 18,
+      "mean_pred": 0.309,
+      "obs_share": 0.667
+     },
+     {
+      "bin": 3,
+      "n": 16,
+      "mean_pred": 0.349,
+      "obs_share": 0.562
+     },
+     {
+      "bin": 4,
+      "n": 17,
+      "mean_pred": 0.386,
+      "obs_share": 0.647
+     },
+     {
+      "bin": 5,
+      "n": 17,
+      "mean_pred": 0.442,
+      "obs_share": 0.765
+     },
+     {
+      "bin": 6,
+      "n": 13,
+      "mean_pred": 0.556,
+      "obs_share": 0.846
+     },
+     {
+      "bin": 7,
+      "n": 14,
+      "mean_pred": 0.645,
+      "obs_share": 0.929
+     },
+     {
+      "bin": 8,
+      "n": 17,
+      "mean_pred": 0.829,
+      "obs_share": 1.0
+     },
+     {
+      "bin": 9,
+      "n": 15,
+      "mean_pred": 0.974,
+      "obs_share": 1.0
+     }
+    ],
+    "decision_curve": {
+     "0.3": {
+      "flagged_share": 0.764,
+      "precision": 0.813,
+      "recall": 0.877,
+      "net_benefit": 0.5599,
+      "net_benefit_flag_all": 0.583,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.4": {
+      "flagged_share": 0.516,
+      "precision": 0.892,
+      "recall": 0.649,
+      "net_benefit": 0.4224,
+      "net_benefit_flag_all": 0.5135,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.5": {
+      "flagged_share": 0.36,
+      "precision": 0.948,
+      "recall": 0.482,
+      "net_benefit": 0.323,
+      "net_benefit_flag_all": 0.4161,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.6": {
+      "flagged_share": 0.286,
+      "precision": 0.978,
+      "recall": 0.395,
+      "net_benefit": 0.2702,
+      "net_benefit_flag_all": 0.2702,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.7": {
+      "flagged_share": 0.205,
+      "precision": 1.0,
+      "recall": 0.289,
+      "net_benefit": 0.205,
+      "net_benefit_flag_all": 0.0269,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.8": {
+      "flagged_share": 0.161,
+      "precision": 1.0,
+      "recall": 0.228,
+      "net_benefit": 0.1615,
+      "net_benefit_flag_all": -0.4596,
+      "net_benefit_flag_none": 0.0
+     }
+    }
+   },
+   "financial_oof": {
+    "auc": 0.687,
+    "mean_pred": 0.707,
+    "brier": 0.1948,
+    "reliability": 0.0109,
+    "resolution": 0.0236,
+    "uncertainty": 0.2067,
+    "ece": 0.09,
+    "reliability_table": [
+     {
+      "bin": 0,
+      "n": 17,
+      "mean_pred": 0.291,
+      "obs_share": 0.471
+     },
+     {
+      "bin": 1,
+      "n": 16,
+      "mean_pred": 0.52,
+      "obs_share": 0.625
+     },
+     {
+      "bin": 2,
+      "n": 16,
+      "mean_pred": 0.624,
+      "obs_share": 0.75
+     },
+     {
+      "bin": 3,
+      "n": 16,
+      "mean_pred": 0.659,
+      "obs_share": 0.562
+     },
+     {
+      "bin": 4,
+      "n": 16,
+      "mean_pred": 0.692,
+      "obs_share": 0.625
+     },
+     {
+      "bin": 5,
+      "n": 16,
+      "mean_pred": 0.75,
+      "obs_share": 0.688
+     },
+     {
+      "bin": 6,
+      "n": 16,
+      "mean_pred": 0.808,
+      "obs_share": 0.75
+     },
+     {
+      "bin": 7,
+      "n": 16,
+      "mean_pred": 0.852,
+      "obs_share": 0.688
+     },
+     {
+      "bin": 8,
+      "n": 16,
+      "mean_pred": 0.917,
+      "obs_share": 0.938
+     },
+     {
+      "bin": 9,
+      "n": 16,
+      "mean_pred": 0.983,
+      "obs_share": 1.0
+     }
+    ],
+    "decision_curve": {
+     "0.3": {
+      "flagged_share": 0.95,
+      "precision": 0.719,
+      "recall": 0.965,
+      "net_benefit": 0.5688,
+      "net_benefit_flag_all": 0.583,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.4": {
+      "flagged_share": 0.907,
+      "precision": 0.733,
+      "recall": 0.939,
+      "net_benefit": 0.5031,
+      "net_benefit_flag_all": 0.5135,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.5": {
+      "flagged_share": 0.87,
+      "precision": 0.743,
+      "recall": 0.912,
+      "net_benefit": 0.4224,
+      "net_benefit_flag_all": 0.4161,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.6": {
+      "flagged_share": 0.783,
+      "precision": 0.754,
+      "recall": 0.833,
+      "net_benefit": 0.3012,
+      "net_benefit_flag_all": 0.2702,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.7": {
+      "flagged_share": 0.528,
+      "precision": 0.8,
+      "recall": 0.596,
+      "net_benefit": 0.176,
+      "net_benefit_flag_all": 0.0269,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.8": {
+      "flagged_share": 0.366,
+      "precision": 0.864,
+      "recall": 0.447,
+      "net_benefit": 0.118,
+      "net_benefit_flag_all": -0.4596,
+      "net_benefit_flag_none": 0.0
+     }
+    }
+   },
+   "combined_oof": {
+    "auc": 0.851,
+    "mean_pred": 0.703,
+    "brier": 0.1411,
+    "reliability": 0.0059,
+    "resolution": 0.0714,
+    "uncertainty": 0.2067,
+    "ece": 0.048,
+    "reliability_table": [
+     {
+      "bin": 0,
+      "n": 17,
+      "mean_pred": 0.147,
+      "obs_share": 0.176
+     },
+     {
+      "bin": 1,
+      "n": 16,
+      "mean_pred": 0.373,
+      "obs_share": 0.438
+     },
+     {
+      "bin": 2,
+      "n": 16,
+      "mean_pred": 0.516,
+      "obs_share": 0.562
+     },
+     {
+      "bin": 3,
+      "n": 16,
+      "mean_pred": 0.621,
+      "obs_share": 0.625
+     },
+     {
+      "bin": 4,
+      "n": 16,
+      "mean_pred": 0.75,
+      "obs_share": 0.75
+     },
+     {
+      "bin": 5,
+      "n": 16,
+      "mean_pred": 0.841,
+      "obs_share": 0.625
+     },
+     {
+      "bin": 6,
+      "n": 16,
+      "mean_pred": 0.901,
+      "obs_share": 0.938
+     },
+     {
+      "bin": 7,
+      "n": 16,
+      "mean_pred": 0.941,
+      "obs_share": 1.0
+     },
+     {
+      "bin": 8,
+      "n": 16,
+      "mean_pred": 0.979,
+      "obs_share": 1.0
+     },
+     {
+      "bin": 9,
+      "n": 16,
+      "mean_pred": 0.997,
+      "obs_share": 1.0
+     }
+    ],
+    "decision_curve": {
+     "0.3": {
+      "flagged_share": 0.901,
+      "precision": 0.772,
+      "recall": 0.982,
+      "net_benefit": 0.6078,
+      "net_benefit_flag_all": 0.583,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.4": {
+      "flagged_share": 0.826,
+      "precision": 0.805,
+      "recall": 0.939,
+      "net_benefit": 0.5569,
+      "net_benefit_flag_all": 0.5135,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.5": {
+      "flagged_share": 0.764,
+      "precision": 0.829,
+      "recall": 0.895,
+      "net_benefit": 0.5031,
+      "net_benefit_flag_all": 0.4161,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.6": {
+      "flagged_share": 0.671,
+      "precision": 0.861,
+      "recall": 0.816,
+      "net_benefit": 0.4379,
+      "net_benefit_flag_all": 0.2702,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.7": {
+      "flagged_share": 0.59,
+      "precision": 0.884,
+      "recall": 0.737,
+      "net_benefit": 0.3623,
+      "net_benefit_flag_all": 0.0269,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.8": {
+      "flagged_share": 0.509,
+      "precision": 0.915,
+      "recall": 0.658,
+      "net_benefit": 0.2919,
+      "net_benefit_flag_all": -0.4596,
+      "net_benefit_flag_none": 0.0
+     }
+    }
+   },
+   "llm_platt_oof": {
+    "auc": 0.808,
+    "mean_pred": 0.707,
+    "brier": 0.1619,
+    "reliability": 0.0042,
+    "resolution": 0.0506,
+    "uncertainty": 0.2067,
+    "ece": 0.046,
+    "reliability_table": [
+     {
+      "bin": 0,
+      "n": 17,
+      "mean_pred": 0.248,
+      "obs_share": 0.353
+     },
+     {
+      "bin": 1,
+      "n": 16,
+      "mean_pred": 0.458,
+      "obs_share": 0.438
+     },
+     {
+      "bin": 2,
+      "n": 16,
+      "mean_pred": 0.582,
+      "obs_share": 0.562
+     },
+     {
+      "bin": 3,
+      "n": 16,
+      "mean_pred": 0.656,
+      "obs_share": 0.5
+     },
+     {
+      "bin": 4,
+      "n": 16,
+      "mean_pred": 0.711,
+      "obs_share": 0.688
+     },
+     {
+      "bin": 5,
+      "n": 16,
+      "mean_pred": 0.768,
+      "obs_share": 0.812
+     },
+     {
+      "bin": 6,
+      "n": 16,
+      "mean_pred": 0.828,
+      "obs_share": 0.875
+     },
+     {
+      "bin": 7,
+      "n": 16,
+      "mean_pred": 0.883,
+      "obs_share": 0.875
+     },
+     {
+      "bin": 8,
+      "n": 16,
+      "mean_pred": 0.969,
+      "obs_share": 1.0
+     },
+     {
+      "bin": 9,
+      "n": 16,
+      "mean_pred": 0.997,
+      "obs_share": 1.0
+     }
+    ],
+    "decision_curve": {
+     "0.3": {
+      "flagged_share": 0.944,
+      "precision": 0.73,
+      "recall": 0.974,
+      "net_benefit": 0.5803,
+      "net_benefit_flag_all": 0.583,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.4": {
+      "flagged_share": 0.882,
+      "precision": 0.746,
+      "recall": 0.93,
+      "net_benefit": 0.5093,
+      "net_benefit_flag_all": 0.5135,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.5": {
+      "flagged_share": 0.826,
+      "precision": 0.774,
+      "recall": 0.904,
+      "net_benefit": 0.4534,
+      "net_benefit_flag_all": 0.4161,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.6": {
+      "flagged_share": 0.739,
+      "precision": 0.798,
+      "recall": 0.833,
+      "net_benefit": 0.3665,
+      "net_benefit_flag_all": 0.2702,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.7": {
+      "flagged_share": 0.565,
+      "precision": 0.89,
+      "recall": 0.711,
+      "net_benefit": 0.3582,
+      "net_benefit_flag_all": 0.0269,
+      "net_benefit_flag_none": 0.0
+     },
+     "0.8": {
+      "flagged_share": 0.385,
+      "precision": 0.935,
+      "recall": 0.509,
+      "net_benefit": 0.2609,
+      "net_benefit_flag_all": -0.4596,
+      "net_benefit_flag_none": 0.0
+     }
+    }
+   }
+  }
+ }
+}
