@@ -4,8 +4,10 @@
 \usepackage[margin=1in]{geometry}\usepackage{mathptmx}\usepackage{setspace}\doublespacing
 \usepackage{booktabs}\usepackage{array}\usepackage{amsmath}\usepackage{graphicx}\usepackage{threeparttable}\usepackage{rotating}
 \usepackage[nolists,tablesfirst]{endfloat}\renewcommand{\efloatseparator}{\mbox{}}\DeclareDelayedFloatFlavor{sidewaystable}{table}
-\usepackage[hidelinks]{hyperref}\usepackage{apacite}
+\usepackage[hidelinks]{hyperref}\usepackage{url}\usepackage{apacite}
 \input{../tables/numbers}
+\newif\ifanon\anontrue   % the package builder sets \anonfalse for the author copy
+\input{archive_ids}       % \ArchiveTag, \ArchiveVersionDOI, \ArchiveConceptDOI (filled after the Zenodo release)
 \newcommand{\tabnote}[1]{\par\vspace{4pt}\begin{minipage}{\linewidth}\singlespacing\small\emph{Note.} #1\end{minipage}}
 \newcommand{\captive}{captive spin-off}
 \title{Controlling Owners, Disclosed Intentions, and Minority Shareholder Returns in Korean Captive Spin-Offs}
@@ -21,6 +23,7 @@
 \input{sec4_results}
 \input{sec5_discussion}
 \input{sec6_conclusion}
+\input{sec7_availability}
 \bibliographystyle{apacite}
 \bibliography{refs,refs_manual}
 \end{document}

@@ -1,3 +1,5 @@
+import numpy as np
+import collections
 #!/usr/bin/env python3
 """make_tables_cgir.py — tables and prose macros for the CGIR manuscript, generated only from results/ and data/processed/ files.
 
@@ -103,7 +105,7 @@ for k, v in (("AUCPooledLLM", G1["pooled"]["auc_p_llm"]), ("AUCPooledFin", G1["p
     mac(k, r(v) if "Share" not in k and "Knowledge" not in k else pct(v, 1))
 mac("GapOldLo", r(an_o["two_model_average"]["gap_ci95_paired_boot"][0])); mac("GapOldHi", r(an_o["two_model_average"]["gap_ci95_paired_boot"][1]))
 mac("AUCEarlyPooled", r(BC["score_predicts_early_disposal"]["early_vs_never"]["auc"])); mac("AUCEarlyNew", r(BC["score_predicts_early_disposal"]["by_period_early_vs_never"]["2017+"]["auc"])); mac("AUCEarlyOld", r(BC["score_predicts_early_disposal"]["by_period_early_vs_never"]["2001-2016"]["auc"])); mac("AUCLateVsNever", r(BC["score_predicts_early_disposal"]["late_vs_never"]["auc"]))
-RT = AN["return_tests_with_anonymized_score"]; mac("SpearmanAnon", r(RT["spearman_anon_score_vs_bhar1y"]["rho"])); mac("SpearmanAnonP", p(RT["spearman_anon_score_vs_bhar1y"]["p"])); mac("RankAnonCoef", r(RT["rank1y_on_anon_score_controls_yearFE"]["p_anon"]["coef"])); mac("RankAnonP", p(RT["rank1y_on_anon_score_controls_yearFE"]["p_anon"]["p_hc1"])); mac("AUCEarlyAnon", r(RT["anon_score_predicts_early_disposal_auc"]["auc"]))
+RT = AN["return_tests_with_anonymized_score"]; mac("SpearmanAnon", r(RT["spearman_anon_score_vs_bhar1y"]["rho"])); mac("NAUCEarlyAnon", RT["anon_score_predicts_early_disposal_auc"]["n"]); mac("NAUCEarly", BC["score_predicts_early_disposal"]["early_vs_never"]["n"]); mac("SpearmanAnonP", p(RT["spearman_anon_score_vs_bhar1y"]["p"])); mac("RankAnonCoef", r(RT["rank1y_on_anon_score_controls_yearFE"]["p_anon"]["coef"])); mac("RankAnonP", p(RT["rank1y_on_anon_score_controls_yearFE"]["p_anon"]["p_hc1"])); mac("AUCEarlyAnon", r(RT["anon_score_predicts_early_disposal_auc"]["auc"]))
 
 # ---------------- returns by score quintile (T4)
 Q = BP["by_score_quintile"]["q5_pooled"]; Qy = BP["by_score_quintile"]["q5_within_year"]; SP = BP["spearman_score_vs_return"]; CT = BP["calendar_time_daily_madj"]; FF = BP["calendar_time_monthly_ff5"]; RG_ = BP["regressions"]
@@ -227,7 +229,7 @@ body = ["\\begin{tabular}{>{\\raggedright\\arraybackslash}p{6.0cm}rrr>{\\raggedr
 w("T_reform", "\n".join(body), "regulation_2022_20261025.json pre_post (cutoff 2022-10-01)")
 for k, v in (("ProtectPre", pct(PP["filings_mention_protection"]["share_pre"], 1)), ("ProtectPost", pct(PP["filings_mention_protection"]["share_post"], 1)), ("ListingPre", pct(PP["filings_mention_listing"]["share_pre"], 1)), ("ListingPost", pct(PP["filings_mention_listing"]["share_post"], 1)),
              ("CarPre", pct(PP["announcement_car"]["mean_pre"], 2, True)), ("CarPost", pct(PP["announcement_car"]["mean_post"], 2, True)), ("CarPrePostP", p(PP["announcement_car"]["mannwhitney_p"])), ("ScorePre", r(PP["disposal_score"]["mean_pre"])), ("ScorePost", r(PP["disposal_score"]["mean_post"])), ("ScorePrePostP", p(PP["disposal_score"]["welch_p"])),
-             ("EarlyPre", pct(PP["early_disposal_rate_mature_only"]["share_pre"], 1)), ("EarlyPost", pct(PP["early_disposal_rate_mature_only"]["share_post"], 1)), ("EarlyPrePostP", p(PP["early_disposal_rate_mature_only"]["fisher_p"])), ("NPost", PP["announcement_car"]["n_post"]), ("NPostFilings", PP["filings_mention_protection"]["n_post"]), ("FilingsPerYearPre", PP["n_filings_per_year_pre_vs_post"]["pre_2017_to_cutoff"]), ("FilingsPerYearPost", PP["n_filings_per_year_pre_vs_post"]["post"])):
+             ("EarlyPre", pct(PP["early_disposal_rate_mature_only"]["share_pre"], 1)), ("NPostOutcomes", PP["early_disposal_rate_mature_only"]["n_post"]), ("EarlyPost", pct(PP["early_disposal_rate_mature_only"]["share_post"], 1)), ("EarlyPrePostP", p(PP["early_disposal_rate_mature_only"]["fisher_p"])), ("NPost", PP["announcement_car"]["n_post"]), ("NPostFilings", PP["filings_mention_protection"]["n_post"]), ("FilingsPerYearPre", PP["n_filings_per_year_pre_vs_post"]["pre_2017_to_cutoff"]), ("FilingsPerYearPost", PP["n_filings_per_year_pre_vs_post"]["post"])):
     mac(k, v)
 
 # ---------------- supporting tables
@@ -381,6 +383,30 @@ mac("NMixed", sum(1 for x in v4_co if x.get("type") == "mixed"))
 _ex = pd.read_csv(f"{D}/bhar_controls_events_20261025.csv", dtype={"rcept_no": str}).set_index("rcept_no")
 for _name, _rn in (("Doosan", "20210610000439"), ("DB", "20230502000307"), ("Tving", "20200730000319")):
     mac(f"Ex{_name}Score", r(_ex.loc[_rn].p_llm, 2)); mac(f"Ex{_name}Outcome", {"majority_disposed": "disposed", "ipo_listed": "listed", "partial_sale": "partially sold", "retained_100": "retained"}[[x for x in v4 if x["rcept_no"] == _rn][0]["outcome"]])
+# sample reconciliation (2026-10-26, cross-review item): unread filings and post-cutoff coverage; one-decimal anchor numbers for prose
+_allk = [r["rcept_no"] for r in old] + [r["rcept_no"] for r in v4_co]
+_unread = [r for r in v4_co if len(_sc.get(r["rcept_no"], set())) < 2] + [r for r in old if len(_sc.get(r["rcept_no"], set())) < 2]
+mac("NUnread", len(_unread)); _oc = collections.Counter(r.get("outcome") for r in _unread)
+mac("NUnreadTooRecent", _oc["too_recent"]); mac("NUnreadUnmatched", _oc["unmatched"] + _oc["majority_disposed_or_dropped"]); mac("NUnreadMergedLiq", _oc["merged_back_into_parent"] + _oc["liquidated"]); mac("NUnreadClean", sum(_oc[k] for k in ("ipo_listed", "majority_disposed", "partial_sale", "retained_100")))
+mac("NPostAll", sum(1 for r in v4_co if r["rcept_no"][:8] >= "20221001"))
+mac("KLBharOne", r(K["bhar_p2_p252_pct"]["mean"], 1)); mac("KLOwnMeanOne", r(K["ownership_mean_pct"]["mean"], 1)); mac("KLOwnMedianOne", r(K["ownership_mean_pct"]["median"], 1))
+# minimum detectable effects for the before/after nulls (two-sided alpha 0.05, power 0.80; two-proportion z for the early-disposal share at the pre rate; two-sample mean for the score with the pre-period sd of the score in the controls event file)
+import math as _math
+from scipy.stats import norm as _norm
+_z = _norm.ppf(0.975) + _norm.ppf(0.8); _e = PP["early_disposal_rate_mature_only"]; _pp = _e["share_pre"]
+mac("MDEEarlyPP", r(_z * _math.sqrt(_pp * (1 - _pp) * (1 / _e["n_pre"] + 1 / _e["n_post"])) * 100, 0))
+# pre-period sd of the two-model signal on the same filings as the reform table: 2017+ carve-outs received before the cutoff, mean over runs per model then over models
+_sc17 = collections.defaultdict(lambda: collections.defaultdict(list))
+for _f in _glob.glob(f"{P}/results/llm_judge/*__identified*.jsonl"):
+    _m = "A" if "anthropic" in _f else "B"
+    for _l in open(_f, encoding="utf-8"):
+        try: _r = json.loads(_l)
+        except Exception: continue
+        _pj = (_r.get("parsed") or _r.get("judgment") or {}).get("p_disposal") if isinstance(_r.get("parsed") or _r.get("judgment"), dict) else _r.get("p_disposal")
+        if _pj is not None: _sc17[_r["rcept_no"]][_m].append(float(_pj) / 100)
+_pre_scores = [np.mean([np.mean(v["A"]), np.mean(v["B"])]) for k, v in _sc17.items() if "A" in v and "B" in v and "20170101" <= k[:8] < "20221001" and k in {x["rcept_no"] for x in v4_co}]
+_s = PP["disposal_score"]; assert abs(len(_pre_scores) - _s["n_pre"]) <= 5, (len(_pre_scores), _s["n_pre"])   # 212 vs 208: four filings have a probability but no parsed facts block
+mac("MDEScore", r(_z * float(np.std(_pre_scores, ddof=1)) * _math.sqrt(1 / _s["n_pre"] + 1 / _s["n_post"]), 2)); mac("ScoreSDPre", r(float(np.std(_pre_scores, ddof=1)), 2))
 lines = [f"% generated by code/make_tables_cgir.py on {dt.date.today()} — every macro traces to a results file (see the generator for keys)"]
 for k, v in nums.items():
     safe = re.sub(r"[^A-Za-z]", "", k); lines.append(f"\\newcommand{{\\{safe}}}{{{v}}}")

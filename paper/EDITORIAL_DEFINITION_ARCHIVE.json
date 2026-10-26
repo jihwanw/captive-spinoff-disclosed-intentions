@@ -1,0 +1,324 @@
+{
+ "schema_version": 1,
+ "title": {
+  "current": "Controlling Owners, Disclosed Intentions, and Minority Shareholder Returns in Korean Captive Spin-Offs",
+  "former_titles": [],
+  "declarative_sentence": true
+ },
+ "outcome": {
+  "name": "Disposal of the carved-out subsidiary",
+  "conceptual_definition": "The event through which the value of the carved-out assets leaves the parent's minority shareholders: after a captive spin-off the parent (controlled by its controlling owner, without a shareholder vote) sells a majority of the new company, lists it, or admits an outside investor; Kang & Lee (2025) show the minority's loss is concentrated in these events.",
+  "conceptual_sources": [
+   "Kang & Lee (2025), Finance Research Letters 85:107826, Section 4 (mechanism paragraph) and footnote 18 (364 of 525 disposed)",
+   "Young, Peng, Ahlstrom, Bruton & Jiang (2008), JMS 45(1): principal-principal conflict"
+  ],
+  "operational_definition": {
+   "unit": "carve-out event (parent x newly created company, dated by the receipt date of the original division filing)",
+   "positive_rule": "disposed = the parent's stake in the new company falls below 50% or the company leaves the parent's equity-investment schedule after appearing (majority_disposed), OR the new company appears in KIND listing records after the division date (ipo_listed), OR the stake falls below 99.5% but stays >= 50% without a listing (partial_sale)",
+   "negative_meaning": "retained_100 = the parent reports ~100% of the new company in every available annual/half-year report through the latest one read (to fiscal 2025); absence of a qualifying observation, not proof that no disposal will ever occur",
+   "time_rule": "annual and half-year reports for fiscal years division_year .. min(division_year + 6, 2025); first_change_fy records the first fiscal year showing a change; events too recent to have a record are excluded (unresolved)",
+   "data_source": "DART Open API DS002 otrCprInvstmntSttus (equity investments in other corporations) and annual-report documents (document.xml) for 2017+ (accessed 2026-10-14 to 10-19); annual-report passages read by Claude (code/09b) for queued 2017+ events and all 2001-2016 events (2026-10-17 to 10-19); KIND listing records",
+   "fields": [
+    "inv_prm",
+    "frst_acqs_de",
+    "bsis_blce_qota_rt",
+    "trmend_blce_qota_rt",
+    "report_nm",
+    "rcept_dt",
+    "mgptncmp_cmpnm",
+    "mgsc_mgdt",
+    "subsidiary tables and division-related passages of the annual report (text)"
+   ],
+   "classification_author": "hybrid",
+   "exclusions": "merged back into the parent; liquidated; division cancelled; unmatched/unresolved; too recent (72 + 105 of 758 events)",
+   "limitations": "11 of 294 2017-2026 labels are sensitive to the definition or to a conflict between the equity-investment schedule and the annual-report text (intragroup transfer, temporary external dilution, related-party preferred shares, dilution below materiality, source conflict, one tracker mismatch); sensitivity reported in SI Table S1 (flipping all 11 to retained strengthens the headline results). Intent is not observed; only ownership changes are.",
+   "sources": [
+    "DART Open API developer guide, DS002 field definitions",
+    "code/02_track_carveout_disposal.py, 02b_track_carveout_disposal_v3.py, 09a-09c, 12c-12d (author rules)",
+    "Kang & Lee (2025) Section 4 for the disposed/retained split"
+   ]
+  }
+ },
+ "concepts": [
+  {
+   "id": "C01",
+   "name": "Captive spin-off",
+   "aliases": [],
+   "deprecated_aliases": [],
+   "definition": "A corporate division under the Korean Commercial Act's division provisions in which the surviving company holds 100% of the newly created company (Kang & Lee, 2025, Section 2); unlike a US spin-off no shares are distributed to the parent's shareholders and unlike an equity carve-out no shares are sold or listed at the division.",
+   "definition_origin": "external",
+   "sources": [
+    {
+     "name": "Kang & Lee (2025), Finance Research Letters 85:107826, Section 2 and footnote 6",
+     "role": "concept"
+    },
+    {
+     "name": "DART division-resolution filings (hoesa bunhal gyeoljeong; from 2017 the material-event report cmpDvDecsn), division-type field and filing text",
+     "role": "data field"
+    },
+    {
+     "name": "Author rule: captive and mixed captive-equity divisions kept; equity spin-offs excluded (code/01, 12b, 12c)",
+     "role": "author choice"
+    }
+   ],
+   "applied": [
+    "Section 3.1",
+    "Table 1",
+    "all tests"
+   ],
+   "main_marker": "Captive spin-off",
+   "supp_marker": "Captive spin-off"
+  },
+  {
+   "id": "C02",
+   "name": "Disposal",
+   "aliases": [
+    "disposed"
+   ],
+   "deprecated_aliases": [],
+   "definition": "The event through which the value of the carved-out assets leaves the parent's minority shareholders (Kang & Lee, 2025, Section 4): the parent sells a majority of the new company, lists it, or lets its stake fall below 99.5% through a sale or third-party investment. Negative (retained) means 100% is reported through the latest available report.",
+   "definition_origin": "hybrid",
+   "sources": [
+    {
+     "name": "Kang & Lee (2025), Section 4 (disposed vs retained)",
+     "role": "concept"
+    },
+    {
+     "name": "DART DS002 equity-investment schedule (otrCprInvstmntSttus: inv_prm, bsis/trmend_blce_qota_rt), half-year reports, KIND listing records",
+     "role": "data field"
+    },
+    {
+     "name": "Author rule 99.5% / majority / listed; annual-report passages read by a language model with verbatim evidence (code/02b, 09a-09c, 12d)",
+     "role": "author choice"
+    }
+   ],
+   "applied": [
+    "Section 3.1",
+    "Tables 1, 3, 5"
+   ],
+   "main_marker": "Disposal",
+   "supp_marker": "Disposal"
+  },
+  {
+   "id": "C03",
+   "name": "Early disposal",
+   "aliases": [],
+   "deprecated_aliases": [],
+   "definition": "A disposal whose first recorded ownership change falls in the fiscal year of the division or the next (first_change_fy minus division year <= 1), i.e. inside the one-year return window.",
+   "definition_origin": "author-developed",
+   "sources": [
+    {
+     "name": "Author rule on the annual-report labels (code/19_bhar_controls.py)",
+     "role": "author choice"
+    }
+   ],
+   "applied": [
+    "Tables 5, 7, 8"
+   ],
+   "main_marker": "Early disposal",
+   "supp_marker": "Early disposal"
+  },
+  {
+   "id": "C04",
+   "name": "Disposal signal",
+   "aliases": [
+    "two-model forecast",
+    "disposal score"
+   ],
+   "deprecated_aliases": [],
+   "definition": "What a careful reader could infer about the controlling owner's intention from the filing alone at the announcement: each of two language models reads the division filing as of its date and returns the probability (0-100) that the parent will not retain 100% of the new company within roughly three to five fiscal years; mean over runs per model, then the two-model mean, rescaled to 0-1.",
+   "definition_origin": "author-developed",
+   "sources": [
+    {
+     "name": "Kang & Lee (2025), Section 4: investors unlikely to discern the intention (the claim tested)",
+     "role": "concept"
+    },
+    {
+     "name": "code/04_llm_judge.py prompt and parser; Anthropic claude-fable-5-1 and OpenAI gpt-6.1-sol via a cloud inference service, October 2026",
+     "role": "implementation"
+    }
+   ],
+   "applied": [
+    "Section 3.3",
+    "Tables 3, 4, 6"
+   ],
+   "main_marker": "Disposal signal",
+   "supp_marker": "Disposal signal"
+  },
+  {
+   "id": "C05",
+   "name": "Anonymized condition",
+   "aliases": [],
+   "deprecated_aliases": [],
+   "definition": "A reading in which recall of the named company's later history is unavailable to the model: parent and new-company names, group names, years and dates masked by regular expressions and the board date withheld (Glasserman & Lin, 2024, for the look-ahead concern).",
+   "definition_origin": "hybrid",
+   "sources": [
+    {
+     "name": "Glasserman & Lin (2024), Journal of Financial Data Science 6(1)",
+     "role": "concept"
+    },
+    {
+     "name": "code/04_llm_judge.py anonymize()",
+     "role": "implementation"
+    }
+   ],
+   "applied": [
+    "Section 3.3",
+    "Table 3"
+   ],
+   "main_marker": "Anonymized condition",
+   "supp_marker": "Anonymized condition"
+  },
+  {
+   "id": "C06",
+   "name": "Controlling block",
+   "aliases": [],
+   "deprecated_aliases": [],
+   "definition": "The controlling owner's cash-flow stake in the parent (Young et al., 2008): common shares held by the largest shareholder and the related parties listed with it, excluding treasury shares, at the fiscal year-end before the announcement year; 2016+ from the DART largest-shareholder table (hyslrSttus), earlier from the same table in the annual report read by two models that must agree within 1 percentage point.",
+   "definition_origin": "hybrid",
+   "sources": [
+    {
+     "name": "Young, Peng, Ahlstrom, Bruton & Jiang (2008), Journal of Management Studies 45(1)",
+     "role": "concept"
+    },
+    {
+     "name": "DART DS002 hyslrSttus; annual-report largest-shareholder tables (code/20, 20b, 20c)",
+     "role": "data field"
+    }
+   ],
+   "applied": [
+    "Section 3.4",
+    "Tables 8, 9"
+   ],
+   "main_marker": "Controlling block",
+   "supp_marker": "Controlling block"
+  },
+  {
+   "id": "C07",
+   "name": "Announcement CAR",
+   "aliases": [],
+   "deprecated_aliases": [],
+   "definition": "The immediate price reaction to the filing: market-model cumulative abnormal return over trading days -1 to +1, model estimated on days -250 to -31 against the parent's market index (KOSPI or KOSDAQ); day 0 is the first trading day on or after the receipt date of the original filing.",
+   "definition_origin": "external",
+   "sources": [
+    {
+     "name": "Standard event-study practice; Kang & Lee (2025) Table 1 for the same window",
+     "role": "practice"
+    },
+    {
+     "name": "code/16, 17, 18",
+     "role": "implementation"
+    }
+   ],
+   "applied": [
+    "Section 3.4",
+    "Tables 4, 6, 10"
+   ],
+   "main_marker": "Announcement CAR",
+   "supp_marker": "Announcement CAR"
+  },
+  {
+   "id": "C08",
+   "name": "One-year BHAR",
+   "aliases": [],
+   "deprecated_aliases": [],
+   "definition": "The return to a minority holder who kept the shares after the announcement reaction: buy-and-hold return of the parent minus its market index over trading days +2 to +250; windows with fewer than 90% of trading days dropped; KRX adjusted prices (2017-2026) and Compustat Global daily security file (2001-2016).",
+   "definition_origin": "external",
+   "sources": [
+    {
+     "name": "Barber & Lyon (1997); Lyon, Barber & Tsai (1999); Kang & Lee (2025) Table 1 Panel B",
+     "role": "practice"
+    },
+    {
+     "name": "code/16, 17, 18",
+     "role": "implementation"
+    }
+   ],
+   "applied": [
+    "Section 3.4",
+    "Tables 4-9"
+   ],
+   "main_marker": "One-year BHAR",
+   "supp_marker": "One-year BHAR"
+  },
+  {
+   "id": "C09",
+   "name": "Within-year rank",
+   "aliases": [],
+   "deprecated_aliases": [],
+   "definition": "The parent's percentile rank (0-1) of the one-year BHAR within its announcement year; a skew-robust ordering within the same calendar environment.",
+   "definition_origin": "author-developed",
+   "sources": [
+    {
+     "name": "Author rule (code/19_bhar_controls.py)",
+     "role": "author choice"
+    }
+   ],
+   "applied": [
+    "Tables 6, 7, 9"
+   ],
+   "main_marker": "Within-year rank",
+   "supp_marker": "Within-year rank"
+  },
+  {
+   "id": "C10",
+   "name": "Post-reform period",
+   "aliases": [],
+   "deprecated_aliases": [],
+   "definition": "Filings received on or after 1 October 2022, i.e. written under the revised disclosure form that requires the division's purpose, expected effects and shareholder-protection measures (FSC press releases of 5 September and 20 December 2022; form applied from 18 October 2022).",
+   "definition_origin": "hybrid",
+   "sources": [
+    {
+     "name": "Financial Services Commission press releases fsc.go.kr/no010101/78449 and /79125",
+     "role": "standard"
+    },
+    {
+     "name": "Author cutoff 2022-10-01 (code/23_regulation_2022.py)",
+     "role": "author choice"
+    }
+   ],
+   "applied": [
+    "Section 4.4",
+    "Table 10"
+   ],
+   "main_marker": "Post-reform period",
+   "supp_marker": "Post-reform period"
+  }
+ ],
+ "presentation": {
+  "same_number_and_order": true,
+  "single_generator": "code/make_tables_cgir.py (DEFS row list -> T_defs_short.tex and S_defs_full.tex)",
+  "main_form": "short",
+  "supplement_form": "full",
+  "main_table_header": "Definitions of the measures used in this paper (short form)",
+  "main_table_max_pages": 1
+ },
+ "archive": {
+  "required": true,
+  "repo_path": "/Users/jihwanw/PhD/Finance/0_pipeline/물적분할-인적분할/replication_repo",
+  "readme_path": "README.md",
+  "results_release": "PENDING",
+  "archive_release": "PENDING",
+  "version_doi": "PENDING",
+  "concept_doi": "PENDING",
+  "tracked_paths": [
+   "code/"
+  ],
+  "allowed_between_releases": [
+   "README.md",
+   "CITATION.cff",
+   "code/make_tables_cgir.py",
+   "code/make_bib_from_dois.py"
+  ],
+  "current_public_title": "Controlling Owners, Disclosed Intentions, and Minority Shareholder Returns in Korean Captive Spin-Offs",
+  "former_title_history_allowed": true,
+  "public_metadata": {
+   "github_checked_date": "PENDING",
+   "zenodo_checked_date": "PENDING",
+   "zenodo_version": "PENDING",
+   "zenodo_file": "PENDING",
+   "title_matches": false,
+   "doi_matches": false
+  }
+ }
+}
