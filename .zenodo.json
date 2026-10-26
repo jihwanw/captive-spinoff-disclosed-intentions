@@ -1,0 +1,9 @@
+{
+  "title": "Controlling Owners, Disclosed Intentions, and Minority Shareholder Returns in Korean Captive Spin-Offs — replication archive",
+  "description": "Code, results files, outcome labels and manuscript generators for the paper of this title (Korean captive spin-offs 2001-2026; language-model reading of division filings; event-time and calendar-time returns; controlling-block cross-section; the 2022 disclosure reform). Licensed price data are not included; see README.",
+  "creators": [{"name": "Woo, Jihwan", "affiliation": "Amazon Web Services, Seoul, Republic of Korea", "orcid": "0000-0002-0424-0242"}],
+  "license": "MIT",
+  "upload_type": "software",
+  "access_right": "open",
+  "keywords": ["captive spin-offs", "controlling shareholders", "minority shareholder protection", "corporate disclosure", "business groups", "Korea", "large language models"]
+}
