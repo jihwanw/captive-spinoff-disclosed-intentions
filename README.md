@@ -1,9 +1,9 @@
 # Controlling Owners, Disclosed Intentions, and Minority Shareholder Returns in Korean Captive Spin-Offs
 
 Replication archive for the manuscript of that title (single author), submitted to *Corporate Governance: An International Review*.
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23660636.svg)](https://doi.org/10.5281/zenodo.23660636)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23721406.svg)](https://doi.org/10.5281/zenodo.23721406)
 
-Version DOI (release `v1.0-submission`, the submitted state): https://doi.org/10.5281/zenodo.23660636. Concept DOI (resolves to the latest version): https://doi.org/10.5281/zenodo.23660635.
+Version DOI (release `v1.1-submission`, the submitted state): https://doi.org/10.5281/zenodo.23721406. Concept DOI (resolves to the latest version): https://doi.org/10.5281/zenodo.23660635.
 
 ## What is here
 
@@ -35,7 +35,7 @@ cd paper/tex && pdflatex main && bibtex main && pdflatex main && pdflatex main
 
 * `v1.0-results` — the code and results files that produced every estimate in the submitted manuscript.
 * `v1.0-submission` — first submission-state release (DOI 10.5281/zenodo.23660636).
-* `v1.1-submission` — the submitted state. Change to results code since v1.0: `16_bhar_by_predicted_disposal.py` builds the calendar-time portfolios from the same full-one-year-window event set as the event-time tests (previously delisted parents' partial windows entered the daily portfolio, and one Compustat adjustment artefact on 2013-09-11 moved the all-carve-out calendar-time mean from about -7% to +25% a year); `18_bhar_pooled.py` re-run → `results/bhar_predicted_disposal_pooled_20261028.json`. Adds `make_figures_cgir.py` and `paper/figures/`.
+* `v1.1-submission` — the submitted state (DOI 10.5281/zenodo.23721406). Change to results code since v1.0: `16_bhar_by_predicted_disposal.py` builds the calendar-time portfolios from the same full-one-year-window event set as the event-time tests (previously delisted parents' partial windows entered the daily portfolio, and one Compustat adjustment artefact on 2013-09-11 moved the all-carve-out calendar-time mean from about -7% to +25% a year); `18_bhar_pooled.py` re-run → `results/bhar_predicted_disposal_pooled_20261028.json`. Adds `make_figures_cgir.py` and `paper/figures/`.
 
 ## Licence and citation
 
