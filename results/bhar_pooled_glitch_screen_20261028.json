@@ -1,0 +1,106 @@
+{
+ "carve_outs_2001_2016_ok": 380,
+ "with_beyond_limit_day": 26,
+ "of_which_delisted_within_1y": 12,
+ "flagged_as_suspected_adjustment_glitch": 14,
+ "flagged_events": [
+  {
+   "rcept_no": "20070920000295",
+   "corp_name": "일공공일안경콘택트",
+   "event_date": "2007-09-20",
+   "n_beyond_limit": 1.0,
+   "worst_abs_ret": 0.19791666666666674
+  },
+  {
+   "rcept_no": "20160805000349",
+   "corp_name": "엠젠솔루션",
+   "event_date": "2016-08-05",
+   "n_beyond_limit": 1.0,
+   "worst_abs_ret": 0.6249999999999998
+  },
+  {
+   "rcept_no": "20081117000153",
+   "corp_name": "디모아",
+   "event_date": "2008-11-17",
+   "n_beyond_limit": 1.0,
+   "worst_abs_ret": 0.6768802050392568
+  },
+  {
+   "rcept_no": "20150415000450",
+   "corp_name": "오리엔탈정공",
+   "event_date": "2015-04-15",
+   "n_beyond_limit": 1.0,
+   "worst_abs_ret": 0.16862745098039222
+  },
+  {
+   "rcept_no": "20100901000280",
+   "corp_name": "케이비물산",
+   "event_date": "2010-09-01",
+   "n_beyond_limit": 1.0,
+   "worst_abs_ret": 0.19000000000000006
+  },
+  {
+   "rcept_no": "20060817000117",
+   "corp_name": "케이엠에이치",
+   "event_date": "2006-08-17",
+   "n_beyond_limit": 1.0,
+   "worst_abs_ret": 0.16615853658536572
+  },
+  {
+   "rcept_no": "20080411001886",
+   "corp_name": "조인에너지",
+   "event_date": "2008-04-11",
+   "n_beyond_limit": 1.0,
+   "worst_abs_ret": 0.17356687898089174
+  },
+  {
+   "rcept_no": "20120920000188",
+   "corp_name": "광무",
+   "event_date": "2012-09-20",
+   "n_beyond_limit": 1.0,
+   "worst_abs_ret": 0.2640449438202248
+  },
+  {
+   "rcept_no": "20060818000108",
+   "corp_name": "메카포럼",
+   "event_date": "2006-08-18",
+   "n_beyond_limit": 1.0,
+   "worst_abs_ret": 0.22549019607843146
+  },
+  {
+   "rcept_no": "20090216000444",
+   "corp_name": "엘앤피아너스",
+   "event_date": "2009-02-16",
+   "n_beyond_limit": 1.0,
+   "worst_abs_ret": 0.2350000000000001
+  },
+  {
+   "rcept_no": "20081217000084",
+   "corp_name": "비트플래닛",
+   "event_date": "2008-12-17",
+   "n_beyond_limit": 1.0,
+   "worst_abs_ret": 0.1657142857142857
+  },
+  {
+   "rcept_no": "20081203000189",
+   "corp_name": "플렉스컴",
+   "event_date": "2008-12-03",
+   "n_beyond_limit": 1.0,
+   "worst_abs_ret": 0.2309782608695652
+  },
+  {
+   "rcept_no": "20071012000230",
+   "corp_name": "지비에스",
+   "event_date": "2007-10-12",
+   "n_beyond_limit": 1.0,
+   "worst_abs_ret": 0.28135593220338984
+  },
+  {
+   "rcept_no": "20090317000270",
+   "corp_name": "에스코넥",
+   "event_date": "2009-03-17",
+   "n_beyond_limit": 1.0,
+   "worst_abs_ret": 0.20141342756183755
+  }
+ ]
+}

@@ -73,3 +73,6 @@ All other entries: Crossref print year, volume, issue and pages agree with the b
 - added vijh2002: verified https://doi.org/10.1086/323508 2026-10-26 (Crossref record read via api.crossref.org; year/volume/issue/pages compared)
 - added young2008: verified https://doi.org/10.1111/j.1467-6486.2007.00752.x 2026-10-26 (Crossref record read via api.crossref.org; year/volume/issue/pages compared)
 - added park2022: verified https://www.koreatimes.co.kr/www/biz/2023/11/602_323668.html 2026-10-26 (article page read; author Anna J. Park, datePublished 2022-02-10; the article Kang & Lee (2025) footnote 1 cites)
+- added hirshleifer2003: verified https://doi.org/10.1016/j.jacceco.2003.10.002 2026-10-28 (Crossref: JAE 36(1-3) 337-386, 2003)
+- added dellavigna2009: verified https://doi.org/10.1111/j.1540-6261.2009.01447.x 2026-10-28 (Crossref: JF 64(2) 709-749, 2009)
+- added benshahar2014: verified https://doi.org/10.23943/princeton/9780691161709.001.0001 2026-10-28 (Crossref monograph record, Princeton University Press 2014; the 2011 U. Penn. L. Rev. article has no Crossref DOI, so the book is cited)

@@ -51,6 +51,8 @@ ADD = {  # DOI: (strand, verification note) — all read back from api.crossref.
  "10.1111/corg.12640": ("V", "Uchida & Yoshikawa, CGIR 33(5) 1107-1125, 2025 (Japan; disclosure of voting records and shareholder dissent)"),
  "10.1111/corg.12484": ("V", "Tanyeri Günsür & Alp, CGIR 31(4) 625-646, 2023 (family firms; shareholder rights and the pricing of control events)"),
  "10.1111/corg.12658": ("V", "Anand, Huan & Pathak, CGIR 34(1) 18-40, 2026 (10-K readability and retail investors' proposals)"),
+ "10.1016/j.jacceco.2003.10.002": ("T", "Hirshleifer & Teoh, JAE 36(1-3) 337-386, 2003 (limited attention and disclosure) — verified 2026-10-28"),
+ "10.1111/j.1540-6261.2009.01447.x": ("T", "DellaVigna & Pollet, JF 64(2) 709-749, 2009 (investor inattention) — verified 2026-10-28"),
 }
 OVERRIDES = {  # DOI: {field: value}; source in the comment
  "10.2307/3666322": {"pages": "83–100"},           # Hulburt, Miles & Woolridge 2002, FM 31(1): Penn State Pure record (pure.psu.edu, J. R. Woolridge); JSTOR DOI carries first page only

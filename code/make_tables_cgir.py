@@ -10,12 +10,12 @@ not images); captions and notes live in the tex. Output: paper/tables/T_*.tex, p
 Sources (all produced 2026-10-18..25):
   results/gate1_pooled_20261019.json                   Gate 1: disposal prediction AUCs by period (identified two-model score, financial baseline)
   results/anonymized_check_20261025.json               identified vs anonymized AUC, return tests with the anonymized score
-  results/bhar_predicted_disposal_pooled_20261025.json  returns by score quintile, realized outcome and timing, calendar-time, FF5 (pooled 2001–2026)
+  results/bhar_predicted_disposal_pooled_20261028.json  returns by score quintile, realized outcome and timing, calendar-time, FF5 (pooled 2001–2026)
   results/bhar_controls_20261025.json                  regressions with controls; score -> early disposal AUC
   results/governance_cross_section_20261025.json       controlling block terciles and regressions
   results/regulation_2022_20261025.json                2022 reform before/after
   results/label_sensitivity_20261025.json              eleven definition-sensitive labels flipped / dropped
-  results/price_coverage_compustat_20261024.json       price sources and cross-check; results/bhar_pooled_glitch_screen_20261025.json
+  results/price_coverage_compustat_20261024.json       price sources and cross-check; results/bhar_pooled_glitch_screen_20261028.json
   results/ownership_llm_agreement_20261025.json, results/largest_shareholder_coverage_20261025.json
   data/processed/carveout_disposal_tracking_{2001_2016,v4}.json, data/processed/event_study_meta_compustat.csv, data/processed/ownership_pre_event_all.json  (sample table)
 """
@@ -26,9 +26,9 @@ import pandas as pd
 P = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); R = f"{P}/results"; D = f"{P}/data/processed"
 OUT = f"{P}/paper/tables"; os.makedirs(OUT, exist_ok=True)
 J = lambda name: json.load(open(f"{R}/{name}", encoding="utf-8"))
-G1 = J("gate1_pooled_20261019.json"); AN = J("anonymized_check_20261025.json"); BP = J("bhar_predicted_disposal_pooled_20261025.json"); BC = J("bhar_controls_20261025.json")
+G1 = J("gate1_pooled_20261019.json"); AN = J("anonymized_check_20261025.json"); BP = J("bhar_predicted_disposal_pooled_20261028.json"); BC = J("bhar_controls_20261025.json")   # BP re-run 2026-10-28: calendar-time portfolios on the same full-window event set as the event-time tests
 GV = J("governance_cross_section_20261025.json"); RG = J("regulation_2022_20261025.json"); LS = J("label_sensitivity_20261025.json"); PC = J("price_coverage_compustat_20261024.json")
-GS = J("bhar_pooled_glitch_screen_20261025.json"); OA = J("ownership_llm_agreement_20261025.json"); OC = J("largest_shareholder_coverage_20261025.json")
+GS = J("bhar_pooled_glitch_screen_20261028.json"); OA = J("ownership_llm_agreement_20261025.json"); OC = J("largest_shareholder_coverage_20261025.json")
 M = "bhar_madj_p2_p250"
 nums = {}
 
@@ -124,7 +124,7 @@ body += ["\\midrule", f"Q5 $-$ Q1 & & {pct(d5['diff'], 1, True)} & & {pct(d5['me
          "\\midrule", f"Calendar-time, top $-$ bottom tercile: annualised AR & & {pct(CT['high_minus_low']['annualized_x250'], 1, True)} & \\multicolumn{{2}}{{l}}{{NW $t$ = {r(CT['high_minus_low']['t_newey_west_lag5'], 2)}}} & & \\\\",
          f"FF5 alpha, top $-$ bottom tercile (monthly) & & {pct(FF['high_minus_low']['alpha_ff5_monthly'], 2, True)} & \\multicolumn{{2}}{{l}}{{NW $t$ = {r(FF['high_minus_low']['alpha_ff5_t_nw3'], 2)}}} & & \\\\",
          "\\bottomrule", "\\end{tabular}"]
-w("T_returns_by_score", "\n".join(body), "bhar_predicted_disposal_pooled_20261025.json: by_score_quintile, spearman_score_vs_return, regressions, calendar_time_daily_madj, calendar_time_monthly_ff5")
+w("T_returns_by_score", "\n".join(body), "bhar_predicted_disposal_pooled_20261028.json: by_score_quintile, spearman_score_vs_return, regressions, calendar_time_daily_madj, calendar_time_monthly_ff5")
 for k, v in (("Q5Q1Diff", pct(d5["diff"], 1, True)), ("Q5Q1Lo", pct(d5["diff_ci95_boot"][0], 1, True)), ("Q5Q1Hi", pct(d5["diff_ci95_boot"][1], 1, True)), ("Q5Q1WithinYear", pct(d5y["diff"], 1, True)), ("Q5Q1WithinYearP", p(d5y["welch_p"])),
              ("SpearmanScoreBhar", r(SP[M]["rho"])), ("SpearmanScoreBharP", p(SP[M]["p"])), ("SpearmanWithinYear", r(SP[M]["rho_within_year_ranks"])), ("SpearmanWithinYearP", p(SP[M]["p_within_year_ranks"])),
              ("AnnCarSlope", r(RG_["announcement_car_on_score_yearFE"]["p_llm"]["coef"], 3)), ("AnnCarSlopeSE", r(RG_["announcement_car_on_score_yearFE"]["p_llm"]["se_hc1"], 3)), ("AnnCarSlopeP", p(RG_["announcement_car_on_score_yearFE"]["p_llm"]["p_hc1"])),
@@ -146,7 +146,7 @@ body = ["\\begin{tabular}{>{\\raggedright\\arraybackslash}p{5.3cm}rrrrr}", "\\to
         "\\midrule", f"Calendar-time, disposed $-$ retained: annualised AR (NW $t$) & & {pct(CT['disposed_minus_retained']['annualized_x250'], 1, True)} & ({r(CT['disposed_minus_retained']['t_newey_west_lag5'], 2)}) & & \\\\",
         f"FF5 alpha, disposed $-$ retained, monthly (NW $t$) & & {pct(FF['disposed_minus_retained']['alpha_ff5_monthly'], 2, True)} & ({r(FF['disposed_minus_retained']['alpha_ff5_t_nw3'], 2)}) & & \\\\",
         "\\bottomrule", "\\end{tabular}"]
-w("T_returns_by_outcome", "\n".join(body), "bhar_predicted_disposal_pooled_20261025.json: by_realized_outcome, by_disposal_timing, calendar_time_*")
+w("T_returns_by_outcome", "\n".join(body), "bhar_predicted_disposal_pooled_20261028.json: by_realized_outcome, by_disposal_timing, calendar_time_*")
 E = T["comparisons"]["early_le1y_vs_never"]
 for k, v in (("EarlyN", T["groups"]["early_le1y"]["n"]), ("EarlyMean", pct(T["groups"]["early_le1y"]["mean"], 1, True)), ("EarlyMedian", pct(T["groups"]["early_le1y"]["median"], 1, True)), ("NeverN", T["groups"]["never"]["n"]), ("NeverMean", pct(T["groups"]["never"]["mean"], 1, True)), ("NeverMedian", pct(T["groups"]["never"]["median"], 1, True)),
              ("EarlyNeverDiff", pct(E["diff"], 1, True)), ("EarlyNeverLo", pct(E["diff_ci95_boot"][0], 1, True)), ("EarlyNeverHi", pct(E["diff_ci95_boot"][1], 1, True)), ("EarlyNeverWelchP", p(E["welch_p"])), ("EarlyNeverMWP", p(E["mannwhitney_p"])),
@@ -248,7 +248,7 @@ body = ["\\begin{tabular}{>{\\raggedright\\arraybackslash}p{11cm}r}", "\\toprule
         f"2017+ events priced in both sources & {kv['events_compared']} \\\\", f"Trading days compared & {kv['days_compared']:,} \\\\", f"Median correlation of daily returns & {r(kv['median_corr'], 4)} \\\\", f"Share of days on which the two sources differ by more than 1 pp (\\%) & {pct(kv['share_days_abs_diff_gt_1pct'], 1)} \\\\", f"Share of events with correlation below 0.95 (\\%) & {pct(kv['share_events_corr_below_0_95'], 1)} \\\\",
         "\\midrule", f"2001--2016 priced events & {GS['carve_outs_2001_2016_ok']} \\\\", f"\\quad with a day beyond the exchange price limit in [$-$1, +250] & {GS['with_beyond_limit_day']} \\\\", f"\\quad of which in delisting proceedings (kept) & {GS['of_which_delisted_within_1y']} \\\\", f"\\quad suspected adjustment errors (excluded) & {GS['flagged_as_suspected_adjustment_glitch']} \\\\",
         "\\bottomrule", "\\end{tabular}"]
-w("S_price_sources", "\n".join(body), "price_coverage_compustat_20261024.json; bhar_pooled_glitch_screen_20261025.json")
+w("S_price_sources", "\n".join(body), "price_coverage_compustat_20261024.json; bhar_pooled_glitch_screen_20261028.json")
 body = ["\\begin{tabular}{>{\\raggedright\\arraybackslash}p{6.6cm}>{\\raggedright\\arraybackslash}p{3.2cm}>{\\raggedright\\arraybackslash}p{4.2cm}}", "\\toprule", "Pre-announcement ownership of the parent & DART table (2016+) & Annual-report extraction (pre-2016) \\\\", "\\midrule",
         f"Events with a usable record & {OC['status']['ok']} & {OA['n_both_models']} passages; {OA['largest_pct']['n']} with figures \\\\", f"Median controlling block (\\%) & {r(OC['block_ex_treasury_pct']['median'], 1)} & see the main text (block terciles) \\\\",
         f"Two-extractor agreement: largest holder within 0.5 pp & -- & {OA['largest_pct']['within_0_5pp']} / {OA['largest_pct']['n']} \\\\", f"Two-extractor agreement: block within 1 pp & -- & {OA['block_pct']['within_1pp']} / {OA['block_pct']['n']} \\\\",
@@ -261,7 +261,7 @@ for per in ("2001-2016", "2017+"):
     b_ = BPP[per]; q = b_.get("Q5_minus_Q1", {}); sp = b_.get("spearman", {}); ac = b_.get("announcement_car_on_score", {}).get("p_llm", {})
     body.append(f"{per.replace('-', '--').replace('+', '--2026')} & {b_['n_score_1y']} & {pct(q.get('diff'), 1, True)} [{pct(q['diff_ci95_boot'][0], 1, True)}, {pct(q['diff_ci95_boot'][1], 1, True)}] & {r(sp.get('rho'))} [{p(sp.get('p'))}] & {r(ac.get('coef'), 4)} [{p(ac.get('p_hc1'))}] \\\\")
 body += ["\\bottomrule", "\\end{tabular}"]
-w("S_by_period", "\n".join(body), "bhar_predicted_disposal_pooled_20261025.json by_period")
+w("S_by_period", "\n".join(body), "bhar_predicted_disposal_pooled_20261028.json by_period")
 
 # ---------------- numbers.tex
 lines = [f"% generated by code/make_tables_cgir.py on {dt.date.today()} — every macro traces to a results file (see the generator for keys)"]
@@ -307,20 +307,20 @@ mac("NDefs", len(DEFS))
 # theory -> prediction -> test -> result (filled from the results files; verdicts are the author's reading recorded here)
 sp_ = BP["spearman_score_vs_return"][M]; q5y = BP["by_score_quintile"]["q5_within_year"]["Q5_minus_Q1"][M]; e_ = BP["by_disposal_timing"]["comparisons"]["early_le1y_vs_never"]
 rows_map = [
- ("H1", "Disclosure is informative about the controller's intention", f"The filing text predicts disposal better than the parent's financials", "Table~\\ref{tab:gate1}: AUC two-model vs financial baseline, pooled; anonymized condition",
+ ("H1", "Information-asymmetry theory of divestitures: a controller who needs outside capital or a buyer describes the vehicle in the filing (rival: boilerplate)", f"The filing text predicts disposal better than the parent's financials", "Table~\\ref{tab:gate1}: AUC two-model vs financial baseline, pooled; anonymized condition",
   f"AUC {r(G1['pooled']['auc_p_llm'])} vs {r(G1['pooled']['financial_cv_auc'])} (difference {r(G1['pooled']['delta_llm_minus_financial']['point'])}, 95\\% CI [{r(G1['pooled']['delta_llm_minus_financial']['ci95'][0])}, {r(G1['pooled']['delta_llm_minus_financial']['ci95'][1])}]); anonymized {r(an_o['two_model_average']['auc_anonymized'])} (2001--16) and {r(an_n['two_model_average']['auc_anonymized'])} (2017+)", "Supported; not memorization"),
- ("H2", "Smaller controlling blocks make disposal more attractive to the controller", "Lower block $\\Rightarrow$ stronger disposal signal and more frequent (early) disposal", "Tables~\\ref{tab:block_terciles}, \\ref{tab:block_regressions}: score and disposal on the block",
+ ("H2", "Principal--principal: the controller's gain from disposal does not depend on its cash-flow stake, its share of the loss does (rival, efficiency view: stake irrelevant)", "Lower block $\\Rightarrow$ stronger disposal signal and more frequent (early) disposal", "Tables~\\ref{tab:block_terciles}, \\ref{tab:block_regressions}: score and disposal on the block",
   f"Score on block {r(T2['block_controls']['block']['coef'])} (HC1 $p$ {p(T2['block_controls']['block']['p_hc1'])}); disposal rate {pct(T5['low']['disposal_rate'],0)}\\% vs {pct(T5['high']['disposal_rate'],0)}\\% (low vs high tercile); early disposal on block {r(T1['block_score_controls']['block']['coef'])} ($p$ {p(T1['block_score_controls']['block']['p_hc1'])})", "Signal: supported; realized disposal: direction only"),
- ("H3a", "Minority investors read the filing (rival: they do not)", "If read: more negative announcement CAR for high-signal filings and no later drift", "Table~\\ref{tab:returns_by_score}: announcement CAR and one-year BHAR on the score",
+ ("H3a", "Semi-strong efficiency: implications priced at the announcement (rival, limited attention: only the stated purpose is priced; implications arrive with the event)", "If read: more negative announcement CAR for high-signal filings and no later drift", "Table~\\ref{tab:returns_by_score}: announcement CAR and one-year BHAR on the score",
   f"Announcement slope {r(RG_['announcement_car_on_score_yearFE']['p_llm']['coef'],3)} ($p$ {p(RG_['announcement_car_on_score_yearFE']['p_llm']['p_hc1'])}) --- positive; one-year Spearman {r(sp_['rho'])} ($p$ {p(sp_['p'])}); within-year Q5$-$Q1 {pct(q5y['diff'],1,True)}\\%", "Rival supported: reaction positive, drift negative"),
- ("H3b", "The loss arrives with the disposal", "Early disposers underperform retainers; late disposers do not within the year", "Tables~\\ref{tab:returns_by_outcome}, \\ref{tab:realized_controls}",
+ ("H3b", "Principal--principal: the transfer is realised at the disposal, not at the division", "Early disposers underperform retainers; late disposers do not within the year", "Tables~\\ref{tab:returns_by_outcome}, \\ref{tab:realized_controls}",
   f"Early $-$ never {pct(e_['diff'],1,True)}\\% (Mann--Whitney $p$ {p(e_['mannwhitney_p'])}); late $-$ never {pct(BP['by_disposal_timing']['comparisons']['late_ge2y_vs_never']['diff'],1,True)}\\% ($p$ {p(BP['by_disposal_timing']['comparisons']['late_ge2y_vs_never']['welch_p'])}); score adds nothing once early disposal is in (Table~\\ref{{tab:realized_controls}})", "Supported"),
- ("H3c", "Minority holders of low-block parents bear the loss", "Lower block $\\Rightarrow$ lower one-year return", "Tables~\\ref{tab:block_terciles}, \\ref{tab:block_regressions}",
+ ("H3c", "Principal--principal: expropriation concentrates where the controller's cash-flow cost is lowest", "Lower block $\\Rightarrow$ lower one-year return", "Tables~\\ref{tab:block_terciles}, \\ref{tab:block_regressions}",
   f"Median BHAR {pct(T5['low']['bhar1y']['median'],1,True)}\\% (low) vs {pct(T5['high']['bhar1y']['median'],1,True)}\\% (high), Mann--Whitney $p$ {p(LH[M]['mannwhitney_p'])}; rank on block {r(T4['rank_on_block']['block']['coef'])} ($p$ {p(T4['rank_on_block']['block']['p_hc1'])})", "Supported (association)"),
- ("H4", "Mandated disclosure changes what is said, not what is done", "Protection statements and announcement reactions change; the disposal signal and early disposal do not", "Table~\\ref{tab:reform}",
+ ("H4", "Critique of mandated disclosure: mandates change what is written before what is done when recipients do not read (rival: information deters)", "Protection statements and announcement reactions change; the disposal signal and early disposal do not", "Table~\\ref{tab:reform}",
   f"Protection statements {pct(PP['filings_mention_protection']['share_pre'],1)}\\% $\\to$ {pct(PP['filings_mention_protection']['share_post'],1)}\\%; announcement CAR {pct(PP['announcement_car']['mean_pre'],2,True)}\\% $\\to$ {pct(PP['announcement_car']['mean_post'],2,True)}\\%; score {r(PP['disposal_score']['mean_pre'])} $\\to$ {r(PP['disposal_score']['mean_post'])}; early disposal {pct(PP['early_disposal_rate_mature_only']['share_pre'],1)}\\% $\\to$ {pct(PP['early_disposal_rate_mature_only']['share_post'],1)}\\%", "Consistent (before/after, small post sample)"),
 ]
-body = ["\\begin{tabular}{>{\\raggedright\\arraybackslash}p{0.9cm}>{\\raggedright\\arraybackslash}p{3.4cm}>{\\raggedright\\arraybackslash}p{3.6cm}>{\\raggedright\\arraybackslash}p{3.3cm}>{\\raggedright\\arraybackslash}p{6.2cm}>{\\raggedright\\arraybackslash}p{2.4cm}}", "\\toprule", " & Theoretical statement & Prediction in our variables & Test & Result & Reading \\\\", "\\midrule"]
+body = ["\\begin{tabular}{>{\\raggedright\\arraybackslash}p{0.8cm}>{\\raggedright\\arraybackslash}p{4.6cm}>{\\raggedright\\arraybackslash}p{3.6cm}>{\\raggedright\\arraybackslash}p{3.0cm}>{\\raggedright\\arraybackslash}p{6.0cm}>{\\raggedright\\arraybackslash}p{2.6cm}}", "\\toprule", " & Theoretical statement & Prediction in our variables & Test & Result & Reading \\\\", "\\midrule"]
 for h in rows_map: body.append(" & ".join(h) + " \\\\ \\addlinespace[2pt]")
 body += ["\\bottomrule", "\\end{tabular}"]
 w("T_mapping", "\n".join(body), "all results files (see rows); readings recorded by the author 2026-10-25")

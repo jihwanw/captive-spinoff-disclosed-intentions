@@ -14,7 +14,7 @@ Version DOI (release `v1.0-submission`, the submitted state): https://doi.org/10
 | `data/processed/` | Outcome labels per carve-out (`carveout_disposal_tracking_v4.json` for 2017–2026, `carveout_disposal_tracking_2001_2016.json`), the event lists, pre-announcement ownership (`ownership_pre_event_all.json`), the event-level analysis file (`bhar_controls_events_20261025.csv`) and the event-study metadata. |
 | `data/raw/` | The two division-filing lists retrieved from DART (structured record 2017–2026; title-filtered list 2001–2016). |
 | `data/external/` | Monthly Korean five-factor returns constructed by the author (`factors_monthly_kr_ff5.csv`) with the construction methodology and compliance notes. |
-| `paper/` | LaTeX sources of the manuscript and the Supporting Information, the generated tables and the bibliography. |
+| `paper/` | LaTeX sources of the manuscript and the Supporting Information, the generated tables and figures, and the bibliography. `make_figures_cgir.py` writes the plotted numbers to `results/figure_data_<date>.json`. |
 | `literature/` | The literature search records and the anchor numbers transcribed from Kang & Lee (2025) with their table/footnote sources. |
 
 ## What is not here, and how to obtain it
@@ -34,7 +34,8 @@ cd paper/tex && pdflatex main && bibtex main && pdflatex main && pdflatex main
 ## Releases
 
 * `v1.0-results` — the code and results files that produced every estimate in the submitted manuscript.
-* `v1.0-submission` — the submitted state (DOI 10.5281/zenodo.23660636); results code unchanged from `v1.0-results`. This README's DOI line was added after the release was archived.
+* `v1.0-submission` — first submission-state release (DOI 10.5281/zenodo.23660636).
+* `v1.1-submission` — the submitted state. Change to results code since v1.0: `16_bhar_by_predicted_disposal.py` builds the calendar-time portfolios from the same full-one-year-window event set as the event-time tests (previously delisted parents' partial windows entered the daily portfolio, and one Compustat adjustment artefact on 2013-09-11 moved the all-carve-out calendar-time mean from about -7% to +25% a year); `18_bhar_pooled.py` re-run → `results/bhar_predicted_disposal_pooled_20261028.json`. Adds `make_figures_cgir.py` and `paper/figures/`.
 
 ## Licence and citation
 

@@ -17,6 +17,9 @@ from pathlib import Path
 P = Path(__file__).resolve().parent.parent
 TEX = P / "paper/tex"; TAB = P / "paper/tables"
 fails, warns = [], []
+def strip_math(t):
+    t = re.sub(r"\\begin\{equation\}.*?\\end\{equation\}", " ", t, flags=re.S)   # display equations: symbols and index constants only
+    return re.sub(r"\$[^$]*\$", " ", t)
 
 # ---- A: regenerate into a scratch copy of the project (tables dir only is written by the generator)
 with tempfile.TemporaryDirectory() as td:
@@ -45,7 +48,7 @@ used = set()
 body_all = ""
 for f in tex_files:
     t = re.sub(r"(?<!\\)%.*", "", f.read_text()); body_all += "\n" + t
-    used |= set(re.findall(r"\\([A-Z][A-Za-z]+)(?:\{\})?", t))
+    used |= set(re.findall(r"\\([A-Z][A-Za-z]+)(?:\{\})?", strip_math(t)))
 latex_cmds = {"NDefs"}  # harmless
 undefined = sorted(u for u in used if u not in nums and u not in archive_macros and re.match(r"^[A-Z]", u) and u not in ("KOSPI", "KOSDAQ", "OLS", "AUC", "ROC", "HC", "BHAR", "CAR", "DART", "US", "LG", "CJ", "ENM", "DB", "SK", "GPT", "BM", "FF", "NW", "MW", "SI", "FE"))
 # only names that look like our macros (CamelCase starting with capital and containing lowercase)
@@ -69,15 +72,16 @@ WHITELIST_PATTERNS = [   # applied in order: multi-character constants first, si
     r"\b(19|20)\d{2}--(19|20)\d{2}\b", r"\b(19|20)\d{2}\b",            # year ranges and years
     r"\b\d{1,2} (January|February|March|April|May|June|July|August|September|October|November|December)\b",   # dates
     r"\b99\.5\b", r"\b60,000\b", r"\b10,000\b", r"\b100\b", r"\b250\b", r"\b130\b", r"\b90\b", r"\b50\b", r"\b31\b",   # method constants stated in Section 3 / table notes
-    r"\b0\.5\b", r"\b0\.01\b", r"\b0\.05\b", r"\b0\.10\b",             # chance level, significance levels
+    r"\b0\.5\b", r"\b0\.01\b", r"\b0\.05\b", r"\b0\.10\b", r"\b95 percent\b",   # chance level, significance and confidence levels
     r"\b0--1\b", r"\b1--3\b", r"\b5-1\b", r"\b6\.1\b", r"\b10-K\b", r"\b3pt\b", r"Article 165-5\(3\)",   # scales, antecedent table range, model versions, statute citation
     r"\b(14|18|17|23|27|28|30)\b",                                         # footnote numbers of the antecedent and day numbers that survive the date pattern
     r"\b[0-6]\b",                                                          # column numbers, Day 0, scale endpoints
 ]
 def prose_only(t):
+    t = strip_math(t)
+    t = re.sub(r"\\includegraphics(?:\[[^\]]*\])?\{[^}]*\}", " ", t)   # figure files and their width options
     t = re.sub(r"\\(?:cite[A-Za-z]*|ref|label|input|texttt)\{[^}]*\}", " ", t)
     t = re.sub(r"\\[A-Za-z]+(?:\{\})?", " ", t)             # macros and commands
-    t = re.sub(r"\$[^$]*\$", " ", t)                        # math windows (-1, +1, +250 ...)
     t = re.sub(r"\\begin\{[^}]*\}|\\end\{[^}]*\}|\[htbp\]", " ", t)
     return t
 typed = []

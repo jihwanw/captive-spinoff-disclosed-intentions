@@ -202,7 +202,11 @@ def analyze(co, pan_d, tag, unmapped=(), sample_note=""):
             res["by_period"][str(per)] = blk
 
     # calendar-time portfolios (daily, market-adjusted): cross-correlation-robust inference
-    pd_ = pan_d.merge(co[["rcept_no", "p_llm", "disposed", "year"]], on="rcept_no").merge(S[["rcept_no", "t3_pooled"]], on="rcept_no", how="left")
+    # 2026-10-28: the calendar-time portfolios hold exactly the events of the event-time tests (score and a full one-year window).
+    # Before this change, delisted parents' partial windows entered the daily portfolio; one Compustat adjustment artefact
+    # (20130516000003, ret +12,377% on 2013-09-11, a delisting-period day the glitch screen keeps by design) moved the
+    # all-carve-out calendar-time mean from about -7% to +25% a year. Same-sample construction removes the dependence on such days.
+    pd_ = pan_d.merge(co.dropna(subset=["p_llm", MAIN])[["rcept_no", "p_llm", "disposed", "year"]], on="rcept_no").merge(S[["rcept_no", "t3_pooled"]], on="rcept_no", how="left")
     win = pd_[(pd_.tau >= 2) & (pd_.tau <= 250)].copy()
     def ct_series(d, minn=5):
         g = d.groupby("date").ar_madj.agg(["mean", "size"]); g = g[g["size"] >= minn]; return g["mean"], g["size"]

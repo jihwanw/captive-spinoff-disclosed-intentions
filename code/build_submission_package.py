@@ -102,7 +102,7 @@ with zipfile.ZipFile(rep, "w", zipfile.ZIP_DEFLATED) as z:
     for f in sorted(repo.rglob("*")):
         if not f.is_file() or ".git" in f.parts or "__pycache__" in f.parts: continue
         rel = f.relative_to(repo).as_posix()
-        if rel in ("CITATION.cff", ".zenodo.json", "LICENSE"): continue   # carry the author's name by design
+        if rel in ("CITATION.cff", ".zenodo.json", "LICENSE", "code/build_submission_package.py"): continue   # carry the author's name or the identifier list by design
         if f.suffix in (".py", ".md", ".tex", ".bib", ".txt", ".json", ".jsonl", ".csv", ".cff", ".yml", ".yaml"):
             s = f.read_text(errors="ignore")
             for pat, repl in SCRUB: s = re.sub(pat, repl, s)
@@ -131,6 +131,11 @@ for zname in (bundle, rep):
             if h: hits_all[n] = h
         report.append((zname.name + " members", hits_all))
 bad = [(l, h) for l, h in report if h]
+
+# ---- 6b. merged tex for the submission gate (sections and archive identifiers inlined; numbers stay an \\input)
+main_src = (TEX / "main.tex").read_text()
+merged = re.sub(r"\\input\{(sec[0-9a-z_]+|archive_ids)\}", lambda mm: "\n" + (TEX / (mm.group(1) + ".tex")).read_text().rstrip() + "\n", main_src)
+(OUT / "main_merged.tex").write_text(merged)
 
 # ---- 7. manifest
 lines = [f"# Submission package — built {dt.datetime.now():%Y-%m-%d %H:%M}", "", f"Anonymous main PDF: {main_pages} pages; main text {main_words:,} words (to the data availability statement); abstract {abstract_words} words. Supporting Information: {supp_pages} pages.", "", "| File | Size | sha256 (16) |", "|---|---|---|"]
