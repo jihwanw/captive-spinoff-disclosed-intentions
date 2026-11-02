@@ -25,25 +25,27 @@ GREY, DARK, MID, LIGHT = "#555555", "#222222", "#888888", "#bbbbbb"
 out = {"generated": str(dt.datetime.now())[:19], "sources": {}}
 
 # ------------------------------------------------------------------ F1 conceptual framework
-fig, ax = plt.subplots(figsize=(6.5, 3.6)); ax.axis("off"); ax.set_xlim(0, 10); ax.set_ylim(-0.2, 4.6)
+fig, ax = plt.subplots(figsize=(6.5, 4.4)); ax.axis("off"); ax.set_xlim(0, 13.4); ax.set_ylim(-0.7, 5.9)
 def box(x, y, w, h, text, fs=8.5):
-    ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.02,rounding_size=0.08", fc="white", ec=DARK, lw=0.9))
-    ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=fs, color=DARK)
-def arrow(x1, y1, x2, y2, label=None, dy=0.18, ls="-"):
-    ax.add_patch(FancyArrowPatch((x1, y1), (x2, y2), arrowstyle="-|>", mutation_scale=10, lw=0.9, color=DARK, linestyle=ls))
-    if label: ax.text((x1 + x2) / 2, (y1 + y2) / 2 + dy, label, ha="center", va="bottom", fontsize=8, color=GREY)
-box(0.2, 2.6, 2.4, 1.0, "Controlling owner's\ncash-flow stake\n(principal–principal)")
-box(3.6, 2.6, 2.8, 1.0, "Division filing\n(read by the minority\nand by counterparties)")
-box(7.4, 2.6, 2.4, 1.0, "Disposal of the\nsubsidiary\n(sale, investor, listing)")
-box(3.7, 0.4, 2.6, 1.0, "Announcement reaction\n(efficiency vs\nlimited attention)")
-box(7.4, 0.4, 2.4, 1.0, "Minority return over\nthe following year")
-arrow(2.6, 3.1, 3.6, 3.1); ax.text(3.15, 3.75, "H2: smaller stake,\nstronger signal", ha="center", fontsize=7.5, color=GREY)
-arrow(6.4, 3.1, 7.4, 3.1); ax.text(6.85, 3.75, "H1: the filing\nforecasts the disposal", ha="center", fontsize=7.5, color=GREY)
-arrow(5.0, 2.6, 5.0, 1.4); ax.text(5.15, 2.0, "H3a: is the signal priced?", fontsize=7.5, color=GREY, va="center")
-arrow(8.6, 2.6, 8.6, 1.4); ax.text(8.75, 2.0, "H3b: the loss arrives\nwith the disposal", fontsize=7.5, color=GREY, va="center")
-ax.add_patch(FancyArrowPatch((1.4, 2.6), (1.4, 0.1), arrowstyle="-", lw=0.9, color=DARK)); ax.add_patch(FancyArrowPatch((1.4, 0.1), (8.6, 0.1), arrowstyle="-", lw=0.9, color=DARK)); arrow(8.6, 0.1, 8.6, 0.4)
-ax.text(5.0, -0.05, "H3c: the loss falls on minority holders of small-block parents", ha="center", va="top", fontsize=7.5, color=GREY)
-ax.text(5.0, 4.45, "2022 reform (H4): mandated statements act on the filing and its reception before they act on the disposal", ha="center", fontsize=7.5, color=GREY, style="italic")
+    ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.02,rounding_size=0.1", fc="white", ec=DARK, lw=0.9))
+    ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=fs, color=DARK, linespacing=1.25)
+def arrow(x1, y1, x2, y2):
+    ax.add_patch(FancyArrowPatch((x1, y1), (x2, y2), arrowstyle="-|>", mutation_scale=10, lw=0.9, color=DARK))
+W = 3.7; X1, X2, X3 = 0.2, 4.6, 9.0   # box left edges; gaps of 0.7 for the arrows
+box(X1, 3.3, W, 1.5, "Controlling owner's\ncash-flow stake\n(principal–principal)")
+box(X2, 3.3, W, 1.5, "Division filing\n(read by the minority\nand by counterparties)")
+box(X3, 3.3, W, 1.5, "Disposal of the\nsubsidiary\n(sale, investor, listing)")
+box(X2, 0.5, W, 1.5, "Announcement\nreaction (efficiency\nvs limited attention)")
+box(X3, 0.5, W, 1.5, "Minority return over\nthe following year")
+arrow(X1 + W, 4.05, X2, 4.05); ax.text((X1 + W + X2) / 2, 5.15, "H2: smaller stake,\nstronger signal", ha="center", va="center", fontsize=7.5, color=GREY)
+arrow(X2 + W, 4.05, X3, 4.05); ax.text((X2 + W + X3) / 2, 5.15, "H1: the filing\nforecasts the disposal", ha="center", va="center", fontsize=7.5, color=GREY)
+c2, c3 = X2 + W / 2, X3 + W / 2
+arrow(c2, 3.3, c2, 2.0); ax.text(c2 - 0.15, 2.65, "H3a: is the\nsignal priced?", fontsize=7.5, color=GREY, va="center", ha="right")
+arrow(c3, 3.3, c3, 2.0); ax.text(c3 + 0.15, 2.65, "H3b: the loss\narrives with\nthe disposal", fontsize=7.5, color=GREY, va="center", ha="left")
+c1 = X1 + W / 2
+ax.plot([c1, c1], [3.3, -0.1], color=DARK, lw=0.9); ax.plot([c1, c3], [-0.1, -0.1], color=DARK, lw=0.9); arrow(c3, -0.1, c3, 0.5)
+ax.text((c1 + c3) / 2, -0.25, "H3c: the loss falls on minority holders of small-block parents", ha="center", va="top", fontsize=7.5, color=GREY)
+ax.text(6.7, 5.75, "2022 reform (H4): mandated statements act on the filing and its reception before they act on the disposal", ha="center", va="center", fontsize=7.5, color=GREY, style="italic")
 fig.savefig(f"{FIG}/F1_framework.pdf", bbox_inches="tight"); plt.close(fig)
 
 # ------------------------------------------------------------------ data for F2/F3: the pooled event set and panel used by Tables 4-5

@@ -1,6 +1,5 @@
+% Input only in the author copy (\anonfalse): the CGIR editorial office asked on 2 Nov 2026 (CORG-26-01588) that the anonymous main document
+% carry no data availability statement. For review the statement is on the title page (02_Title_Page.docx) and in the Research Exchange form
+% (submission_build/src/data_availability_statement_submission_form.txt); the three texts must say the same thing.
 \section*{Data availability statement}
-\ifanon
-The code, the results files, the outcome labels and the table generators that produce every number in this paper are deposited in a public archive under a version DOI; the link is given on the title page, and an anonymized copy of the archive accompanies this submission as material for review. The language-model judgments actually used are part of the archive, so the tables can be regenerated without any model call. Daily prices from the Korea Exchange and Compustat Global are not redistributed; the scripts rebuild them from the sources named in Section~\ref{sec:returns}.
-\else
 The code, the results files, the outcome labels and the table generators that produce every number in this paper are deposited at \url{https://doi.org/\ArchiveVersionDOI} (release \ArchiveTag; concept DOI for all versions \ArchiveConceptDOI) and at \url{https://github.com/jihwanw/captive-spinoff-disclosed-intentions}. The language-model judgments actually used are part of the archive, so the tables can be regenerated without any model call. Daily prices from the Korea Exchange and Compustat Global are not redistributed; the scripts rebuild them from the sources named in Section~\ref{sec:returns}.
-\fi

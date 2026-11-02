@@ -3,7 +3,8 @@
 \documentclass[12pt]{article}
 \usepackage[margin=1in]{geometry}\usepackage{mathptmx}\usepackage{setspace}\doublespacing
 \usepackage{booktabs}\usepackage{array}\usepackage{amsmath}\usepackage{graphicx}\usepackage{threeparttable}\usepackage{rotating}
-\usepackage[nolists,tablesfirst]{endfloat}\renewcommand{\efloatseparator}{\mbox{}}\DeclareDelayedFloatFlavor{sidewaystable}{table}
+\newif\ifinlinefloats\inlinefloatsfalse   % the package builder sets \inlinefloatstrue for the reading copy (floats at their positions); the submission copy moves them after the references (CGIR guideline)
+\ifinlinefloats\else\usepackage[nolists,tablesfirst]{endfloat}\renewcommand{\efloatseparator}{\mbox{}}\DeclareDelayedFloatFlavor{sidewaystable}{table}\fi
 \usepackage[hidelinks]{hyperref}\usepackage{url}\usepackage{apacite}
 \input{../tables/numbers}
 \newif\ifanon\anontrue   % the package builder sets \anonfalse for the author copy
@@ -23,7 +24,7 @@
 \input{sec4_results}
 \input{sec5_discussion}
 \input{sec6_conclusion}
-\input{sec7_availability}
+\ifanon\else\input{sec7_availability}\fi   % CGIR editorial office, 2 Nov 2026 (CORG-26-01588 returned to draft): no data availability statement in the anonymous main document — it is on the title page and in the submission form; the author copy keeps it for the accepted version
 \bibliographystyle{apacite}
 \bibliography{refs,refs_manual}
 \end{document}

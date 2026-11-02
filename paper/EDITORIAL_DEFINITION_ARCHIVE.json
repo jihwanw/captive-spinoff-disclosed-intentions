@@ -297,9 +297,9 @@
   "required": true,
   "repo_path": "/Users/jihwanw/PhD/Finance/0_pipeline/물적분할-인적분할/replication_repo",
   "readme_path": "README.md",
-  "results_release": "v1.0-results",
-  "archive_release": "v1.0-submission",
-  "version_doi": "10.5281/zenodo.23660636",
+  "results_release": "v1.1-submission",
+  "archive_release": "v1.1-submission",
+  "version_doi": "10.5281/zenodo.23721406",
   "concept_doi": "10.5281/zenodo.23660635",
   "tracked_paths": [
    "code/"
@@ -319,15 +319,31 @@
   "current_public_title": "Controlling Owners, Disclosed Intentions, and Minority Shareholder Returns in Korean Captive Spin-Offs",
   "former_title_history_allowed": true,
   "public_metadata": {
-   "github_checked_date": "2026-10-26",
-   "zenodo_checked_date": "2026-10-26",
-   "zenodo_version": "1.0-submission",
-   "zenodo_version_as_displayed": "v1.0-submission",
-   "zenodo_file": "jihwanw/captive-spinoff-disclosed-intentions-v1.0-submission.zip",
+   "github_checked_date": "2026-10-28",
+   "zenodo_checked_date": "2026-10-28",
+   "zenodo_version": "1.1-submission",
+   "zenodo_version_as_displayed": "v1.1-submission",
+   "zenodo_file": "jihwanw/captive-spinoff-disclosed-intentions-v1.1-submission.zip",
    "zenodo_title": "Controlling Owners, Disclosed Intentions, and Minority Shareholder Returns in Korean Captive Spin-Offs — replication archive",
    "title_matches": true,
    "doi_matches": true,
-   "verification": "GitHub: release v1.0-submission on commit 8db2929 (gh release create from EC2, 2026-10-26 17:34 KST); Zenodo public API records query 2026-10-26 17:35 KST: doi 10.5281/zenodo.23660636, conceptdoi 10.5281/zenodo.23660635, version v1.0-submission, one file"
-  }
+   "verification": "GitHub release v1.1-submission on commit 1e6a748 (EC2, 2026-10-28); Zenodo public API conceptdoi query 2026-10-28: doi 10.5281/zenodo.23721406 version v1.1-submission, one file"
+  },
+  "release_history": [
+   {
+    "tag": "v1.0-results",
+    "note": "results as first produced"
+   },
+   {
+    "tag": "v1.0-submission",
+    "doi": "10.5281/zenodo.23660636",
+    "note": "first submission state"
+   },
+   {
+    "tag": "v1.1-submission",
+    "doi": "10.5281/zenodo.23721406",
+    "note": "results code changed (16_bhar_by_predicted_disposal.py calendar-time sample); 18 re-run; figures added — results and archive release coincide"
+   }
+  ]
  }
 }

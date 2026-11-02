@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-28 15:01:54",
+ "generated": "2026-10-28 15:36:07",
  "sources": {
   "F2a_F3": "18_bhar_pooled.build_pooled() (same event set and daily panel as Tables 4-5; glitch-flagged 2001-2016 events excluded)",
   "F2b": "results/bhar_predicted_disposal_pooled_20261028.json: by_score_quintile.q5_pooled",
