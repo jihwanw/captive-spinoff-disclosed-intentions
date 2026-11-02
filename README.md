@@ -1,9 +1,9 @@
 # Controlling Owners, Disclosed Intentions, and Minority Shareholder Returns in Korean Captive Spin-Offs
 
 Replication archive for the manuscript of that title (single author), submitted to *Corporate Governance: An International Review*.
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23721406.svg)](https://doi.org/10.5281/zenodo.23721406)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23890412.svg)](https://doi.org/10.5281/zenodo.23890412)
 
-Version DOI (release `v1.1-submission`, the submitted state): https://doi.org/10.5281/zenodo.23721406. Concept DOI (resolves to the latest version): https://doi.org/10.5281/zenodo.23660635.
+Version DOI (release `v1.2-submission`, the submitted state): https://doi.org/10.5281/zenodo.23890412. Previous version: `v1.1-submission`, https://doi.org/10.5281/zenodo.23721406. Concept DOI (resolves to the latest version): https://doi.org/10.5281/zenodo.23660635.
 
 ## What is here
 
@@ -35,9 +35,9 @@ cd paper/tex && pdflatex main && bibtex main && pdflatex main && pdflatex main
 
 * `v1.0-results` — the code and results files that produced every estimate in the submitted manuscript.
 * `v1.0-submission` — first submission-state release (DOI 10.5281/zenodo.23660636).
-* `v1.1-submission` — the submitted state (DOI 10.5281/zenodo.23721406). Change to results code since v1.0: `16_bhar_by_predicted_disposal.py` builds the calendar-time portfolios from the same full-one-year-window event set as the event-time tests (previously delisted parents' partial windows entered the daily portfolio, and one Compustat adjustment artefact on 2013-09-11 moved the all-carve-out calendar-time mean from about -7% to +25% a year); `18_bhar_pooled.py` re-run → `results/bhar_predicted_disposal_pooled_20261028.json`. Adds `make_figures_cgir.py` and `paper/figures/`.
+* `v1.1-submission` — the state uploaded on 31 October 2026 (DOI 10.5281/zenodo.23721406; superseded by `v1.2-submission` after the editorial-office correction). Change to results code since v1.0: `16_bhar_by_predicted_disposal.py` builds the calendar-time portfolios from the same full-one-year-window event set as the event-time tests (previously delisted parents' partial windows entered the daily portfolio, and one Compustat adjustment artefact on 2013-09-11 moved the all-carve-out calendar-time mean from about -7% to +25% a year); `18_bhar_pooled.py` re-run → `results/bhar_predicted_disposal_pooled_20261028.json`. Adds `make_figures_cgir.py` and `paper/figures/`.
 
-* `v1.2-submission` — the corrected submission state (CGIR editorial office, 2 November 2026, manuscript CORG-26-01588 returned to draft: "remove Data availability statement from your main document"). The anonymous main document no longer carries the data availability statement (it is on the title page and in the submission form; `main.tex` inputs `sec7_availability.tex` only in the author copy). Also since v1.1: the Figure 1 conceptual-framework layout in `make_figures_cgir.py` (box geometry and arrow routing only; the figure has no data), and the package builder (flat LaTeX bundle with the figure files, standalone compile test, a build failure if the anonymous PDF contains a data availability statement, fixed cover-letter date). No change to results code, results files, tables or numbers since v1.1; `results/figure_data_20261028.json` differs only in its generation timestamp.
+* `v1.2-submission` — the corrected submission state (DOI 10.5281/zenodo.23890412; CGIR editorial office, 2 November 2026, manuscript CORG-26-01588 returned to draft: "remove Data availability statement from your main document"). The anonymous main document no longer carries the data availability statement (it is on the title page and in the submission form; `main.tex` inputs `sec7_availability.tex` only in the author copy). Also since v1.1: the Figure 1 conceptual-framework layout in `make_figures_cgir.py` (box geometry and arrow routing only; the figure has no data), and the package builder (flat LaTeX bundle with the figure files, standalone compile test, a build failure if the anonymous PDF contains a data availability statement, fixed cover-letter date). No change to results code, results files, tables or numbers since v1.1; `results/figure_data_20261028.json` differs only in its generation timestamp.
 
 ## Licence and citation
 

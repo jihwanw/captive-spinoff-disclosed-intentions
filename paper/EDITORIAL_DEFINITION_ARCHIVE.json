@@ -298,8 +298,8 @@
   "repo_path": "/Users/jihwanw/PhD/Finance/0_pipeline/물적분할-인적분할/replication_repo",
   "readme_path": "README.md",
   "results_release": "v1.1-submission",
-  "archive_release": "v1.1-submission",
-  "version_doi": "10.5281/zenodo.23721406",
+  "archive_release": "v1.2-submission",
+  "version_doi": "10.5281/zenodo.23890412",
   "concept_doi": "10.5281/zenodo.23660635",
   "tracked_paths": [
    "code/"
@@ -314,20 +314,21 @@
    "code/build_submission_package.py",
    "code/check_build_cgir.py",
    "paper/*",
-   "paper/**"
+   "paper/**",
+   "code/make_figures_cgir.py"
   ],
   "current_public_title": "Controlling Owners, Disclosed Intentions, and Minority Shareholder Returns in Korean Captive Spin-Offs",
   "former_title_history_allowed": true,
   "public_metadata": {
-   "github_checked_date": "2026-10-28",
-   "zenodo_checked_date": "2026-10-28",
-   "zenodo_version": "1.1-submission",
-   "zenodo_version_as_displayed": "v1.1-submission",
-   "zenodo_file": "jihwanw/captive-spinoff-disclosed-intentions-v1.1-submission.zip",
+   "github_checked_date": "2026-11-03",
+   "zenodo_checked_date": "2026-11-03",
+   "zenodo_version": "v1.2-submission",
+   "zenodo_version_as_displayed": "v1.2-submission",
+   "zenodo_file": "jihwanw/captive-spinoff-disclosed-intentions-v1.2-submission.zip",
    "zenodo_title": "Controlling Owners, Disclosed Intentions, and Minority Shareholder Returns in Korean Captive Spin-Offs — replication archive",
    "title_matches": true,
    "doi_matches": true,
-   "verification": "GitHub release v1.1-submission on commit 1e6a748 (EC2, 2026-10-28); Zenodo public API conceptdoi query 2026-10-28: doi 10.5281/zenodo.23721406 version v1.1-submission, one file"
+   "verification": "GitHub: commit b2491fb pushed and release v1.2-submission created from EC2 vla-experiment 2026-11-02 16:41 UTC (01:41 KST 11-03); gh api releases/tags/v1.2-submission: target main, published 2026-11-02T16:41:39Z. Zenodo public API records/23890412 2026-11-03 01:45 KST: doi 10.5281/zenodo.23890412, conceptdoi 10.5281/zenodo.23660635, version v1.2-submission, one file (5,295,383 bytes), title identical, creator Woo, Jihwan ORCID 0000-0002-0424-0242, licence MIT; doi.org resolves (302 to zenodo.org/doi/10.5281/zenodo.23890412)."
   },
   "release_history": [
    {
@@ -343,7 +344,13 @@
     "tag": "v1.1-submission",
     "doi": "10.5281/zenodo.23721406",
     "note": "results code changed (16_bhar_by_predicted_disposal.py calendar-time sample); 18 re-run; figures added — results and archive release coincide"
+   },
+   {
+    "tag": "v1.2-submission",
+    "doi": "10.5281/zenodo.23890412",
+    "note": "archive release only — results_release stays v1.1-submission. Anonymous main document without the data availability statement (CGIR editorial office, 2 Nov 2026, CORG-26-01588 returned to draft); Figure 1 layout in make_figures_cgir.py; package builder guards. No change to results code, results files, tables or numbers."
    }
-  ]
+  ],
+  "allowed_between_releases_note": "code/make_figures_cgir.py added 2026-11-03: the only change between v1.1-submission and v1.2-submission is the Figure 1 conceptual-framework layout (lines 28-48: figure size, box geometry, arrow routing); Figure 1 has no data, and the F2-F6 code and results/figure_data_20261028.json (apart from its generation timestamp) are unchanged. Not results code."
  }
 }
