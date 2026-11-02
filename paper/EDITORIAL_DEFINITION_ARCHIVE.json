@@ -315,14 +315,15 @@
    "code/check_build_cgir.py",
    "paper/*",
    "paper/**",
-   "code/make_figures_cgir.py"
+   "code/make_figures_cgir.py",
+   "results/figure_data_20261028.json"
   ],
   "current_public_title": "Controlling Owners, Disclosed Intentions, and Minority Shareholder Returns in Korean Captive Spin-Offs",
   "former_title_history_allowed": true,
   "public_metadata": {
    "github_checked_date": "2026-11-03",
    "zenodo_checked_date": "2026-11-03",
-   "zenodo_version": "v1.2-submission",
+   "zenodo_version": "1.2-submission",
    "zenodo_version_as_displayed": "v1.2-submission",
    "zenodo_file": "jihwanw/captive-spinoff-disclosed-intentions-v1.2-submission.zip",
    "zenodo_title": "Controlling Owners, Disclosed Intentions, and Minority Shareholder Returns in Korean Captive Spin-Offs — replication archive",
@@ -351,6 +352,6 @@
     "note": "archive release only — results_release stays v1.1-submission. Anonymous main document without the data availability statement (CGIR editorial office, 2 Nov 2026, CORG-26-01588 returned to draft); Figure 1 layout in make_figures_cgir.py; package builder guards. No change to results code, results files, tables or numbers."
    }
   ],
-  "allowed_between_releases_note": "code/make_figures_cgir.py added 2026-11-03: the only change between v1.1-submission and v1.2-submission is the Figure 1 conceptual-framework layout (lines 28-48: figure size, box geometry, arrow routing); Figure 1 has no data, and the F2-F6 code and results/figure_data_20261028.json (apart from its generation timestamp) are unchanged. Not results code."
+  "allowed_between_releases_note": "code/make_figures_cgir.py added 2026-11-03: the only change between v1.1-submission and v1.2-submission is the Figure 1 conceptual-framework layout (lines 28-48: figure size, box geometry, arrow routing); Figure 1 has no data, and the F2-F6 code and results/figure_data_20261028.json (apart from its generation timestamp) are unchanged. Not results code. results/figure_data_20261028.json added 2026-11-03: between v1.1-submission and v1.2-submission only the \"generated\" timestamp key differs (2026-10-28 15:01:54 -> 15:36:07; verified by a key-sorted JSON diff); every data value is identical, so Figures 2-6 are unchanged."
  }
 }
