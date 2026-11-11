@@ -2,9 +2,9 @@
 plus a page-by-page measurement of the rightmost glyph in the PDF against the text block. Exit 1 on any error, undefined reference,
 overfull box, or glyph beyond the text block. Written 2026-10-23 after a shell check with a double-escaped grep pattern reported
 'overfull: 0' for a log that held six."""
-import re, subprocess, sys
+import re, os, subprocess, sys
 from pathlib import Path
-T = Path(__file__).resolve().parents[1] / "paper/tex"
+T = Path(os.environ.get("TEXDIR", Path(__file__).resolve().parents[1] / "paper/tex"))   # TEXDIR=paper/tex_jifma for the JIFMA version
 log = (T / "main.log").read_text(errors="ignore")
 errors = len(re.findall(r"^! ", log, re.M)); undefined = log.count("undefined")
 over = [(m.group(1), m.group(2)) for m in re.finditer(r"Overfull \\hbox \(([0-9.]+)pt too wide\) (.*)", log)]

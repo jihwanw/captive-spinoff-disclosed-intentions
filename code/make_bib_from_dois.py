@@ -53,13 +53,24 @@ ADD = {  # DOI: (strand, verification note) — all read back from api.crossref.
  "10.1111/corg.12658": ("V", "Anand, Huan & Pathak, CGIR 34(1) 18-40, 2026 (10-K readability and retail investors' proposals)"),
  "10.1016/j.jacceco.2003.10.002": ("T", "Hirshleifer & Teoh, JAE 36(1-3) 337-386, 2003 (limited attention and disclosure) — verified 2026-10-28"),
  "10.1111/j.1540-6261.2009.01447.x": ("T", "DellaVigna & Pollet, JF 64(2) 709-749, 2009 (investor inattention) — verified 2026-10-28"),
+ # ---- added 2026-11-11 for the JIFMA version (all read back from api.crossref.org/works/<doi> on 2026-11-11)
+ "10.1111/jifm.12196": ("J", "Shim, JIFMA 35(1) 290-326, 2024 (Korea; financial affiliates and tax avoidance in business groups)"),
+ "10.1111/jifm.12207": ("J", "Chen, Han & Reda, JIFMA 35(3) 651-693, 2024 (China; CEO famine experience and tunneling)"),
+ "10.1111/jifm.12208": ("J", "Huang, Deng & Jiu, JIFMA 35(3) 617-650, 2024 (China; stock market liberalisation and management forecasts, staggered DiD)"),
+ "10.1111/jifm.12205": ("J", "Chen, Li, Kang & Yang, JIFMA 35(2) 584-609, 2024 (China; blockholder exit threats and excess cash)"),
+ "10.1111/jifm.12247": ("J", "Liu, Huang, He & Liu, JIFMA 37(1) 171-198, 2026 (China; regulatory policy and analysts' forecasts)"),
+ "10.2307/1913390": ("T", "Crawford & Sobel, Econometrica 50(6) 1431-1451, 1982 (strategic information transmission); pages from econometricsociety.org (JSTOR DOI carries the first page only)"),
+ "10.1257/jep.10.3.103": ("T", "Farrell & Rabin, JEP 10(3) 103-118, 1996 (cheap talk)"),
+ "10.1016/0304-405X(76)90026-X": ("T", "Jensen & Meckling, JFE 3(4) 305-360, 1976 (agency costs; bonding)"),
+ "10.1086/689578": ("T", "Jiang, Li, Mei & Thomas, JLE 59(3) 697-729, 2016 (appraisal remedy)"),
 }
 OVERRIDES = {  # DOI: {field: value}; source in the comment
+ "10.2307/1913390": {"pages": "1431–1451"},        # Crawford & Sobel 1982, Econometrica 50(6): econometricsociety.org/publications/econometrica/1982/11/01/strategic-information-transmission "p. 1431-1451" (read 2026-11-11); JSTOR DOI carries first page only
  "10.2307/3666322": {"pages": "83–100"},           # Hulburt, Miles & Woolridge 2002, FM 31(1): Penn State Pure record (pure.psu.edu, J. R. Woolridge); JSTOR DOI carries first page only
  "10.2307/2327589": {"DOI": "10.1111/j.1540-6261.1983.tb03843.x", "pages": "1597–1606"},   # Miles & Rosenfeld 1983, JF 38(5): Wiley DOI (Crossref page 1597-1606)
  "10.1016/s0304-405x(98)00026-9": {"title": "Market efficiency, long-term returns, and behavioral finance"},   # Crossref embeds the acknowledgement footnote in the title; JFE 49(3) 283-306
 }
-PROPER = ["Korean", "Korea", "Indian", "India", "China", "Chinese", "East Asian", "Asian", "GPT", "U.S.", "10-Ks", "10-K", "ROC", "LLM", "Japan", "Japanese", "South Korea", "Plain Writing Act"]
+PROPER = ["Korean", "Korea", "Indian", "India", "China", "Chinese", "East Asian", "Asian", "GPT", "U.S.", "10-Ks", "10-K", "ROC", "LLM", "Japan", "Japanese", "South Korea", "Plain Writing Act", "CEO", "Friday", "Delaware", "SEC"]
 
 def norm(s): return unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower()
 def crossref(doi):
@@ -71,11 +82,11 @@ def bibtex(doi):
 def fix_author(a):
     a = re.sub(r"[\u2010\u2011\u2012\u2013]", "-", a)      # Unicode hyphens in Crossref names -> ASCII (Jae-Seung, Lopez-de-Silanes)
     a = re.sub(r"^\s*and\s+", "", a.strip())            # Crossref quirk: leading empty author (ARFR 38(1) record)
-    a = a.replace("Lopez-De-Silanes", "Lopez-de-Silanes")
+    a = a.replace("Lopez-De-Silanes", "Lopez-de-Silanes").replace("Dellavigna", "DellaVigna")   # DellaVigna & Pollet 2009: the JF byline capitalises the V
     def cap(tok): return "-".join(w[:1].upper() + w[1:].lower() if w.isupper() and len(w) > 1 else w for w in tok.split("-"))
-    if not re.search(r"[A-Z]{4,}", a): return a.replace("Mcdonald", "McDonald")
+    if not re.search(r"[A-Z]{4,}", a): return a.replace("Mcdonald", "McDonald").replace("Dellavigna", "DellaVigna")
     out = " and ".join(", ".join(" ".join(cap(w) for w in part.split(" ")) for part in name.split(", ")) for name in a.split(" and "))
-    out = out.replace("‐", "-").replace("Mcdonald", "McDonald")
+    out = out.replace("‐", "-").replace("Mcdonald", "McDonald").replace("Dellavigna", "DellaVigna")   # DellaVigna & Pollet 2009: the JF byline capitalises the V
     return out
 def fix_title(s):
     s = re.sub(r"[\u2010\u2011\u2012]", "-", s)                     # Unicode hyphens -> ASCII (10-K, carve-outs)
@@ -106,6 +117,7 @@ for doi, strand, note in sel:
     if "journal" not in bib: print("INCOMPLETE:", doi, bib[:80].replace("\n", " ")); continue
     yr = ((m.get("published-print") or m.get("issued") or {}).get("date-parts") or [[None]])[0][0]
     bib = re.sub(r",\s*month=\{?[A-Za-z]+\}?", "", bib); bib = re.sub(r",\s*url=\{[^}]*\}", "", bib)
+    bib = bib.replace("&amp;", "\\&").replace("&lt;", "<").replace("&gt;", ">")   # doi.org BibTeX carries HTML entities in journal names (JIFMA: "Management &amp; Accounting"), 2026-11-11
     bib = re.sub(r"year=\{\d{4}\}", f"year={{{yr}}}", bib, 1)
     bib = re.sub(r"author=\{([^}]*)\}", lambda k: "author={" + fix_author(k.group(1)) + "}", bib, 1)
     bib = re.sub(r"title=\{(.*?)\}(?=,\s*\w+=)", lambda k: "title={" + fix_title(k.group(1)) + "}", bib, 1, flags=re.S)

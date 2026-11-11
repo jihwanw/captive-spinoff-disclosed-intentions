@@ -1,6 +1,6 @@
 # Controlling Owners, Disclosed Intentions, and Minority Shareholder Returns in Korean Captive Spin-Offs
 
-Replication archive for the manuscript of that title (single author), submitted to *Corporate Governance: An International Review*.
+Replication archive for the manuscript of that title (single author). The manuscript was submitted to *Corporate Governance: An International Review* on 31 October 2026 (desk decision 10 November 2026, no external review) and is being prepared, in a substantially extended form, for submission to the *Journal of International Financial Management & Accounting* (`paper/tex_jifma/`; see "Version 2" below).
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23890412.svg)](https://doi.org/10.5281/zenodo.23890412)
 
 Version DOI (release `v1.2-submission`, the submitted state): https://doi.org/10.5281/zenodo.23890412. Previous version: `v1.1-submission`, https://doi.org/10.5281/zenodo.23721406. Concept DOI (resolves to the latest version): https://doi.org/10.5281/zenodo.23660635.
@@ -16,6 +16,27 @@ Version DOI (release `v1.2-submission`, the submitted state): https://doi.org/10
 | `data/external/` | Monthly Korean five-factor returns constructed by the author (`factors_monthly_kr_ff5.csv`) with the construction methodology and compliance notes. |
 | `paper/` | LaTeX sources of the manuscript and the Supporting Information, the generated tables and figures, and the bibliography. `make_figures_cgir.py` writes the plotted numbers to `results/figure_data_<date>.json`. |
 | `literature/` | The literature search records and the anchor numbers transcribed from Kang & Lee (2025) with their table/footnote sources. |
+
+
+## Version 2 (JIFMA manuscript, November 2026)
+
+The JIFMA version keeps every result of the CGIR submission and adds the design battery and the measurement audit written after the CGIR desk decision:
+
+| Script | Adds | Results file |
+|---|---|---|
+| `25_pull_compustat_global_universe.py`, `26_verify_compustat_global_kr.py` | Compustat Global universe of Korean stocks (one WRDS session) and its verification against DART/KIND (`docs/INTERFACE_CARD_compustat_global_kr.md`) | `compustat_global_kr_verification_20261110.json` |
+| `27_nested_models_signal_decomposition.py` | nested models M0–M3 (financials, purpose categories, mention flags, signal), keyword ladder, decomposition of the signal | `nested_models_20261110.json` |
+| `28_cox_time_to_disposal.py` | Cox model of time to first disposal with period strata; Kaplan–Meier by signal tercile | `cox_time_to_disposal_20261110.json` |
+| `29_industry_fe_firm_clusters.py` | year + GICS/SIC fixed effects, parent- and two-way-clustered inference | `industry_fe_firm_clusters_20261110.json` |
+| `30_universe_panel.py`, `31_matched_benchmark_and_selection.py` | 5×5 / 3×3 size–B/M portfolios, matched firm, propensity-matched control; firm-year selection logit | `universe_build_20261110.json`, `matched_benchmark_selection_20261110.json` |
+| `32_equity_did_appraisal_put.py` | captive × post-2022 DiD against equity spin-offs; appraisal-price put tests | `equity_did_appraisal_put_20261110.json` |
+| `33_protection_block_covenants.py` | classification of the mandatory shareholder-protection block | `protection_block_20261110.json` |
+| `34_governance_controls_foreign_board.py` | foreign ownership (KRX) and outside-director ratio (DART) as controls | `governance_controls_20261110.json` |
+| `35_coder_sample_and_codebook.py` | human-coder sample and codebook (prepared; coding deferred) | `data/coding/` |
+| `36_measurement_validity_bias_audit.py` | subgroup AUC/calibration, anonymisation, residual bias, two-model agreement, Kang & Lee benchmark | `validity_bias_audit_20261111.json` |
+| `make_tables_jifma.py`, `make_figures_jifma.py`, `build_submission_package_jifma.py` | tables, figures and the ScholarOne package for `paper/tex_jifma/` | `paper/tables/`, `paper/figures/` |
+
+Reproduce the JIFMA tables: `python code/make_tables_jifma.py` (runs `make_tables_cgir.py` first), then `TEXDIR=paper/tex_jifma TABLEGEN=make_tables_jifma.py python code/numeric_smoke_test.py`, then compile `paper/tex_jifma/main.tex` and `supplement.tex`. The Compustat Global universe files (`data/processed/universe_*.parquet`, `benchmark_portfolios_*.parquet`) are not redistributed; `30_universe_panel.py` rebuilds them from `data/raw/compustat_global_kr/`, which `25_pull_compustat_global_universe.py` pulls from WRDS under the user's subscription.
 
 ## What is not here, and how to obtain it
 

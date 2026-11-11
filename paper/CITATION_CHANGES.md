@@ -76,3 +76,37 @@ All other entries: Crossref print year, volume, issue and pages agree with the b
 - added hirshleifer2003: verified https://doi.org/10.1016/j.jacceco.2003.10.002 2026-10-28 (Crossref: JAE 36(1-3) 337-386, 2003)
 - added dellavigna2009: verified https://doi.org/10.1111/j.1540-6261.2009.01447.x 2026-10-28 (Crossref: JF 64(2) 709-749, 2009)
 - added benshahar2014: verified https://doi.org/10.23943/princeton/9780691161709.001.0001 2026-10-28 (Crossref monograph record, Princeton University Press 2014; the 2011 U. Penn. L. Rev. article has no Crossref DOI, so the book is cited)
+
+## 2026-11-11 JIFMA version (paper/tex_jifma) — citation changes relative to the CGIR submission (paper/tex)
+
+Reasons for dropped keys (the JIFMA version replaces the CGIR "conversation" paragraph with the JIFMA literature and shortens the divestiture background to meet the 30-page guideline):
+- dropped aguilera2025: CGIR review of business-group governance cited only in the CGIR conversation paragraph; not part of the JIFMA framing
+- dropped anand2026: CGIR paper on 10-K readability and retail proposals, cited only in the CGIR theoretical-implications paragraph; removed with that paragraph
+- dropped bian2023: CGIR expropriation study cited only in the CGIR conversation paragraph
+- dropped castaner2022: review cited in the CGIR theory paragraph's list of reviews; list shortened
+- dropped he2025: CGIR disclosure-as-governance paper cited only in the CGIR conversation paragraph
+- dropped huang2025: CGIR expropriation study cited only in the CGIR conversation paragraph
+- dropped karamatzanis2026: CGIR disclosure paper cited only in the CGIR conversation paragraph
+- dropped na2025: CGIR Korean dividend/inheritance-tax paper cited as "this journal's most recent Korean evidence"; the phrase does not apply to JIFMA
+- dropped qian2026: CGIR expropriation study cited only in the CGIR conversation paragraph
+- dropped shi2022: CGIR expropriation study cited only in the CGIR conversation paragraph
+- dropped uchida2025: CGIR paper on disclosure of voting records cited in the policy paragraph; policy paragraph rewritten around the three channels
+- dropped allen1998: US carve-out proceeds study cited in the CGIR H2 paragraph; the JIFMA H2 paragraph is shorter and cites the efficiency-view papers only
+- dropped black2006: Korean governance-index paper cited in the list of Korean evidence; list shortened for length
+- dropped dyck2004: control-premium paper cited in the general principal–principal list; list shortened for length
+- dropped hite1983: US spin-off paper cited in the definitions paragraph (why "captive spin-off"); the definitions table moved to the Supporting Information and the paragraph was removed for length
+- dropped klein1991: US two-stage carve-out paper cited in the same definitions paragraph; removed with it
+- dropped miles1983: US spin-off paper cited in the same definitions paragraph; removed with it
+- dropped mitton2002: East Asian crisis governance paper cited in the list of Korean evidence; list shortened for length
+
+Added keys (all read back from api.crossref.org/works/<doi> on 2026-11-11; pages of Crawford & Sobel from econometricsociety.org because the JSTOR DOI carries the first page only):
+- added shim2024: verified https://doi.org/10.1111/jifm.12196 2026-11-11 (JIFMA 35(1) 290–326)
+- added chen2024: verified https://doi.org/10.1111/jifm.12207 2026-11-11 (JIFMA 35(3) 651–693)
+- added huang2024: verified https://doi.org/10.1111/jifm.12208 2026-11-11 (JIFMA 35(3) 617–650)
+- added liu2026: verified https://doi.org/10.1111/jifm.12247 2026-11-11 (JIFMA 37(1) 171–198; Crossref published-print 2026)
+- added crawford1982: verified https://doi.org/10.2307/1913390 2026-11-11 (Econometrica 50(6) 1431–1451; page range from https://www.econometricsociety.org/publications/econometrica/1982/11/01/strategic-information-transmission)
+- added farrell1996: verified https://doi.org/10.1257/jep.10.3.103 2026-11-11 (JEP 10(3) 103–118)
+- added jensen1976: verified https://doi.org/10.1016/0304-405X(76)90026-X 2026-11-11 (JFE 3(4) 305–360)
+- added jiang2016: verified https://doi.org/10.1086/689578 2026-11-11 (JLE 59(3) 697–729)
+- chen2024a (Chen, Li, Kang & Yang 2024, JIFMA 35(2) 584–609, verified https://doi.org/10.1111/jifm.12205 2026-11-11) is in the bib but not cited in this version.
+- benshahar2014, fsc2022a, fsc2022b, park2022 are in paper/tex/refs_manual.bib (hand-written entries with sources), not in refs.bib; the gate reads one bib file.

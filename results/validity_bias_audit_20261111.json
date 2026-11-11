@@ -1,0 +1,1493 @@
+{
+ "generated": "2026-11-11T01:08:19+09:00",
+ "expectations_preregistered": "(written 2026-11-10 before the first run; outside = bug first):\n  identity    n = 579, AUC(S) = 0.761 (±0.002); two-model p correlation 0.85 (±0.02) on 2017+ identified (judge summary 10-15)\n  A           every subgroup AUC in [0.62, 0.86]; max-min across the levels of one grouping <= 0.15; interaction LR p: no prior;\n              calibration-in-the-large: 2001-2016 gap (mean S - mean y) in [-0.30, -0.10] (base rate ~0.74 vs model mean ~0.5),\n              2017+ gap in [-0.05, +0.12] (base rate ~0.49, model mean ~0.53); recalibration slope in [0.6, 1.6]\n  B           overall dAUC (identified - anonymized) in [-0.03, +0.04] (2017+ ensemble: 0.767 vs 0.760); |dAUC| <= 0.06 in every\n              subgroup; Claude self-reported outside knowledge 0.35-0.60, GPT <= 0.10 (2017+); a dAUC > 0.06 inside the self-reported\n              subset is the leakage flag -> report and use anonymized scores there\n  C           |standardised coefficient| on any firm characteristic <= 0.25 SD; larger = reportable bias (not a bug) unless the sign\n              reverses when y is added\n  D           mention-flag kappa in [0.35, 0.90]; purpose-category kappa in [0.25, 0.85] (multi-label, rare categories lower);\n              path agreement in [0.45, 0.80], kappa in [0.25, 0.60] (GPT predicts 'retain' far more often: 127 vs 69 of ~185)\n  E           specialization share within ±0.15 of 0.891; sale (strict) in [0.05, 0.30]; efficiency likely ABOVE 0.059 (our list is\n              multi-label and '효율' is near-universal boilerplate) — a granularity difference, recorded, not an error;\n              ipo_listed share in [0.02, 0.08] vs 0.040; retained_100 share in [0.20, 0.40] vs 0.307",
+ "identity_control": {
+  "n": 579,
+  "auc_S": 0.7607,
+  "pass": true
+ },
+ "judgments_loaded": [
+  [
+   "anonymized",
+   "claude",
+   "1",
+   "714"
+  ],
+  [
+   "anonymized",
+   "gpt",
+   "1",
+   "720"
+  ],
+  [
+   "identified",
+   "claude",
+   "1",
+   "715"
+  ],
+  [
+   "identified",
+   "claude",
+   "2",
+   "251"
+  ],
+  [
+   "identified",
+   "gpt",
+   "1",
+   "720"
+  ],
+  [
+   "identified",
+   "gpt",
+   "2",
+   "256"
+  ]
+ ],
+ "sample": {
+  "n": 579,
+  "listed": 476,
+  "with_anonymized": 579,
+  "with_text_chars": 579,
+  "with_gsector": 474,
+  "with_foreign": 460
+ },
+ "calibration_overall": {
+  "mean_S": 0.521,
+  "mean_y": 0.693,
+  "gap": -0.171,
+  "brier": 0.207,
+  "recal_intercept": 0.926,
+  "recal_slope": 1.456
+ },
+ "A_subgroups": {
+  "period": {
+   "levels": {
+    "2001-08": {
+     "n": 161,
+     "pos": 124,
+     "auc": 0.639,
+     "ci95": [
+      0.533,
+      0.743
+     ],
+     "mean_S": 0.54,
+     "mean_y": 0.77,
+     "gap": -0.23,
+     "brier": 0.22
+    },
+    "2009-16": {
+     "n": 178,
+     "pos": 128,
+     "auc": 0.751,
+     "ci95": [
+      0.661,
+      0.834
+     ],
+     "mean_S": 0.497,
+     "mean_y": 0.719,
+     "gap": -0.222,
+     "brier": 0.224
+    },
+    "2017+": {
+     "n": 240,
+     "pos": 149,
+     "auc": 0.813,
+     "ci95": [
+      0.76,
+      0.865
+     ],
+     "mean_S": 0.526,
+     "mean_y": 0.621,
+     "gap": -0.095,
+     "brier": 0.184
+    }
+   },
+   "max_minus_min_auc": 0.174,
+   "lr_tests": {
+    "calibration_group_dummies": {
+     "lr": 9.28,
+     "df": 2,
+     "p": 0.0097
+    },
+    "discrimination_interaction": {
+     "lr": 1.71,
+     "df": 2,
+     "p": 0.425
+    }
+   }
+  },
+  "kosdaq": {
+   "levels": {
+    "KOSDAQ": {
+     "n": 200,
+     "pos": 146,
+     "auc": 0.767,
+     "ci95": [
+      0.693,
+      0.836
+     ],
+     "mean_S": 0.504,
+     "mean_y": 0.73,
+     "gap": -0.226,
+     "brier": 0.219
+    },
+    "KOSPI/other": {
+     "n": 379,
+     "pos": 255,
+     "auc": 0.762,
+     "ci95": [
+      0.709,
+      0.811
+     ],
+     "mean_S": 0.531,
+     "mean_y": 0.673,
+     "gap": -0.142,
+     "brier": 0.2
+    }
+   },
+   "max_minus_min_auc": 0.005,
+   "lr_tests": {
+    "calibration_group_dummies": {
+     "lr": 3.53,
+     "df": 1,
+     "p": 0.0603
+    },
+    "discrimination_interaction": {
+     "lr": 1.52,
+     "df": 1,
+     "p": 0.2178
+    }
+   }
+  },
+  "listed_parent": {
+   "levels": {
+    "listed": {
+     "n": 476,
+     "pos": 331,
+     "auc": 0.785,
+     "ci95": [
+      0.741,
+      0.827
+     ],
+     "mean_S": 0.527,
+     "mean_y": 0.695,
+     "gap": -0.169,
+     "brier": 0.2
+    },
+    "unlisted": {
+     "n": 103,
+     "pos": 70,
+     "auc": 0.658,
+     "ci95": [
+      0.539,
+      0.779
+     ],
+     "mean_S": 0.496,
+     "mean_y": 0.68,
+     "gap": -0.183,
+     "brier": 0.238
+    }
+   },
+   "max_minus_min_auc": 0.127,
+   "lr_tests": {
+    "calibration_group_dummies": {
+     "lr": 0.19,
+     "df": 1,
+     "p": 0.6595
+    },
+    "discrimination_interaction": {
+     "lr": 5.93,
+     "df": 1,
+     "p": 0.0149
+    }
+   }
+  },
+  "parent_size_filing_2009plus": {
+   "levels": {
+    "large": {
+     "n": 112,
+     "pos": 68,
+     "auc": 0.823,
+     "ci95": [
+      0.74,
+      0.898
+     ],
+     "mean_S": 0.575,
+     "mean_y": 0.607,
+     "gap": -0.032,
+     "brier": 0.167
+    },
+    "mid": {
+     "n": 112,
+     "pos": 60,
+     "auc": 0.846,
+     "ci95": [
+      0.776,
+      0.914
+     ],
+     "mean_S": 0.48,
+     "mean_y": 0.536,
+     "gap": -0.056,
+     "brier": 0.181
+    },
+    "small": {
+     "n": 112,
+     "pos": 90,
+     "auc": 0.631,
+     "ci95": [
+      0.484,
+      0.765
+     ],
+     "mean_S": 0.533,
+     "mean_y": 0.804,
+     "gap": -0.271,
+     "brier": 0.232
+    }
+   },
+   "max_minus_min_auc": 0.215,
+   "lr_tests": {
+    "calibration_group_dummies": {
+     "lr": 15.98,
+     "df": 2,
+     "p": 0.0003
+    },
+    "discrimination_interaction": {
+     "lr": 7.34,
+     "df": 2,
+     "p": 0.0255
+    }
+   }
+  },
+  "market_cap_listed": {
+   "levels": {
+    "large": {
+     "n": 158,
+     "pos": 94,
+     "auc": 0.816,
+     "ci95": [
+      0.752,
+      0.88
+     ],
+     "mean_S": 0.54,
+     "mean_y": 0.595,
+     "gap": -0.055,
+     "brier": 0.177
+    },
+    "mid": {
+     "n": 157,
+     "pos": 106,
+     "auc": 0.753,
+     "ci95": [
+      0.665,
+      0.831
+     ],
+     "mean_S": 0.51,
+     "mean_y": 0.675,
+     "gap": -0.165,
+     "brier": 0.211
+    },
+    "small": {
+     "n": 158,
+     "pos": 129,
+     "auc": 0.764,
+     "ci95": [
+      0.669,
+      0.85
+     ],
+     "mean_S": 0.53,
+     "mean_y": 0.816,
+     "gap": -0.287,
+     "brier": 0.213
+    }
+   },
+   "max_minus_min_auc": 0.063,
+   "lr_tests": {
+    "calibration_group_dummies": {
+     "lr": 16.33,
+     "df": 2,
+     "p": 0.0003
+    },
+    "discrimination_interaction": {
+     "lr": 1.33,
+     "df": 2,
+     "p": 0.5136
+    }
+   }
+  },
+  "newco_size": {
+   "levels": {
+    "large": {
+     "n": 111,
+     "pos": 65,
+     "auc": 0.879,
+     "ci95": [
+      0.812,
+      0.935
+     ],
+     "mean_S": 0.547,
+     "mean_y": 0.586,
+     "gap": -0.039,
+     "brier": 0.148
+    },
+    "mid": {
+     "n": 111,
+     "pos": 72,
+     "auc": 0.757,
+     "ci95": [
+      0.657,
+      0.844
+     ],
+     "mean_S": 0.53,
+     "mean_y": 0.649,
+     "gap": -0.119,
+     "brier": 0.206
+    },
+    "small": {
+     "n": 111,
+     "pos": 82,
+     "auc": 0.702,
+     "ci95": [
+      0.582,
+      0.815
+     ],
+     "mean_S": 0.523,
+     "mean_y": 0.739,
+     "gap": -0.216,
+     "brier": 0.225
+    }
+   },
+   "max_minus_min_auc": 0.177,
+   "lr_tests": {
+    "calibration_group_dummies": {
+     "lr": 6.43,
+     "df": 2,
+     "p": 0.0402
+    },
+    "discrimination_interaction": {
+     "lr": 1.85,
+     "df": 2,
+     "p": 0.3969
+    }
+   }
+  },
+  "relative_size": {
+   "levels": {
+    "high": {
+     "n": 109,
+     "pos": 66,
+     "auc": 0.809,
+     "ci95": [
+      0.719,
+      0.887
+     ],
+     "mean_S": 0.494,
+     "mean_y": 0.606,
+     "gap": -0.111,
+     "brier": 0.191
+    },
+    "low": {
+     "n": 109,
+     "pos": 72,
+     "auc": 0.738,
+     "ci95": [
+      0.639,
+      0.827
+     ],
+     "mean_S": 0.532,
+     "mean_y": 0.661,
+     "gap": -0.129,
+     "brier": 0.208
+    },
+    "mid": {
+     "n": 109,
+     "pos": 75,
+     "auc": 0.806,
+     "ci95": [
+      0.712,
+      0.89
+     ],
+     "mean_S": 0.569,
+     "mean_y": 0.688,
+     "gap": -0.119,
+     "brier": 0.181
+    }
+   },
+   "max_minus_min_auc": 0.071,
+   "lr_tests": {
+    "calibration_group_dummies": {
+     "lr": 0.17,
+     "df": 2,
+     "p": 0.9207
+    },
+    "discrimination_interaction": {
+     "lr": 2.75,
+     "df": 2,
+     "p": 0.253
+    }
+   }
+  },
+  "text_length": {
+   "levels": {
+    "long": {
+     "n": 193,
+     "pos": 120,
+     "auc": 0.764,
+     "ci95": [
+      0.699,
+      0.824
+     ],
+     "mean_S": 0.531,
+     "mean_y": 0.622,
+     "gap": -0.091,
+     "brier": 0.197
+    },
+    "mid": {
+     "n": 193,
+     "pos": 136,
+     "auc": 0.804,
+     "ci95": [
+      0.729,
+      0.87
+     ],
+     "mean_S": 0.506,
+     "mean_y": 0.705,
+     "gap": -0.199,
+     "brier": 0.205
+    },
+    "short": {
+     "n": 193,
+     "pos": 145,
+     "auc": 0.691,
+     "ci95": [
+      0.602,
+      0.78
+     ],
+     "mean_S": 0.526,
+     "mean_y": 0.751,
+     "gap": -0.225,
+     "brier": 0.218
+    }
+   },
+   "max_minus_min_auc": 0.113,
+   "lr_tests": {
+    "calibration_group_dummies": {
+     "lr": 7.35,
+     "df": 2,
+     "p": 0.0254
+    },
+    "discrimination_interaction": {
+     "lr": 2.2,
+     "df": 2,
+     "p": 0.3323
+    }
+   }
+  },
+  "label_source": {
+   "levels": {
+    "annual_report_llm": {
+     "n": 485,
+     "pos": 325,
+     "auc": 0.759,
+     "ci95": [
+      0.713,
+      0.803
+     ],
+     "mean_S": 0.52,
+     "mean_y": 0.67,
+     "gap": -0.15,
+     "brier": 0.205
+    },
+    "v3_tracker": {
+     "n": 90,
+     "pos": 76,
+     "auc": 0.809,
+     "ci95": [
+      0.701,
+      0.906
+     ],
+     "mean_S": 0.537,
+     "mean_y": 0.844,
+     "gap": -0.307,
+     "brier": 0.217
+    }
+   },
+   "max_minus_min_auc": 0.05,
+   "lr_tests": {
+    "calibration_group_dummies": {
+     "lr": 14.61,
+     "df": 1,
+     "p": 0.0001
+    },
+    "discrimination_interaction": {
+     "lr": 0.14,
+     "df": 1,
+     "p": 0.7063
+    }
+   }
+  },
+  "foreign_ownership_listed": {
+   "levels": {
+    "high": {
+     "n": 154,
+     "pos": 97,
+     "auc": 0.832,
+     "ci95": [
+      0.767,
+      0.89
+     ],
+     "mean_S": 0.52,
+     "mean_y": 0.63,
+     "gap": -0.109,
+     "brier": 0.18
+    },
+    "low": {
+     "n": 153,
+     "pos": 121,
+     "auc": 0.642,
+     "ci95": [
+      0.531,
+      0.748
+     ],
+     "mean_S": 0.55,
+     "mean_y": 0.791,
+     "gap": -0.24,
+     "brier": 0.218
+    },
+    "mid": {
+     "n": 153,
+     "pos": 104,
+     "auc": 0.79,
+     "ci95": [
+      0.707,
+      0.865
+     ],
+     "mean_S": 0.511,
+     "mean_y": 0.68,
+     "gap": -0.169,
+     "brier": 0.205
+    }
+   },
+   "max_minus_min_auc": 0.19,
+   "lr_tests": {
+    "calibration_group_dummies": {
+     "lr": 3.24,
+     "df": 2,
+     "p": 0.1976
+    },
+    "discrimination_interaction": {
+     "lr": 2.81,
+     "df": 2,
+     "p": 0.2449
+    }
+   }
+  },
+  "gics_sector": {
+   "levels": {
+    "15": {
+     "n": 58,
+     "pos": 35,
+     "auc": 0.803,
+     "ci95": [
+      0.675,
+      0.909
+     ],
+     "mean_S": 0.522,
+     "mean_y": 0.603,
+     "gap": -0.082,
+     "brier": 0.183
+    },
+    "20": {
+     "n": 84,
+     "pos": 56,
+     "auc": 0.735,
+     "ci95": [
+      0.62,
+      0.842
+     ],
+     "mean_S": 0.514,
+     "mean_y": 0.667,
+     "gap": -0.153,
+     "brier": 0.215
+    },
+    "25": {
+     "n": 82,
+     "pos": 52,
+     "auc": 0.827,
+     "ci95": [
+      0.723,
+      0.914
+     ],
+     "mean_S": 0.536,
+     "mean_y": 0.634,
+     "gap": -0.099,
+     "brier": 0.185
+    },
+    "35": {
+     "n": 37,
+     "pos": 26,
+     "auc": 0.815,
+     "ci95": [
+      0.638,
+      0.955
+     ],
+     "mean_S": 0.536,
+     "mean_y": 0.703,
+     "gap": -0.166,
+     "brier": 0.201
+    },
+    "45": {
+     "n": 113,
+     "pos": 90,
+     "auc": 0.639,
+     "ci95": [
+      0.519,
+      0.757
+     ],
+     "mean_S": 0.542,
+     "mean_y": 0.796,
+     "gap": -0.255,
+     "brier": 0.225
+    },
+    "50": {
+     "n": 50,
+     "pos": 37,
+     "auc": 0.923,
+     "ci95": [
+      0.829,
+      0.988
+     ],
+     "mean_S": 0.548,
+     "mean_y": 0.74,
+     "gap": -0.192,
+     "brier": 0.161
+    },
+    "other/small": {
+     "n": 155,
+     "pos": 105,
+     "auc": 0.731,
+     "ci95": [
+      0.64,
+      0.813
+     ],
+     "mean_S": 0.49,
+     "mean_y": 0.677,
+     "gap": -0.187,
+     "brier": 0.224
+    }
+   },
+   "max_minus_min_auc": 0.284,
+   "lr_tests": {
+    "calibration_group_dummies": {
+     "lr": 8.97,
+     "df": 6,
+     "p": 0.1752
+    },
+    "discrimination_interaction": {
+     "lr": 11.73,
+     "df": 6,
+     "p": 0.0682
+    }
+   }
+  }
+ },
+ "calibration_by_period": {
+  "2001-08": {
+   "n": 161,
+   "mean_S": 0.54,
+   "mean_y": 0.77,
+   "gap": -0.23,
+   "recal_intercept": 1.127,
+   "recal_slope": 1.078,
+   "brier": 0.22
+  },
+  "2009-16": {
+   "n": 178,
+   "mean_S": 0.497,
+   "mean_y": 0.719,
+   "gap": -0.222,
+   "recal_intercept": 1.192,
+   "recal_slope": 1.364,
+   "brier": 0.224
+  },
+  "2017+": {
+   "n": 240,
+   "mean_S": 0.526,
+   "mean_y": 0.621,
+   "gap": -0.095,
+   "recal_intercept": 0.613,
+   "recal_slope": 1.652,
+   "brier": 0.184
+  }
+ },
+ "B_anonymization": {
+  "overall": {
+   "n": 579,
+   "auc_1": 0.758,
+   "auc_2": 0.751,
+   "dauc": 0.007,
+   "ci95": [
+    -0.007,
+    0.021
+   ]
+  },
+  "overall_by_model": {
+   "claude": {
+    "n": 573,
+    "auc_1": 0.77,
+    "auc_2": 0.763,
+    "dauc": 0.007,
+    "ci95": [
+     -0.016,
+     0.029
+    ]
+   },
+   "gpt": {
+    "n": 579,
+    "auc_1": 0.734,
+    "auc_2": 0.729,
+    "dauc": 0.004,
+    "ci95": [
+     -0.01,
+     0.018
+    ]
+   }
+  },
+  "mean_shift_id_minus_an": {
+   "claude": 0.0058,
+   "gpt": 0.0035
+  },
+  "corr_id_an": {
+   "claude": 0.926,
+   "gpt": 0.963
+  },
+  "by_subgroup": {
+   "period": {
+    "2001-08": {
+     "n": 161,
+     "auc_1": 0.639,
+     "auc_2": 0.645,
+     "dauc": -0.006,
+     "ci95": [
+      -0.038,
+      0.027
+     ]
+    },
+    "2009-16": {
+     "n": 178,
+     "auc_1": 0.751,
+     "auc_2": 0.729,
+     "dauc": 0.021,
+     "ci95": [
+      -0.014,
+      0.06
+     ]
+    },
+    "2017+": {
+     "n": 240,
+     "auc_1": 0.805,
+     "auc_2": 0.804,
+     "dauc": 0.001,
+     "ci95": [
+      -0.017,
+      0.018
+     ]
+    }
+   },
+   "listed_parent": {
+    "listed": {
+     "n": 476,
+     "auc_1": 0.784,
+     "auc_2": 0.777,
+     "dauc": 0.007,
+     "ci95": [
+      -0.01,
+      0.024
+     ]
+    },
+    "unlisted": {
+     "n": 103,
+     "auc_1": 0.651,
+     "auc_2": 0.645,
+     "dauc": 0.005,
+     "ci95": [
+      -0.021,
+      0.034
+     ]
+    }
+   },
+   "kosdaq": {
+    "KOSDAQ": {
+     "n": 200,
+     "auc_1": 0.763,
+     "auc_2": 0.741,
+     "dauc": 0.022,
+     "ci95": [
+      -0.009,
+      0.055
+     ]
+    },
+    "KOSPI/other": {
+     "n": 379,
+     "auc_1": 0.761,
+     "auc_2": 0.76,
+     "dauc": 0.001,
+     "ci95": [
+      -0.015,
+      0.017
+     ]
+    }
+   },
+   "parent_size_filing_2009plus": {
+    "large": {
+     "n": 112,
+     "auc_1": 0.823,
+     "auc_2": 0.823,
+     "dauc": 0.001,
+     "ci95": [
+      -0.021,
+      0.022
+     ]
+    },
+    "mid": {
+     "n": 112,
+     "auc_1": 0.836,
+     "auc_2": 0.843,
+     "dauc": -0.006,
+     "ci95": [
+      -0.036,
+      0.022
+     ]
+    },
+    "small": {
+     "n": 112,
+     "auc_1": 0.614,
+     "auc_2": 0.599,
+     "dauc": 0.014,
+     "ci95": [
+      -0.023,
+      0.063
+     ]
+    }
+   },
+   "market_cap_listed": {
+    "large": {
+     "n": 158,
+     "auc_1": 0.817,
+     "auc_2": 0.807,
+     "dauc": 0.01,
+     "ci95": [
+      -0.016,
+      0.035
+     ]
+    },
+    "mid": {
+     "n": 157,
+     "auc_1": 0.754,
+     "auc_2": 0.763,
+     "dauc": -0.01,
+     "ci95": [
+      -0.042,
+      0.02
+     ]
+    },
+    "small": {
+     "n": 158,
+     "auc_1": 0.76,
+     "auc_2": 0.743,
+     "dauc": 0.018,
+     "ci95": [
+      -0.022,
+      0.063
+     ]
+    }
+   },
+   "newco_size": {
+    "large": {
+     "n": 111,
+     "auc_1": 0.879,
+     "auc_2": 0.886,
+     "dauc": -0.008,
+     "ci95": [
+      -0.03,
+      0.011
+     ]
+    },
+    "mid": {
+     "n": 111,
+     "auc_1": 0.745,
+     "auc_2": 0.729,
+     "dauc": 0.016,
+     "ci95": [
+      -0.016,
+      0.052
+     ]
+    },
+    "small": {
+     "n": 111,
+     "auc_1": 0.692,
+     "auc_2": 0.671,
+     "dauc": 0.021,
+     "ci95": [
+      -0.018,
+      0.063
+     ]
+    }
+   },
+   "text_length": {
+    "long": {
+     "n": 193,
+     "auc_1": 0.758,
+     "auc_2": 0.768,
+     "dauc": -0.01,
+     "ci95": [
+      -0.028,
+      0.008
+     ]
+    },
+    "mid": {
+     "n": 193,
+     "auc_1": 0.795,
+     "auc_2": 0.785,
+     "dauc": 0.01,
+     "ci95": [
+      -0.016,
+      0.039
+     ]
+    },
+    "short": {
+     "n": 193,
+     "auc_1": 0.692,
+     "auc_2": 0.681,
+     "dauc": 0.011,
+     "ci95": [
+      -0.023,
+      0.048
+     ]
+    }
+   }
+  },
+  "outside_knowledge_rate": {
+   "claude_id": {
+    "rate": 0.418,
+    "n": 576,
+    "by_period": {
+     "2001-08": 0.398,
+     "2009-16": 0.466,
+     "2017+": 0.397
+    },
+    "by_listed": {
+     "listed": 0.423,
+     "unlisted": 0.396
+    },
+    "by_size": {
+     "small": 0.279,
+     "mid": 0.378,
+     "large": 0.631
+    }
+   },
+   "claude_an": {
+    "rate": 0.517,
+    "n": 576,
+    "by_period": {
+     "2001-08": 0.46,
+     "2009-16": 0.548,
+     "2017+": 0.534
+    },
+    "by_listed": {
+     "listed": 0.527,
+     "unlisted": 0.471
+    },
+    "by_size": {
+     "small": 0.396,
+     "mid": 0.455,
+     "large": 0.829
+    }
+   },
+   "gpt_id": {
+    "rate": 0.038,
+    "n": 579,
+    "by_period": {
+     "2001-08": 0.012,
+     "2009-16": 0.062,
+     "2017+": 0.037
+    },
+    "by_listed": {
+     "listed": 0.038,
+     "unlisted": 0.039
+    },
+    "by_size": {
+     "small": 0.018,
+     "mid": 0.018,
+     "large": 0.098
+    }
+   },
+   "gpt_an": {
+    "rate": 0.033,
+    "n": 579,
+    "by_period": {
+     "2001-08": 0.025,
+     "2009-16": 0.056,
+     "2017+": 0.021
+    },
+    "by_listed": {
+     "listed": 0.038,
+     "unlisted": 0.01
+    },
+    "by_size": {
+     "small": 0.018,
+     "mid": 0.009,
+     "large": 0.071
+    }
+   }
+  },
+  "self_reported_subset": {
+   "claude_reported_outside": {
+    "n": 239,
+    "auc_1": 0.784,
+    "auc_2": 0.78,
+    "dauc": 0.003,
+    "ci95": [
+     -0.035,
+     0.038
+    ]
+   },
+   "claude_no_outside": {
+    "n": 334,
+    "auc_1": 0.761,
+    "auc_2": 0.749,
+    "dauc": 0.012,
+    "ci95": [
+     -0.019,
+     0.04
+    ]
+   },
+   "gpt_no_outside": {
+    "n": 557,
+    "auc_1": 0.73,
+    "auc_2": 0.725,
+    "dauc": 0.005,
+    "ci95": [
+     -0.009,
+     0.02
+    ]
+   }
+  }
+ },
+ "C_residual_bias": {
+  "stage1": {
+   "n": 579,
+   "r2": 0.529,
+   "note": "logit(S) on majority-vote facts + log text length + period dummies"
+  },
+  "all_filings": {
+   "no_y": {
+    "n": 327,
+    "r2": 0.038,
+    "log_assets_filing": {
+     "beta_std": 0.09,
+     "p": 0.276
+    },
+    "kosdaq": {
+     "beta_std": -0.052,
+     "p": 0.339
+    },
+    "listed": {
+     "beta_std": 0.017,
+     "p": 0.819
+    },
+    "relative_size": {
+     "beta_std": -0.136,
+     "p": 0.019
+    }
+   },
+   "with_y": {
+    "n": 327,
+    "r2": 0.164,
+    "log_assets_filing": {
+     "beta_std": 0.128,
+     "p": 0.107
+    },
+    "kosdaq": {
+     "beta_std": -0.052,
+     "p": 0.322
+    },
+    "listed": {
+     "beta_std": 0.038,
+     "p": 0.597
+    },
+    "relative_size": {
+     "beta_std": -0.093,
+     "p": 0.071
+    },
+    "y": {
+     "beta_std": 0.359,
+     "p": 0.0
+    }
+   }
+  },
+  "listed_parents": {
+   "no_y": {
+    "n": 261,
+    "r2": 0.065,
+    "log_me_f": {
+     "beta_std": 0.131,
+     "p": 0.148
+    },
+    "kosdaq": {
+     "beta_std": -0.055,
+     "p": 0.322
+    },
+    "relative_size": {
+     "beta_std": -0.125,
+     "p": 0.075
+    },
+    "foreign": {
+     "beta_std": 0.048,
+     "p": 0.668
+    }
+   },
+   "with_y": {
+    "n": 261,
+    "r2": 0.226,
+    "log_me_f": {
+     "beta_std": 0.166,
+     "p": 0.05
+    },
+    "kosdaq": {
+     "beta_std": -0.066,
+     "p": 0.211
+    },
+    "relative_size": {
+     "beta_std": -0.1,
+     "p": 0.088
+    },
+    "foreign": {
+     "beta_std": 0.064,
+     "p": 0.536
+    },
+    "y": {
+     "beta_std": 0.406,
+     "p": 0.0
+    }
+   }
+  },
+  "error_S_minus_y_on_characteristics": {
+   "all": {
+    "n": 327,
+    "r2": 0.038,
+    "log_assets_filing": {
+     "beta_std": 0.148,
+     "p": 0.005
+    },
+    "kosdaq": {
+     "beta_std": -0.051,
+     "p": 0.417
+    },
+    "listed": {
+     "beta_std": 0.09,
+     "p": 0.136
+    },
+    "relative_size": {
+     "beta_std": 0.065,
+     "p": 0.241
+    }
+   },
+   "listed": {
+    "n": 261,
+    "r2": 0.053,
+    "log_me_f": {
+     "beta_std": 0.188,
+     "p": 0.039
+    },
+    "kosdaq": {
+     "beta_std": -0.091,
+     "p": 0.189
+    },
+    "relative_size": {
+     "beta_std": 0.028,
+     "p": 0.633
+    },
+    "foreign": {
+     "beta_std": -0.006,
+     "p": 0.944
+    }
+   }
+  }
+ },
+ "D_two_model_agreement": {
+  "n_common_filings": 715,
+  "p_corr": {
+   "pearson": 0.804,
+   "spearman": 0.819,
+   "pearson_2017plus": 0.867,
+   "mean_claude": 0.592,
+   "mean_gpt": 0.458
+  },
+  "facts": {
+   "purp_specialization": {
+    "n": 715,
+    "prev_claude": 0.983,
+    "prev_gpt": 0.976,
+    "agreement": 0.985,
+    "kappa": 0.613
+   },
+   "purp_efficiency": {
+    "n": 715,
+    "prev_claude": 0.962,
+    "prev_gpt": 0.955,
+    "agreement": 0.987,
+    "kappa": 0.841
+   },
+   "purp_sale_or_disposal": {
+    "n": 715,
+    "prev_claude": 0.095,
+    "prev_gpt": 0.084,
+    "agreement": 0.983,
+    "kappa": 0.897
+   },
+   "purp_fundraising_or_investment_attraction": {
+    "n": 715,
+    "prev_claude": 0.176,
+    "prev_gpt": 0.159,
+    "agreement": 0.978,
+    "kappa": 0.92
+   },
+   "purp_holding_company_or_group_restructuring": {
+    "n": 715,
+    "prev_claude": 0.169,
+    "prev_gpt": 0.138,
+    "agreement": 0.958,
+    "kappa": 0.839
+   },
+   "purp_regulatory_or_legal": {
+    "n": 715,
+    "prev_claude": 0.036,
+    "prev_gpt": 0.039,
+    "agreement": 0.989,
+    "kappa": 0.846
+   },
+   "purp_other": {
+    "n": 715,
+    "prev_claude": 0.22,
+    "prev_gpt": 0.076,
+    "agreement": 0.825,
+    "kappa": 0.333
+   },
+   "mentions_listing_or_ipo": {
+    "n": 715,
+    "prev_claude": 0.078,
+    "prev_gpt": 0.938,
+    "agreement": 0.14,
+    "kappa": 0.011
+   },
+   "mentions_external_investment_or_strategic_investor": {
+    "n": 715,
+    "prev_claude": 0.138,
+    "prev_gpt": 0.259,
+    "agreement": 0.824,
+    "kappa": 0.459
+   },
+   "mentions_sale_or_buyer": {
+    "n": 715,
+    "prev_claude": 0.102,
+    "prev_gpt": 0.124,
+    "agreement": 0.964,
+    "kappa": 0.819
+   },
+   "mentions_shareholder_protection_measures": {
+    "n": 715,
+    "prev_claude": 0.062,
+    "prev_gpt": 0.319,
+    "agreement": 0.74,
+    "kappa": 0.238
+   },
+   "appraisal_rights_mentioned": {
+    "n": 715,
+    "prev_claude": 0.68,
+    "prev_gpt": 0.776,
+    "agreement": 0.903,
+    "kappa": 0.759
+   }
+  },
+  "path": {
+   "n": 715,
+   "agreement": 0.516,
+   "kappa": 0.34,
+   "dist_claude": {
+    "sale_to_third_party": 342,
+    "retain": 167,
+    "partial_stake_sale_or_investor": 100,
+    "intragroup_transfer_or_merger": 92,
+    "ipo": 14
+   },
+   "dist_gpt": {
+    "retain": 484,
+    "sale_to_third_party": 136,
+    "partial_stake_sale_or_investor": 65,
+    "intragroup_transfer_or_merger": 27,
+    "ipo": 3
+   },
+   "agreement_retain_vs_not": 0.548
+  },
+  "within_model_identified_vs_anonymized_facts": {
+   "claude": {
+    "n": 709,
+    "agreement": {
+     "purp_specialization": 0.99,
+     "purp_efficiency": 0.986,
+     "purp_sale_or_disposal": 0.997,
+     "purp_fundraising_or_investment_attraction": 0.984,
+     "purp_holding_company_or_group_restructuring": 0.973,
+     "purp_regulatory_or_legal": 0.992,
+     "purp_other": 0.858,
+     "mentions_listing_or_ipo": 0.984,
+     "mentions_external_investment_or_strategic_investor": 0.977,
+     "mentions_sale_or_buyer": 0.994,
+     "mentions_shareholder_protection_measures": 0.999,
+     "appraisal_rights_mentioned": 0.92
+    },
+    "p_corr": 0.919
+   },
+   "gpt": {
+    "n": 720,
+    "agreement": {
+     "purp_specialization": 0.996,
+     "purp_efficiency": 0.999,
+     "purp_sale_or_disposal": 0.997,
+     "purp_fundraising_or_investment_attraction": 0.994,
+     "purp_holding_company_or_group_restructuring": 0.986,
+     "purp_regulatory_or_legal": 0.999,
+     "purp_other": 0.961,
+     "mentions_listing_or_ipo": 0.981,
+     "mentions_external_investment_or_strategic_investor": 0.981,
+     "mentions_sale_or_buyer": 0.993,
+     "mentions_shareholder_protection_measures": 0.881,
+     "appraisal_rights_mentioned": 0.999
+    },
+    "p_corr": 0.965
+   }
+  }
+ },
+ "E_kang_lee_benchmark": {
+  "kang_lee_table1": {
+   "purpose_sale": 0.12,
+   "purpose_efficiency": 0.059,
+   "purpose_specialization": 0.891,
+   "purpose_other": 0.042,
+   "subsidiary_listed": 0.04,
+   "subsidiary_retained": 0.307,
+   "source": "literature/KangLee2025_FRL_fulltext.txt lines 229-235 (Table 1 Panel A), sample lines 151-156; read 2026-11-10"
+  },
+  "ours_listed_2001_2021_majority_vote": {
+   "n": 517,
+   "strict": {
+    "sale": 0.085,
+    "efficiency": 0.969,
+    "specialization": 0.994,
+    "other": 0.52
+   },
+   "broad_sale_incl_fundraising": {
+    "sale": 0.224,
+    "efficiency": 0.969,
+    "specialization": 0.994,
+    "other": 0.391
+   },
+   "raw_7_categories": {
+    "specialization": 0.994,
+    "efficiency": 0.969,
+    "sale_or_disposal": 0.085,
+    "fundraising_or_investment_attraction": 0.182,
+    "holding_company_or_group_restructuring": 0.145,
+    "regulatory_or_legal": 0.041,
+    "other": 0.248
+   },
+   "mentions": {
+    "mentions_listing_or_ipo": 0.977,
+    "mentions_external_investment_or_strategic_investor": 0.286,
+    "mentions_sale_or_buyer": 0.12,
+    "mentions_shareholder_protection_measures": 0.261,
+    "appraisal_rights_mentioned": 0.756
+   }
+  },
+  "ours_all_filings_with_judgments": {
+   "n": 720,
+   "strict": {
+    "sale": 0.097,
+    "efficiency": 0.963,
+    "specialization": 0.988,
+    "other": 0.524
+   },
+   "broad_sale_incl_fundraising": {
+    "sale": 0.225,
+    "efficiency": 0.963,
+    "specialization": 0.988,
+    "other": 0.394
+   },
+   "raw_7_categories": {
+    "specialization": 0.988,
+    "efficiency": 0.963,
+    "sale_or_disposal": 0.097,
+    "fundraising_or_investment_attraction": 0.175,
+    "holding_company_or_group_restructuring": 0.168,
+    "regulatory_or_legal": 0.042,
+    "other": 0.221
+   },
+   "mentions": {
+    "mentions_listing_or_ipo": 0.939,
+    "mentions_external_investment_or_strategic_investor": 0.283,
+    "mentions_sale_or_buyer": 0.128,
+    "mentions_shareholder_protection_measures": 0.3,
+    "appraisal_rights_mentioned": 0.776
+   }
+  },
+  "ours_outcomes_listed_2001_2021_gate1": {
+   "n": 412,
+   "shares": {
+    "majority_disposed": 0.558,
+    "retained_100": 0.26,
+    "partial_sale": 0.143,
+    "ipo_listed": 0.039
+   },
+   "subsidiary_listed_ipo": 0.039,
+   "retained_100": 0.26,
+   "retained_100_or_partial_sale_upper_bound": 0.403,
+   "disposed_y": 0.74,
+   "note": "K&L 'Subsidiary Listed' = eventually listed; ours = first observed change is a listing (ipo_listed). K&L 'Retained' = remained controlled and owned by the parent; ours retained_100 (strict) and retained_100+partial_sale (parent keeps control) bracket it."
+  }
+ },
+ "expectation_check": {
+  "identity_pass": true,
+  "two_model_corr_2017plus_in_0.83_0.87": true,
+  "all_subgroup_auc_in_[0.62,0.86]": false,
+  "min_subgroup_auc": 0.631,
+  "max_subgroup_auc": 0.923,
+  "max_spread_within_grouping_le_0.15": false,
+  "gap_2001_16_in_[-0.30,-0.10]": true,
+  "gap_2017plus_in_[-0.05,0.12]": false,
+  "recal_slope_in_[0.6,1.6]": true,
+  "dauc_overall_in_[-0.03,0.04]": true,
+  "dauc_all_subgroups_abs_le_0.06": true,
+  "claude_outside_rate_2017plus_in_[0.35,0.60]": true,
+  "gpt_outside_rate_2017plus_le_0.10": true,
+  "residual_bias_all_abs_le_0.25": true,
+  "mention_kappa_in_[0.35,0.90]": false,
+  "purpose_kappa_in_[0.25,0.85]": false,
+  "path_agreement_in_[0.45,0.80]": true,
+  "path_kappa_in_[0.25,0.60]": true,
+  "KL_specialization_within_0.15": true,
+  "KL_sale_strict_in_[0.05,0.30]": true,
+  "KL_ipo_share_in_[0.02,0.08]": true,
+  "KL_retained_in_[0.20,0.40]": true
+ },
+ "post_hoc_reading_added_after_run": {
+  "first_run_bugs_fixed": [
+   "size tercile mixed parent assets with newco assets when the parent field was missing (2001-08 coverage 4%) -> parent assets only, labelled 2009+; newco size is its own grouping",
+   "K&L outcome shares were read from the judge records' 'outcome' field (label at judge time, 69% 'unknown') -> now from the tracking files 15 reads"
+  ],
+  "gap_2017plus": "expectation [-0.05, 0.12] was set from the October judge summary (2017+ base rate 0.49, n~185); the Gate-1 2017+ sample now has base rate 0.621 (n 240) after label completion, so the model under-predicts there too (gap about -0.10). Expectation mis-set from stale numbers, not a code error.",
+  "subgroup_auc_range": "misses are (i) small parents by filing assets, 2009+ (AUC ~0.60; discrimination-interaction LR p < 0.01) and short/old/unlisted filings (0.64-0.69), and (ii) GICS sector 50 (n 50, AUC ~0.92, wide CI). (i) is a reportable property of the signal — weaker and more conservative for small parents, whose realised disposal rate is highest; (ii) is a small-sample extreme.",
+  "kappa_misses": "mentions_listing_or_ipo (kappa ~0.01) is a field-definition split, not a reading disagreement: GPT marks True whenever the form line '재상장신청 여부: 아니오' appears, Claude only for a positive plan; both models' listing_plan_statement text says 'no plan' for the same filings (checked on the 615 GPT-True/Claude-False cases). mentions_shareholder_protection_measures (0.24) and purp_other (0.33) are the same kind of boundary ambiguity. None of these fields enters the headline signal S.",
+  "K&L_purpose_granularity": "K&L dummies sum to 1.11 (near single primary purpose; specialization 0.891, efficiency 0.059); our extraction lists every stated category (efficiency 0.97, specialization 0.99 — boilerplate). Only 'sale' is comparable (ours 0.085 strict / 0.224 incl. fundraising vs 0.120). Outcome shares are like-for-like after the fix."
+ }
+}

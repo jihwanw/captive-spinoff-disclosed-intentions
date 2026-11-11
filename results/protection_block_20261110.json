@@ -1,0 +1,156 @@
+{
+ "generated": "2026-11-10T20:29:06+09:00",
+ "expectations_preregistered": "(2026-11-10): blocks found in >= 55 of 66 post-reform filings and in <= 3 pre-reform filings; sale_plan filings\nhave the highest mean S (> 0.7) and the highest realised early-disposal share; charter_vote filings the lowest S (< 0.4); CAR by category:\nno prior, recorded.",
+ "coverage": {
+  "captive_filings_2017plus": 294,
+  "with_text": 293,
+  "post_reform": 66,
+  "post_with_block": 61,
+  "pre_reform": 228,
+  "pre_with_block": 0
+ },
+ "post_reform_categories": {
+  "charter_vote": 7,
+  "no_listing_horizon": 3,
+  "unlisted_soft": 32,
+  "sale_plan": 4,
+  "payout_policy": 3,
+  "disclosure_commit": 4,
+  "consult_shareholders": 4,
+  "appraisal_only": 3,
+  "none": 15
+ },
+ "post_reform_strength": {
+  "0": 29,
+  "1": 27,
+  "2": 3,
+  "3": 7
+ },
+ "post_reform_plan_no_listing_5y": 22,
+ "post_by_strength": {
+  "0.0": {
+   "n": 29,
+   "mean_S": 0.658,
+   "mean_car3_pct": 5.94,
+   "n_car": 14,
+   "disposed_share": 0.615,
+   "n_labelled": 13,
+   "early_share": 0.545
+  },
+  "1.0": {
+   "n": 27,
+   "mean_S": 0.437,
+   "mean_car3_pct": 6.05,
+   "n_car": 21,
+   "disposed_share": 0.174,
+   "n_labelled": 23,
+   "early_share": 0.095
+  },
+  "2.0": {
+   "n": 3,
+   "mean_S": 0.343,
+   "mean_car3_pct": -2.26,
+   "n_car": 3,
+   "disposed_share": 0.0,
+   "n_labelled": 1,
+   "early_share": 0.0
+  },
+  "3.0": {
+   "n": 7,
+   "mean_S": 0.5,
+   "mean_car3_pct": 6.69,
+   "n_car": 5,
+   "disposed_share": 0.333,
+   "n_labelled": 6,
+   "early_share": 0.2
+  }
+ },
+ "post_by_category": {
+  "charter_vote": {
+   "n": 7,
+   "mean_S": 0.5,
+   "mean_car3_pct": 6.69,
+   "disposed_share": 0.333,
+   "n_labelled": 6
+  },
+  "no_listing_horizon": {
+   "n": 3,
+   "mean_S": 0.343,
+   "mean_car3_pct": -2.26,
+   "disposed_share": 0.0,
+   "n_labelled": 1
+  },
+  "unlisted_soft": {
+   "n": 32,
+   "mean_S": 0.45,
+   "mean_car3_pct": 5.62,
+   "disposed_share": 0.192,
+   "n_labelled": 26
+  },
+  "sale_plan": {
+   "n": 4,
+   "mean_S": null,
+   "mean_car3_pct": -2.0,
+   "disposed_share": null,
+   "n_labelled": 0
+  },
+  "payout_policy": {
+   "n": 3,
+   "mean_S": 0.618,
+   "mean_car3_pct": 1.48,
+   "disposed_share": 0.667,
+   "n_labelled": 3
+  },
+  "disclosure_commit": {
+   "n": 4,
+   "mean_S": null,
+   "mean_car3_pct": 5.22,
+   "disposed_share": null,
+   "n_labelled": 0
+  },
+  "consult_shareholders": {
+   "n": 4,
+   "mean_S": 0.375,
+   "mean_car3_pct": 0.72,
+   "disposed_share": 0.0,
+   "n_labelled": 2
+  },
+  "appraisal_only": {
+   "n": 3,
+   "mean_S": 0.833,
+   "mean_car3_pct": 16.99,
+   "disposed_share": 1.0,
+   "n_labelled": 2
+  },
+  "none": {
+   "n": 15,
+   "mean_S": 0.682,
+   "mean_car3_pct": 5.6,
+   "disposed_share": 0.667,
+   "n_labelled": 9
+  }
+ },
+ "post_tests": {
+  "spearman_strength_S": {
+   "rho": -0.272,
+   "p": 0.075,
+   "n": 44
+  },
+  "sale_plan_vs_rest_S": {
+   "mean_sale_plan": null,
+   "mean_rest": 0.51,
+   "mw_p": null
+  },
+  "spearman_strength_car3": {
+   "rho": -0.053,
+   "p": 0.733,
+   "n": 43
+  }
+ },
+ "expectation_check": {
+  "post_blocks_ge_55": true,
+  "pre_blocks_le_3": true,
+  "sale_plan_mean_S_gt_0.7": false,
+  "charter_vote_mean_S_lt_0.4": false
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "n_items": 150,
+ "labelled": 120,
+ "post_reform": 30,
+ "allocation": {
+  "2001-2008|0": 12,
+  "2001-2008|1": 25,
+  "2009-2016|0": 12,
+  "2009-2016|1": 26,
+  "2017+|0": 19,
+  "2017+|1": 26
+ },
+ "stratum_counts": {
+  "post-reform|unknown": 30,
+  "2009-2016|disposed": 26,
+  "2017+|disposed": 26,
+  "2001-2008|disposed": 25,
+  "2017+|retained": 19,
+  "2009-2016|retained": 12,
+  "2001-2008|retained": 12
+ },
+ "text_available": 150
+}

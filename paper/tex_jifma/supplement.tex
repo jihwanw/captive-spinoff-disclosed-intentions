@@ -1,0 +1,57 @@
+% Supporting Information for the JIFMA manuscript (separate file). Same macros and generated tables as the main document; anonymous.
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}\usepackage{mathptmx}\usepackage{setspace}\onehalfspacing
+\usepackage{booktabs}\usepackage{array}\usepackage{longtable}\usepackage{amsmath}\usepackage{graphicx}\usepackage{rotating}\usepackage{xr-hyper}\externaldocument{main}\usepackage[hidelinks]{hyperref}\usepackage{apacite}
+\input{../tables/numbers}
+\newcommand{\tabnote}[1]{\par\vspace{4pt}\begin{minipage}{\linewidth}\singlespacing\small\emph{Note.} #1\end{minipage}}
+\newcommand{\captive}{captive spin-off}
+\renewcommand{\thetable}{S\arabic{table}}\renewcommand{\thefigure}{S\arabic{figure}}
+\title{Supporting Information\\[4pt]\large Controlling Owners, Disclosed Intentions, and Minority Shareholder Returns in Korean Captive Spin-Offs}\author{}\date{}
+\begin{document}
+\maketitle
+\noindent This document contains the exhibits referred to in the main text as Tables S1--S5 and Figures S1--S5, and the full definitions of the measures. All numbers are generated from the same results files as the main text.
+
+\section{Measurement validity and bias of the disposal signal (Table S1)}
+\begin{sidewaystable}[htbp]\centering\caption{Validity and bias of the disposal signal}\label{tab:s_validity}
+{\scriptsize\setlength{\tabcolsep}{3pt}\input{../tables/S_validity}}
+\tabnote{Panel A: AUC of the two-model signal against the clean-label disposal indicator within each subgroup of the \ValN{} Gate-1 divisions, with a stratified bootstrap 95 percent interval (2,000 resamples); the gap is the mean signal minus the realised disposal rate; LR tests compare a logit of the outcome on logit($S$) with (i) group dummies added (calibration) and (ii) group $\times$ logit($S$) interactions added (discrimination). Parent assets are the surviving company's total assets stated in the filing (available for 2009 onward); market capitalisation and foreign ownership are for listed parents; GICS sectors from Compustat Global. Panel B: the same filings read with and without the parent's and new company's names, group names, tickers and dates; the difference in AUC is a paired bootstrap over events; the self-reported subset uses the model's own flag for having used knowledge outside the filing. Panel C: Cohen's $\kappa$ between the two models' structured extractions on the identified first run; ``definition split'' marks a field whose boundary the two models interpret differently (Model~B marks the form line ``re-listing application: no'' as a mention of listing), not a reading disagreement. Panel D: \citeA{kang2025}, Table 1, Panel A (525 \captive{}s by KOSPI/KOSDAQ-listed parents, 2001--2021), against the majority-vote extraction on our listed-parent filings of 2001--2021 and our outcome labels on the clean-label listed-parent divisions of the same years.}
+\end{sidewaystable}
+
+The anonymised signal reproduces the return results: the Spearman correlation with the one-year market-adjusted return is \SpearmanAnon{} ($p$ = \SpearmanAnonP{}) and the within-year rank coefficient with the full controls \RankAnonCoef{} ($p$ = \RankAnonP{}); the early-disposal AUC is \AUCEarlyAnon{} on the \NAUCEarlyAnon{} events with an anonymised score and a recorded timing. The raw signal under-predicts disposal (mean \ValMeanS{} against \ValMeanY{}); because every test in the paper uses the signal's ordering (AUC, ranks, terciles) or its level with year effects, the under-prediction affects no reported coefficient's sign.
+
+\section{Label definitions and sensitivity (Table S2)}
+\begin{table}[htbp]\centering\caption{Headline results with the \NSensitive{} definition-sensitive labels flipped or dropped}\label{tab:s_labels}
+{\footnotesize\setlength{\tabcolsep}{3pt}\input{../tables/S_label_sensitivity}}\tabnote{\NSensitive{} of the 2017--2026 labels are sensitive to the outcome definition or to a disagreement between the equity-investment schedule and the annual-report text (categories: intragroup transfer, temporary external dilution, related-party preferred shares, dilution below materiality, unresolved conflict, one tracker mismatch). Column 2 recodes all of them as retained, the direction least favourable to the paper's results; column 3 drops them.}\end{table}
+
+\section{Selection into captive spin-offs (Table S3)}
+\begin{table}[htbp]\centering\caption{Firm-year logit of the \captive{} decision on the Compustat Global universe}\label{tab:s_selection}
+{\footnotesize\setlength{\tabcolsep}{3pt}\input{../tables/S_selection}}\tabnote{Korean common stocks in Compustat Global (consolidated accounts where reported, parent-only otherwise, with an indicator), firm-years 2000--2025; the dependent variable is one in the year a \captive{} is announced. Covariates are lagged one year: log total assets, Tobin's $q$, debt to assets, capital expenditure to assets, operating cash flow to assets, cash to assets, sales growth, KOSDAQ listing. Standard errors clustered by firm. The propensity score from this model selects the control firm of Table~4, Panel C; \SelSupport{} percent of events lie inside the controls' support. Signs agree with the selection model of \citeA{kang2025} (Table 4) on size, leverage, cash flow and investment and differ on the exchange indicator.}\end{table}
+
+\section{Industry fixed effects and clustered inference (Table S4)}
+\begin{table}[htbp]\centering\caption{Returns on the disposal signal with alternative fixed effects and clustering}\label{tab:s_industry}
+{\footnotesize\setlength{\tabcolsep}{3pt}\input{../tables/S_industry_fe}}\tabnote{Coefficient on the two-model signal in the specification of Table~4, column (1), re-estimated with the stated fixed effects (GICS sector, GICS industry and two-digit SIC codes of the parent from Compustat Global, linked by gvkey; current classification) and $p$-values from HC1, parent-clustered and two-way parent-and-year-clustered standard errors. \IndustryEvents{} events of \IndustryParents{} parents.}\end{table}
+
+\section{Comparison with the hand-coded sample of Kang and Lee (Table S5)}
+\begin{table}[htbp]\centering\caption{The tests of \protect\citeA{kang2025} and their counterparts in this paper}\label{tab:s_mirror}
+{\footnotesize\setlength{\tabcolsep}{3pt}\input{../tables/T_mirror_jifma}}\tabnote{Left column: results as reported by \citeA{kang2025} for \KLN{} \captive{}s announced by listed parents between 2001 and 2021; their long-run abnormal returns use a matched portfolio and their ownership measure is the controlling family's and inside directors' stake. Right column: this paper's counterparts with market-adjusted buy-and-hold returns and the controlling block of the main text. The two samples were built independently from the regulator's filings; Table S1, Panel D, compares the two samples' purpose codes and outcome shares.}\end{table}
+
+\section{Results by period, price and ownership sources}
+\begin{table}[htbp]\centering\caption{Headline return results by period}\label{tab:s_period}
+{\footnotesize\setlength{\tabcolsep}{3pt}\input{../tables/S_by_period}}\tabnote{Listed parents with a disposal signal and a full one-year window, by announcement period. Q5 $-$ Q1 is the mean one-year market-adjusted BHAR difference between the top and bottom quintiles of the signal with a bootstrap 95 percent interval; Spearman correlation between the signal and the one-year BHAR; CAR slope is the OLS coefficient of the three-day announcement CAR on the signal with year fixed effects (HC1 $p$).}\end{table}
+\begin{table}[htbp]\centering\caption{Two price sources: cross-check and screen}\label{tab:s_prices}
+{\footnotesize\setlength{\tabcolsep}{3pt}\input{../tables/S_price_sources}}\tabnote{Daily adjusted prices from the Korea Exchange (2017--2026) and Compustat Global (2001--2016). Returns are compared on the events priced in both sources over trading days $-250$ to $+250$. The screen flags a 2001--2016 event when a daily return in $[-1, +250]$ exceeds the exchange's daily price limit by more than one percentage point; flagged events whose parent was in delisting proceedings are kept, the rest are excluded from the main results and included in a sensitivity run.}\end{table}
+\begin{table}[htbp]\centering\caption{Pre-announcement ownership: two sources and their agreement}\label{tab:s_ownership}
+{\footnotesize\setlength{\tabcolsep}{3pt}\input{../tables/S_ownership_sources}}\tabnote{The controlling block is the largest shareholder's and related parties' common shares, excluding treasury shares, at the fiscal year-end before the announcement year. For announcements from 2016 the figure is read from the largest-shareholder table returned by the regulator's interface; for earlier announcements the same table is read from the annual report's text by two language models independently, and a record is kept when the two agree within one percentage point.}\end{table}
+
+\section{Additional figures}
+\begin{figure}[htbp]\centering\includegraphics[width=0.8\textwidth]{../figures/F7_km_signal.pdf}\caption{Share of subsidiaries disposed of, by tercile of the disposal signal}\tabnote{Kaplan--Meier cumulative shares from Table 4, Panel B of the main text, at the end of fiscal years 0, 1, 3 and 5 after the division, by tercile of the two-model signal (ranges in the legend); \CoxN{} divisions with a recorded disposal year or a censoring year.}\end{figure}
+\begin{figure}[htbp]\centering\includegraphics[width=0.97\textwidth]{../figures/F5_roc.pdf}\caption{Receiver operating characteristic curves of the disposal signal}\tabnote{Panel (a): the pooled Gate-1 sample with the out-of-sample AUC of the financial baseline for comparison. Panel (b): the 2001--2016 divisions read in the identified and the anonymised condition.}\end{figure}
+\begin{figure}[htbp]\centering\includegraphics[width=\textwidth]{../figures/F3_car_paths.pdf}\caption{Cumulative abnormal return paths by tercile of the disposal signal}\tabnote{Mean cumulative market-model abnormal return from trading day $-10$, by tercile of the disposal signal, for the listed parents with a full one-year window; day 0 is the first trading day on or after the filing.}\end{figure}
+\begin{figure}[htbp]\centering\includegraphics[width=\textwidth]{../figures/F6_block.pdf}\caption{Signal, disposal and returns by tercile of the controlling block}\tabnote{By tercile of the controlling block held before the announcement (low: up to \LowBlockMax{} percent of common shares; high: \HighBlockMin{} percent and above): mean disposal signal, disposal rate on clean labels, early-disposal rate on the subset with a recorded timing, and the median one-year market-adjusted BHAR.}\end{figure}
+\begin{figure}[htbp]\centering\includegraphics[width=\textwidth]{../figures/F4_reform.pdf}\caption{Captive spin-off filings and shareholder-protection statements by year, 2017--2025}\tabnote{Bars: filings read by the two models in each year; line: share of those filings in which the majority of model judgments flag a shareholder-protection statement. The dotted line marks October 2022, when the revised disclosure form took effect.}\end{figure}
+
+\section{Definitions in full}
+{\footnotesize\input{../tables/S_defs_full_jifma}}
+\bibliographystyle{apacite}
+\bibliography{../tex/refs,../tex/refs_manual}
+\end{document}

@@ -1,0 +1,860 @@
+{
+ "generated": "2026-11-10T12:11:14+09:00",
+ "probes": {
+  "P1_fyear_convention": {
+   "rows_by_fyr_and_(datadate_year - fyear)": {
+    "1": {
+     "0": 0,
+     "1": 15
+    },
+    "2": {
+     "0": 0,
+     "1": 22
+    },
+    "3": {
+     "0": 0,
+     "1": 1351
+    },
+    "4": {
+     "0": 0,
+     "1": 6
+    },
+    "5": {
+     "0": 0,
+     "1": 5
+    },
+    "6": {
+     "0": 661,
+     "1": 0
+    },
+    "7": {
+     "0": 4,
+     "1": 0
+    },
+    "8": {
+     "0": 25,
+     "1": 0
+    },
+    "9": {
+     "0": 349,
+     "1": 0
+    },
+    "10": {
+     "0": 44,
+     "1": 0
+    },
+    "11": {
+     "0": 58,
+     "1": 0
+    },
+    "12": {
+     "0": 49820,
+     "1": 0
+    }
+   },
+   "reading": "see table: for each fiscal-year-end month, how many rows have datadate.year - fyear = 0 / 1"
+  },
+  "P2_P3_matched_firm_years": 264,
+  "P2_units": {
+   "consol_C": {
+    "n_rows": 232,
+    "by_dart_fs_div": {
+     "CFS": 232
+    },
+    "at": {
+     "n": 232,
+     "log10_ratio_rounded_counts": {
+      "6": 232
+     },
+     "median_ratio": 1000000.0,
+     "share_within_1pct_of_1e6": 1.0,
+     "share_within_1pct_of_1e3": 0.0,
+     "share_within_1pct_of_1": 0.0
+    },
+    "lt": {
+     "n": 232,
+     "log10_ratio_rounded_counts": {
+      "6": 232
+     },
+     "median_ratio": 1000000.0,
+     "share_within_1pct_of_1e6": 1.0,
+     "share_within_1pct_of_1e3": 0.0,
+     "share_within_1pct_of_1": 0.0
+    },
+    "sale_vs_sale": {
+     "n": 227,
+     "log10_ratio_rounded_counts": {
+      "6": 227
+     },
+     "median_ratio": 999999.9999999999,
+     "share_within_1pct_of_1e6": 1.0,
+     "share_within_1pct_of_1e3": 0.0,
+     "share_within_1pct_of_1": 0.0
+    },
+    "sale_vs_revt": {
+     "n": 227,
+     "log10_ratio_rounded_counts": {
+      "6": 227
+     },
+     "median_ratio": 999999.9999999999,
+     "share_within_1pct_of_1e6": 1.0,
+     "share_within_1pct_of_1e3": 0.0,
+     "share_within_1pct_of_1": 0.0
+    },
+    "ni_vs_nicon": {
+     "n": 138,
+     "log10_ratio_rounded_counts": {
+      "6": 129,
+      "7": 8,
+      "8": 1
+     },
+     "median_ratio": 1002404.9389861429,
+     "share_within_1pct_of_1e6": 0.41304347826086957,
+     "share_within_1pct_of_1e3": 0.0,
+     "share_within_1pct_of_1": 0.0
+    },
+    "ni_vs_ib": {
+     "n": 141,
+     "log10_ratio_rounded_counts": {
+      "5": 2,
+      "6": 130,
+      "7": 9
+     },
+     "median_ratio": 1000813.2122504889,
+     "share_within_1pct_of_1e6": 0.41843971631205673,
+     "share_within_1pct_of_1e3": 0.0,
+     "share_within_1pct_of_1": 0.0
+    },
+    "eq_vs_seq": {
+     "n": 231,
+     "log10_ratio_rounded_counts": {
+      "6": 225,
+      "7": 6
+     },
+     "median_ratio": 1013491.8041292522,
+     "share_within_1pct_of_1e6": 0.45021645021645024,
+     "share_within_1pct_of_1e3": 0.0,
+     "share_within_1pct_of_1": 0.0
+    },
+    "eq_vs_ceq": {
+     "n": 231,
+     "log10_ratio_rounded_counts": {
+      "6": 225,
+      "7": 6
+     },
+     "median_ratio": 1017202.681468608,
+     "share_within_1pct_of_1e6": 0.43722943722943725,
+     "share_within_1pct_of_1e3": 0.0,
+     "share_within_1pct_of_1": 0.0
+    },
+    "eq_vs_teq": {
+     "n": 231,
+     "log10_ratio_rounded_counts": {
+      "6": 231
+     },
+     "median_ratio": 1000000.0,
+     "share_within_1pct_of_1e6": 1.0,
+     "share_within_1pct_of_1e3": 0.0,
+     "share_within_1pct_of_1": 0.0
+    },
+    "oi_vs_oiadp": {
+     "n": 168,
+     "log10_ratio_rounded_counts": {
+      "6": 168
+     },
+     "median_ratio": 1000000.0,
+     "share_within_1pct_of_1e6": 1.0,
+     "share_within_1pct_of_1e3": 0.0,
+     "share_within_1pct_of_1": 0.0
+    },
+    "definition_agreement_after_1e6": {
+     "at": {
+      "n": 232,
+      "share_within_1pct": 1.0,
+      "share_within_10pct": 1.0
+     },
+     "lt": {
+      "n": 232,
+      "share_within_1pct": 1.0,
+      "share_within_10pct": 1.0
+     },
+     "sale~sale": {
+      "n": 227,
+      "share_within_1pct": 1.0,
+      "share_within_10pct": 1.0
+     },
+     "sale~revt": {
+      "n": 227,
+      "share_within_1pct": 1.0,
+      "share_within_10pct": 1.0
+     },
+     "oi~oiadp": {
+      "n": 232,
+      "share_within_1pct": 1.0,
+      "share_within_10pct": 1.0
+     },
+     "oi~oibdp": {
+      "n": 232,
+      "share_within_1pct": 0.004310344827586207,
+      "share_within_10pct": 0.05172413793103448
+     },
+     "eq~teq": {
+      "n": 231,
+      "share_within_1pct": 1.0,
+      "share_within_10pct": 1.0
+     },
+     "eq~seq": {
+      "n": 231,
+      "share_within_1pct": 0.45021645021645024,
+      "share_within_10pct": 0.6926406926406926
+     },
+     "eq~ceq": {
+      "n": 231,
+      "share_within_1pct": 0.43722943722943725,
+      "share_within_10pct": 0.6926406926406926
+     },
+     "ni~nicon": {
+      "n": 223,
+      "share_within_1pct": 0.42152466367713004,
+      "share_within_10pct": 0.6457399103139013
+     },
+     "ni~ib": {
+      "n": 230,
+      "share_within_1pct": 0.3869565217391304,
+      "share_within_10pct": 0.591304347826087
+     }
+    }
+   },
+   "consol_N": {
+    "n_rows": 32,
+    "by_dart_fs_div": {
+     "OFS": 32
+    },
+    "at": {
+     "n": 32,
+     "log10_ratio_rounded_counts": {
+      "6": 32
+     },
+     "median_ratio": 1000000.0000565419,
+     "share_within_1pct_of_1e6": 0.96875,
+     "share_within_1pct_of_1e3": 0.0,
+     "share_within_1pct_of_1": 0.0
+    },
+    "lt": {
+     "n": 32,
+     "log10_ratio_rounded_counts": {
+      "6": 32
+     },
+     "median_ratio": 1000000.0018702615,
+     "share_within_1pct_of_1e6": 1.0,
+     "share_within_1pct_of_1e3": 0.0,
+     "share_within_1pct_of_1": 0.0
+    },
+    "sale_vs_sale": {
+     "n": 32,
+     "log10_ratio_rounded_counts": {
+      "6": 31,
+      "7": 1
+     },
+     "median_ratio": 999999.9999534338,
+     "share_within_1pct_of_1e6": 0.96875,
+     "share_within_1pct_of_1e3": 0.0,
+     "share_within_1pct_of_1": 0.0
+    },
+    "sale_vs_revt": {
+     "n": 32,
+     "log10_ratio_rounded_counts": {
+      "6": 31,
+      "7": 1
+     },
+     "median_ratio": 999999.9999534338,
+     "share_within_1pct_of_1e6": 0.96875,
+     "share_within_1pct_of_1e3": 0.0,
+     "share_within_1pct_of_1": 0.0
+    },
+    "ni_vs_nicon": {
+     "n": 0,
+     "log10_ratio_rounded_counts": {},
+     "median_ratio": NaN,
+     "share_within_1pct_of_1e6": NaN,
+     "share_within_1pct_of_1e3": NaN,
+     "share_within_1pct_of_1": NaN
+    },
+    "ni_vs_ib": {
+     "n": 14,
+     "log10_ratio_rounded_counts": {
+      "6": 14
+     },
+     "median_ratio": 1000000.0090168691,
+     "share_within_1pct_of_1e6": 0.8571428571428571,
+     "share_within_1pct_of_1e3": 0.0,
+     "share_within_1pct_of_1": 0.0
+    },
+    "eq_vs_seq": {
+     "n": 32,
+     "log10_ratio_rounded_counts": {
+      "6": 32
+     },
+     "median_ratio": 999999.9970617678,
+     "share_within_1pct_of_1e6": 0.96875,
+     "share_within_1pct_of_1e3": 0.0,
+     "share_within_1pct_of_1": 0.0
+    },
+    "eq_vs_ceq": {
+     "n": 32,
+     "log10_ratio_rounded_counts": {
+      "6": 32
+     },
+     "median_ratio": 999999.9959823966,
+     "share_within_1pct_of_1e6": 0.96875,
+     "share_within_1pct_of_1e3": 0.0,
+     "share_within_1pct_of_1": 0.0
+    },
+    "eq_vs_teq": {
+     "n": 32,
+     "log10_ratio_rounded_counts": {
+      "6": 32
+     },
+     "median_ratio": 999999.9970617678,
+     "share_within_1pct_of_1e6": 0.96875,
+     "share_within_1pct_of_1e3": 0.0,
+     "share_within_1pct_of_1": 0.0
+    },
+    "oi_vs_oiadp": {
+     "n": 15,
+     "log10_ratio_rounded_counts": {
+      "6": 15
+     },
+     "median_ratio": 999999.9810656608,
+     "share_within_1pct_of_1e6": 1.0,
+     "share_within_1pct_of_1e3": 0.0,
+     "share_within_1pct_of_1": 0.0
+    },
+    "definition_agreement_after_1e6": {
+     "at": {
+      "n": 32,
+      "share_within_1pct": 0.96875,
+      "share_within_10pct": 0.96875
+     },
+     "lt": {
+      "n": 32,
+      "share_within_1pct": 1.0,
+      "share_within_10pct": 1.0
+     },
+     "sale~sale": {
+      "n": 32,
+      "share_within_1pct": 0.96875,
+      "share_within_10pct": 0.96875
+     },
+     "sale~revt": {
+      "n": 32,
+      "share_within_1pct": 0.96875,
+      "share_within_10pct": 0.96875
+     },
+     "oi~oiadp": {
+      "n": 32,
+      "share_within_1pct": 0.96875,
+      "share_within_10pct": 0.96875
+     },
+     "oi~oibdp": {
+      "n": 32,
+      "share_within_1pct": 0.03125,
+      "share_within_10pct": 0.125
+     },
+     "eq~teq": {
+      "n": 32,
+      "share_within_1pct": 0.96875,
+      "share_within_10pct": 1.0
+     },
+     "eq~seq": {
+      "n": 32,
+      "share_within_1pct": 0.96875,
+      "share_within_10pct": 1.0
+     },
+     "eq~ceq": {
+      "n": 32,
+      "share_within_1pct": 0.96875,
+      "share_within_10pct": 1.0
+     },
+     "ni~nicon": {
+      "n": 0,
+      "share_within_1pct": null,
+      "share_within_10pct": null
+     },
+     "ni~ib": {
+      "n": 32,
+      "share_within_1pct": 0.875,
+      "share_within_10pct": 0.96875
+     }
+    }
+   }
+  },
+  "P3_consolidation": {
+   "unit_factor_used": 1000000.0,
+   "DART_CFS_vs_consol_C": {
+    "n": 232,
+    "share_at_equal_to_0.1pct_after_unit": 1.0
+   },
+   "DART_CFS_vs_consol_N": {
+    "n": 0,
+    "share_at_equal_to_0.1pct_after_unit": null
+   },
+   "DART_OFS_vs_consol_C": {
+    "n": 0,
+    "share_at_equal_to_0.1pct_after_unit": null
+   },
+   "DART_OFS_vs_consol_N": {
+    "n": 32,
+    "share_at_equal_to_0.1pct_after_unit": 0.96875
+   }
+  },
+  "P4_shares_outstanding_unit": {
+   "n": 240,
+   "log10_ratio_rounded_counts": {
+    "-1": 1,
+    "0": 239
+   },
+   "median_ratio": 0.9999810937706521,
+   "share_within_1pct_of_1e6": 0.0,
+   "share_within_1pct_of_1e3": 0.0,
+   "share_within_1pct_of_1": 0.8791666666666667,
+   "note": "ratio = cshoc / DART-implied common shares (holder count / holder % from the largest-shareholder table, rows with >= 5%); 10^0 means cshoc is in shares"
+  },
+  "P5_identity_with_oct24_extract": {
+   "old_rows": 565664,
+   "years_compared": [
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+   ],
+   "old_rows_in_years": 565664,
+   "found_in_new": 565647,
+   "prccd_exact_equal_share": 1.0,
+   "ajexdi_exact_equal_share": 0.9934731572099338,
+   "trfd_exact_equal_share": 0.9977389404310686
+  },
+  "P6_exchg_vs_KIND_market": {
+   "crosstab_exchg_x_market": {
+    "248": {
+     "유가": 826,
+     "코넥스": 0,
+     "코스닥": 1
+    },
+    "298": {
+     "유가": 1,
+     "코넥스": 1,
+     "코스닥": 1789
+    },
+    "353": {
+     "유가": 0,
+     "코넥스": 105,
+     "코스닥": 0
+    }
+   },
+   "n_active_matched": 2723,
+   "catalog_definition_exchg": "Stock Exchange Code",
+   "note": "KIND 시장구분 values are the exchange's own labels (유가 = KOSPI main board, 코스닥, 코넥스)"
+  },
+  "P7_coverage": {
+   "daily_by_year": {
+    "2000": {
+     "securities_with_>=200_KRW_price_days": 798,
+     "securities_any": 872,
+     "rows": 196759
+    },
+    "2001": {
+     "securities_with_>=200_KRW_price_days": 1148,
+     "securities_any": 1289,
+     "rows": 287407
+    },
+    "2002": {
+     "securities_with_>=200_KRW_price_days": 1186,
+     "securities_any": 1271,
+     "rows": 294069
+    },
+    "2003": {
+     "securities_with_>=200_KRW_price_days": 1144,
+     "securities_any": 1369,
+     "rows": 307694
+    },
+    "2004": {
+     "securities_with_>=200_KRW_price_days": 1228,
+     "securities_any": 1367,
+     "rows": 315522
+    },
+    "2005": {
+     "securities_with_>=200_KRW_price_days": 1271,
+     "securities_any": 1479,
+     "rows": 327321
+    },
+    "2006": {
+     "securities_with_>=200_KRW_price_days": 1390,
+     "securities_any": 1556,
+     "rows": 359245
+    },
+    "2007": {
+     "securities_with_>=200_KRW_price_days": 1529,
+     "securities_any": 1922,
+     "rows": 405387
+    },
+    "2008": {
+     "securities_with_>=200_KRW_price_days": 1831,
+     "securities_any": 1985,
+     "rows": 472670
+    },
+    "2009": {
+     "securities_with_>=200_KRW_price_days": 1884,
+     "securities_any": 2062,
+     "rows": 498104
+    },
+    "2010": {
+     "securities_with_>=200_KRW_price_days": 1896,
+     "securities_any": 2079,
+     "rows": 507768
+    },
+    "2011": {
+     "securities_with_>=200_KRW_price_days": 1940,
+     "securities_any": 2094,
+     "rows": 518945
+    },
+    "2012": {
+     "securities_with_>=200_KRW_price_days": 1977,
+     "securities_any": 2102,
+     "rows": 525163
+    },
+    "2013": {
+     "securities_with_>=200_KRW_price_days": 1969,
+     "securities_any": 2084,
+     "rows": 523090
+    },
+    "2014": {
+     "securities_with_>=200_KRW_price_days": 1987,
+     "securities_any": 2117,
+     "rows": 527669
+    },
+    "2015": {
+     "securities_with_>=200_KRW_price_days": 2035,
+     "securities_any": 2226,
+     "rows": 546105
+    },
+    "2016": {
+     "securities_with_>=200_KRW_price_days": 2173,
+     "securities_any": 2349,
+     "rows": 580767
+    },
+    "2017": {
+     "securities_with_>=200_KRW_price_days": 2305,
+     "securities_any": 2580,
+     "rows": 632365
+    },
+    "2018": {
+     "securities_with_>=200_KRW_price_days": 2544,
+     "securities_any": 2724,
+     "rows": 676744
+    },
+    "2019": {
+     "securities_with_>=200_KRW_price_days": 2671,
+     "securities_any": 2853,
+     "rows": 711309
+    },
+    "2020": {
+     "securities_with_>=200_KRW_price_days": 2782,
+     "securities_any": 2983,
+     "rows": 744809
+    },
+    "2021": {
+     "securities_with_>=200_KRW_price_days": 2906,
+     "securities_any": 3133,
+     "rows": 778926
+    },
+    "2022": {
+     "securities_with_>=200_KRW_price_days": 3080,
+     "securities_any": 3343,
+     "rows": 821368
+    },
+    "2023": {
+     "securities_with_>=200_KRW_price_days": 3288,
+     "securities_any": 3592,
+     "rows": 881787
+    },
+    "2024": {
+     "securities_with_>=200_KRW_price_days": 3547,
+     "securities_any": 3837,
+     "rows": 952110
+    },
+    "2025": {
+     "securities_with_>=200_KRW_price_days": 3750,
+     "securities_any": 4071,
+     "rows": 1006109
+    },
+    "2026": {
+     "securities_with_>=200_KRW_price_days": 3862,
+     "securities_any": 4223,
+     "rows": 888629
+    }
+   },
+   "g_funda_KRW_INDL_C_gvkeys_by_fyear": {
+    "1999": 257,
+    "2000": 273,
+    "2001": 380,
+    "2002": 422,
+    "2003": 459,
+    "2004": 512,
+    "2005": 553,
+    "2006": 630,
+    "2007": 698,
+    "2008": 785,
+    "2009": 740,
+    "2010": 786,
+    "2011": 1194,
+    "2012": 1220,
+    "2013": 1282,
+    "2014": 1319,
+    "2015": 1378,
+    "2016": 1477,
+    "2017": 1573,
+    "2018": 1617,
+    "2019": 1691,
+    "2020": 1765,
+    "2021": 1825,
+    "2022": 1898,
+    "2023": 1946,
+    "2024": 1981,
+    "2025": 2024
+   },
+   "KIND_listed_today": 2753,
+   "KIND_by_market": {
+    "코스닥": 1817,
+    "유가": 830,
+    "코넥스": 106
+   }
+  }
+ },
+ "inputs": {
+  "g_security_rows": 5801,
+  "g_company_rows": 5399,
+  "g_funda_rows": 52360,
+  "g_secm_rows": 522159,
+  "g_secd_years": [
+   2000,
+   2001,
+   2002,
+   2003,
+   2004,
+   2005,
+   2006,
+   2007,
+   2008,
+   2009,
+   2010,
+   2011,
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ]
+ },
+ "link": {
+  "kr7_isin_securities": 5620,
+  "distinct_stock_codes": 5616,
+  "stock_codes_with_several_gvkeys": 0,
+  "stock_codes_with_several_iids_same_gvkey": 4
+ },
+ "dart_parents": {
+  "with_dart_financials": 277,
+  "linked_to_gvkey": 277,
+  "fs_div": {
+   "CFS": 242,
+   "OFS": 35
+  }
+ },
+ "code_values": {
+  "g_funda": {
+   "indfmt": {
+    "INDL": 49805,
+    "FS": 2555
+   },
+   "datafmt": {
+    "HIST_STD": 52360
+   },
+   "popsrc": {
+    "I": 52360
+   },
+   "consol": {
+    "C": 33368,
+    "N": 18992
+   },
+   "curcd": {
+    "KRW": 52237,
+    "CNY": 56,
+    "USD": 29,
+    "HKD": 21,
+    "JPY": 12,
+    "TWD": 5
+   },
+   "fyr": {
+    "12": 49820,
+    "3": 1351,
+    "6": 661,
+    "9": 349,
+    "11": 58,
+    "10": 44,
+    "8": 25,
+    "2": 22,
+    "1": 15,
+    "4": 6,
+    "5": 5,
+    "7": 4
+   },
+   "costat": {
+    "A": 42867,
+    "I": 9493
+   }
+  },
+  "g_security": {
+   "excntry": {
+    "KOR": 5798,
+    "HKG": 2,
+    "DEU": 1
+   },
+   "exchg": {
+    "248": 3194,
+    "298": 2414,
+    "353": 176,
+    "1": 7,
+    "157": 4,
+    "127": 3,
+    "170": 2,
+    "115": 1
+   },
+   "tpci": {
+    "0": 4157,
+    "%": 1275,
+    "1": 298,
+    "2": 34,
+    "7": 24,
+    "F": 12,
+    "None": 1
+   },
+   "secstat": {
+    "A": 4071,
+    "I": 1730
+   },
+   "dlrsni": {
+    "nan": 4071,
+    "10.0": 1085,
+    "20.0": 282,
+    "1.0": 245,
+    "9.0": 54,
+    "4.0": 35,
+    "2.0": 14,
+    "11.0": 7,
+    "3.0": 4,
+    "12.0": 2,
+    "5.0": 1,
+    "7.0": 1
+   },
+   "epf": {
+    "Y": 5501,
+    "N": 300
+   }
+  },
+  "g_company": {
+   "fic": {
+    "KOR": 5348,
+    "None": 18,
+    "HKG": 17,
+    "CYM": 9,
+    "JPN": 3,
+    "SGP": 2,
+    "CHN": 1,
+    "GBR": 1
+   },
+   "loc": {
+    "KOR": 5364,
+    "HKG": 16,
+    "CHN": 5,
+    "USA": 4,
+    "JPN": 4,
+    "CYM": 4,
+    "SGP": 1,
+    "GBR": 1
+   },
+   "costat": {
+    "A": 3939,
+    "I": 1460
+   },
+   "dlrsn": {
+    "nan": 3939,
+    "10.0": 1143,
+    "1.0": 212,
+    "9.0": 51,
+    "4.0": 35,
+    "2.0": 13,
+    "3.0": 4,
+    "5.0": 1,
+    "7.0": 1
+   }
+  }
+ },
+ "missing_wanted_columns": {
+  "g_funda": [
+   "ni",
+   "csho",
+   "cshpri",
+   "ajex",
+   "prcc_f",
+   "mkvalt",
+   "epspx"
+  ],
+  "g_secm": [
+   "trfm",
+   "cshom"
+  ],
+  "substitutes_present_with_catalog_definition": {
+   "nicon": "Net Income (Loss) - Consolidated",
+   "ib": "Income Before Extraordinary Items",
+   "cshoi": "Com Shares Outstanding - Issue",
+   "cshpria": "Common Shares Used to Calculate Earnings Per Share (Basic) - As Reported",
+   "ajexi": "Adjustment Factor (International Issue)-Cumulative by Ex-Date",
+   "g_secd.cshoc": "Shares Outstanding",
+   "g_secd.prccd": "Price - Close - Daily",
+   "g_secm.prccm": "Price - Close - Monthly"
+  }
+ }
+}
