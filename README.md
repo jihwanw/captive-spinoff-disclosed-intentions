@@ -1,9 +1,9 @@
 # Controlling Owners, Disclosed Intentions, and Minority Shareholder Returns in Korean Captive Spin-Offs
 
 Replication archive for the manuscript of that title (single author). The manuscript was submitted to *Corporate Governance: An International Review* on 31 October 2026 (desk decision 10 November 2026, no external review) and is being prepared, in a substantially extended form, for submission to the *Journal of International Financial Management & Accounting* (`paper/tex_jifma/`; see "Version 2" below).
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24136702.svg)](https://doi.org/10.5281/zenodo.24136702)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24220450.svg)](https://doi.org/10.5281/zenodo.24220450)
 
-Version DOI (release `v2.0-jifma`, the JIFMA manuscript state): https://doi.org/10.5281/zenodo.24136702. CGIR submission state: `v1.2-submission`, https://doi.org/10.5281/zenodo.23890412. Previous version: `v1.1-submission`, https://doi.org/10.5281/zenodo.23721406. Concept DOI (resolves to the latest version): https://doi.org/10.5281/zenodo.23660635.
+Version DOI (release `v2.1-jifma`, the JIFMA manuscript state): https://doi.org/10.5281/zenodo.24220450. Previous JIFMA state: `v2.0-jifma`, https://doi.org/10.5281/zenodo.24136702. CGIR submission state: `v1.2-submission`, https://doi.org/10.5281/zenodo.23890412. Previous version: `v1.1-submission`, https://doi.org/10.5281/zenodo.23721406. Concept DOI (resolves to the latest version): https://doi.org/10.5281/zenodo.23660635.
 
 ## What is here
 
@@ -60,7 +60,7 @@ cd paper/tex && pdflatex main && bibtex main && pdflatex main && pdflatex main
 
 * `v1.2-submission` — the corrected submission state (DOI 10.5281/zenodo.23890412; CGIR editorial office, 2 November 2026, manuscript CORG-26-01588 returned to draft: "remove Data availability statement from your main document"). The anonymous main document no longer carries the data availability statement (it is on the title page and in the submission form; `main.tex` inputs `sec7_availability.tex` only in the author copy). Also since v1.1: the Figure 1 conceptual-framework layout in `make_figures_cgir.py` (box geometry and arrow routing only; the figure has no data), and the package builder (flat LaTeX bundle with the figure files, standalone compile test, a build failure if the anonymous PDF contains a data availability statement, fixed cover-letter date). No change to results code, results files, tables or numbers since v1.1; `results/figure_data_20261028.json` differs only in its generation timestamp.
 * `v2.0-jifma` — the JIFMA manuscript state, 11 November 2026 (DOI 10.5281/zenodo.24136702): design battery (code 25–34), validity and bias audit (36), `paper/tex_jifma/` sources and package builder.
-* `v2.1-jifma` — after cross-review round 1–2 (13–14 November 2026): `31` early-vs-never comparator corrected to retained-only, `32` DiD with the post main effect plus winsorised/median variants, two-model reading count 718 (parsed probabilities from both models), reform table Panel B with multi-label categories and the strength index, short-form definitions table in the main text, manuscript revisions. DOI: see the badge once minted.
+* `v2.1-jifma` — after cross-review round 1–2 (13–14 November 2026): `31` early-vs-never comparator corrected to retained-only, `32` DiD with the post main effect plus winsorised/median variants, two-model reading count 718 (parsed probabilities from both models), reform table Panel B with multi-label categories and the strength index, short-form definitions table in the main text, manuscript revisions. DOI 10.5281/zenodo.24220450.
 
 ## Licence and citation
 

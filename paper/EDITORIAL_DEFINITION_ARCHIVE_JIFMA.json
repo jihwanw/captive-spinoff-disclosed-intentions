@@ -306,7 +306,7 @@
   "readme_path": "README.md",
   "results_release": "v2.1-jifma",
   "archive_release": "v2.1-jifma",
-  "version_doi": "[FILL after the v2.1-jifma Zenodo deposit]",
+  "version_doi": "10.5281/zenodo.24220450",
   "concept_doi": "10.5281/zenodo.23660635",
   "tracked_paths": [
    "code/"
@@ -323,15 +323,15 @@
   "current_public_title": "Controlling Owners, Disclosed Intentions, and Minority Shareholder Returns in Korean Captive Spin-Offs",
   "former_title_history_allowed": true,
   "public_metadata": {
-   "github_checked_date": "[FILL]",
-   "zenodo_checked_date": "[FILL]",
-   "zenodo_version": "[FILL]",
-   "zenodo_version_as_displayed": "[FILL]",
-   "zenodo_file": "[FILL]",
+   "github_checked_date": "2026-11-14",
+   "zenodo_checked_date": "2026-11-14",
+   "zenodo_version": "2.1-jifma",
+   "zenodo_version_as_displayed": "v2.1-jifma",
+   "zenodo_file": "jihwanw/captive-spinoff-disclosed-intentions-v2.1-jifma.zip",
    "zenodo_title": "Controlling Owners, Disclosed Intentions, and Minority Shareholder Returns in Korean Captive Spin-Offs — replication archive",
-   "title_matches": false,
-   "doi_matches": false,
-   "verification": "[FILL after the release: gh api release + Zenodo records API]"
+   "title_matches": true,
+   "doi_matches": true,
+   "verification": "GitHub: commit 241721c pushed and release v2.1-jifma created from EC2 ec2-vla 2026-11-14 21:21-21:22 KST (gh api commits/main sha 241721c, 2026-11-14T12:21:20Z; tags list shows v2.1-jifma). Zenodo public API records/24220450 2026-11-14 21:24 KST: doi 10.5281/zenodo.24220450, conceptdoi 10.5281/zenodo.23660635, version v2.1-jifma, one file (6,084,526 bytes), title identical, creator ORCID 0000-0002-0424-0242, licence MIT; doi.org resolves (302 to zenodo.org/doi/10.5281/zenodo.24220450)."
   },
   "release_history": [
    {
@@ -360,7 +360,7 @@
    },
    {
     "tag": "v2.1-jifma",
-    "doi": "[FILL]",
+    "doi": "10.5281/zenodo.24220450",
     "note": "cross-review round 1 fixes (2026-11-13/14): 31 early-vs-never comparator = retained only (late disposals had been pooled into the comparator); 32 DiD adds the post main effect (year effects do not absorb an October cutoff); NScored counts parsed two-model readings (718, not 720); Panel B of the reform table shows categories (multi-label) and the strength index; short-form definitions table added to the main text; British spelling in remapped tables; macros for the published announcement-slope specification, the joint rank regression, the per-ten-point block effect"
    }
   ],
