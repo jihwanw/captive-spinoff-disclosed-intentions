@@ -1,0 +1,158 @@
+{
+ "paper": "JIFMA — Controlling Owners, Disclosed Intentions, and Minority Shareholder Returns in Korean Captive Spin-Offs",
+ "built": "2026-11-14",
+ "note": "Institutional statements of the JIFMA manuscript (paper/tex_jifma/sec1_intro.tex, sec2_setting_theory.tex) and the primary sources read for them. The two FSC press releases were fetched and read in full on 2026-11-13 (session log). Statute article numbers are quoted from the FSC release, which cites them in parentheses; the law.go.kr text itself was not opened — the rows carry source_type 'primary' for the release and 'secondary' for the article citation it contains.",
+ "facts": [
+  {
+   "id": "FSC-2022-09-05-problem",
+   "claim_en": "The regulator's account of the problem, in the release that announced the reform, was that some firms had carved out high-growth divisions and listed them within a short time, and that general shareholders had lost their rights over the division and seen the parent's price fall.",
+   "quote_original": "최근 일부 기업이 고성장 사업부문을 물적분할하여 단기간 내 상장하면서, 주주권 상실과 주가 하락 등 일반주주의 피해문제가 제기된 바 있습니다. ㅇ 물적분할은 인적분할과 달리 분할된 신설회사의 주식을 분할전 회사의 일반주주들이 배분 받지 못하게 됨에 따라 일반주주들이 분할부문에 대한 주주권을 직접 행사하지 못하게 되고",
+   "source": {
+    "type": "press release",
+    "title": "물적분할 자회사 상장 관련 일반주주 권익 제고방안",
+    "issuer": "금융위원회",
+    "date": "2022-09-05",
+    "url": "https://www.fsc.go.kr/no010101/78449",
+    "accessed": "2026-11-13",
+    "source_type": "primary"
+   },
+   "tex_patterns": [
+    "carved out high-growth divisions and listed them within a short time"
+   ],
+   "status": "verified"
+  },
+  {
+   "id": "FSC-2022-09-05-three-measures",
+   "claim_en": "The package had three measures: a mandatory statement of the division's specific purpose, expected effects and shareholder-protection measures (with any listing plan and its schedule), an appraisal right for shareholders who dissent from a captive spin-off, and an exchange review of the parent's protection of general shareholders when a carved-out subsidiary applies to list within five years, with the listing refused where protection is insufficient.",
+   "quote_original": "[1] (공시 강화) 물적분할을 추진하려는 기업은 앞으로 ‘주요사항보고서’를 통해 물적분할의 구체적인 목적(예: 구조조정, 매각, 상장 등), 기대효과, 및 주주보호방안을 충실히 공시하여야 합니다 … 분할 자회사의 상장을 계획하고 있는 경우 예상 일정 등을 공시해야 하며 … [2] (주식매수청구권 도입) 상장기업의 주주가 물적분할에 반대하는 경우, 기업에 주식을 매수해줄 것을 청구하는 권리(주식매수청구권)을 부여합니다. … [3] (상장심사 강화) 물적분할 이후 5년 내 자회사를 상장하려는 경우, 거래소가 모회사 일반주주에 대한 보호노력을 심사하고 미흡한 경우 상장이 제한됩니다.",
+   "source": {
+    "type": "press release",
+    "title": "물적분할 자회사 상장 관련 일반주주 권익 제고방안",
+    "issuer": "금융위원회",
+    "date": "2022-09-05",
+    "url": "https://www.fsc.go.kr/no010101/78449",
+    "accessed": "2026-11-13",
+    "source_type": "primary"
+   },
+   "direction_check": {
+    "original": [
+     "이내 (5년 내)"
+    ],
+    "english": [
+     "within five years"
+    ]
+   },
+   "tex_patterns": [
+    "package of three measures",
+    "applies to list within five years"
+   ],
+   "status": "verified"
+  },
+  {
+   "id": "FSC-2022-12-20-dates",
+   "claim_en": "The revised disclosure form applied from 18 October 2022; the strengthened listing review from 28 September 2022; the enabling decree for the appraisal right was approved by the cabinet on 20 December 2022 and was to be promulgated within the year and take effect on promulgation.",
+   "quote_original": "‘22.12.20일(화) 국무회의에서 「자본시장과 금융투자업에 관한 법률 시행령」 개정안이 의결되었습니다. … ❶ (공시 강화) 10.18일부터 물적분할을 추진하는 기업은 ‘주요사항보고서’를 통해 물적분할의 목적, 기대효과, 주주보호 방안 및 상장계획 등 구조개편계획을 공시하고 있습니다. … ❸ (상장심사 강화) 9.28일부터 물적분할 자회사가 상장하려는 경우에는 모회사의 일반주주 보호노력을 심사하고 있습니다. … 금일 국무회의를 통과한 자본시장법 시행령 개정안은 연내 공포 후 즉시 시행될 예정입니다.",
+   "source": {
+    "type": "press release",
+    "title": "상장기업 물적분할시 주식매수청구권 도입 — 자본시장법 시행령 개정안 국무회의 통과",
+    "issuer": "금융위원회",
+    "date": "2022-12-20",
+    "url": "https://www.fsc.go.kr/no010101/79125",
+    "accessed": "2026-11-13",
+    "source_type": "primary"
+   },
+   "tex_patterns": [
+    "18 October 2022",
+    "28 September 2022",
+    "approved on 20 December 2022 for promulgation and immediate effect before the year's end",
+    "listing review on 28 September, disclosure form on 18 October, appraisal right at the year's end",
+    "post-reform period begins on 1 October 2022, the first month after the listing review took effect"
+   ],
+   "status": "verified"
+  },
+  {
+   "id": "FSC-appraisal-price-formula",
+   "claim_en": "A shareholder who votes against a captive spin-off may sell the shares to the company at a price fixed by the pre-announcement market: the arithmetic mean of the volume-weighted average prices over the two months, one month and one week before the board resolution (Article 165-5(3) of the Capital Markets Act; Article 176-7(3) of the enforcement decree); a shareholder who disputes the price may ask a court to set it.",
+   "quote_original": "(法 §165-5③) 상장기업 주식매수청구권 행사시 매수가격은 주주-기업간 협의로 결정 → 협의가 되지 않으면 자본법령상(令 §176-7③) 시장가격 (이사회 결의일 전일부터 과거 2개월, 과거 1개월, 과거 1주일 간 각각 가중평균한 가격을 산술평균) 적용 → 이에 대해서도 협의가 되지 않는 경우 법원에 매수가격 결정 청구 가능",
+   "source": {
+    "type": "press release quoting statute",
+    "title": "물적분할 자회사 상장 관련 일반주주 권익 제고방안 / 시행령 개정안 국무회의 통과",
+    "issuer": "금융위원회",
+    "date": "2022-09-05 and 2022-12-20",
+    "url": "https://www.fsc.go.kr/no010101/78449 ; https://www.fsc.go.kr/no010101/79125",
+    "accessed": "2026-11-13",
+    "source_type": "secondary",
+    "note": "article numbers are as cited by the FSC release; law.go.kr text not opened — the manuscript's phrase 'a price fixed by the pre-announcement market' summarises the release's description (price by agreement first, then the statutory market price if no agreement, then the court). Re-check the decree text before submission."
+   },
+   "tex_patterns": [
+    "mean of the volume-weighted average prices over the two months, one month and one week before the board resolution",
+    "Article 165-5\\(3\\) of the Capital Markets Act and Article 176-7\\(3\\)"
+   ],
+   "status": "verified"
+  },
+  {
+   "id": "FSC-deterrence-expectation",
+   "claim_en": "The regulator expected the package to work by deterrence: a captive spin-off that most general shareholders opposed, and that lowered the parent's value, would face appraisal demands on a scale that made it hard to pursue.",
+   "quote_original": "이에 대해 일반주주들의 지지와 동의를 얻지 못하면 물적분할 추진이 사실상 어려워*질 수 있습니다. * 대다수 일반주주가 반대하고 기업가치(주가) 하락을 초래하는 물적분할의 경우에는 대규모 주식매수청구권 행사가 이루어질 수 있음 (2022-09-05) ; 다수의 일반주주가 반대하거나 기업가치 하락을 유발하는 경우에는 물적분할 자체가 어려워짐에 따라, 상장기업은 주주보호방안을 마련해 일반주주를 설득한 경우에만 물적분할 추진이 가능합니다. (2022-12-20)",
+   "source": {
+    "type": "press release",
+    "title": "FSC releases of 2022-09-05 (78449) and 2022-12-20 (79125)",
+    "issuer": "금융위원회",
+    "url": "https://www.fsc.go.kr/no010101/78449 ; https://www.fsc.go.kr/no010101/79125",
+    "accessed": "2026-11-13",
+    "source_type": "primary"
+   },
+   "tex_patterns": [
+    "appraisal demands on a scale that made it hard to pursue"
+   ],
+   "status": "verified"
+  },
+  {
+   "id": "LGChem-sequence",
+   "claim_en": "LG Chem's board approved the division on 7 September 2020; a special shareholders' meeting approved it on 30 October 2020; LG Energy Solution listed on 27 January 2022; LG Chem's stock fell more than 30 percent between the announcement and the listing.",
+   "quote_original": "On September 7, 2020, in an ‘‘emergency’’ irregular board meeting, LG Chem approved and immediately announced … On October 30, 2020, LG Chem hosted a special meeting of shareholders to obtain shareholders’ approval … On January 27, 2022, LG Energy Solution conducted its IPO … a more than 30% decrease in LG Chem’s stock prices over the period from the spin-off’s initial announcement date to the spun-off subsidiary’s initial [public offering]",
+   "source": {
+    "type": "journal article (Appendix A)",
+    "title": "Kang & Lee (2025), Do 'captive' spin-offs create value? Evidence from Korea, Finance Research Letters 85:107826, Appendix A and p. 2",
+    "url": "literature/KangLee2025_FRL_fulltext.txt lines 86-87, 568-606",
+    "accessed": "2026-11-13",
+    "source_type": "secondary",
+    "note": "case facts taken from the cited study, which the manuscript cites at the sentence; DART filings not opened for this sentence"
+   },
+   "tex_patterns": [
+    "voted in October 2020 on the division that created LG Energy Solution",
+    "between the announcement and the listing"
+   ],
+   "status": "verified"
+  },
+  {
+   "id": "FSC-scope-captive-only",
+   "claim_en": "All three measures are defined for captive spin-offs (mulchŏk bunhal): the disclosure duty applies to a company pursuing a captive spin-off, the appraisal right to shareholders dissenting from a captive spin-off, and the listing review to a subsidiary created by a captive spin-off that applies to list within five years; equity spin-offs are outside the scope of each.",
+   "quote_original": "[1] 물적분할을 추진하려는 기업은 … 공시하여야 합니다 … [2] 상장기업의 주주가 물적분할에 반대하는 경우 … 주식매수청구권을 부여합니다 … [3] 물적분할 이후 5년 내 자회사를 상장하려는 경우, 거래소가 모회사 일반주주에 대한 보호노력을 심사",
+   "source": {
+    "type": "press release",
+    "title": "물적분할 자회사 상장 관련 일반주주 권익 제고방안",
+    "issuer": "금융위원회",
+    "date": "2022-09-05",
+    "url": "https://www.fsc.go.kr/no010101/78449",
+    "accessed": "2026-11-13",
+    "source_type": "primary",
+    "note": "the exemption of equity spin-offs is by scope — every measure is written for 물적분할; no provision names 인적분할"
+   },
+   "direction_check": {
+    "original": [
+     "이내 (5년 내)"
+    ],
+    "english": [
+     "within five years"
+    ]
+   },
+   "tex_patterns": [
+    "were touched by none of the three",
+    "exempt from the reform",
+    "exempt from all three measures"
+   ],
+   "status": "verified"
+  }
+ ]
+}

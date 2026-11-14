@@ -72,6 +72,10 @@ for k in HEAD:
 WHITELIST_PATTERNS = [   # applied in order: multi-character constants first, single digits last
     # JIFMA version (2026-11-11): JEL codes, statute article, period-strata labels, column widths in text tables, column numbers in table notes, the 21-day window
     r"\b[A-Z]\d{2}\b", r"Article 165-5\(3\)", r"Article 176-7\(3\)", r"\b(19|20)\d{2}--\d{2}\b", r"\b\d+(\.\d+)?cm\b", r"\b\d+pt\b", r"\(\d{1,2}\)", r"\b21-day\b",
+    # 2026-11-13: pre-registered bands quoted in Section 3.5 (expectations_preregistered of validity_bias_audit_20261111.json and protection_block_20261110.json)
+    r"than the 0\.15 we had allowed", r"the value below 0\.40 we expected",
+    r"between 15 and 25 October 2026",   # model run dates (judgment files written 2026-10-15 .. 10-25; WINNING_MEMO entries of those dates)
+    r"\bcolumns? \d{1,2}\b",   # column references to the table of the same section ("column 7", "columns 2 and 3"); the numbers are column labels, not statistics
     r"\b(19|20)\d{2}--(19|20)\d{2}\b", r"\b(19|20)\d{2}\b",            # year ranges and years
     r"\b\d{1,2} (January|February|March|April|May|June|July|August|September|October|November|December)\b",   # dates
     r"\b99\.5\b", r"\b60,000\b", r"\b10,000\b", r"\b100\b", r"\b250\b", r"\b130\b", r"\b90\b", r"\b50\b", r"\b31\b",   # method constants stated in Section 3 / table notes

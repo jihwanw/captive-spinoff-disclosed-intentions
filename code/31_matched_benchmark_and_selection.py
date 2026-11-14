@@ -11,7 +11,8 @@ for "who announces a captive spin-off", with propensity-matched control firms as
       nearest-neighbour control firm on standardised (log June ME, log B/M) within the same assignment year, non-event parents only,
       propensity-score nearest neighbour from (b) within the same year.
     Re-estimated on each benchmark: mean/median BHAR, Spearman(S, BHAR), within-year rank regression on S with 19's spec-3 controls
-    (year FE; HC1 and firm-clustered p), early-vs-never difference.
+    (year FE; HC1 and firm-clustered p), early-vs-never difference (never = retained through the latest report, as in 18; corrected
+    2026-11-13 — the 2026-11-10 run pooled late disposals into the comparator; that version is kept as early_vs_late_or_never).
 (b) Selection logit on the firm-year universe (fundamentals of fiscal year f, ME at the fiscal year-end month; outcome = captive
     spin-off announced by the firm in calendar year f+1): log assets, Q = (ME + liabilities)/assets, leverage, investment capx/at,
     cash flow oibdp/at, cash che/at, sales growth, KOSDAQ, parent-only-statement flag; year FE, GICS sector FE, firm clusters.
@@ -161,6 +162,8 @@ R["benchmarks_coverage"]["psm_control"] = int(co.bhar_psm.notna().sum())
 
 # ---------------- re-estimation on each benchmark
 co["early"] = co.timing.map({"early_le1y": 1.0, "never": 0.0, "late_ge2y": 0.0}); co["firm"] = co.stock_code.fillna(co.corp_name)
+# 2026-11-13: "never" in early_vs_never = retained only (timing "never"), the definition of 18/by_disposal_timing and of the paper; the first run pooled
+# late disposals (lag >= 2) into the comparator (market benchmark -13.6 vs the paper's -15.6 pp) — that comparison is kept as early_vs_late_or_never.
 BASE = ["log_me", "log_bm", "mom6", "kosdaq"]; FIL = ["rel_size", "surv_lev", "relisting"]; IMP = ["log_me", "log_bm", "mom6", "rel_size", "surv_lev"]
 def reg(d, y, xs):
     d = d.dropna(subset=[y, "p_llm"]).copy(); X = d[xs].astype(float).copy()
@@ -176,12 +179,13 @@ for y, lab in ((M, "market_adjusted_paper"), ("bhar_pf", "pf55_sizeBM_with_size_
     d = co.dropna(subset=[y, "p_llm"]).copy(); d["rank"] = d.groupby("year")[y].rank(pct=True)
     boot = np.random.default_rng(1); means = [d[y].sample(frac=1, replace=True, random_state=int(s)).mean() for s in boot.integers(0, 1e9, 2000)]
     q = pd.qcut(d.p_llm, 5, labels=False) + 1
-    e = d[d.early == 1][y]; nv = d[d.early == 0][y]
+    e = d[d.early == 1][y]; nv = d[d.timing == "never"][y]; nv2 = d[d.early == 0][y]
     R["by_benchmark"][lab] = {"n": int(len(d)), "mean": round(float(d[y].mean()), 4), "mean_ci95": [round(float(np.percentile(means, 2.5)), 4), round(float(np.percentile(means, 97.5)), 4)], "median": round(float(d[y].median()), 4), "share_negative": round(float((d[y] < 0).mean()), 3),
                               "spearman_S": {"rho": round(float(stats.spearmanr(d.p_llm, d[y]).statistic), 4), "p": round(float(stats.spearmanr(d.p_llm, d[y]).pvalue), 4)},
                               "median_by_S_quintile": {int(k): round(float(v), 4) for k, v in d.groupby(q)[y].median().items()}, "Q5_minus_Q1_median": round(float(d[q == 5][y].median() - d[q == 1][y].median()), 4),
                               "rank_on_S_spec3": reg(d.assign(**{"rank": d["rank"]}), "rank", ["p_llm"] + BASE + FIL), "level_on_S_spec3": reg(d, y, ["p_llm"] + BASE + FIL),
-                              "early_vs_never": {"n_early": int(len(e)), "n_never": int(len(nv)), "diff_mean_pp": round(float((e.mean() - nv.mean()) * 100), 2), "diff_median_pp": round(float((e.median() - nv.median()) * 100), 2), "mw_p": round(float(stats.mannwhitneyu(e, nv).pvalue), 4) if len(e) and len(nv) else None}}
+                              "early_vs_never": {"n_early": int(len(e)), "n_never": int(len(nv)), "diff_mean_pp": round(float((e.mean() - nv.mean()) * 100), 2), "diff_median_pp": round(float((e.median() - nv.median()) * 100), 2), "mw_p": round(float(stats.mannwhitneyu(e, nv).pvalue), 4) if len(e) and len(nv) else None},
+                              "early_vs_late_or_never": {"n_early": int(len(e)), "n_other": int(len(nv2)), "diff_mean_pp": round(float((e.mean() - nv2.mean()) * 100), 2), "diff_median_pp": round(float((e.median() - nv2.median()) * 100), 2), "mw_p": round(float(stats.mannwhitneyu(e, nv2).pvalue), 4) if len(e) and len(nv2) else None}}
     v = R["by_benchmark"][lab]; print(f"[{lab}] n {v['n']} mean {v['mean']:+.4f} {v['mean_ci95']} median {v['median']:+.4f} | Spearman {v['spearman_S']['rho']:+.3f} (p {v['spearman_S']['p']}) | rank~S {v['rank_on_S_spec3']['coef']:+.4f} (hc1 p {v['rank_on_S_spec3']['p_hc1']}, firm p {v['rank_on_S_spec3']['p_firm']}) | early−never {v['early_vs_never']['diff_mean_pp']:+.1f} pp (MW p {v['early_vs_never']['mw_p']})", flush=True)
 co[["rcept_no", "corp_name", "event_date", "year", "period", "gvkey", "iid", "p_llm", "timing", "firm_bhar", "mkt_bhar", M, "pf55_bhar", "pf33_bhar", "size5_bhar", "mf_bhar", "psm_bhar", "bhar_pf", "bhar_pf55", "bhar_pf33", "bhar_mf", "bhar_psm", "bench_used", "size5", "bm5"]].to_csv(f"{OUT}/event_benchmarks_{STAMP}.csv", index=False)
 

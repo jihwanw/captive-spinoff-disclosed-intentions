@@ -11,7 +11,8 @@ payoff of exercising. Resubmission strategy §1-D (H-대조군 DiD, H-풋옵션)
     filing (13's rule; 2017+: min(rcept_no, text_rcept_no) date). Event types: 2017+ from the structured record (carve_out/mixed = captive,
     spin_off = equity; 'other' dropped); 2001–2016 from the LLM-extracted division_type of 12b (물적분할/혼합 = captive, 인적분할 = equity;
     분할합병/unclear dropped). Identity control: the captive events' CARs must track the paper's (event_study_meta*.csv) with r >= 0.95.
-    DiD: CAR = a + b1 Captive + b2 Captive x Post(>= 2022-10-01) + year FE + log ME (previous month-end) + KOSDAQ; HC1, firm- and
+    DiD: CAR = a + b1 Captive + b2 Captive x Post(>= 2022-10-01) + b3 Post + year FE + log ME (previous month-end) + KOSDAQ; HC1, firm- and
+    [b3 added 2026-11-13: year effects do not absorb an October cutoff inside 2022; the 2026-11-10 run omitted it]
     year-clustered SE; samples 2017–2026 (structured era) and 2001–2026; event-time table of yearly mean CAR by type; placebo cutoff
     2019-10-01 inside the pre-period. Filing counts by type and half-year are reported descriptively (no denominator for a count DiD).
 (b) The revised form has a block "10. 주식매수청구권에 관한 사항 … 매수예정가격 <KRW>" (seen in the raw texts 2026-11-10). The stated price is read
@@ -96,13 +97,17 @@ print("identity:", R["identity_control"], "| cars by type:", R["cars"]["mean_car
 def did(d, y, post_col="post", extra=()):
     d = d.dropna(subset=[y]).copy(); d["cxp"] = d.captive * d[post_col]
     X = pd.concat([d[["captive", "cxp"] + list(extra)].astype(float), pd.get_dummies(d.year, prefix="y", drop_first=True, dtype=float)], axis=1)
-    if d[post_col].nunique() > 1 and "y_" + str(int(d.year.max())) not in X: X[post_col] = d[post_col]
+    # 2026-11-13: the post indicator always enters as its own regressor when it varies. Calendar-year effects do not absorb a 1 October 2022
+    # cutoff (January-September 2022 is pre, October-December 2022 post), so the first run's omission of the main effect let the captive x post
+    # coefficient carry any common Q4-2022 shift; the design stays full rank because both forms have 2022 announcements on each side of the cut.
+    if d[post_col].nunique() > 1: X[post_col] = d[post_col].astype(float)
     X = sm.add_constant(X.loc[:, X.nunique() > 1]); X["log_me"] = d.log_me.fillna(d.log_me.median()) if "log_me" in extra else X.get("log_me", 0)
     if "log_me" not in extra and "log_me" in X: X = X.drop(columns="log_me")
     yv = d[y].astype(float)
     hc = sm.OLS(yv, X).fit(cov_type="HC1"); cf = sm.OLS(yv, X).fit(cov_type="cluster", cov_kwds={"groups": pd.factorize(d.stock_code)[0]}); cy = sm.OLS(yv, X).fit(cov_type="cluster", cov_kwds={"groups": pd.factorize(d.year)[0]})
-    o = {"n": int(len(d)), "n_captive": int(d.captive.sum()), "n_equity": int((1 - d.captive).sum()), "n_post": int(d[post_col].sum())}
-    for v in ("captive", "cxp"):
+    o = {"n": int(len(d)), "n_captive": int(d.captive.sum()), "n_equity": int((1 - d.captive).sum()), "n_post": int(d[post_col].sum()),
+         "design_full_rank": bool(np.linalg.matrix_rank(X.values) == X.shape[1]), "post_main_effect_included": bool(post_col in X)}
+    for v in ("captive", "cxp") + ((post_col,) if post_col in X else ()):
         o[v] = {"coef_pp": round(float(hc.params[v] * 100), 3), "se_hc1_pp": round(float(hc.bse[v] * 100), 3), "p_hc1": round(float(hc.pvalues[v]), 3), "p_firm": round(float(cf.pvalues[v]), 3), "p_year": round(float(cy.pvalues[v]), 3)}
     return o
 d17 = ok[ok.src == "2017+"].copy(); dall = ok.copy()
@@ -110,9 +115,36 @@ R["did"] = {"2017_2026_car3_yearFE": did(d17, "car_mm_m1_p1"), "2017_2026_car3_y
             "2001_2026_car3_yearFE_logme_kosdaq": did(dall, "car_mm_m1_p1", extra=("log_me", "kosdaq")), "2001_2026_madj3_yearFE_logme_kosdaq": did(dall, "car_madj_m1_p1", extra=("log_me", "kosdaq"))}
 pre = d17[d17.event_date < CUT].copy(); pre["post_fake"] = (pre.event_date >= PLACEBO_CUT).astype(float)
 R["did"]["placebo_2017_2022sep_cut_2019_10"] = did(pre, "car_mm_m1_p1", post_col="post_fake", extra=("log_me", "kosdaq"))
+# 2026-11-14 (cross-review round 2): is the headline a few events? (a) winsorised CAR (1st/99th percentile of the 2017-2026 sample), (b) median
+# regression of the same design, (c) the largest post-reform captive three-day CARs by name.
+lo, hi = d17.car_mm_m1_p1.quantile([0.01, 0.99]); d17w = d17.assign(car_w=d17.car_mm_m1_p1.clip(lo, hi))
+R["did"]["2017_2026_car3_winsorised_1_99_yearFE_logme_kosdaq"] = did(d17w, "car_w", extra=("log_me", "kosdaq"))
+def did_median(d, y, extra=("log_me", "kosdaq")):
+    d = d.dropna(subset=[y]).copy(); d["cxp"] = d.captive * d.post
+    X = pd.concat([d[["captive", "cxp", "post"] + list(extra)].astype(float), pd.get_dummies(d.year, prefix="y", drop_first=True, dtype=float)], axis=1)
+    X["log_me"] = X.log_me.fillna(X.log_me.median()); X = sm.add_constant(X.loc[:, X.nunique() > 1])
+    q = sm.QuantReg(d[y].astype(float), X).fit(q=0.5, max_iter=5000)
+    return {"n": int(len(d)), "cxp": {"coef_pp": round(float(q.params["cxp"] * 100), 3), "se_pp": round(float(q.bse["cxp"] * 100), 3), "p": round(float(q.pvalues["cxp"]), 3)}}
+R["did"]["2017_2026_car3_median_regression_yearFE_logme_kosdaq"] = did_median(d17, "car_mm_m1_p1")
+top = d17[(d17.captive == 1) & (d17.post == 1)].nlargest(3, "car_mm_m1_p1")
+R["did"]["largest_post_reform_captive_car3"] = [{"corp_name": r.corp_name, "event_date": str(r.event_date.date()), "car3_pct": round(float(r.car_mm_m1_p1 * 100), 1)} for r in top.itertuples()]
+pc = d17[(d17.captive == 1) & (d17.post == 1)].car_mm_m1_p1
+R["did"]["post_reform_captive_car3_distribution"] = {"n": int(pc.notna().sum()), "mean_pct": round(float(pc.mean() * 100), 2), "median_pct": round(float(pc.median() * 100), 2),
+                                                      "mean_without_top3_pct": round(float(pc.drop(top.index).mean() * 100), 2), "share_positive": round(float((pc > 0).mean()), 3)}
+# the right came into force at the end of December 2022 (decree approved 20 December; FSC: promulgation and immediate effect within the year): filings
+# between the cutoff and the year-end carry the revised form (from 18 October) but no appraisal right — the only split the data allow between channels
+pcl = d17[(d17.captive == 1) & (d17.post == 1)]
+q4 = pcl[pcl.event_date <= pd.Timestamp("2022-12-31")]; aft = pcl[pcl.event_date > pd.Timestamp("2022-12-31")]
+R["did"]["post_reform_captive_by_window"] = {"listed_parent_events_post": int(len(pcl)),
+    "form_without_right_2022Q4": {"events": int(len(q4)), "n_car3": int(q4.car_mm_m1_p1.notna().sum()), "mean_car3_pct": round(float(q4.car_mm_m1_p1.mean() * 100), 2), "median_car3_pct": round(float(q4.car_mm_m1_p1.median() * 100), 2)},
+    "form_with_right_2023plus": {"events": int(len(aft)), "n_car3": int(aft.car_mm_m1_p1.notna().sum()), "mean_car3_pct": round(float(aft.car_mm_m1_p1.mean() * 100), 2), "median_car3_pct": round(float(aft.car_mm_m1_p1.median() * 100), 2)}}
+print("by window:", R["did"]["post_reform_captive_by_window"], flush=True)
+print("robustness:", json.dumps({k: R["did"][k] for k in ("2017_2026_car3_winsorised_1_99_yearFE_logme_kosdaq", "2017_2026_car3_median_regression_yearFE_logme_kosdaq", "largest_post_reform_captive_car3", "post_reform_captive_car3_distribution")}, ensure_ascii=False, default=str), flush=True)
 R["event_time_mean_car_pct_by_type_year"] = {int(y): {t: {"n": int(len(g)), "mean": round(float(g.car_mm_m1_p1.mean() * 100), 2)} for t, g in gy.groupby("type")} for y, gy in ok[ok.year >= 2015].groupby("year")}
 R["filings_by_halfyear_type"] = {f"{p}": c.to_dict() for p, c in ok.assign(h=ok.event_date.dt.year.astype(str) + "H" + ((ok.event_date.dt.month > 6) + 1).astype(str)).groupby("h").type.value_counts().unstack(fill_value=0).iterrows() if p >= "2017H1"}
-for k, v in R["did"].items(): print(f"[DiD {k}] n {v['n']} (captive {v['n_captive']}, equity {v['n_equity']}, post {v['n_post']}) | captive {v['captive']['coef_pp']:+.2f} pp | captive×post {v['cxp']['coef_pp']:+.2f} pp (hc1 p {v['cxp']['p_hc1']}, firm p {v['cxp']['p_firm']}, year p {v['cxp']['p_year']})", flush=True)
+for k, v in R["did"].items():
+    if "n_captive" not in v: continue
+    print(f"[DiD {k}] n {v['n']} (captive {v['n_captive']}, equity {v['n_equity']}, post {v['n_post']}) | captive {v['captive']['coef_pp']:+.2f} pp | captive×post {v['cxp']['coef_pp']:+.2f} pp (hc1 p {v['cxp']['p_hc1']}, firm p {v['cxp']['p_firm']}, year p {v['cxp']['p_year']})", flush=True)
 
 # ---------------- appraisal put
 pat = re.compile(r"매수\s*예정\s*가격\s*([\d,]{3,})")   # the price must be the next token; a "-" (not applicable) yields no price
@@ -192,7 +224,7 @@ ok.drop(columns=[c for c in ("board_ts",) if c in ok]).to_csv(f"{OUT}/division_a
 md = [f"# Equity spin-off control group DiD and the appraisal put ({STAMP})", "", f"Source `results/equity_did_appraisal_put_{STAMP}.json` (`code/32_equity_did_appraisal_put.py`); per-event file `data/processed/division_announcement_cars_{STAMP}.csv`.", "",
       f"Events with CARs: {R['cars']['ok_by_type_src']} (status {R['cars']['status']}). Identity control vs the paper's CARs: {R['identity_control']}.", "", f"Mean CAR[-1,+1] by type: {R['cars']['mean_car_by_type']}; 2017+ by type × post: {R['cars']['mean_car_by_type_period']}", "",
       "## Difference-in-differences (Captive × Post(2022-10-01), year FE)", "", "| Spec | n (captive/equity/post) | Captive (pp) | Captive×Post (pp) | p HC1 | p firm | p year |", "|---|---|---|---|---|---|---|"] + \
-     [f"| {k} | {v['n']} ({v['n_captive']}/{v['n_equity']}/{v['n_post']}) | {v['captive']['coef_pp']:+.2f} | {v['cxp']['coef_pp']:+.2f} ± {v['cxp']['se_hc1_pp']:.2f} | {v['cxp']['p_hc1']} | {v['cxp']['p_firm']} | {v['cxp']['p_year']} |" for k, v in R["did"].items()] + [
+     [f"| {k} | {v['n']} ({v['n_captive']}/{v['n_equity']}/{v['n_post']}) | {v['captive']['coef_pp']:+.2f} | {v['cxp']['coef_pp']:+.2f} ± {v['cxp']['se_hc1_pp']:.2f} | {v['cxp']['p_hc1']} | {v['cxp']['p_firm']} | {v['cxp']['p_year']} |" for k, v in R["did"].items() if isinstance(v, dict) and "n_captive" in v] + [
       "", "Event time (mean CAR % by type and year, 2015+): " + json.dumps(R["event_time_mean_car_pct_by_type_year"], ensure_ascii=False), "", "Filings with CARs by half-year and type (2017+): " + json.dumps(R["filings_by_halfyear_type"], ensure_ascii=False), "",
       "## Appraisal right as a put", "", json.dumps(R["appraisal"], ensure_ascii=False, indent=1), "", "## Expectation check", "", str(R["expectation_check"]), "",
       "## Caveats recorded", "", "- Equity spin-off parents are the untreated group for the announcement reaction only; their later returns are not comparable (new-company shares).",

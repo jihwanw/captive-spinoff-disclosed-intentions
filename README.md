@@ -28,8 +28,8 @@ The JIFMA version keeps every result of the CGIR submission and adds the design 
 | `27_nested_models_signal_decomposition.py` | nested models M0–M3 (financials, purpose categories, mention flags, signal), keyword ladder, decomposition of the signal | `nested_models_20261110.json` |
 | `28_cox_time_to_disposal.py` | Cox model of time to first disposal with period strata; Kaplan–Meier by signal tercile | `cox_time_to_disposal_20261110.json` |
 | `29_industry_fe_firm_clusters.py` | year + GICS/SIC fixed effects, parent- and two-way-clustered inference | `industry_fe_firm_clusters_20261110.json` |
-| `30_universe_panel.py`, `31_matched_benchmark_and_selection.py` | 5×5 / 3×3 size–B/M portfolios, matched firm, propensity-matched control; firm-year selection logit | `universe_build_20261110.json`, `matched_benchmark_selection_20261110.json` |
-| `32_equity_did_appraisal_put.py` | captive × post-2022 DiD against equity spin-offs; appraisal-price put tests | `equity_did_appraisal_put_20261110.json` |
+| `30_universe_panel.py`, `31_matched_benchmark_and_selection.py` | 5×5 / 3×3 size–B/M portfolios, matched firm, propensity-matched control; firm-year selection logit | `universe_build_20261110.json`, `matched_benchmark_selection_20261113.json` (early-vs-never comparator = retained only, corrected 2026-11-13; supersedes `_20261110` |
+| `32_equity_did_appraisal_put.py` | captive × post-2022 DiD against equity spin-offs (post main effect added 2026-11-13; winsorised and median variants 2026-11-14); appraisal-price put tests | `equity_did_appraisal_put_20261114.json` (superseding `_20261110`, `_20261113`) |
 | `33_protection_block_covenants.py` | classification of the mandatory shareholder-protection block | `protection_block_20261110.json` |
 | `34_governance_controls_foreign_board.py` | foreign ownership (KRX) and outside-director ratio (DART) as controls | `governance_controls_20261110.json` |
 | `35_coder_sample_and_codebook.py` | human-coder sample and codebook (prepared; coding deferred) | `data/coding/` |
@@ -60,6 +60,7 @@ cd paper/tex && pdflatex main && bibtex main && pdflatex main && pdflatex main
 
 * `v1.2-submission` — the corrected submission state (DOI 10.5281/zenodo.23890412; CGIR editorial office, 2 November 2026, manuscript CORG-26-01588 returned to draft: "remove Data availability statement from your main document"). The anonymous main document no longer carries the data availability statement (it is on the title page and in the submission form; `main.tex` inputs `sec7_availability.tex` only in the author copy). Also since v1.1: the Figure 1 conceptual-framework layout in `make_figures_cgir.py` (box geometry and arrow routing only; the figure has no data), and the package builder (flat LaTeX bundle with the figure files, standalone compile test, a build failure if the anonymous PDF contains a data availability statement, fixed cover-letter date). No change to results code, results files, tables or numbers since v1.1; `results/figure_data_20261028.json` differs only in its generation timestamp.
 * `v2.0-jifma` — the JIFMA manuscript state, 11 November 2026 (DOI 10.5281/zenodo.24136702): design battery (code 25–34), validity and bias audit (36), `paper/tex_jifma/` sources and package builder.
+* `v2.1-jifma` — after cross-review round 1–2 (13–14 November 2026): `31` early-vs-never comparator corrected to retained-only, `32` DiD with the post main effect plus winsorised/median variants, two-model reading count 718 (parsed probabilities from both models), reform table Panel B with multi-label categories and the strength index, short-form definitions table in the main text, manuscript revisions. DOI: see the badge once minted.
 
 ## Licence and citation
 

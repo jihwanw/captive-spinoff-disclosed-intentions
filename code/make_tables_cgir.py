@@ -371,8 +371,10 @@ for _f in _glob.glob(f"{P}/results/llm_judge*/*__identified*.jsonl"):
     for _l in open(_f, encoding="utf-8"):
         try: _r = json.loads(_l)
         except Exception: continue
-        _sc.setdefault(_r["rcept_no"], set()).add(_m)
-mac("NScored", sum(1 for v in _sc.values() if len(v) == 2))   # filings read by both models (identified condition)
+        # 2026-11-13: count a model's reading only if it parsed to a probability — the same rule 15_gate1_pooled.scores() applies when it builds S
+        # (two 2001-2016 filings, 20140904800198 and 20111017900195, have a Model A record without a parsed p_disposal: 720 records -> 718 readings)
+        if isinstance((_r.get("parsed") or {}).get("p_disposal"), (int, float)): _sc.setdefault(_r["rcept_no"], set()).add(_m)
+mac("NScored", sum(1 for v in _sc.values() if len(v) == 2))   # filings with a parsed probability from both models (identified condition)
 _q = BP["by_score_quintile"]["q5_pooled"]; _d = _q["Q5_minus_Q1"]["bhar_madj_p2_p250"]
 mac("QOneMedian", pct(_q["1"]["bhar_madj_p2_p250"]["median"], 1, sign=True)); mac("QFiveMedian", pct(_q["5"]["bhar_madj_p2_p250"]["median"], 1, sign=True))
 mac("QQMedianDiff", pct(_d["median_a"] - _d["median_b"], 1, sign=True)); mac("QQMWP", p(_d["mannwhitney_p"]))

@@ -8,6 +8,8 @@
 \usepackage{booktabs}\usepackage{array}\usepackage{amsmath}\usepackage{graphicx}\usepackage{threeparttable}\usepackage{rotating}
 \newif\ifinlinefloats\inlinefloatstrue   % the package builder sets \inlinefloatstrue for the reading copy
 \ifinlinefloats\else\usepackage[nolists,tablesfirst]{endfloat}\renewcommand{\efloatseparator}{\mbox{}}\DeclareDelayedFloatFlavor{sidewaystable}{table}\fi
+\usepackage{placeins}   % \FloatBarrier at section ends keeps each section's tables and figures inside the section (2026-11-14)
+\renewcommand{\topfraction}{0.92}\renewcommand{\bottomfraction}{0.6}\renewcommand{\textfraction}{0.06}\renewcommand{\floatpagefraction}{0.75}\setcounter{topnumber}{3}\setcounter{totalnumber}{4}
 \usepackage[hidelinks]{hyperref}\usepackage{url}\usepackage{apacite}
 \input{../tables/numbers}
 \newif\ifanon\anontrue   % the package builder sets \anonfalse for the author copy
@@ -17,17 +19,20 @@
 \title{Controlling Owners, Disclosed Intentions, and Minority Shareholder Returns in Korean Captive Spin-Offs}
 \author{}\date{}
 \begin{document}
-\maketitle
+% compact title block (\maketitle leaves room for empty author/date lines and pushed the keywords onto a second page)
 \thispagestyle{empty}
+{\centering\singlespacing{\Large\bfseries Controlling Owners, Disclosed Intentions, and Minority Shareholder Returns in Korean Captive Spin-Offs\par}\vspace{10pt}}
 \input{sec0_abstract}
 \clearpage
 \input{sec1_intro}
 \input{sec2_setting_theory}
+\FloatBarrier
 \input{sec3_data}
+\FloatBarrier
 \input{sec4_results}
 \input{sec5_discussion}
 \input{sec6_conclusion}
 \ifanon\else\input{sec7_availability}\fi   % the data availability statement names the repository; it is on the cover page and kept in the author copy only
-{\singlespacing\renewcommand{\bibliographytypesize}{\small}\setlength{\bibitemsep}{3pt}\bibliographystyle{apacite}
+{\singlespacing\renewcommand{\bibliographytypesize}{\footnotesize}\setlength{\bibitemsep}{2pt}\bibliographystyle{apacite}
 \bibliography{../tex/refs,../tex/refs_manual}}
 \end{document}
